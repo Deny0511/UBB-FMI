@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# Verifică dacă a fost primit exact un argument
+if [ "$#" -ne 1 ]; then
+    echo "Usage: run.sh <1>" >&2
+    exit 1
+fi
+
+DIR="$1"
+
+# Verifică dacă argumentul este un director valid
+if [ ! -d "$DIR" ]; then
+    echo "Error: $DIR is not a valid directory" >&2
+    exit 1
+fi
+
+oldest_symlink=""
+oldest_time=""
+sum=0
+count=0
+
+# Parcurge toate fișierele din director
+while IFS= read -r -d '' file; do
+    if [ -L "$file" ]; then
+        target=$(readlink -f "$file")
+        if [ -f "$target" ]; then
+            mod_time=$(stat -c %Y "$target")
+            if [ -z "$oldest_time" ] || [ "$mod_time" -lt "$oldest_time" ]; then
+                oldest_time="$mod_time"
+                oldest_symlink="$target"
+            fi
+        fi
+    else
+        if [ -f "$file" ]; then
+            mod_time=$(stat -c %Y "$file")
+            sum=$((sum + mod_time))
+            count=$((count + 1))
+        fi
+    fi
+done < <(find "$DIR" -type f -o -type l -print0)
+
+# Afișează calea completă către cel mai vechi symlink
+echo "Cel mai vechi symlink duce la: $oldest_symlink"
+
+# Calculează media și diferența în zile
+if [ "$count" -gt 0 ]; then
+    average=$((sum / count))
+    diff_seconds=$((average - oldest_time))
+    diff_days=$((diff_seconds / 86400))
+    echo "Diferența (în zile) dintre media și cel mai vechi fișier: $diff_days"
+else
+    echo "Nu există fișiere obișnuite în director pentru a calcula media."
+fi

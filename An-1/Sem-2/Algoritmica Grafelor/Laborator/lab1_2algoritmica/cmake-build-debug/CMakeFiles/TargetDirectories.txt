@@ -1,0 +1,3 @@
+C:/Users/urdad/lab1_2algoritmica/cmake-build-debug/CMakeFiles/lab1_2algoritmica.dir
+C:/Users/urdad/lab1_2algoritmica/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/urdad/lab1_2algoritmica/cmake-build-debug/CMakeFiles/rebuild_cache.dir

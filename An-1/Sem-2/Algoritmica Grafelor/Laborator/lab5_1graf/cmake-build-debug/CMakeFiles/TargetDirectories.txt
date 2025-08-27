@@ -1,0 +1,3 @@
+C:/Users/urdad/lab5_1graf/cmake-build-debug/CMakeFiles/lab5_1graf.dir
+C:/Users/urdad/lab5_1graf/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/urdad/lab5_1graf/cmake-build-debug/CMakeFiles/rebuild_cache.dir

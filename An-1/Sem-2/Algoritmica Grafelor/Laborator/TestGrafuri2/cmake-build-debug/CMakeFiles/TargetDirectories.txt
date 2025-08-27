@@ -1,0 +1,3 @@
+C:/Users/urdad/TestGrafuri2/cmake-build-debug/CMakeFiles/TestGrafuri2.dir
+C:/Users/urdad/TestGrafuri2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/urdad/TestGrafuri2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

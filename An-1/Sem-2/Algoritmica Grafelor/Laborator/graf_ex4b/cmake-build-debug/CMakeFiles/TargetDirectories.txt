@@ -1,0 +1,3 @@
+C:/Users/urdad/graf_ex4b/cmake-build-debug/CMakeFiles/graf_ex4b.dir
+C:/Users/urdad/graf_ex4b/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/urdad/graf_ex4b/cmake-build-debug/CMakeFiles/rebuild_cache.dir

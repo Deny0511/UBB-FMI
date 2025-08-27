@@ -1,0 +1,31 @@
+cmake_minimum_required(VERSION 3.30)
+project(Test)
+
+set(CMAKE_CXX_STANDARD 20)
+
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
+set(CMAKE_PREFIX_PATH "C:/Qt/6.9.0/mingw_64/lib/cmake")
+
+find_package(Qt6 COMPONENTS
+        Core
+        Gui
+        Widgets
+        REQUIRED)
+
+
+
+
+add_executable(Test main.cpp)
+
+
+target_link_libraries(Test
+        Qt6::Core
+        Qt6::Gui
+        Qt6::Widgets
+)
+#configure_file(${CMAKE_SOURCE_DIR}/fisier.txt ${CMAKE_BINARY_DIR}/fisier.txt COPYONLY)
+
+

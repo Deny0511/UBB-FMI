@@ -1,0 +1,282 @@
+        -:    0:Source:C:/Qt/6.9.0/mingw_64/include/QtCore/qshareddata_impl.h
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\gui.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\gui.cpp.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright (C) 2020 Klarälvdalens Datakonsult AB, a KDAB Group company, info@kdab.com, author Giuseppe D'Angelo <giuseppe.dangelo@kdab.com>
+        -:    2:// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+        -:    3:
+        -:    4:#if 0
+        -:    5:#pragma qt_sync_skip_header_check
+        -:    6:#pragma qt_sync_stop_processing
+        -:    7:#endif
+        -:    8:
+        -:    9:#ifndef QSHAREDDATA_IMPL_H
+        -:   10:#define QSHAREDDATA_IMPL_H
+        -:   11:
+        -:   12:#include <QtCore/qcompare.h>
+        -:   13:#include <QtCore/qglobal.h>
+        -:   14:#include <QtCore/qshareddata.h>
+        -:   15:
+        -:   16:QT_BEGIN_NAMESPACE
+        -:   17:
+        -:   18:namespace QtPrivate {
+        -:   19:
+        -:   20:template <typename T>
+        -:   21:class QExplicitlySharedDataPointerV2
+        -:   22:{
+        -:   23:    Qt::totally_ordered_wrapper<T *> d;
+        -:   24:
+        -:   25:public:
+function _ZN9QtPrivate30QExplicitlySharedDataPointerV2I8QMapDataISt3mapI7QStringP11QPushButtonSt4lessIS3_ESaISt4pairIKS3_S5_EEEEEC1Ev called 38 returned 100% blocks executed 100%
+       38:   26:    constexpr QExplicitlySharedDataPointerV2() noexcept : d(nullptr) {}
+       38:   26-block  0
+call    0 returned 38
+        -:   27:
+function _ZN9QtPrivate30QExplicitlySharedDataPointerV2I8QMapDataISt3mapI7QStringP11QPushButtonSt4lessIS3_ESaISt4pairIKS3_S5_EEEEEC1EPSD_ called 0 returned 0% blocks executed 0%
+    #####:   28:    explicit QExplicitlySharedDataPointerV2(T *t) noexcept
+    #####:   29:        : d(t)
+    %%%%%:   29-block  0
+call    0 never executed
+        -:   30:    {
+    #####:   31:        if (d)
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:   32:            d->ref.ref();
+    %%%%%:   32-block  0
+call    0 never executed
+call    1 never executed
+    #####:   33:    }
+        -:   34:
+        -:   35:    QExplicitlySharedDataPointerV2(T *t, QAdoptSharedDataTag) noexcept
+        -:   36:        : d(t)
+        -:   37:    {
+        -:   38:    }
+        -:   39:
+function _ZN9QtPrivate30QExplicitlySharedDataPointerV2I8QMapDataISt3mapI7QStringP11QPushButtonSt4lessIS3_ESaISt4pairIKS3_S5_EEEEEC1ERKSE_ called 0 returned 0% blocks executed 0%
+    #####:   40:    QExplicitlySharedDataPointerV2(const QExplicitlySharedDataPointerV2 &other) noexcept
+    #####:   41:        : d(other.d)
+        -:   42:    {
+    #####:   43:        if (d)
+    %%%%%:   43-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:   44:            d->ref.ref();
+    %%%%%:   44-block  0
+call    0 never executed
+call    1 never executed
+    #####:   45:    }
+        -:   46:
+        -:   47:    QExplicitlySharedDataPointerV2 &operator=(const QExplicitlySharedDataPointerV2 &other) noexcept
+        -:   48:    {
+        -:   49:        QExplicitlySharedDataPointerV2 copy(other);
+        -:   50:        swap(copy);
+        -:   51:        return *this;
+        -:   52:    }
+        -:   53:
+        -:   54:    QExplicitlySharedDataPointerV2(QExplicitlySharedDataPointerV2 &&other) noexcept
+        -:   55:        : d(std::exchange(other.d, nullptr))
+        -:   56:    {
+        -:   57:    }
+        -:   58:
+        -:   59:    QExplicitlySharedDataPointerV2 &operator=(QExplicitlySharedDataPointerV2 &&other) noexcept
+        -:   60:    {
+        -:   61:        QExplicitlySharedDataPointerV2 moved(std::move(other));
+        -:   62:        swap(moved);
+        -:   63:        return *this;
+        -:   64:    }
+        -:   65:
+function _ZN9QtPrivate30QExplicitlySharedDataPointerV2I8QMapDataISt3mapI7QStringP11QPushButtonSt4lessIS3_ESaISt4pairIKS3_S5_EEEEED1Ev called 0 returned 0% blocks executed 0%
+    #####:   66:    ~QExplicitlySharedDataPointerV2()
+        -:   67:    {
+    #####:   68:        if (d && !d->ref.deref())
+    %%%%%:   68-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    %%%%%:   68-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed
+    %%%%%:   68-block  2
+    %%%%%:   68-block  3
+    %%%%%:   68-block  4
+branch  7 never executed (fallthrough)
+branch  8 never executed
+    #####:   69:            delete d.get();
+    %%%%%:   69-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    %%%%%:   69-block  1
+call    3 never executed
+call    4 never executed
+    #####:   70:    }
+        -:   71:
+function _ZN9QtPrivate30QExplicitlySharedDataPointerV2I8QMapDataISt3mapI7QStringP11QPushButtonSt4lessIS3_ESaISt4pairIKS3_S5_EEEEE6detachEv called 36 returned 100% blocks executed 32%
+       36:   72:    void detach()
+        -:   73:    {
+       36:   74:        if (!d) {
+       36:   74-block  0
+call    0 returned 36
+branch  1 taken 0 (fallthrough)
+branch  2 taken 36
+        -:   75:            // should this codepath be here on in all user's detach()?
+    #####:   76:            d.reset(new T);
+    %%%%%:   76-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   77:            d->ref.ref();
+call    0 never executed
+call    1 never executed
+       36:   78:        } else if (d->ref.loadRelaxed() != 1) {
+       36:   78-block  0
+call    0 returned 36
+call    1 returned 36
+branch  2 taken 0 (fallthrough)
+branch  3 taken 36
+        -:   79:            // TODO: qAtomicDetach here...?
+    #####:   80:            QExplicitlySharedDataPointerV2 copy(new T(*d));
+    %%%%%:   80-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   80-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+    %%%%%:   80-block  2
+call    7 never executed
+    $$$$$:   80-block  3
+branch  8 never executed (fallthrough)
+branch  9 never executed
+    $$$$$:   80-block  4
+call   10 never executed
+    #####:   81:            swap(copy);
+call    0 never executed
+    #####:   82:        }
+call    0 never executed
+       36:   83:    }
+       36:   83-block  0
+        -:   84:
+function _ZN9QtPrivate30QExplicitlySharedDataPointerV2I8QMapDataISt3mapI7QStringP11QPushButtonSt4lessIS3_ESaISt4pairIKS3_S5_EEEEE5resetEPSD_ called 1 returned 100% blocks executed 56%
+        1:   85:    void reset(T *t = nullptr) noexcept
+        -:   86:    {
+       1*:   87:        if (d && !d->ref.deref())
+        1:   87-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   87-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed
+    %%%%%:   87-block  2
+        1:   87-block  3
+        1:   87-block  4
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    #####:   88:            delete d.get();
+    %%%%%:   88-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    %%%%%:   88-block  1
+call    3 never executed
+call    4 never executed
+        1:   89:        d.reset(t);
+        1:   89-block  0
+call    0 returned 1
+        1:   90:        if (d)
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0
+        1:   91:            d->ref.ref();
+        1:   91-block  0
+call    0 returned 1
+call    1 returned 1
+        1:   92:    }
+        -:   93:
+        -:   94:    constexpr T *take() noexcept
+        -:   95:    {
+        -:   96:        return std::exchange(d, nullptr).get();
+        -:   97:    }
+        -:   98:
+function _ZNK9QtPrivate30QExplicitlySharedDataPointerV2I8QMapDataISt3mapI7QStringP11QPushButtonSt4lessIS3_ESaISt4pairIKS3_S5_EEEEE8isSharedEv called 43 returned 100% blocks executed 89%
+       43:   99:    bool isShared() const noexcept
+        -:  100:    {
+      43*:  101:        return d && d->ref.loadRelaxed() != 1;
+       43:  101-block  0
+call    0 returned 43
+branch  1 taken 42 (fallthrough)
+branch  2 taken 1
+       42:  101-block  1
+call    3 returned 42
+call    4 returned 42
+branch  5 taken 0 (fallthrough)
+branch  6 taken 42
+    %%%%%:  101-block  2
+       43:  101-block  3
+       43:  101-block  4
+        -:  102:    }
+        -:  103:
+function _ZN9QtPrivate30QExplicitlySharedDataPointerV2I8QMapDataISt3mapI7QStringP11QPushButtonSt4lessIS3_ESaISt4pairIKS3_S5_EEEEE4swapERSE_ called 0 returned 0% blocks executed 0%
+    #####:  104:    constexpr void swap(QExplicitlySharedDataPointerV2 &other) noexcept
+        -:  105:    {
+    #####:  106:        qt_ptr_swap(d, other.d);
+    %%%%%:  106-block  0
+call    0 never executed
+    #####:  107:    }
+        -:  108:
+        -:  109:    // important change from QExplicitlySharedDataPointer: deep const
+        -:  110:    constexpr T &operator*() { return *(d.get()); }
+function _ZN9QtPrivate30QExplicitlySharedDataPointerV2I8QMapDataISt3mapI7QStringP11QPushButtonSt4lessIS3_ESaISt4pairIKS3_S5_EEEEEptEv called 117 returned 100% blocks executed 100%
+      117:  111:    constexpr T *operator->() { return d.get(); }
+      117:  111-block  0
+call    0 returned 117
+        -:  112:    constexpr const T &operator*() const { return *(d.get()); }
+        -:  113:    constexpr const T *operator->() const { return d.get(); }
+        -:  114:
+        -:  115:    constexpr T *data() noexcept { return d.get(); }
+        -:  116:    constexpr const T *data() const noexcept { return d.get(); }
+        -:  117:
+function _ZNK9QtPrivate30QExplicitlySharedDataPointerV2I8QMapDataISt3mapI7QStringP11QPushButtonSt4lessIS3_ESaISt4pairIKS3_S5_EEEEEcvbEv called 44 returned 100% blocks executed 100%
+       44:  118:    constexpr explicit operator bool() const noexcept { return d.get(); }
+       44:  118-block  0
+call    0 returned 44
+        -:  119:
+        -:  120:private:
+        -:  121:    constexpr friend bool comparesEqual(const QExplicitlySharedDataPointerV2 &lhs,
+        -:  122:                                        const QExplicitlySharedDataPointerV2 &rhs) noexcept
+        -:  123:    { return lhs.d == rhs.d; }
+        -:  124:    constexpr friend Qt::strong_ordering
+        -:  125:    compareThreeWay(const QExplicitlySharedDataPointerV2 &lhs,
+        -:  126:                    const QExplicitlySharedDataPointerV2 &rhs) noexcept
+        -:  127:    { return Qt::compareThreeWay(lhs.d, rhs.d); }
+        -:  128:    Q_DECLARE_STRONGLY_ORDERED_LITERAL_TYPE(QExplicitlySharedDataPointerV2)
+        -:  129:
+        -:  130:    constexpr friend bool
+        -:  131:    comparesEqual(const QExplicitlySharedDataPointerV2 &lhs, std::nullptr_t) noexcept
+        -:  132:    { return lhs.d == nullptr; }
+        -:  133:    constexpr friend Qt::strong_ordering
+        -:  134:    compareThreeWay(const QExplicitlySharedDataPointerV2 &lhs, std::nullptr_t) noexcept
+        -:  135:    { return Qt::compareThreeWay(lhs.d, nullptr); }
+        -:  136:    Q_DECLARE_STRONGLY_ORDERED_LITERAL_TYPE(QExplicitlySharedDataPointerV2, std::nullptr_t)
+        -:  137:};
+        -:  138:
+        -:  139:template <typename T>
+        -:  140:constexpr void swap(QExplicitlySharedDataPointerV2<T> &lhs, QExplicitlySharedDataPointerV2<T> &rhs) noexcept
+        -:  141:{
+        -:  142:    lhs.swap(rhs);
+        -:  143:}
+        -:  144:
+        -:  145:} // namespace QtPrivate
+        -:  146:
+        -:  147:QT_END_NAMESPACE
+        -:  148:
+        -:  149:#endif // QSHAREDDATA_IMPL_H

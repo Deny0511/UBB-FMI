@@ -1,0 +1,5938 @@
+        -:    0:Source:C:/Users/urdad/lab6_7/teste.cpp
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\teste.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\teste.cpp.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:#include "teste.h"
+        -:    3:#include "service.h"
+        -:    4:#include "validator.h"
+        -:    5:#include <cassert>
+        -:    6:#include <iostream>
+        -:    7:#include <sstream>
+        -:    8:#include <fstream>
+        -:    9:#include <filesystem>
+        -:   10:
+function _ZN5Teste8testFilmEv called 1 returned 100% blocks executed 53%
+        1:   11:void Teste::testFilm() {
+        1:   11-block  0
+        5:   12:    Film f("Inception", "SF", 2010, "Leonardo DiCaprio");
+        1:   12-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   12-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   12-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   12-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   12-block  4
+call   12 returned 1
+        1:   12-block  5
+call   13 returned 1
+        1:   12-block  6
+call   14 returned 1
+    $$$$$:   12-block  7
+call   15 never executed
+    $$$$$:   12-block  8
+    $$$$$:   12-block  9
+    $$$$$:   12-block 10
+call   16 never executed
+    $$$$$:   12-block 11
+    $$$$$:   12-block 12
+    $$$$$:   12-block 13
+call   17 never executed
+    $$$$$:   12-block 14
+    $$$$$:   12-block 15
+       1*:   13:    assert(f.getTitlu() == "Inception");
+        1:   13-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   13-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   13-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:   13-block  3
+call    8 never executed
+        1:   13-block  4
+       1*:   14:    assert(f.getGen() == "SF");
+        1:   14-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   14-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   14-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:   14-block  3
+call    8 never executed
+        1:   14-block  4
+       1*:   15:    assert(f.getAn() == 2010);
+        1:   15-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   15-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:   15-block  2
+call    5 never executed
+        1:   15-block  3
+       1*:   16:    assert(f.getActor() == "Leonardo DiCaprio");
+        1:   16-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   16-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   16-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:   16-block  3
+call    8 never executed
+        1:   16-block  4
+        6:   17:    Film f2("Inception", "SF", 2010, "Leonardo DiCaprio");
+        1:   17-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   17-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   17-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   17-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   17-block  4
+call   12 returned 1
+        1:   17-block  5
+call   13 returned 1
+        1:   17-block  6
+call   14 returned 1
+        1:   17-block  7
+    $$$$$:   17-block  8
+call   15 never executed
+    $$$$$:   17-block  9
+    $$$$$:   17-block 10
+    $$$$$:   17-block 11
+call   16 never executed
+    $$$$$:   17-block 12
+    $$$$$:   17-block 13
+    $$$$$:   17-block 14
+call   17 never executed
+    $$$$$:   17-block 15
+    $$$$$:   17-block 16
+        5:   18:    Film f3("Interstellar", "SF", 2014, "Matthew McConaughey");
+        1:   18-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   18-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   18-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   18-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   18-block  4
+call   12 returned 1
+        1:   18-block  5
+call   13 returned 1
+        1:   18-block  6
+call   14 returned 1
+    $$$$$:   18-block  7
+call   15 never executed
+    $$$$$:   18-block  8
+    $$$$$:   18-block  9
+    $$$$$:   18-block 10
+call   16 never executed
+    $$$$$:   18-block 11
+    $$$$$:   18-block 12
+    $$$$$:   18-block 13
+call   17 never executed
+    $$$$$:   18-block 14
+    $$$$$:   18-block 15
+        -:   19:
+       1*:   20:    assert(f == f2);
+        1:   20-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   20-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:   20-block  2
+call    5 never executed
+        1:   20-block  3
+        -:   21:
+       1*:   22:    assert(!(f == f3));
+        1:   22-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   22-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:   22-block  2
+call    5 never executed
+        1:   22-block  3
+        -:   23:
+        1:   24:}
+        1:   24-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:   24-block  1
+call    3 never executed
+    $$$$$:   24-block  2
+call    4 never executed
+    $$$$$:   24-block  3
+call    5 never executed
+        -:   25:
+function _ZN5Teste8testRepoEv called 1 returned 100% blocks executed 54%
+        1:   26:void Teste::testRepo() {
+        1:   27:    Repo repo;
+        1:   27-block  0
+        5:   28:    Film f("Inception", "SF", 2010, "Leonardo DiCaprio");
+        1:   28-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   28-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   28-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   28-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   28-block  4
+call   12 returned 1
+        1:   28-block  5
+call   13 returned 1
+        1:   28-block  6
+call   14 returned 1
+    $$$$$:   28-block  7
+call   15 never executed
+    $$$$$:   28-block  8
+    $$$$$:   28-block  9
+    $$$$$:   28-block 10
+call   16 never executed
+    $$$$$:   28-block 11
+    $$$$$:   28-block 12
+    $$$$$:   28-block 13
+call   17 never executed
+    $$$$$:   28-block 14
+    $$$$$:   28-block 15
+        1:   29:    repo.adauga(f);
+        1:   29-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   30:    assert(repo.getAll().size() == 1);
+        1:   30-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:   30-block  1
+call    4 never executed
+        1:   30-block  2
+        5:   31:    Film f2("Inception", "SF", 2010, "Leonardo DiCaprio");
+        1:   31-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   31-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   31-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   31-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   31-block  4
+call   12 returned 1
+        1:   31-block  5
+call   13 returned 1
+        1:   31-block  6
+call   14 returned 1
+    $$$$$:   31-block  7
+call   15 never executed
+    $$$$$:   31-block  8
+    $$$$$:   31-block  9
+    $$$$$:   31-block 10
+call   16 never executed
+    $$$$$:   31-block 11
+    $$$$$:   31-block 12
+    $$$$$:   31-block 13
+call   17 never executed
+    $$$$$:   31-block 14
+    $$$$$:   31-block 15
+        -:   32:
+        -:   33:    try {
+        1:   34:        repo.adauga(f2);
+        1:   34-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+    #####:   35:        assert(false);
+    %%%%%:   35-block  0
+call    0 never executed
+        1:   36:    } catch (const std::runtime_error& e) {
+        1:   36-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   36-block  1
+call    2 returned 1
+        2:   37:        assert(std::string(e.what()) == "Filmul exista deja!"); // Verifică mesajul excepției
+        1:   37-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   37-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   37-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    $$$$$:   37-block  3
+call    9 never executed
+        1:   37-block  4
+        1:   37-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:   37-block  6
+call   12 returned 1
+        1:   37-block  7
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+    $$$$$:   37-block  8
+branch 15 never executed (fallthrough)
+branch 16 never executed
+    $$$$$:   37-block  9
+call   17 never executed
+    $$$$$:   37-block 10
+    $$$$$:   37-block 11
+branch 18 never executed (fallthrough)
+branch 19 never executed
+    $$$$$:   37-block 12
+        1:   38:    }
+        1:   38-block  0
+call    0 returned 1
+    $$$$$:   38-block  1
+call    1 never executed
+        1:   39:    repo.sterge("Inception", 2010);
+        1:   39-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   39-block  1
+call    3 returned 1
+        1:   39-block  2
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+    $$$$$:   39-block  3
+call    7 never executed
+    $$$$$:   39-block  4
+    $$$$$:   39-block  5
+        1:   40:    assert(repo.getAll().empty());
+        1:   40-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    $$$$$:   40-block  1
+call    4 never executed
+        1:   40-block  2
+        -:   41:    try {
+        2:   42:        repo.sterge("Inception", 2010);
+        1:   42-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   42-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1 (throw)
+    $$$$$:   42-block  2
+call    6 never executed
+        1:   42-block  3
+call    7 returned 1
+        1:   42-block  4
+        1:   42-block  5
+    =====:   43:        assert(false);
+    $$$$$:   43-block  0
+call    0 never executed
+        1:   44:    } catch (const std::runtime_error& e) {
+        1:   44-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   44-block  1
+call    2 returned 1
+        2:   45:        assert(std::string(e.what()) == "Filmul nu exista!"); // Verifică mesajul excepției
+        1:   45-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   45-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   45-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    $$$$$:   45-block  3
+call    9 never executed
+        1:   45-block  4
+        1:   45-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:   45-block  6
+call   12 returned 1
+        1:   45-block  7
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+    $$$$$:   45-block  8
+branch 15 never executed (fallthrough)
+branch 16 never executed
+    $$$$$:   45-block  9
+call   17 never executed
+    $$$$$:   45-block 10
+    $$$$$:   45-block 11
+branch 18 never executed (fallthrough)
+branch 19 never executed
+    $$$$$:   45-block 12
+        1:   46:    }
+        1:   46-block  0
+call    0 returned 1
+    $$$$$:   46-block  1
+call    1 never executed
+        1:   47:}
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:   47-block  0
+call    3 never executed
+    $$$$$:   47-block  1
+call    4 never executed
+    $$$$$:   47-block  2
+call    5 never executed
+        -:   48:
+function _ZN5Teste11testServiceEv called 1 returned 100% blocks executed 54%
+        1:   49:void Teste::testService() {
+        1:   50:    Repo repo;
+        1:   51:    Service service{ repo };
+        1:   51-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   52:    service.adaugaFilm("Inception", "SF", 2010, "Leonardo DiCaprio");
+        1:   52-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   52-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   52-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   52-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   52-block  4
+call   12 returned 1
+        1:   52-block  5
+call   13 returned 1
+        1:   52-block  6
+call   14 returned 1
+    $$$$$:   52-block  7
+call   15 never executed
+    $$$$$:   52-block  8
+    $$$$$:   52-block  9
+    $$$$$:   52-block 10
+call   16 never executed
+    $$$$$:   52-block 11
+    $$$$$:   52-block 12
+    $$$$$:   52-block 13
+call   17 never executed
+    $$$$$:   52-block 14
+    $$$$$:   52-block 15
+       1*:   53:    assert(service.getFilme().size() == 1);
+        1:   53-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   53-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   53-block  2
+call    6 never executed
+        1:   53-block  3
+        1:   54:    service.stergeFilm("Inception", 2010);
+        1:   54-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   54-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   54-block  2
+call    6 returned 1
+    $$$$$:   54-block  3
+call    7 never executed
+    $$$$$:   54-block  4
+    $$$$$:   54-block  5
+       1*:   55:    assert(service.getFilme().empty());
+        1:   55-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   55-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   55-block  2
+call    6 never executed
+        1:   55-block  3
+        1:   56:}
+        1:   56-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:   56-block  1
+call    2 never executed
+    $$$$$:   56-block  2
+call    3 never executed
+        -:   57:
+function _ZN5Teste16testRepoModificaEv called 1 returned 100% blocks executed 61%
+        1:   58:void Teste::testRepoModifica() {
+        1:   59:    Repo repo;
+        1:   59-block  0
+        -:   60:
+        5:   61:    Film f1("Inception", "SF", 2010, "Leonardo DiCaprio");
+        1:   61-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   61-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   61-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   61-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   61-block  4
+call   12 returned 1
+        1:   61-block  5
+call   13 returned 1
+        1:   61-block  6
+call   14 returned 1
+    $$$$$:   61-block  7
+call   15 never executed
+    $$$$$:   61-block  8
+    $$$$$:   61-block  9
+    $$$$$:   61-block 10
+call   16 never executed
+    $$$$$:   61-block 11
+    $$$$$:   61-block 12
+    $$$$$:   61-block 13
+call   17 never executed
+    $$$$$:   61-block 14
+    $$$$$:   61-block 15
+        1:   62:    repo.adauga(f1);
+        1:   62-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   63:
+       1*:   64:    assert(repo.getAll().size() == 1);
+        1:   64-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:   64-block  1
+call    4 never executed
+        1:   64-block  2
+        -:   65:
+        5:   66:    repo.modifica("Inception", 2010, "SF", 2012, "Matthew McConaughey");
+        1:   66-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   66-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   66-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   66-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   66-block  4
+call   12 returned 1
+        1:   66-block  5
+call   13 returned 1
+        1:   66-block  6
+call   14 returned 1
+    $$$$$:   66-block  7
+call   15 never executed
+    $$$$$:   66-block  8
+    $$$$$:   66-block  9
+    $$$$$:   66-block 10
+call   16 never executed
+    $$$$$:   66-block 11
+    $$$$$:   66-block 12
+    $$$$$:   66-block 13
+call   17 never executed
+    $$$$$:   66-block 14
+    $$$$$:   66-block 15
+        -:   67:
+        1:   68:    const std::vector<Film>& filme = repo.getAll();
+        1:   68-block  0
+call    0 returned 1
+       1*:   69:    assert(filme.size() == 1);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   69-block  0
+call    3 never executed
+        1:   69-block  1
+       1*:   70:    assert(filme[0].getTitlu() == "Inception");
+        1:   70-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   70-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   70-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:   70-block  3
+call    9 never executed
+        1:   70-block  4
+       1*:   71:    assert(filme[0].getAn() == 2012);
+        1:   71-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   71-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   71-block  2
+call    6 never executed
+        1:   71-block  3
+       1*:   72:    assert(filme[0].getActor() == "Matthew McConaughey");
+        1:   72-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   72-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   72-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:   72-block  3
+call    9 never executed
+        1:   72-block  4
+        -:   73:
+        -:   74:    try {
+       6*:   75:        repo.modifica("NonExistent Film", 2020, "Drama", 2021, "Unknown Actor");
+        1:   75-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   75-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   75-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   75-block  3
+call    9 returned 1
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1 (throw)
+    %%%%%:   75-block  4
+call   12 never executed
+    %%%%%:   75-block  5
+call   13 never executed
+    %%%%%:   75-block  6
+call   14 never executed
+        1:   75-block  7
+call   15 returned 1
+        1:   75-block  8
+        1:   75-block  9
+        1:   75-block 10
+call   16 returned 1
+        1:   75-block 11
+        1:   75-block 12
+        1:   75-block 13
+call   17 returned 1
+        1:   75-block 14
+        1:   75-block 15
+    #####:   76:        assert(false);
+    %%%%%:   76-block  0
+call    0 never executed
+        1:   77:    } catch (const std::runtime_error& e) {
+        1:   77-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   77-block  1
+call    2 returned 1
+        2:   78:        assert(std::string(e.what()) == "Filmul nu exista!");
+        1:   78-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   78-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   78-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    $$$$$:   78-block  3
+call    9 never executed
+        1:   78-block  4
+        1:   78-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:   78-block  6
+call   12 returned 1
+        1:   78-block  7
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+    $$$$$:   78-block  8
+branch 15 never executed (fallthrough)
+branch 16 never executed
+    $$$$$:   78-block  9
+call   17 never executed
+    $$$$$:   78-block 10
+    $$$$$:   78-block 11
+branch 18 never executed (fallthrough)
+branch 19 never executed
+    $$$$$:   78-block 12
+        1:   79:    }
+        1:   79-block  0
+call    0 returned 1
+    $$$$$:   79-block  1
+call    1 never executed
+        -:   80:
+        1:   81:}
+call    0 returned 1
+call    1 returned 1
+    $$$$$:   81-block  0
+call    2 never executed
+    $$$$$:   81-block  1
+call    3 never executed
+        -:   82:
+        -:   83:
+function _ZN5Teste23testServiceModificaFilmEv called 1 returned 100% blocks executed 68%
+        1:   84:void Teste::testServiceModificaFilm() {
+        1:   85:    Repo repo;
+        -:   86:
+        1:   87:    Service service{ repo };
+        1:   87-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   88:
+        5:   89:    service.adaugaFilm("Inception", "SF", 2010, "Leonardo DiCaprio");
+        1:   89-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   89-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   89-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   89-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   89-block  4
+call   12 returned 1
+        1:   89-block  5
+call   13 returned 1
+        1:   89-block  6
+call   14 returned 1
+    $$$$$:   89-block  7
+call   15 never executed
+    $$$$$:   89-block  8
+    $$$$$:   89-block  9
+    $$$$$:   89-block 10
+call   16 never executed
+    $$$$$:   89-block 11
+    $$$$$:   89-block 12
+    $$$$$:   89-block 13
+call   17 never executed
+    $$$$$:   89-block 14
+    $$$$$:   89-block 15
+        -:   90:
+       1*:   91:    assert(service.getFilme().size() == 1);
+        1:   91-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   91-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   91-block  2
+call    6 never executed
+        1:   91-block  3
+       1*:   92:    assert(service.getFilme()[0].getTitlu() == "Inception");
+        1:   92-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   92-block  1
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   92-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:   92-block  3
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1
+    %%%%%:   92-block  4
+call   12 never executed
+        1:   92-block  5
+       1*:   93:    assert(service.getFilme()[0].getAn() == 2010);
+        1:   93-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   93-block  1
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   93-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:   93-block  3
+call    9 never executed
+        1:   93-block  4
+       1*:   94:    assert(service.getFilme()[0].getActor() == "Leonardo DiCaprio");
+        1:   94-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   94-block  1
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   94-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:   94-block  3
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1
+    %%%%%:   94-block  4
+call   12 never executed
+        1:   94-block  5
+        -:   95:
+        -:   96:    try {
+       6*:   97:        service.adaugaFilm("Inception", "", 2022, "Matthew McConaughey");  // Gen invalid
+        1:   97-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   97-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   97-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   97-block  3
+call    9 returned 1
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1 (throw)
+    %%%%%:   97-block  4
+call   12 never executed
+    %%%%%:   97-block  5
+call   13 never executed
+    %%%%%:   97-block  6
+call   14 never executed
+        1:   97-block  7
+call   15 returned 1
+        1:   97-block  8
+        1:   97-block  9
+        1:   97-block 10
+call   16 returned 1
+        1:   97-block 11
+        1:   97-block 12
+        1:   97-block 13
+call   17 returned 1
+        1:   97-block 14
+        1:   97-block 15
+    #####:   98:        assert(false);  // Nu ar trebui să ajungă aici
+    %%%%%:   98-block  0
+call    0 never executed
+        1:   99:    } catch (const ValidationException& ) {
+        1:   99-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   99-block  1
+call    2 returned 1
+        -:  100:        assert(true);  // Trebuie prinsă excepția
+        1:  101:    }
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  102:
+        -:  103:
+        5:  104:    service.modificaFilm("Inception", 2010, "SF", 2012, "Matthew McConaughey");
+        1:  104-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  104-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  104-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  104-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  104-block  4
+call   12 returned 1
+        1:  104-block  5
+call   13 returned 1
+        1:  104-block  6
+call   14 returned 1
+    $$$$$:  104-block  7
+call   15 never executed
+    $$$$$:  104-block  8
+    $$$$$:  104-block  9
+    $$$$$:  104-block 10
+call   16 never executed
+    $$$$$:  104-block 11
+    $$$$$:  104-block 12
+    $$$$$:  104-block 13
+call   17 never executed
+    $$$$$:  104-block 14
+    $$$$$:  104-block 15
+        -:  105:
+        1:  106:    const std::vector<Film>& filme = service.getFilme();
+        1:  106-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  107:    assert(filme.size() == 1);
+        1:  107-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    $$$$$:  107-block  1
+call    3 never executed
+        1:  107-block  2
+        1:  108:    assert(filme[0].getTitlu() == "Inception");
+        1:  108-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  108-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  108-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    $$$$$:  108-block  3
+call    9 never executed
+        1:  108-block  4
+        1:  109:    assert(filme[0].getAn() == 2012);
+        1:  109-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  109-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  109-block  2
+call    6 never executed
+        1:  109-block  3
+        1:  110:    assert(filme[0].getActor() == "Matthew McConaughey");
+        1:  110-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  110-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  110-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    $$$$$:  110-block  3
+call    9 never executed
+        1:  110-block  4
+        -:  111:
+        -:  112:    try {
+        6:  113:        service.modificaFilm("NonExistent Film", 2020, "Drama", 2021, "Unknown Actor");
+        1:  113-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  113-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  113-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  113-block  3
+call    9 returned 1
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1 (throw)
+    $$$$$:  113-block  4
+call   12 never executed
+    $$$$$:  113-block  5
+call   13 never executed
+    $$$$$:  113-block  6
+call   14 never executed
+        1:  113-block  7
+call   15 returned 1
+        1:  113-block  8
+        1:  113-block  9
+        1:  113-block 10
+call   16 returned 1
+        1:  113-block 11
+        1:  113-block 12
+        1:  113-block 13
+call   17 returned 1
+        1:  113-block 14
+        1:  113-block 15
+    =====:  114:        assert(false);
+    $$$$$:  114-block  0
+call    0 never executed
+        1:  115:    } catch (const std::runtime_error& e) {
+        1:  115-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  115-block  1
+call    2 returned 1
+        2:  116:        assert(std::string(e.what()) == "Filmul nu exista!");
+        1:  116-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  116-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  116-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    $$$$$:  116-block  3
+call    9 never executed
+        1:  116-block  4
+        1:  116-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  116-block  6
+call   12 returned 1
+        1:  116-block  7
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+    $$$$$:  116-block  8
+branch 15 never executed (fallthrough)
+branch 16 never executed
+    $$$$$:  116-block  9
+call   17 never executed
+    $$$$$:  116-block 10
+    $$$$$:  116-block 11
+branch 18 never executed (fallthrough)
+branch 19 never executed
+    $$$$$:  116-block 12
+        1:  117:    }
+        1:  117-block  0
+call    0 returned 1
+    $$$$$:  117-block  1
+call    1 never executed
+        -:  118:
+        -:  119:    try {
+        6:  120:        service.modificaFilm("Inception", 2012, "", 2022, "Matthew McConaughey");  // Gen invalid
+        1:  120-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  120-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  120-block  2
+call    6 returned 1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1 (throw)
+    $$$$$:  120-block  3
+call    9 never executed
+    $$$$$:  120-block  4
+call   10 never executed
+    $$$$$:  120-block  5
+call   11 never executed
+        1:  120-block  6
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  120-block  7
+call   15 returned 1
+        1:  120-block  8
+        1:  120-block  9
+        1:  120-block 10
+call   16 returned 1
+        1:  120-block 11
+        1:  120-block 12
+        1:  120-block 13
+call   17 returned 1
+        1:  120-block 14
+        1:  120-block 15
+    =====:  121:        assert(false);  // Nu ar trebui să ajungă aici
+    $$$$$:  121-block  0
+call    0 never executed
+        1:  122:    } catch (const ValidationException& ) {
+        1:  122-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  122-block  1
+call    2 returned 1
+        -:  123:        assert(true);  // Trebuie prinsă excepția
+        1:  124:    }
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  125:
+        1:  126:}
+        1:  126-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  126-block  1
+call    2 never executed
+    $$$$$:  126-block  2
+call    3 never executed
+        -:  127:
+function _ZN5Teste13testValidatorEv called 1 returned 100% blocks executed 60%
+        1:  128:void Teste::testValidator() {
+        1:  128-block  0
+        -:  129:    try {
+       2*:  130:        Validator::validateTitlu("");
+        1:  130-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  130-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1 (throw)
+    %%%%%:  130-block  2
+call    6 never executed
+        1:  130-block  3
+call    7 returned 1
+        1:  130-block  4
+        1:  130-block  5
+    #####:  131:        assert(false);
+    %%%%%:  131-block  0
+call    0 never executed
+        1:  132:    } catch (const std::runtime_error& e) {
+        1:  132-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  132-block  1
+call    2 returned 1
+        2:  133:        assert(std::string(e.what()) == "Titlul nu poate fi gol!");
+        1:  133-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  133-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  133-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    $$$$$:  133-block  3
+call    9 never executed
+        1:  133-block  4
+        1:  133-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  133-block  6
+call   12 returned 1
+        1:  133-block  7
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+    $$$$$:  133-block  8
+branch 15 never executed (fallthrough)
+branch 16 never executed
+    $$$$$:  133-block  9
+call   17 never executed
+    $$$$$:  133-block 10
+    $$$$$:  133-block 11
+branch 18 never executed (fallthrough)
+branch 19 never executed
+    $$$$$:  133-block 12
+        1:  134:    }
+        1:  134-block  0
+call    0 returned 1
+    $$$$$:  134-block  1
+call    1 never executed
+        -:  135:
+        -:  136:    try {
+        1:  137:        Validator::validateAn(1899);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+    =====:  138:        assert(false);
+    $$$$$:  138-block  0
+call    0 never executed
+        1:  139:    } catch (const std::runtime_error& e) {
+        1:  139-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  139-block  1
+call    2 returned 1
+        2:  140:        assert(std::string(e.what()) == "Anul trebuie sa fie intre 1900 si 2100!");
+        1:  140-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  140-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  140-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    $$$$$:  140-block  3
+call    9 never executed
+        1:  140-block  4
+        1:  140-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  140-block  6
+call   12 returned 1
+        1:  140-block  7
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+    $$$$$:  140-block  8
+branch 15 never executed (fallthrough)
+branch 16 never executed
+    $$$$$:  140-block  9
+call   17 never executed
+    $$$$$:  140-block 10
+    $$$$$:  140-block 11
+branch 18 never executed (fallthrough)
+branch 19 never executed
+    $$$$$:  140-block 12
+        1:  141:    }
+        1:  141-block  0
+call    0 returned 1
+    $$$$$:  141-block  1
+call    1 never executed
+        -:  142:
+        -:  143:    try {
+        2:  144:        Validator::validateActor("");
+        1:  144-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+    $$$$$:  144-block  1
+call    3 never executed
+        1:  144-block  2
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  144-block  3
+call    7 returned 1
+        1:  144-block  4
+        1:  144-block  5
+    =====:  145:        assert(false);
+    $$$$$:  145-block  0
+call    0 never executed
+        1:  146:    } catch (const std::runtime_error& e) {
+        1:  146-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  146-block  1
+call    2 returned 1
+        2:  147:        assert(std::string(e.what()) == "Actorul principal nu poate fi gol!");
+        1:  147-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  147-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  147-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    $$$$$:  147-block  3
+call    9 never executed
+        1:  147-block  4
+        1:  147-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  147-block  6
+call   12 returned 1
+        1:  147-block  7
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+    $$$$$:  147-block  8
+branch 15 never executed (fallthrough)
+branch 16 never executed
+    $$$$$:  147-block  9
+call   17 never executed
+    $$$$$:  147-block 10
+    $$$$$:  147-block 11
+branch 18 never executed (fallthrough)
+branch 19 never executed
+    $$$$$:  147-block 12
+        1:  148:    }
+        1:  148-block  0
+call    0 returned 1
+    $$$$$:  148-block  1
+call    1 never executed
+        -:  149:
+        -:  150:    try {
+        2:  151:        Validator::validateGen("");
+        1:  151-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+    $$$$$:  151-block  1
+call    3 never executed
+        1:  151-block  2
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  151-block  3
+call    7 returned 1
+        1:  151-block  4
+        1:  151-block  5
+    =====:  152:        assert(false);
+    $$$$$:  152-block  0
+call    0 never executed
+        1:  153:    } catch (const std::runtime_error& e) {
+        1:  153-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  153-block  1
+call    2 returned 1
+        2:  154:        assert(std::string(e.what()) == "Genul nu poate fi gol!");
+        1:  154-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  154-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  154-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    $$$$$:  154-block  3
+call    9 never executed
+        1:  154-block  4
+        1:  154-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  154-block  6
+call   12 returned 1
+        1:  154-block  7
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+    $$$$$:  154-block  8
+branch 15 never executed (fallthrough)
+branch 16 never executed
+    $$$$$:  154-block  9
+call   17 never executed
+    $$$$$:  154-block 10
+    $$$$$:  154-block 11
+branch 18 never executed (fallthrough)
+branch 19 never executed
+    $$$$$:  154-block 12
+        1:  155:    }
+        1:  155-block  0
+call    0 returned 1
+    $$$$$:  155-block  1
+call    1 never executed
+        -:  156:
+        1:  157:}
+        -:  158:
+        -:  159:
+function _ZN5Teste11testCautareEv called 1 returned 100% blocks executed 51%
+        1:  160:void Teste::testCautare() {
+        1:  161:    Repo repo;
+        1:  162:    Service service{ repo };
+        1:  162-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  163:
+        6:  164:    service.adaugaFilm("Inception", "SF", 2010, "Leonardo DiCaprio");
+        1:  164-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  164-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  164-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  164-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  164-block  4
+call   12 returned 1
+        1:  164-block  5
+call   13 returned 1
+        1:  164-block  6
+call   14 returned 1
+        1:  164-block  7
+    $$$$$:  164-block  8
+call   15 never executed
+    $$$$$:  164-block  9
+    $$$$$:  164-block 10
+    $$$$$:  164-block 11
+call   16 never executed
+    $$$$$:  164-block 12
+    $$$$$:  164-block 13
+    $$$$$:  164-block 14
+call   17 never executed
+    $$$$$:  164-block 15
+    $$$$$:  164-block 16
+        6:  165:    service.adaugaFilm("Interstellar", "SF", 2014, "Matthew McConaughey");
+        1:  165-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  165-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  165-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  165-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  165-block  4
+call   12 returned 1
+        1:  165-block  5
+call   13 returned 1
+        1:  165-block  6
+call   14 returned 1
+        1:  165-block  7
+    $$$$$:  165-block  8
+call   15 never executed
+    $$$$$:  165-block  9
+    $$$$$:  165-block 10
+    $$$$$:  165-block 11
+call   16 never executed
+    $$$$$:  165-block 12
+    $$$$$:  165-block 13
+    $$$$$:  165-block 14
+call   17 never executed
+    $$$$$:  165-block 15
+    $$$$$:  165-block 16
+        6:  166:    service.adaugaFilm("The Dark Knight", "Action", 2008, "Christian Bale");
+        1:  166-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  166-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  166-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  166-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  166-block  4
+call   12 returned 1
+        1:  166-block  5
+call   13 returned 1
+        1:  166-block  6
+call   14 returned 1
+        1:  166-block  7
+    $$$$$:  166-block  8
+call   15 never executed
+    $$$$$:  166-block  9
+    $$$$$:  166-block 10
+    $$$$$:  166-block 11
+call   16 never executed
+    $$$$$:  166-block 12
+    $$$$$:  166-block 13
+    $$$$$:  166-block 14
+call   17 never executed
+    $$$$$:  166-block 15
+    $$$$$:  166-block 16
+        -:  167:
+        3:  168:    auto rezultateTitlu = service.cautaFilme("Inception");
+        1:  168-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  168-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  168-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  168-block  3
+call    9 returned 1
+        1:  168-block  4
+call   10 returned 1
+    $$$$$:  168-block  5
+call   11 never executed
+    $$$$$:  168-block  6
+    $$$$$:  168-block  7
+    $$$$$:  168-block  8
+call   12 never executed
+    $$$$$:  168-block  9
+    $$$$$:  168-block 10
+       1*:  169:    assert(rezultateTitlu.size() == 1);
+        1:  169-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  169-block  1
+call    3 never executed
+        1:  169-block  2
+       1*:  170:    assert(rezultateTitlu[0].getTitlu() == "Inception");
+        1:  170-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  170-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  170-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  170-block  3
+call    9 never executed
+        1:  170-block  4
+        -:  171:
+        3:  172:    auto rezultateGen = service.cautaFilme("", "SF");
+        1:  172-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  172-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  172-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  172-block  3
+call    9 returned 1
+        1:  172-block  4
+call   10 returned 1
+    $$$$$:  172-block  5
+call   11 never executed
+    $$$$$:  172-block  6
+    $$$$$:  172-block  7
+    $$$$$:  172-block  8
+call   12 never executed
+    $$$$$:  172-block  9
+    $$$$$:  172-block 10
+       1*:  173:    assert(rezultateGen.size() == 2);
+        1:  173-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  173-block  1
+call    3 never executed
+        1:  173-block  2
+        -:  174:
+        3:  175:    auto rezultateAn = service.cautaFilme("", "", 2014);
+        1:  175-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  175-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  175-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  175-block  3
+call    9 returned 1
+        1:  175-block  4
+call   10 returned 1
+    $$$$$:  175-block  5
+call   11 never executed
+    $$$$$:  175-block  6
+    $$$$$:  175-block  7
+    $$$$$:  175-block  8
+call   12 never executed
+    $$$$$:  175-block  9
+    $$$$$:  175-block 10
+       1*:  176:    assert(rezultateAn.size() == 1);
+        1:  176-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  176-block  1
+call    3 never executed
+        1:  176-block  2
+       1*:  177:    assert(rezultateAn[0].getAn() == 2014);
+        1:  177-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  177-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  177-block  2
+call    6 never executed
+        1:  177-block  3
+        -:  178:
+        3:  179:    auto rezultateTitluAn = service.cautaFilme("Inception", "", 2010);
+        1:  179-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  179-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  179-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  179-block  3
+call    9 returned 1
+        1:  179-block  4
+call   10 returned 1
+    $$$$$:  179-block  5
+call   11 never executed
+    $$$$$:  179-block  6
+    $$$$$:  179-block  7
+    $$$$$:  179-block  8
+call   12 never executed
+    $$$$$:  179-block  9
+    $$$$$:  179-block 10
+       1*:  180:    assert(rezultateTitluAn.size() == 1);
+        1:  180-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  180-block  1
+call    3 never executed
+        1:  180-block  2
+       1*:  181:    assert(rezultateTitluAn[0].getTitlu() == "Inception");
+        1:  181-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  181-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  181-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  181-block  3
+call    9 never executed
+        1:  181-block  4
+        -:  182:
+        1:  183:}
+        1:  183-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+    $$$$$:  183-block  1
+call    6 never executed
+    $$$$$:  183-block  2
+call    7 never executed
+    $$$$$:  183-block  3
+call    8 never executed
+    $$$$$:  183-block  4
+call    9 never executed
+    $$$$$:  183-block  5
+call   10 never executed
+    $$$$$:  183-block  6
+call   11 never executed
+        -:  184:
+function _ZN5Teste12testFiltrareEv called 1 returned 100% blocks executed 53%
+        1:  185:void Teste::testFiltrare() {
+        1:  186:    Repo repo;
+        1:  187:    Service service{ repo };
+        1:  187-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  188:
+        6:  189:    service.adaugaFilm("Inception", "SF", 2010, "Leonardo DiCaprio");
+        1:  189-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  189-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  189-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  189-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  189-block  4
+call   12 returned 1
+        1:  189-block  5
+call   13 returned 1
+        1:  189-block  6
+call   14 returned 1
+        1:  189-block  7
+    $$$$$:  189-block  8
+call   15 never executed
+    $$$$$:  189-block  9
+    $$$$$:  189-block 10
+    $$$$$:  189-block 11
+call   16 never executed
+    $$$$$:  189-block 12
+    $$$$$:  189-block 13
+    $$$$$:  189-block 14
+call   17 never executed
+    $$$$$:  189-block 15
+    $$$$$:  189-block 16
+        6:  190:    service.adaugaFilm("Interstellar", "SF", 2014, "Matthew McConaughey");
+        1:  190-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  190-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  190-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  190-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  190-block  4
+call   12 returned 1
+        1:  190-block  5
+call   13 returned 1
+        1:  190-block  6
+call   14 returned 1
+        1:  190-block  7
+    $$$$$:  190-block  8
+call   15 never executed
+    $$$$$:  190-block  9
+    $$$$$:  190-block 10
+    $$$$$:  190-block 11
+call   16 never executed
+    $$$$$:  190-block 12
+    $$$$$:  190-block 13
+    $$$$$:  190-block 14
+call   17 never executed
+    $$$$$:  190-block 15
+    $$$$$:  190-block 16
+        6:  191:    service.adaugaFilm("The Dark Knight", "Acțiune", 2008, "Christian Bale");
+        1:  191-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  191-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  191-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  191-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  191-block  4
+call   12 returned 1
+        1:  191-block  5
+call   13 returned 1
+        1:  191-block  6
+call   14 returned 1
+        1:  191-block  7
+    $$$$$:  191-block  8
+call   15 never executed
+    $$$$$:  191-block  9
+    $$$$$:  191-block 10
+    $$$$$:  191-block 11
+call   16 never executed
+    $$$$$:  191-block 12
+    $$$$$:  191-block 13
+    $$$$$:  191-block 14
+call   17 never executed
+    $$$$$:  191-block 15
+    $$$$$:  191-block 16
+        -:  192:
+        1:  193:    auto rezultateTitlu = service.filtrareFilme("Inception", -1);
+        1:  193-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  193-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  193-block  2
+call    6 returned 1
+    $$$$$:  193-block  3
+call    7 never executed
+    $$$$$:  193-block  4
+    $$$$$:  193-block  5
+       1*:  194:    assert(rezultateTitlu.size() == 1);
+        1:  194-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  194-block  1
+call    3 never executed
+        1:  194-block  2
+       1*:  195:    assert(rezultateTitlu[0].getTitlu() == "Inception");
+        1:  195-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  195-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  195-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  195-block  3
+call    9 never executed
+        1:  195-block  4
+        -:  196:
+        1:  197:    auto rezultateAn = service.filtrareFilme("", 2014);
+        1:  197-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  197-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  197-block  2
+call    6 returned 1
+    $$$$$:  197-block  3
+call    7 never executed
+    $$$$$:  197-block  4
+    $$$$$:  197-block  5
+       1*:  198:    assert(rezultateAn.size() == 1);
+        1:  198-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  198-block  1
+call    3 never executed
+        1:  198-block  2
+       1*:  199:    assert(rezultateAn[0].getAn() == 2014);
+        1:  199-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  199-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  199-block  2
+call    6 never executed
+        1:  199-block  3
+        -:  200:
+        1:  201:    auto rezultateTitluAn = service.filtrareFilme("Inception", 2010);
+        1:  201-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  201-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  201-block  2
+call    6 returned 1
+    $$$$$:  201-block  3
+call    7 never executed
+    $$$$$:  201-block  4
+    $$$$$:  201-block  5
+       1*:  202:    assert(rezultateTitluAn.size() == 1);
+        1:  202-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  202-block  1
+call    3 never executed
+        1:  202-block  2
+       1*:  203:    assert(rezultateTitluAn[0].getTitlu() == "Inception" && rezultateTitluAn[0].getAn() == 2010);
+        1:  203-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  203-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  203-block  2
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0
+        1:  203-block  3
+call    9 returned 1
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:  203-block  4
+branch 13 taken 0 (fallthrough)
+branch 14 taken 1
+    %%%%%:  203-block  5
+call   15 never executed
+        1:  203-block  6
+        -:  204:
+        1:  205:    auto rezultateInexistente = service.filtrareFilme("Avatar", 2009);
+        1:  205-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  205-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  205-block  2
+call    6 returned 1
+    $$$$$:  205-block  3
+call    7 never executed
+    $$$$$:  205-block  4
+    $$$$$:  205-block  5
+       1*:  206:    assert(rezultateInexistente.empty());
+        1:  206-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  206-block  1
+call    3 never executed
+        1:  206-block  2
+        1:  207:}
+        1:  207-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+    $$$$$:  207-block  1
+call    6 never executed
+    $$$$$:  207-block  2
+call    7 never executed
+    $$$$$:  207-block  3
+call    8 never executed
+    $$$$$:  207-block  4
+call    9 never executed
+    $$$$$:  207-block  5
+call   10 never executed
+    $$$$$:  207-block  6
+call   11 never executed
+        -:  208:
+function _ZN5Teste13testMyListAddEv called 1 returned 100% blocks executed 70%
+        1:  209:void Teste::testMyListAdd() {
+        1:  210:    MyList<int> list;
+        1:  210-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  211:    assert(list.size() == 0);  // Lista ar trebui să fie goală la început
+        1:  211-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  211-block  1
+call    3 never executed
+        1:  211-block  2
+        -:  212:
+        1:  213:    list.add(10);
+        1:  213-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  213-block  1
+       1*:  214:    assert(list.size() == 1);  // După adăugare, lista ar trebui să conțină un element
+        1:  214-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  214-block  1
+call    3 never executed
+        1:  214-block  2
+       1*:  215:    assert(list[0] == 10);     // Elementul adăugat ar trebui să fie 10
+        1:  215-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  215-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  215-block  2
+call    5 never executed
+        1:  215-block  3
+        -:  216:
+        1:  217:    list.add(20);
+        1:  217-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  217-block  1
+       1*:  218:    assert(list.size() == 2);  // Lista ar trebui să conțină acum 2 elemente
+        1:  218-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  218-block  1
+call    3 never executed
+        1:  218-block  2
+       1*:  219:    assert(list[1] == 20);     // Al doilea element ar trebui să fie 20
+        1:  219-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  219-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  219-block  2
+call    5 never executed
+        1:  219-block  3
+        1:  220:}
+        1:  220-block  0
+call    0 returned 1
+    $$$$$:  220-block  1
+call    1 never executed
+        -:  221:
+function _ZN5Teste16testMyListRemoveEv called 1 returned 100% blocks executed 60%
+        1:  222:void Teste::testMyListRemove() {
+        1:  223:    MyList<int> list;
+        1:  223-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  224:    list.add(10);
+        1:  224-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  224-block  1
+        1:  225:    list.add(20);
+        1:  225-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  225-block  1
+        1:  226:    list.add(30);
+        1:  226-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  226-block  1
+        -:  227:
+        1:  228:    list.remove(1);  // Eliminăm elementul de la indexul 1 (20)
+        1:  228-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  229:    assert(list.size() == 2);  // Lista ar trebui să aibă acum 2 elemente
+        1:  229-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  229-block  1
+call    3 never executed
+        1:  229-block  2
+       1*:  230:    assert(list[0] == 10);     // Primul element ar trebui să fie 10
+        1:  230-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  230-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  230-block  2
+call    5 never executed
+        1:  230-block  3
+       1*:  231:    assert(list[1] == 30);     // Al doilea element ar trebui să fie 30
+        1:  231-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  231-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  231-block  2
+call    5 never executed
+        1:  231-block  3
+        -:  232:
+        -:  233:    try {
+        1:  234:        list.remove(5);  // Încercăm să eliminăm un element la un index invalid
+        1:  234-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+    #####:  235:        assert(false);    // Ar trebui să arunce o excepție
+    %%%%%:  235-block  0
+call    0 never executed
+        1:  236:    } catch (const std::out_of_range& e) {
+        1:  236-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  236-block  1
+call    2 returned 1
+        2:  237:        assert(std::string(e.what()) == "Index invalid");
+        1:  237-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  237-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  237-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    $$$$$:  237-block  3
+call    9 never executed
+        1:  237-block  4
+        1:  237-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  237-block  6
+call   12 returned 1
+        1:  237-block  7
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+    $$$$$:  237-block  8
+branch 15 never executed (fallthrough)
+branch 16 never executed
+    $$$$$:  237-block  9
+call   17 never executed
+    $$$$$:  237-block 10
+    $$$$$:  237-block 11
+branch 18 never executed (fallthrough)
+branch 19 never executed
+    $$$$$:  237-block 12
+        1:  238:    }
+        1:  238-block  0
+call    0 returned 1
+    $$$$$:  238-block  1
+call    1 never executed
+        1:  239:}
+call    0 returned 1
+    $$$$$:  239-block  0
+call    1 never executed
+        -:  240:
+function _ZN5Teste16testMyListUpdateEv called 1 returned 100% blocks executed 57%
+        1:  241:void Teste::testMyListUpdate() {
+        1:  242:    MyList<int> list;
+        1:  242-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  243:    list.add(10);
+        1:  243-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  243-block  1
+        1:  244:    list.add(20);
+        1:  244-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  244-block  1
+        -:  245:
+        1:  246:    list.update(1, 25);  // Modificăm elementul de la indexul 1
+        1:  246-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  246-block  1
+       1*:  247:    assert(list[1] == 25);  // Elementul la indexul 1 ar trebui să fie acum 25
+        1:  247-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  247-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  247-block  2
+call    5 never executed
+        1:  247-block  3
+        -:  248:
+        -:  249:    try {
+       1*:  250:        list.update(5, 30);  // Încercăm să actualizăm un element la un index invalid
+        1:  250-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        1:  250-block  1
+    #####:  251:        assert(false);        // Ar trebui să arunce o excepție
+    %%%%%:  251-block  0
+call    0 never executed
+        1:  252:    } catch (const std::out_of_range& e) {
+        1:  252-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  252-block  1
+call    2 returned 1
+        2:  253:        assert(std::string(e.what()) == "Index invalid");
+        1:  253-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  253-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  253-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    $$$$$:  253-block  3
+call    9 never executed
+        1:  253-block  4
+        1:  253-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  253-block  6
+call   12 returned 1
+        1:  253-block  7
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+    $$$$$:  253-block  8
+branch 15 never executed (fallthrough)
+branch 16 never executed
+    $$$$$:  253-block  9
+call   17 never executed
+    $$$$$:  253-block 10
+    $$$$$:  253-block 11
+branch 18 never executed (fallthrough)
+branch 19 never executed
+    $$$$$:  253-block 12
+        1:  254:    }
+        1:  254-block  0
+call    0 returned 1
+    $$$$$:  254-block  1
+call    1 never executed
+        1:  255:}
+call    0 returned 1
+    $$$$$:  255-block  0
+call    1 never executed
+        -:  256:
+function _ZN5Teste23testMyListOperatorIndexEv called 1 returned 100% blocks executed 58%
+        1:  257:void Teste::testMyListOperatorIndex() {
+        1:  258:    MyList<int> list;
+        1:  258-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  259:    list.add(10);
+        1:  259-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  259-block  1
+        1:  260:    list.add(20);
+        1:  260-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  260-block  1
+        1:  261:    list.add(30);
+        1:  261-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  261-block  1
+        -:  262:
+        -:  263:    // Testează accesul la un index valid
+       1*:  264:    assert(list[0] == 10);
+        1:  264-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  264-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  264-block  2
+call    5 never executed
+        1:  264-block  3
+       1*:  265:    assert(list[1] == 20);
+        1:  265-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  265-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  265-block  2
+call    5 never executed
+        1:  265-block  3
+       1*:  266:    assert(list[2] == 30);
+        1:  266-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  266-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  266-block  2
+call    5 never executed
+        1:  266-block  3
+        -:  267:
+        -:  268:    try {
+        -:  269:        // Acces invalid (index 3, dar lista are doar 3 elemente)
+        1:  270:        list[3];  // Va arunca o excepție std::out_of_range
+        1:  270-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+    #####:  271:        assert(false);  // Dacă ajungi aici, testul a eșuat
+    %%%%%:  271-block  0
+call    0 never executed
+        1:  272:    } catch (const std::out_of_range& e) {
+        1:  272-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  272-block  1
+call    2 returned 1
+        2:  273:        assert(std::string(e.what()) == "Index invalid");
+        1:  273-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  273-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  273-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    $$$$$:  273-block  3
+call    9 never executed
+        1:  273-block  4
+        1:  273-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  273-block  6
+call   12 returned 1
+        1:  273-block  7
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+    $$$$$:  273-block  8
+branch 15 never executed (fallthrough)
+branch 16 never executed
+    $$$$$:  273-block  9
+call   17 never executed
+    $$$$$:  273-block 10
+    $$$$$:  273-block 11
+branch 18 never executed (fallthrough)
+branch 19 never executed
+    $$$$$:  273-block 12
+        1:  274:    }
+        1:  274-block  0
+call    0 returned 1
+    $$$$$:  274-block  1
+call    1 never executed
+        -:  275:
+        -:  276:    // Testează și pentru un obiect const
+        1:  277:    const MyList<int> constList = list;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  278:
+        1:  279:    assert(constList[0] == 10);
+        1:  279-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  279-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    $$$$$:  279-block  2
+call    5 never executed
+        1:  279-block  3
+        -:  280:    try {
+        1:  281:        constList[3];  // Va arunca o excepție std::out_of_range
+        1:  281-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+    =====:  282:        assert(false);  // Dacă ajungi aici, testul a eșuat
+    $$$$$:  282-block  0
+call    0 never executed
+        1:  283:    } catch (const std::out_of_range& e) {
+        1:  283-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  283-block  1
+call    2 returned 1
+        2:  284:        assert(std::string(e.what()) == "Index invalid");
+        1:  284-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  284-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  284-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    $$$$$:  284-block  3
+call    9 never executed
+        1:  284-block  4
+        1:  284-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  284-block  6
+call   12 returned 1
+        1:  284-block  7
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+    $$$$$:  284-block  8
+branch 15 never executed (fallthrough)
+branch 16 never executed
+    $$$$$:  284-block  9
+call   17 never executed
+    $$$$$:  284-block 10
+    $$$$$:  284-block 11
+branch 18 never executed (fallthrough)
+branch 19 never executed
+    $$$$$:  284-block 12
+        1:  285:    }
+        1:  285-block  0
+call    0 returned 1
+    $$$$$:  285-block  1
+call    1 never executed
+        1:  286:}
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  286-block  0
+call    2 never executed
+    $$$$$:  286-block  1
+call    3 never executed
+        -:  287:
+function _ZN5Teste18testMyListCapacityEv called 1 returned 100% blocks executed 68%
+        1:  288:void Teste::testMyListCapacity() {
+        1:  289:    MyList<int> list(2);  // Setăm capacitatea inițială la 2
+        1:  289-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  290:    assert(list.size() == 0);
+        1:  290-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  290-block  1
+call    3 never executed
+        1:  290-block  2
+        -:  291:
+        1:  292:    list.add(10);
+        1:  292-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  292-block  1
+        1:  293:    list.add(20);
+        1:  293-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  293-block  1
+       1*:  294:    assert(list.size() == 2);
+        1:  294-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  294-block  1
+call    3 never executed
+        1:  294-block  2
+        -:  295:
+        1:  296:    list.add(30);  // Acum lista trebuie să își mărească capacitatea
+        1:  296-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  296-block  1
+       1*:  297:    assert(list.size() == 3);  // Lista ar trebui să conțină 3 elemente
+        1:  297-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  297-block  1
+call    3 never executed
+        1:  297-block  2
+       1*:  298:    assert(list[2] == 30);     // Ultimul element adăugat ar trebui să fie 30
+        1:  298-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  298-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  298-block  2
+call    5 never executed
+        1:  298-block  3
+        1:  299:}
+        1:  299-block  0
+call    0 returned 1
+    $$$$$:  299-block  1
+call    1 never executed
+        -:  300:
+function _ZN5Teste25testMyListCopyConstructorEv called 1 returned 100% blocks executed 70%
+        1:  301:void Teste::testMyListCopyConstructor() {
+        1:  302:    MyList<int> list;
+        1:  302-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  303:    list.add(10);
+        1:  303-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  303-block  1
+        1:  304:    list.add(20);
+        1:  304-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  304-block  1
+        1:  305:    list.add(30);
+        1:  305-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  305-block  1
+        -:  306:
+        -:  307:    // Copiem lista într-o nouă listă
+        1:  308:    MyList<int> copiedList = list;
+        1:  308-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  309:
+        -:  310:    // Verificăm dacă dimensiunile și elementele sunt aceleași
+       1*:  311:    assert(copiedList.size() == list.size());
+        1:  311-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:  311-block  1
+call    4 never executed
+        1:  311-block  2
+       1*:  312:    assert(copiedList[0] == list[0]);
+        1:  312-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  312-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  312-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:  312-block  3
+call    8 never executed
+        1:  312-block  4
+       1*:  313:    assert(copiedList[1] == list[1]);
+        1:  313-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  313-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  313-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:  313-block  3
+call    8 never executed
+        1:  313-block  4
+       1*:  314:    assert(copiedList[2] == list[2]);
+        1:  314-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  314-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  314-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:  314-block  3
+call    8 never executed
+        1:  314-block  4
+        -:  315:
+        -:  316:    // Modificăm elementele în lista originală
+        1:  317:    list.update(0, 100);
+        1:  317-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  317-block  1
+        -:  318:
+        -:  319:    // Verificăm că lista copiată nu a fost afectată
+       1*:  320:    assert(copiedList[0] == 10);  // Lista copiată ar trebui să rămână nemodificată
+        1:  320-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  320-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  320-block  2
+call    5 never executed
+        1:  320-block  3
+       1*:  321:    assert(list[0] == 100);       // Lista originală ar trebui să aibă valoarea modificată
+        1:  321-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  321-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  321-block  2
+call    5 never executed
+        1:  321-block  3
+        1:  322:}
+        1:  322-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  322-block  1
+call    2 never executed
+    $$$$$:  322-block  2
+call    3 never executed
+        -:  323:
+function _ZN5Teste22testConstructorCopiereEv called 1 returned 100% blocks executed 60%
+        1:  324:void Teste::testConstructorCopiere() {
+        -:  325:    // Redirecționăm ieșirea standard pentru a captura mesajul din constructor
+        1:  326:    std::stringstream buffer;
+        1:  326-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  327:    std::streambuf* prev = std::cout.rdbuf(buffer.rdbuf()); // redirecționează std::cout în buffer
+        1:  327-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  327-block  1
+        -:  328:
+        5:  329:    Film f1("Inception", "SF", 2010, "Leonardo DiCaprio");
+        1:  329-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  329-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  329-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  329-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  329-block  4
+call   12 returned 1
+        1:  329-block  5
+call   13 returned 1
+        1:  329-block  6
+call   14 returned 1
+    $$$$$:  329-block  7
+call   15 never executed
+    $$$$$:  329-block  8
+    $$$$$:  329-block  9
+    $$$$$:  329-block 10
+call   16 never executed
+    $$$$$:  329-block 11
+    $$$$$:  329-block 12
+    $$$$$:  329-block 13
+call   17 never executed
+    $$$$$:  329-block 14
+    $$$$$:  329-block 15
+        1:  330:    Film f2 = f1;  // Apelul constructorului de copiere
+        1:  330-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  331:
+        -:  332:    // Verificăm dacă obiectul copiat conține aceleași date
+       1*:  333:    assert(f2.getTitlu() == "Inception");
+        1:  333-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  333-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  333-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:  333-block  3
+call    8 never executed
+        1:  333-block  4
+       1*:  334:    assert(f2.getGen() == "SF");
+        1:  334-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  334-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  334-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:  334-block  3
+call    8 never executed
+        1:  334-block  4
+       1*:  335:    assert(f2.getAn() == 2010);
+        1:  335-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  335-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  335-block  2
+call    5 never executed
+        1:  335-block  3
+       1*:  336:    assert(f2.getActor() == "Leonardo DiCaprio");
+        1:  336-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  336-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  336-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:  336-block  3
+call    8 never executed
+        1:  336-block  4
+        -:  337:
+        -:  338:    // Verificăm mesajul care a fost afișat
+        1:  339:    std::string output = buffer.str();
+        1:  339-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  340:    assert(output.find("Constructor de copiere apelat. Copiem filmul: Inception, SF, 2010, Leonardo DiCaprio") != std::string::npos);
+        1:  340-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  340-block  1
+call    3 never executed
+        1:  340-block  2
+        -:  341:
+        1:  342:    std::cout.rdbuf(prev);
+        1:  342-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  343:}
+        1:  343-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+    $$$$$:  343-block  1
+call    4 never executed
+    $$$$$:  343-block  2
+call    5 never executed
+    $$$$$:  343-block  3
+call    6 never executed
+    $$$$$:  343-block  4
+call    7 never executed
+        -:  344:
+function _ZN5Teste21testOperatorAtribuireEv called 1 returned 100% blocks executed 69%
+        1:  345:void Teste::testOperatorAtribuire() {
+        1:  346:    MyList<int> l1;
+        1:  346-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  347:    l1.add(10);
+        1:  347-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  347-block  1
+        1:  348:    l1.add(20);
+        1:  348-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  348-block  1
+        1:  349:    l1.add(30);
+        1:  349-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  349-block  1
+        -:  350:
+        1:  351:    MyList<int> l2;
+        1:  351-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  352:    l2 = l1; // folosim operatorul de atribuire
+        1:  352-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  353:
+        -:  354:    // verificăm că elementele au fost copiate corect
+       1*:  355:    assert(l2.size() == 3);
+        1:  355-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  355-block  1
+call    3 never executed
+        1:  355-block  2
+       1*:  356:    assert(l2[0] == 10);
+        1:  356-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  356-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  356-block  2
+call    5 never executed
+        1:  356-block  3
+       1*:  357:    assert(l2[1] == 20);
+        1:  357-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  357-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  357-block  2
+call    5 never executed
+        1:  357-block  3
+       1*:  358:    assert(l2[2] == 30);
+        1:  358-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  358-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  358-block  2
+call    5 never executed
+        1:  358-block  3
+        -:  359:
+        -:  360:    // modificăm l2 și ne asigurăm că l1 nu e afectat
+        1:  361:    l2[0] = 99;
+        1:  361-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  362:    assert(l1[0] == 10); // l1 rămâne neschimbat
+        1:  362-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  362-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  362-block  2
+call    5 never executed
+        1:  362-block  3
+       1*:  363:    assert(l2[0] == 99); // doar l2 s-a schimbat
+        1:  363-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  363-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  363-block  2
+call    5 never executed
+        1:  363-block  3
+        1:  364:}
+        1:  364-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  364-block  1
+call    2 never executed
+    $$$$$:  364-block  2
+call    3 never executed
+        -:  365:
+function _ZN5Teste19testMyListIteratorsEv called 1 returned 100% blocks executed 68%
+        1:  366:void Teste::testMyListIterators() {
+        1:  367:    MyList<int> lista;
+        1:  367-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  368:    lista.add(1);
+        1:  368-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  368-block  1
+        1:  369:    lista.add(2);
+        1:  369-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  369-block  1
+        1:  370:    lista.add(3);
+        1:  370-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  370-block  1
+        -:  371:
+        1:  372:    int suma = 0;
+        4:  373:    for (auto it = lista.begin(); it != lista.end(); ++it) {
+        1:  373-block  0
+call    0 returned 1
+        4:  373-block  1
+call    1 returned 4
+branch  2 taken 3
+branch  3 taken 1 (fallthrough)
+        3:  374:        suma += *it;
+        3:  374-block  0
+        -:  375:    }
+        -:  376:
+       1*:  377:    assert(suma == 6);  // 1 + 2 + 3
+        1:  377-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  377-block  1
+call    2 never executed
+        1:  377-block  2
+        1:  378:}
+        1:  378-block  0
+call    0 returned 1
+    $$$$$:  378-block  1
+call    1 never executed
+        -:  379:
+function _ZN5Teste16testSortariFilmeEv called 1 returned 100% blocks executed 53%
+        1:  380:void Teste::testSortariFilme() {
+        1:  381:    Repo repo;
+        1:  382:    Service service{repo};
+        1:  382-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  383:
+        6:  384:    Film f1{"Film Z", "Drama", 2010, "Actor B"};
+        1:  384-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  384-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  384-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  384-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  384-block  4
+call   12 returned 1
+        1:  384-block  5
+call   13 returned 1
+        1:  384-block  6
+call   14 returned 1
+        1:  384-block  7
+    $$$$$:  384-block  8
+call   15 never executed
+    $$$$$:  384-block  9
+    $$$$$:  384-block 10
+    $$$$$:  384-block 11
+call   16 never executed
+    $$$$$:  384-block 12
+    $$$$$:  384-block 13
+    $$$$$:  384-block 14
+call   17 never executed
+    $$$$$:  384-block 15
+    $$$$$:  384-block 16
+        6:  385:    Film f2{"Film A", "Actiune", 2005, "Actor C"};
+        1:  385-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  385-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  385-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  385-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  385-block  4
+call   12 returned 1
+        1:  385-block  5
+call   13 returned 1
+        1:  385-block  6
+call   14 returned 1
+        1:  385-block  7
+    $$$$$:  385-block  8
+call   15 never executed
+    $$$$$:  385-block  9
+    $$$$$:  385-block 10
+    $$$$$:  385-block 11
+call   16 never executed
+    $$$$$:  385-block 12
+    $$$$$:  385-block 13
+    $$$$$:  385-block 14
+call   17 never executed
+    $$$$$:  385-block 15
+    $$$$$:  385-block 16
+        6:  386:    Film f3{"Film M", "Comedie", 2005, "Actor A"};
+        1:  386-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  386-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  386-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  386-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  386-block  4
+call   12 returned 1
+        1:  386-block  5
+call   13 returned 1
+        1:  386-block  6
+call   14 returned 1
+        1:  386-block  7
+    $$$$$:  386-block  8
+call   15 never executed
+    $$$$$:  386-block  9
+    $$$$$:  386-block 10
+    $$$$$:  386-block 11
+call   16 never executed
+    $$$$$:  386-block 12
+    $$$$$:  386-block 13
+    $$$$$:  386-block 14
+call   17 never executed
+    $$$$$:  386-block 15
+    $$$$$:  386-block 16
+        6:  387:    Film f4{"Film B", "Actiune", 2015, "Actor D"};
+        1:  387-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  387-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  387-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  387-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  387-block  4
+call   12 returned 1
+        1:  387-block  5
+call   13 returned 1
+        1:  387-block  6
+call   14 returned 1
+        1:  387-block  7
+    $$$$$:  387-block  8
+call   15 never executed
+    $$$$$:  387-block  9
+    $$$$$:  387-block 10
+    $$$$$:  387-block 11
+call   16 never executed
+    $$$$$:  387-block 12
+    $$$$$:  387-block 13
+    $$$$$:  387-block 14
+call   17 never executed
+    $$$$$:  387-block 15
+    $$$$$:  387-block 16
+        -:  388:
+        6:  389:    service.adaugaFilm("Film Z", "Drama", 2010, "Actor B");
+        1:  389-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  389-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  389-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  389-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  389-block  4
+call   12 returned 1
+        1:  389-block  5
+call   13 returned 1
+        1:  389-block  6
+call   14 returned 1
+        1:  389-block  7
+    $$$$$:  389-block  8
+call   15 never executed
+    $$$$$:  389-block  9
+    $$$$$:  389-block 10
+    $$$$$:  389-block 11
+call   16 never executed
+    $$$$$:  389-block 12
+    $$$$$:  389-block 13
+    $$$$$:  389-block 14
+call   17 never executed
+    $$$$$:  389-block 15
+    $$$$$:  389-block 16
+        6:  390:    service.adaugaFilm("Film A", "Actiune", 2005, "Actor C");
+        1:  390-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  390-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  390-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  390-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  390-block  4
+call   12 returned 1
+        1:  390-block  5
+call   13 returned 1
+        1:  390-block  6
+call   14 returned 1
+        1:  390-block  7
+    $$$$$:  390-block  8
+call   15 never executed
+    $$$$$:  390-block  9
+    $$$$$:  390-block 10
+    $$$$$:  390-block 11
+call   16 never executed
+    $$$$$:  390-block 12
+    $$$$$:  390-block 13
+    $$$$$:  390-block 14
+call   17 never executed
+    $$$$$:  390-block 15
+    $$$$$:  390-block 16
+        6:  391:    service.adaugaFilm("Film M", "Comedie", 2005, "Actor A");
+        1:  391-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  391-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  391-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  391-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  391-block  4
+call   12 returned 1
+        1:  391-block  5
+call   13 returned 1
+        1:  391-block  6
+call   14 returned 1
+        1:  391-block  7
+    $$$$$:  391-block  8
+call   15 never executed
+    $$$$$:  391-block  9
+    $$$$$:  391-block 10
+    $$$$$:  391-block 11
+call   16 never executed
+    $$$$$:  391-block 12
+    $$$$$:  391-block 13
+    $$$$$:  391-block 14
+call   17 never executed
+    $$$$$:  391-block 15
+    $$$$$:  391-block 16
+        5:  392:    service.adaugaFilm("Film B", "Actiune", 2015, "Actor D");
+        1:  392-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  392-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  392-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  392-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  392-block  4
+call   12 returned 1
+        1:  392-block  5
+call   13 returned 1
+        1:  392-block  6
+call   14 returned 1
+    $$$$$:  392-block  7
+call   15 never executed
+    $$$$$:  392-block  8
+    $$$$$:  392-block  9
+    $$$$$:  392-block 10
+call   16 never executed
+    $$$$$:  392-block 11
+    $$$$$:  392-block 12
+    $$$$$:  392-block 13
+call   17 never executed
+    $$$$$:  392-block 14
+    $$$$$:  392-block 15
+        -:  393:
+        -:  394:    // Sortare dupa an si gen
+        1:  395:    service.sortareFilmeDupaAnSiGen();
+        1:  395-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  396:    auto sortedAnGen = service.getFilme();
+        1:  396-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  396-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  397:
+       1*:  398:    assert(sortedAnGen[0] == f2); // 2005, Actiune
+        1:  398-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  398-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  398-block  2
+call    6 never executed
+        1:  398-block  3
+       1*:  399:    assert(sortedAnGen[1] == f3); // 2005, Comedie
+        1:  399-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  399-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  399-block  2
+call    6 never executed
+        1:  399-block  3
+       1*:  400:    assert(sortedAnGen[2] == f1); // 2010, Drama
+        1:  400-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  400-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  400-block  2
+call    6 never executed
+        1:  400-block  3
+       1*:  401:    assert(sortedAnGen[3] == f4); // 2015, Actiune
+        1:  401-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  401-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  401-block  2
+call    6 never executed
+        1:  401-block  3
+        -:  402:
+        -:  403:    // Sortare dupa titlu
+        1:  404:    service.sortareFilmeDupaTitlu();
+        1:  404-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  405:    auto sortedTitlu = service.getFilme();
+        1:  405-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  405-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+       1*:  406:    assert(sortedTitlu[0] == f2); // "Film A"
+        1:  406-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  406-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  406-block  2
+call    6 never executed
+        1:  406-block  3
+       1*:  407:    assert(sortedTitlu[1] == f4); // "Film B"
+        1:  407-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  407-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  407-block  2
+call    6 never executed
+        1:  407-block  3
+       1*:  408:    assert(sortedTitlu[2] == f3); // "Film M"
+        1:  408-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  408-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  408-block  2
+call    6 never executed
+        1:  408-block  3
+       1*:  409:    assert(sortedTitlu[3] == f1); // "Film Z"
+        1:  409-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  409-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  409-block  2
+call    6 never executed
+        1:  409-block  3
+        -:  410:
+        -:  411:    // Sortare dupa actor
+        1:  412:    service.sortareFilmeDupaActor();
+        1:  412-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  413:    auto sortedActor = service.getFilme();
+        1:  413-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  413-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+       1*:  414:    assert(sortedActor[0] == f3); // "Actor A"
+        1:  414-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  414-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  414-block  2
+call    6 never executed
+        1:  414-block  3
+       1*:  415:    assert(sortedActor[1] == f1); // "Actor B"
+        1:  415-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  415-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  415-block  2
+call    6 never executed
+        1:  415-block  3
+       1*:  416:    assert(sortedActor[2] == f2); // "Actor C"
+        1:  416-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  416-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  416-block  2
+call    6 never executed
+        1:  416-block  3
+       1*:  417:    assert(sortedActor[3] == f4); // "Actor D"
+        1:  417-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  417-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  417-block  2
+call    6 never executed
+        1:  417-block  3
+        1:  418:}
+        1:  418-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  418-block  1
+call    9 never executed
+    $$$$$:  418-block  2
+call   10 never executed
+    $$$$$:  418-block  3
+call   11 never executed
+    $$$$$:  418-block  4
+call   12 never executed
+    $$$$$:  418-block  5
+call   13 never executed
+    $$$$$:  418-block  6
+call   14 never executed
+    $$$$$:  418-block  7
+call   15 never executed
+    $$$$$:  418-block  8
+call   16 never executed
+    $$$$$:  418-block  9
+call   17 never executed
+        -:  419:
+function _ZN5Teste21test_move_constructorEv called 1 returned 100% blocks executed 68%
+        1:  420:void Teste::test_move_constructor() {
+        1:  421:    MyList<int> list1;
+        1:  421-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  422:    list1.add(1);
+        1:  422-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  422-block  1
+        1:  423:    list1.add(2);
+        1:  423-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  423-block  1
+        1:  424:    list1.add(3);
+        1:  424-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  424-block  1
+        -:  425:
+        -:  426:    // Move constructor
+        1:  427:    MyList<int> list2(std::move(list1));
+        1:  427-block  0
+call    0 returned 1
+call    1 returned 1
+        -:  428:
+       1*:  429:    assert(list2.size() == 3);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  429-block  0
+call    3 never executed
+        1:  429-block  1
+       1*:  430:    assert(list2[0] == 1);
+        1:  430-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  430-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  430-block  2
+call    5 never executed
+        1:  430-block  3
+       1*:  431:    assert(list2[1] == 2);
+        1:  431-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  431-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  431-block  2
+call    5 never executed
+        1:  431-block  3
+       1*:  432:    assert(list2[2] == 3);
+        1:  432-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  432-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  432-block  2
+call    5 never executed
+        1:  432-block  3
+        -:  433:
+        -:  434:    // După mutare, list1 ar trebui să fie într-o stare validă dar "goală"
+       1*:  435:    assert(list1.size() == 0);
+        1:  435-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  435-block  1
+call    3 never executed
+        1:  435-block  2
+        1:  436:}
+        1:  436-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  436-block  1
+call    2 never executed
+    $$$$$:  436-block  2
+call    3 never executed
+        -:  437:
+function _ZN5Teste20test_move_assignmentEv called 1 returned 100% blocks executed 68%
+        1:  438:void Teste::test_move_assignment() {
+        1:  439:    MyList<int> list1;
+        1:  439-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  440:    list1.add(10);
+        1:  440-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  440-block  1
+        1:  441:    list1.add(20);
+        1:  441-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  441-block  1
+        -:  442:
+        1:  443:    MyList<int> list2;
+        1:  443-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  444:    list2.add(99);
+        1:  444-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  444-block  1
+        -:  445:
+        1:  446:    list2 = std::move(list1);  // Move assignment
+        1:  446-block  0
+call    0 returned 1
+call    1 returned 1
+        -:  447:
+       1*:  448:    assert(list2.size() == 2);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  448-block  0
+call    3 never executed
+        1:  448-block  1
+       1*:  449:    assert(list2[0] == 10);
+        1:  449-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  449-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  449-block  2
+call    5 never executed
+        1:  449-block  3
+       1*:  450:    assert(list2[1] == 20);
+        1:  450-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  450-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  450-block  2
+call    5 never executed
+        1:  450-block  3
+        -:  451:
+       1*:  452:    assert(list1.size() == 0);
+        1:  452-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  452-block  1
+call    3 never executed
+        1:  452-block  2
+        1:  453:}
+        1:  453-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  453-block  1
+call    2 never executed
+    $$$$$:  453-block  2
+call    3 never executed
+        -:  454:
+        -:  455:
+        -:  456:
+        -:  457:
+        -:  458:
+        -:  459:
+function _Z12testCosFilmev called 1 returned 100% blocks executed 55%
+        1:  460:void testCosFilme() {
+        1:  461:    CosFilm cos;
+        1:  461-block  0
+        -:  462:
+        -:  463:    // Test adaugaCosFilme
+        5:  464:    Film f1{"Titanic", "Drama", 1997, "Leonardo DiCaprio"};
+        1:  464-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  464-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  464-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  464-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  464-block  4
+call   12 returned 1
+        1:  464-block  5
+call   13 returned 1
+        1:  464-block  6
+call   14 returned 1
+    $$$$$:  464-block  7
+call   15 never executed
+    $$$$$:  464-block  8
+    $$$$$:  464-block  9
+    $$$$$:  464-block 10
+call   16 never executed
+    $$$$$:  464-block 11
+    $$$$$:  464-block 12
+    $$$$$:  464-block 13
+call   17 never executed
+    $$$$$:  464-block 14
+    $$$$$:  464-block 15
+        1:  465:    cos.adaugaCosFilme(f1);
+        1:  465-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  466:    assert(cos.getCosFilme().size() == 1);
+        1:  466-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  466-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  466-block  2
+call    6 never executed
+        1:  466-block  3
+       1*:  467:    assert(cos.getCosFilme()[0].getTitlu() == "Titanic");
+        1:  467-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  467-block  1
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  467-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:  467-block  3
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1
+    %%%%%:  467-block  4
+call   12 never executed
+        1:  467-block  5
+        -:  468:
+        -:  469:    // Test golesteCosFilme
+        1:  470:    cos.golesteCosFilme();
+        1:  470-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  471:    assert(cos.getCosFilme().empty());
+        1:  471-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  471-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  471-block  2
+call    6 never executed
+        1:  471-block  3
+        -:  472:
+        -:  473:    // Test umpleRandomCosFilme
+        -:  474:    std::vector<Film> listaFilme = {
+        -:  475:        {"Inception", "Actiune", 2010, "Leonardo DiCaprio"},
+        -:  476:        {"Interstellar", "SF", 2014, "Matthew McConaughey"},
+        -:  477:        {"The Revenant", "Drama", 2015, "Leonardo DiCaprio"}
+        5:  478:    };
+        1:  478-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  478-block  1
+        4:  478-block  2
+branch  3 taken 3 (fallthrough)
+branch  4 taken 1
+        3:  478-block  3
+call    5 returned 3
+    $$$$$:  478-block  4
+    $$$$$:  478-block  5
+    $$$$$:  478-block  6
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  478-block  7
+call    8 never executed
+    $$$$$:  478-block  8
+        1:  479:    cos.umpleRandomCosFilme(2, listaFilme);
+       1*:  480:    assert(cos.getCosFilme().size() == 2);
+        1:  480-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  480-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  480-block  2
+call    6 never executed
+        1:  480-block  3
+        1:  481:    cos.umpleRandomCosFilme(5, listaFilme);  // lista are 3 filme, cerem 5 => trebuie refolosită
+        1:  481-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  482:    assert(cos.getCosFilme().size() == 5);
+        1:  482-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  482-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  482-block  2
+call    6 never executed
+        1:  482-block  3
+        -:  483:
+        -:  484:
+        -:  485:
+        -:  486:    // Test exportCSV
+        1:  487:    std::string numeFisier = "test_cos.csv";
+        1:  487-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  487-block  1
+        1:  488:    cos.exportCSV(numeFisier);
+        1:  488-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  489:
+        1:  490:    std::ifstream in(numeFisier);
+        1:  490-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  491:    assert(in.is_open());
+        1:  491-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  491-block  1
+call    3 never executed
+        1:  491-block  2
+        1:  492:    std::string linie;
+        1:  492-block  0
+call    0 returned 1
+        1:  493:    int count = 0;
+        6:  494:    while (std::getline(in, linie)) {
+        6:  494-block  0
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        6:  494-block  1
+call    3 returned 6
+branch  4 taken 6 (fallthrough)
+branch  5 taken 0 (throw)
+        6:  494-block  2
+branch  6 taken 5
+branch  7 taken 1 (fallthrough)
+       5*:  495:        assert(!linie.empty());
+        5:  495-block  0
+call    0 returned 5
+branch  1 taken 0 (fallthrough)
+branch  2 taken 5
+    %%%%%:  495-block  1
+call    3 never executed
+        5:  495-block  2
+        5:  496:        count++;
+        5:  496-block  0
+        -:  497:    }
+        1:  498:    in.close();
+        1:  498-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  499:    assert(count == 5);
+        1:  499-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  499-block  1
+call    2 never executed
+        1:  499-block  2
+        -:  500:
+        -:  501:    // Curăță fișierul după test (opțional)
+        1:  502:    std::remove(numeFisier.c_str());
+        1:  502-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        5:  503:}
+        1:  503-block  0
+        1:  503-block  1
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  503-block  2
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  503-block  3
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  503-block  4
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  503-block  5
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  503-block  6
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  503-block  7
+call   18 returned 1
+branch 19 taken 1 (fallthrough)
+branch 20 taken 0 (throw)
+        1:  503-block  8
+call   21 returned 1
+branch 22 taken 1 (fallthrough)
+branch 23 taken 0 (throw)
+        1:  503-block  9
+call   24 returned 1
+branch 25 taken 1 (fallthrough)
+branch 26 taken 0 (throw)
+        1:  503-block 10
+call   27 returned 1
+branch 28 taken 1 (fallthrough)
+branch 29 taken 0 (throw)
+        1:  503-block 11
+call   30 returned 1
+branch 31 taken 1 (fallthrough)
+branch 32 taken 0 (throw)
+        1:  503-block 12
+call   33 returned 1
+branch 34 taken 1 (fallthrough)
+branch 35 taken 0 (throw)
+        1:  503-block 13
+        1:  503-block 14
+call   36 returned 1
+call   37 returned 1
+call   38 returned 1
+call   39 returned 1
+call   40 returned 1
+call   41 returned 1
+call   42 returned 1
+call   43 returned 1
+call   44 returned 1
+        1:  503-block 15
+call   45 returned 1
+branch 46 taken 1 (fallthrough)
+branch 47 taken 0 (throw)
+        1:  503-block 16
+call   48 returned 1
+call   49 returned 1
+call   50 returned 1
+call   51 returned 1
+call   52 returned 1
+call   53 returned 1
+    $$$$$:  503-block 17
+call   54 never executed
+    $$$$$:  503-block 18
+    $$$$$:  503-block 19
+call   55 never executed
+    $$$$$:  503-block 20
+    $$$$$:  503-block 21
+call   56 never executed
+    $$$$$:  503-block 22
+    $$$$$:  503-block 23
+call   57 never executed
+    $$$$$:  503-block 24
+    $$$$$:  503-block 25
+call   58 never executed
+    $$$$$:  503-block 26
+    $$$$$:  503-block 27
+call   59 never executed
+    $$$$$:  503-block 28
+    $$$$$:  503-block 29
+call   60 never executed
+    $$$$$:  503-block 30
+    $$$$$:  503-block 31
+call   61 never executed
+    $$$$$:  503-block 32
+    $$$$$:  503-block 33
+call   62 never executed
+    $$$$$:  503-block 34
+    $$$$$:  503-block 35
+    $$$$$:  503-block 36
+branch 63 never executed (fallthrough)
+branch 64 never executed
+    $$$$$:  503-block 37
+    $$$$$:  503-block 38
+branch 65 never executed (fallthrough)
+branch 66 never executed
+    $$$$$:  503-block 39
+call   67 never executed
+    $$$$$:  503-block 40
+call   68 never executed
+    $$$$$:  503-block 41
+call   69 never executed
+    $$$$$:  503-block 42
+call   70 never executed
+    $$$$$:  503-block 43
+call   71 never executed
+    $$$$$:  503-block 44
+call   72 never executed
+    $$$$$:  503-block 45
+call   73 never executed
+        -:  504:
+function _Z24testCosInchirieriServicev called 1 returned 100% blocks executed 57%
+        1:  505:void testCosInchirieriService() {
+        -:  506:    // Instanțierea obiectelor necesare
+        1:  507:    Repo repo;
+        -:  508:    Validator val;
+        1:  509:    CosFilm cos;
+        1:  510:    Service srv{repo, val, cos};
+        1:  510-block  0
+call    0 returned 1
+        -:  511:
+        -:  512:    // Adăugare filme în repo
+        6:  513:    srv.adaugaFilm("Matrix", "SF", 1999, "Keanu Reeves");
+        1:  513-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  513-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  513-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  513-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  513-block  4
+call   12 returned 1
+        1:  513-block  5
+call   13 returned 1
+        1:  513-block  6
+call   14 returned 1
+        1:  513-block  7
+    $$$$$:  513-block  8
+call   15 never executed
+    $$$$$:  513-block  9
+    $$$$$:  513-block 10
+    $$$$$:  513-block 11
+call   16 never executed
+    $$$$$:  513-block 12
+    $$$$$:  513-block 13
+    $$$$$:  513-block 14
+call   17 never executed
+    $$$$$:  513-block 15
+    $$$$$:  513-block 16
+        6:  514:    srv.adaugaFilm("Avatar", "SF", 2009, "Sam Worthington");
+        1:  514-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  514-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  514-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  514-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  514-block  4
+call   12 returned 1
+        1:  514-block  5
+call   13 returned 1
+        1:  514-block  6
+call   14 returned 1
+        1:  514-block  7
+    $$$$$:  514-block  8
+call   15 never executed
+    $$$$$:  514-block  9
+    $$$$$:  514-block 10
+    $$$$$:  514-block 11
+call   16 never executed
+    $$$$$:  514-block 12
+    $$$$$:  514-block 13
+    $$$$$:  514-block 14
+call   17 never executed
+    $$$$$:  514-block 15
+    $$$$$:  514-block 16
+        6:  515:    srv.adaugaFilm("Inception", "Actiune", 2010, "DiCaprio");
+        1:  515-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  515-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  515-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  515-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  515-block  4
+call   12 returned 1
+        1:  515-block  5
+call   13 returned 1
+        1:  515-block  6
+call   14 returned 1
+        1:  515-block  7
+    $$$$$:  515-block  8
+call   15 never executed
+    $$$$$:  515-block  9
+    $$$$$:  515-block 10
+    $$$$$:  515-block 11
+call   16 never executed
+    $$$$$:  515-block 12
+    $$$$$:  515-block 13
+    $$$$$:  515-block 14
+call   17 never executed
+    $$$$$:  515-block 15
+    $$$$$:  515-block 16
+        -:  516:
+        -:  517:    // Test adăugare în coș
+        1:  518:    auto& cos1 = srv.adaugaFilmInCosInchirieri("Matrix");
+        1:  518-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  518-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  518-block  2
+call    6 returned 1
+    $$$$$:  518-block  3
+call    7 never executed
+    $$$$$:  518-block  4
+    $$$$$:  518-block  5
+       1*:  519:    assert(cos1.size() == 1);
+        1:  519-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  519-block  1
+call    3 never executed
+        1:  519-block  2
+       1*:  520:    assert(cos1[0].getTitlu() == "Matrix");
+        1:  520-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  520-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  520-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  520-block  3
+call    9 never executed
+        1:  520-block  4
+        -:  521:
+        -:  522:    // Test că nu se adaugă de două ori același film
+        1:  523:    auto& cos2 = srv.adaugaFilmInCosInchirieri("Matrix");
+        1:  523-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  523-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  523-block  2
+call    6 returned 1
+    $$$$$:  523-block  3
+call    7 never executed
+    $$$$$:  523-block  4
+    $$$$$:  523-block  5
+       1*:  524:    assert(cos2.size() == 1);  // Tot 1
+        1:  524-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  524-block  1
+call    3 never executed
+        1:  524-block  2
+        -:  525:
+        -:  526:    // Test excepție când filmul nu există
+        -:  527:    try {
+       2*:  528:        srv.adaugaFilmInCosInchirieri("NuExista");
+        1:  528-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  528-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1 (throw)
+    %%%%%:  528-block  2
+call    6 never executed
+        1:  528-block  3
+call    7 returned 1
+        1:  528-block  4
+        1:  528-block  5
+    #####:  529:        assert(false);  // Nu trebuie să ajungă aici
+    %%%%%:  529-block  0
+call    0 never executed
+        1:  530:    } catch (const RepositoryException&) {
+        1:  530-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  530-block  1
+call    2 returned 1
+        -:  531:        assert(true);  // Filmul nu există, excepție corectă
+        1:  532:    }
+call    0 returned 1
+        -:  533:
+        -:  534:    // Test umplere aleatoare
+        1:  535:    auto& cos3 = srv.umpleRandomCosInchirieri(5);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  536:    assert(cos3.size() == 5);  // Coșul trebuie să aibă 5 filme
+        1:  536-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    $$$$$:  536-block  1
+call    3 never executed
+        1:  536-block  2
+        -:  537:
+        -:  538:    // Test getAll
+        1:  539:    const auto& toate = srv.getAllCosInchirieri();
+        1:  539-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  540:    assert(toate.size() == 5);  // Ar trebui să fie 5 filme în coș
+        1:  540-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    $$$$$:  540-block  1
+call    3 never executed
+        1:  540-block  2
+        -:  541:
+        -:  542:    // Test golire
+        1:  543:    const auto& golit = srv.golesteCosInchirieri();
+        1:  543-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  544:    assert(golit.empty());  // Coșul ar trebui să fie gol
+        1:  544-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    $$$$$:  544-block  1
+call    3 never executed
+        1:  544-block  2
+        -:  545:
+        -:  546:    // Test export CSV
+        2:  547:    srv.adaugaFilmInCosInchirieri("Avatar");
+        1:  547-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  547-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  547-block  2
+call    6 returned 1
+        1:  547-block  3
+    $$$$$:  547-block  4
+call    7 never executed
+    $$$$$:  547-block  5
+    $$$$$:  547-block  6
+        1:  548:    std::string fisier = "export_cos_test.csv";
+        1:  548-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  548-block  1
+        1:  549:    srv.exportaCosCSV(fisier);
+        1:  549-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  550:
+        -:  551:    // Verificare că fișierul a fost creat și conținutul său
+        1:  552:    std::ifstream in(fisier);
+        1:  552-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  553:    assert(in.is_open());
+        1:  553-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    $$$$$:  553-block  1
+call    3 never executed
+        1:  553-block  2
+        1:  554:    std::string linie;
+        1:  554-block  0
+call    0 returned 1
+        1:  555:    int count = 0;
+        2:  556:    while (std::getline(in, linie)) {
+        2:  556-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  556-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:  556-block  2
+branch  6 taken 1
+branch  7 taken 1 (fallthrough)
+        1:  557:        count++;
+        1:  557-block  0
+        -:  558:    }
+        1:  559:    in.close();
+        1:  559-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  560:    assert(count == 1);  // Trebuie să fie 1 film în fișier
+        1:  560-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    $$$$$:  560-block  1
+call    2 never executed
+        1:  560-block  2
+        -:  561:
+        -:  562:    // Ștergem fișierul de test
+        1:  563:    std::remove(fisier.c_str());
+        1:  563-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  564:}
+        1:  564-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+    $$$$$:  564-block  1
+call    6 never executed
+    $$$$$:  564-block  2
+call    7 never executed
+    $$$$$:  564-block  3
+call    8 never executed
+    $$$$$:  564-block  4
+call    9 never executed
+    $$$$$:  564-block  5
+call   10 never executed
+    $$$$$:  564-block  6
+call   11 never executed
+        -:  565:
+function _Z20test_readAllFromFilev called 1 returned 100% blocks executed 75%
+        1:  566:void test_readAllFromFile() {
+        -:  567:    // Crează un fișier de test cu date valide
+        1:  568:    std::ofstream fout("test_filmee.txt");
+        1:  568-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  569:    fout << "Titanic,Romance,1997,Leonardo DiCaprio\n";
+        1:  569-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  570:    fout << "Avatar,Sci-Fi,2009,Sam Worthington\n";
+        1:  570-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  571:    fout.close();
+        1:  571-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  572:
+        1:  573:    RepoFile repo_file{"test_filmee.txt"};
+        1:  573-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  573-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  573-block  2
+call    6 returned 1
+    $$$$$:  573-block  3
+call    7 never executed
+    $$$$$:  573-block  4
+    $$$$$:  573-block  5
+        -:  574:
+        -:  575:    // Verifică dacă fișierul este citit corect
+        1:  576:    const auto& filme = repo_file.getAll();
+        1:  576-block  0
+call    0 returned 1
+       1*:  577:    assert(filme.size() == 2);  // Verifică dacă sunt două filme
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  577-block  0
+call    3 never executed
+        1:  577-block  1
+        -:  578:
+        -:  579:    // Verifică dacă datele sunt corecte
+       1*:  580:    assert(filme[0].getTitlu() == "Titanic");
+        1:  580-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  580-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  580-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  580-block  3
+call    9 never executed
+        1:  580-block  4
+       1*:  581:    assert(filme[0].getGen() == "Romance");
+        1:  581-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  581-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  581-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  581-block  3
+call    9 never executed
+        1:  581-block  4
+       1*:  582:    assert(filme[0].getAn() == 1997);
+        1:  582-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  582-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  582-block  2
+call    6 never executed
+        1:  582-block  3
+       1*:  583:    assert(filme[0].getActor() == "Leonardo DiCaprio");
+        1:  583-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  583-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  583-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  583-block  3
+call    9 never executed
+        1:  583-block  4
+        -:  584:
+       1*:  585:    assert(filme[1].getTitlu() == "Avatar");
+        1:  585-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  585-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  585-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  585-block  3
+call    9 never executed
+        1:  585-block  4
+       1*:  586:    assert(filme[1].getGen() == "Sci-Fi");
+        1:  586-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  586-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  586-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  586-block  3
+call    9 never executed
+        1:  586-block  4
+       1*:  587:    assert(filme[1].getAn() == 2009);
+        1:  587-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  587-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  587-block  2
+call    6 never executed
+        1:  587-block  3
+       1*:  588:    assert(filme[1].getActor() == "Sam Worthington");
+        1:  588-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  588-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  588-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  588-block  3
+call    9 never executed
+        1:  588-block  4
+        -:  589:
+        -:  590:
+        1:  591:}
+        1:  591-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  591-block  1
+call    2 never executed
+    $$$$$:  591-block  2
+call    3 never executed
+        -:  592:
+function _Z19test_writeAllToFilev called 1 returned 100% blocks executed 49%
+        1:  593:void test_writeAllToFile() {
+        1:  593-block  0
+        -:  594:    // Creează fișierul test_filmee_output.txt și adaugă filme
+        2:  595:    RepoFile repo_file{"test_filmee_output.txt"};
+        1:  595-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  595-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  595-block  2
+call    6 returned 1
+        1:  595-block  3
+    $$$$$:  595-block  4
+call    7 never executed
+    $$$$$:  595-block  5
+    $$$$$:  595-block  6
+        6:  596:    Film film1{"The Matri", "Sci", 2025, "Reeves"};
+        1:  596-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  596-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  596-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  596-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  596-block  4
+call   12 returned 1
+        1:  596-block  5
+call   13 returned 1
+        1:  596-block  6
+call   14 returned 1
+        1:  596-block  7
+    $$$$$:  596-block  8
+call   15 never executed
+    $$$$$:  596-block  9
+    $$$$$:  596-block 10
+    $$$$$:  596-block 11
+call   16 never executed
+    $$$$$:  596-block 12
+    $$$$$:  596-block 13
+    $$$$$:  596-block 14
+call   17 never executed
+    $$$$$:  596-block 15
+    $$$$$:  596-block 16
+        5:  597:    Film film2{"Inceptio", "Sci-Fi", 2030, "Leonardo DiCaprio"};
+        1:  597-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  597-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  597-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  597-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  597-block  4
+call   12 returned 1
+        1:  597-block  5
+call   13 returned 1
+        1:  597-block  6
+call   14 returned 1
+    $$$$$:  597-block  7
+call   15 never executed
+    $$$$$:  597-block  8
+    $$$$$:  597-block  9
+    $$$$$:  597-block 10
+call   16 never executed
+    $$$$$:  597-block 11
+    $$$$$:  597-block 12
+    $$$$$:  597-block 13
+call   17 never executed
+    $$$$$:  597-block 14
+    $$$$$:  597-block 15
+        -:  598:
+        -:  599:    // Adaugă filmele
+        1:  600:     repo_file.adauga(film1);
+        1:  600-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  601:     //repo_file.adauga(film2);
+        5:  602:    repo_file.modifica("The Matri",2025,"ana",2024,"a");
+        1:  602-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  602-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  602-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  602-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  602-block  4
+call   12 returned 1
+        1:  602-block  5
+call   13 returned 1
+        1:  602-block  6
+call   14 returned 1
+    $$$$$:  602-block  7
+call   15 never executed
+    $$$$$:  602-block  8
+    $$$$$:  602-block  9
+    $$$$$:  602-block 10
+call   16 never executed
+    $$$$$:  602-block 11
+    $$$$$:  602-block 12
+    $$$$$:  602-block 13
+call   17 never executed
+    $$$$$:  602-block 14
+    $$$$$:  602-block 15
+        -:  603:    // Scrie filmele în fișier
+        1:  604:    repo_file.writeAllToFile();
+        1:  604-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  605:
+        -:  606:    // Citește fișierul și verifică datele
+        1:  607:    std::ifstream fin("test_filmee_output.txt");
+        1:  607-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  608:    std::string linie;
+        1:  608-block  0
+call    0 returned 1
+        -:  609:
+        1:  610:    std::getline(fin, linie);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  611:
+        1:  612:    std::getline(fin, linie);
+        1:  612-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  613:
+        1:  614:    fin.close();
+        1:  614-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  615:    repo_file.sterge("The Matri",2024);
+        1:  615-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  615-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  615-block  2
+call    6 returned 1
+    $$$$$:  615-block  3
+call    7 never executed
+    $$$$$:  615-block  4
+    $$$$$:  615-block  5
+        -:  616:
+        -:  617:
+        1:  618:}
+        1:  618-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+    $$$$$:  618-block  1
+call    5 never executed
+    $$$$$:  618-block  2
+call    6 never executed
+    $$$$$:  618-block  3
+call    7 never executed
+    $$$$$:  618-block  4
+call    8 never executed
+    $$$$$:  618-block  5
+call    9 never executed
+        -:  619:
+function _Z8testUndov called 1 returned 100% blocks executed 51%
+        1:  620:void testUndo() {
+        1:  621:    Repo repo;
+        1:  622:    Service service(repo);
+        1:  622-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  623:
+        -:  624:    // Adăugăm un film
+        5:  625:    service.adaugaFilm("Titanic", "Drama", 1997, "Leonardo DiCaprio");
+        1:  625-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  625-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  625-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  625-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  625-block  4
+call   12 returned 1
+        1:  625-block  5
+call   13 returned 1
+        1:  625-block  6
+call   14 returned 1
+    $$$$$:  625-block  7
+call   15 never executed
+    $$$$$:  625-block  8
+    $$$$$:  625-block  9
+    $$$$$:  625-block 10
+call   16 never executed
+    $$$$$:  625-block 11
+    $$$$$:  625-block 12
+    $$$$$:  625-block 13
+call   17 never executed
+    $$$$$:  625-block 14
+    $$$$$:  625-block 15
+        -:  626:
+        1:  627:    service.undo();
+        1:  627-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  628:
+        -:  629:    // Adăugăm un alt film
+        6:  630:    service.adaugaFilm("Inception", "Sci-Fi", 2010, "Leonardo DiCaprio");
+        1:  630-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  630-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  630-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  630-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  630-block  4
+call   12 returned 1
+        1:  630-block  5
+call   13 returned 1
+        1:  630-block  6
+call   14 returned 1
+        1:  630-block  7
+    $$$$$:  630-block  8
+call   15 never executed
+    $$$$$:  630-block  9
+    $$$$$:  630-block 10
+    $$$$$:  630-block 11
+call   16 never executed
+    $$$$$:  630-block 12
+    $$$$$:  630-block 13
+    $$$$$:  630-block 14
+call   17 never executed
+    $$$$$:  630-block 15
+    $$$$$:  630-block 16
+        -:  631:
+        5:  632:    service.modificaFilm("Inception", 2010, "Sci-Fi", 2012, "Leonardo DiCaprio");
+        1:  632-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  632-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  632-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  632-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  632-block  4
+call   12 returned 1
+        1:  632-block  5
+call   13 returned 1
+        1:  632-block  6
+call   14 returned 1
+    $$$$$:  632-block  7
+call   15 never executed
+    $$$$$:  632-block  8
+    $$$$$:  632-block  9
+    $$$$$:  632-block 10
+call   16 never executed
+    $$$$$:  632-block 11
+    $$$$$:  632-block 12
+    $$$$$:  632-block 13
+call   17 never executed
+    $$$$$:  632-block 14
+    $$$$$:  632-block 15
+       2*:  633:    assert(repo.cauta("Inception", 2012).getAn() == 2012);  // Verificăm că filmul a fost modificat
+        1:  633-block  0
+        1:  633-block  1
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  633-block  2
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  633-block  3
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  633-block  4
+branch  9 taken 0 (fallthrough)
+branch 10 taken 1
+    %%%%%:  633-block  5
+call   11 never executed
+        1:  633-block  6
+        1:  633-block  7
+branch 12 taken 1 (fallthrough)
+branch 13 taken 0
+        1:  633-block  8
+call   14 returned 1
+        1:  633-block  9
+branch 15 taken 1 (fallthrough)
+branch 16 taken 0
+    $$$$$:  633-block 10
+branch 17 never executed (fallthrough)
+branch 18 never executed
+    $$$$$:  633-block 11
+call   19 never executed
+    $$$$$:  633-block 12
+    $$$$$:  633-block 13
+branch 20 never executed (fallthrough)
+branch 21 never executed
+    $$$$$:  633-block 14
+        -:  634:
+        1:  635:    service.undo();
+        1:  635-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       3*:  636:    assert(repo.cauta("Inception", 2010).getAn() == 2010);  // Verificăm că filmul a revenit la anul original
+        1:  636-block  0
+        1:  636-block  1
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  636-block  2
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  636-block  3
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  636-block  4
+branch  9 taken 0 (fallthrough)
+branch 10 taken 1
+    %%%%%:  636-block  5
+call   11 never executed
+        1:  636-block  6
+        1:  636-block  7
+branch 12 taken 1 (fallthrough)
+branch 13 taken 0
+        1:  636-block  8
+call   14 returned 1
+        1:  636-block  9
+branch 15 taken 1 (fallthrough)
+branch 16 taken 0
+        1:  636-block 10
+    $$$$$:  636-block 11
+branch 17 never executed (fallthrough)
+branch 18 never executed
+    $$$$$:  636-block 12
+call   19 never executed
+    $$$$$:  636-block 13
+    $$$$$:  636-block 14
+branch 20 never executed (fallthrough)
+branch 21 never executed
+    $$$$$:  636-block 15
+        -:  637:
+        1:  638:    service.stergeFilm("Inception", 2010);
+        1:  638-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  638-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  638-block  2
+call    6 returned 1
+    $$$$$:  638-block  3
+call    7 never executed
+    $$$$$:  638-block  4
+    $$$$$:  638-block  5
+        -:  639:
+        1:  640:    service.undo();
+        1:  640-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  641:    try {
+        1:  642:        service.undo();
+        1:  642-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  643:        service.undo();
+        1:  643-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+    #####:  644:        service.undo();
+    %%%%%:  644-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  645:        service.undo();
+    %%%%%:  645-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  646:        assert(false);
+    %%%%%:  646-block  0
+call    0 never executed
+        1:  647:    }catch (std::exception& e) {
+        1:  647-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  647-block  1
+call    2 returned 1
+        2:  648:        assert(std::string(e.what()) == "Nu exista operatii pentru a fi facute undo.");
+        1:  648-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  648-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  648-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    $$$$$:  648-block  3
+call    9 never executed
+        1:  648-block  4
+        1:  648-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  648-block  6
+call   12 returned 1
+        1:  648-block  7
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+    $$$$$:  648-block  8
+branch 15 never executed (fallthrough)
+branch 16 never executed
+    $$$$$:  648-block  9
+call   17 never executed
+    $$$$$:  648-block 10
+    $$$$$:  648-block 11
+branch 18 never executed (fallthrough)
+branch 19 never executed
+    $$$$$:  648-block 12
+        1:  649:    }
+        1:  649-block  0
+call    0 returned 1
+    $$$$$:  649-block  1
+call    1 never executed
+        -:  650:
+        1:  651:}
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  651-block  0
+call    2 never executed
+    $$$$$:  651-block  1
+call    3 never executed
+        -:  652:
+function _Z15testSetteriFilmv called 1 returned 100% blocks executed 55%
+        1:  653:void testSetteriFilm() {
+        1:  653-block  0
+        6:  654:    Film f{ "Matrix", "SF", 1999, "Keanu Reeves" };
+        1:  654-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  654-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  654-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  654-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  654-block  4
+call   12 returned 1
+        1:  654-block  5
+call   13 returned 1
+        1:  654-block  6
+call   14 returned 1
+        1:  654-block  7
+    $$$$$:  654-block  8
+call   15 never executed
+    $$$$$:  654-block  9
+    $$$$$:  654-block 10
+    $$$$$:  654-block 11
+call   16 never executed
+    $$$$$:  654-block 12
+    $$$$$:  654-block 13
+    $$$$$:  654-block 14
+call   17 never executed
+    $$$$$:  654-block 15
+    $$$$$:  654-block 16
+        -:  655:
+        1:  656:    f.setGen("Actiune");
+        1:  656-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  656-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  656-block  2
+call    6 returned 1
+    $$$$$:  656-block  3
+call    7 never executed
+    $$$$$:  656-block  4
+    $$$$$:  656-block  5
+       1*:  657:    assert(f.getGen() == "Actiune");
+        1:  657-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  657-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  657-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:  657-block  3
+call    8 never executed
+        1:  657-block  4
+        -:  658:
+        1:  659:    f.setAn(2000);
+        1:  659-block  0
+call    0 returned 1
+       1*:  660:    assert(f.getAn() == 2000);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  660-block  0
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  660-block  1
+call    5 never executed
+        1:  660-block  2
+        -:  661:
+        1:  662:    f.setActor("Laurence Fishburne");
+        1:  662-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  662-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  662-block  2
+call    6 returned 1
+    $$$$$:  662-block  3
+call    7 never executed
+    $$$$$:  662-block  4
+    $$$$$:  662-block  5
+       1*:  663:    assert(f.getActor() == "Laurence Fishburne");
+        1:  663-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  663-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  663-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:  663-block  3
+call    8 never executed
+        1:  663-block  4
+        1:  664:}
+        1:  664-block  0
+call    0 returned 1
+    $$$$$:  664-block  1
+call    1 never executed
+        -:  665:
+function _Z23testRepoNouFaraExceptiiv called 1 returned 100% blocks executed 52%
+        1:  666:void testRepoNouFaraExceptii() {
+        1:  667:    RepoNou repo(0.0f); // Probabilitate 0 => nu se aruncă excepții
+        1:  667-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  668:
+        6:  669:    Film f1("Matrix", "SF", 1999, "Keanu Reeves");
+        1:  669-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  669-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  669-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  669-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  669-block  4
+call   12 returned 1
+        1:  669-block  5
+call   13 returned 1
+        1:  669-block  6
+call   14 returned 1
+        1:  669-block  7
+    $$$$$:  669-block  8
+call   15 never executed
+    $$$$$:  669-block  9
+    $$$$$:  669-block 10
+    $$$$$:  669-block 11
+call   16 never executed
+    $$$$$:  669-block 12
+    $$$$$:  669-block 13
+    $$$$$:  669-block 14
+call   17 never executed
+    $$$$$:  669-block 15
+    $$$$$:  669-block 16
+        5:  670:    Film f2("Titanic", "Drama", 1997, "Leonardo DiCaprio");
+        1:  670-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  670-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  670-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  670-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  670-block  4
+call   12 returned 1
+        1:  670-block  5
+call   13 returned 1
+        1:  670-block  6
+call   14 returned 1
+    $$$$$:  670-block  7
+call   15 never executed
+    $$$$$:  670-block  8
+    $$$$$:  670-block  9
+    $$$$$:  670-block 10
+call   16 never executed
+    $$$$$:  670-block 11
+    $$$$$:  670-block 12
+    $$$$$:  670-block 13
+call   17 never executed
+    $$$$$:  670-block 14
+    $$$$$:  670-block 15
+        -:  671:
+        1:  672:    repo.adauga(f1);
+        1:  672-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  673:    repo.adauga(f2);
+        1:  673-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  674:
+       1*:  675:    assert(repo.getAll().size() == 2);
+        1:  675-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:  675-block  1
+call    4 never executed
+        1:  675-block  2
+       3*:  676:    assert(repo.cauta("Matrix", 1999).getActor() == "Keanu Reeves");
+        1:  676-block  0
+        1:  676-block  1
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  676-block  2
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  676-block  3
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  676-block  4
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  676-block  5
+branch 12 taken 0 (fallthrough)
+branch 13 taken 1
+    %%%%%:  676-block  6
+call   14 never executed
+        1:  676-block  7
+        1:  676-block  8
+branch 15 taken 1 (fallthrough)
+branch 16 taken 0
+        1:  676-block  9
+call   17 returned 1
+        1:  676-block 10
+branch 18 taken 1 (fallthrough)
+branch 19 taken 0
+        1:  676-block 11
+    $$$$$:  676-block 12
+branch 20 never executed (fallthrough)
+branch 21 never executed
+    $$$$$:  676-block 13
+call   22 never executed
+    $$$$$:  676-block 14
+    $$$$$:  676-block 15
+branch 23 never executed (fallthrough)
+branch 24 never executed
+    $$$$$:  676-block 16
+        -:  677:
+        5:  678:    repo.modifica("Matrix", 1999, "Actiune", 2000, "Laurence Fishburne");
+        1:  678-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  678-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  678-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  678-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  678-block  4
+call   12 returned 1
+        1:  678-block  5
+call   13 returned 1
+        1:  678-block  6
+call   14 returned 1
+    $$$$$:  678-block  7
+call   15 never executed
+    $$$$$:  678-block  8
+    $$$$$:  678-block  9
+    $$$$$:  678-block 10
+call   16 never executed
+    $$$$$:  678-block 11
+    $$$$$:  678-block 12
+    $$$$$:  678-block 13
+call   17 never executed
+    $$$$$:  678-block 14
+    $$$$$:  678-block 15
+       3*:  679:    assert(repo.cauta("Matrix", 2000).getGen() == "Actiune");
+        1:  679-block  0
+        1:  679-block  1
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  679-block  2
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  679-block  3
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  679-block  4
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  679-block  5
+branch 12 taken 0 (fallthrough)
+branch 13 taken 1
+    %%%%%:  679-block  6
+call   14 never executed
+        1:  679-block  7
+        1:  679-block  8
+branch 15 taken 1 (fallthrough)
+branch 16 taken 0
+        1:  679-block  9
+call   17 returned 1
+        1:  679-block 10
+branch 18 taken 1 (fallthrough)
+branch 19 taken 0
+        1:  679-block 11
+    $$$$$:  679-block 12
+branch 20 never executed (fallthrough)
+branch 21 never executed
+    $$$$$:  679-block 13
+call   22 never executed
+    $$$$$:  679-block 14
+    $$$$$:  679-block 15
+branch 23 never executed (fallthrough)
+branch 24 never executed
+    $$$$$:  679-block 16
+        -:  680:
+        1:  681:    repo.sterge("Titanic", 1997);
+        1:  681-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  681-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  681-block  2
+call    6 returned 1
+    $$$$$:  681-block  3
+call    7 never executed
+    $$$$$:  681-block  4
+    $$$$$:  681-block  5
+       1*:  682:    assert(repo.getAll().size() == 1);
+        1:  682-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:  682-block  1
+call    4 never executed
+        1:  682-block  2
+        1:  683:}
+        1:  683-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:  683-block  1
+call    3 never executed
+    $$$$$:  683-block  2
+call    4 never executed
+    $$$$$:  683-block  3
+call    5 never executed
+        -:  684:
+function _Z21testRepoNouCuExceptiiv called 1 returned 100% blocks executed 66%
+        1:  685:void testRepoNouCuExceptii() {
+        1:  686:    RepoNou repo(1.0f); // Probabilitate 1 => întotdeauna se aruncă excepții
+        1:  686-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  687:
+        5:  688:    Film f("Inception", "SF", 2010, "Leonardo DiCaprio");
+        1:  688-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  688-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  688-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  688-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  688-block  4
+call   12 returned 1
+        1:  688-block  5
+call   13 returned 1
+        1:  688-block  6
+call   14 returned 1
+    $$$$$:  688-block  7
+call   15 never executed
+    $$$$$:  688-block  8
+    $$$$$:  688-block  9
+    $$$$$:  688-block 10
+call   16 never executed
+    $$$$$:  688-block 11
+    $$$$$:  688-block 12
+    $$$$$:  688-block 13
+call   17 never executed
+    $$$$$:  688-block 14
+    $$$$$:  688-block 15
+        -:  689:
+        -:  690:    try {
+        1:  691:        repo.adauga(f);
+        1:  691-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+    #####:  692:        assert(false); // Nu ar trebui să ajungă aici
+    %%%%%:  692-block  0
+call    0 never executed
+        1:  693:    } catch (const RepositoryException& e) {
+        1:  693-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  693-block  1
+call    2 returned 1
+        -:  694:        assert(true);  // Excepția a fost aruncată
+        1:  695:    }
+call    0 returned 1
+        -:  696:
+        -:  697:    try {
+        6:  698:        repo.modifica("Inception", 2010, "Thriller", 2011, "Tom Hardy");
+        1:  698-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  698-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  698-block  2
+call    6 returned 1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1 (throw)
+    $$$$$:  698-block  3
+call    9 never executed
+    $$$$$:  698-block  4
+call   10 never executed
+    $$$$$:  698-block  5
+call   11 never executed
+        1:  698-block  6
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  698-block  7
+call   15 returned 1
+        1:  698-block  8
+        1:  698-block  9
+        1:  698-block 10
+call   16 returned 1
+        1:  698-block 11
+        1:  698-block 12
+        1:  698-block 13
+call   17 returned 1
+        1:  698-block 14
+        1:  698-block 15
+    =====:  699:        assert(false);
+    $$$$$:  699-block  0
+call    0 never executed
+        1:  700:    } catch (const RepositoryException&) {
+        1:  700-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  700-block  1
+call    2 returned 1
+        -:  701:        assert(true);
+        1:  702:    }
+call    0 returned 1
+        -:  703:
+        -:  704:    try {
+        2:  705:        repo.sterge("Inception", 2010);
+        1:  705-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+    $$$$$:  705-block  1
+call    3 never executed
+        1:  705-block  2
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  705-block  3
+call    7 returned 1
+        1:  705-block  4
+        1:  705-block  5
+    =====:  706:        assert(false);
+    $$$$$:  706-block  0
+call    0 never executed
+        1:  707:    } catch (const RepositoryException&) {
+        1:  707-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  707-block  1
+call    2 returned 1
+        -:  708:        assert(true);
+        1:  709:    }
+call    0 returned 1
+        1:  710:}
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  710-block  0
+call    2 never executed
+    $$$$$:  710-block  1
+call    3 never executed
+        -:  711:
+function _Z7testSetv called 1 returned 100% blocks executed 45%
+        1:  712:void testSet(){
+        1:  713:    RepoNou repo(0.0f);
+        1:  713-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  714:
+        -:  715:    std::vector<Film> filmeNoi = {
+        -:  716:        Film("Matrix", "SF", 1999, "Keanu Reeves"),
+        -:  717:        Film("Inception", "SF", 2010, "Leonardo DiCaprio")
+        4:  718:    };
+        1:  718-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  718-block  1
+        3:  718-block  2
+branch  3 taken 2 (fallthrough)
+branch  4 taken 1
+        2:  718-block  3
+call    5 returned 2
+    $$$$$:  718-block  4
+    $$$$$:  718-block  5
+    $$$$$:  718-block  6
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  718-block  7
+call    8 never executed
+    $$$$$:  718-block  8
+        -:  719:
+        -:  720:    try {
+        1:  721:        repo.setAll(filmeNoi);
+        -:  722:        assert(true);
+        -:  723:    } catch (const RepositoryException& e) {
+        -:  724:        assert(false);
+        -:  725:    }
+        4:  726:}
+        1:  726-block  0
+        1:  726-block  1
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  726-block  2
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  726-block  3
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  726-block  4
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  726-block  5
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  726-block  6
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  726-block  7
+call   18 returned 1
+branch 19 taken 1 (fallthrough)
+branch 20 taken 0 (throw)
+        1:  726-block  8
+call   21 returned 1
+branch 22 taken 1 (fallthrough)
+branch 23 taken 0 (throw)
+        1:  726-block  9
+        1:  726-block 10
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+call   27 returned 1
+call   28 returned 1
+call   29 returned 1
+        1:  726-block 11
+call   30 returned 1
+call   31 returned 1
+call   32 returned 1
+    $$$$$:  726-block 12
+call   33 never executed
+    $$$$$:  726-block 13
+    $$$$$:  726-block 14
+call   34 never executed
+    $$$$$:  726-block 15
+    $$$$$:  726-block 16
+call   35 never executed
+    $$$$$:  726-block 17
+    $$$$$:  726-block 18
+call   36 never executed
+    $$$$$:  726-block 19
+    $$$$$:  726-block 20
+call   37 never executed
+    $$$$$:  726-block 21
+    $$$$$:  726-block 22
+call   38 never executed
+    $$$$$:  726-block 23
+    $$$$$:  726-block 24
+    $$$$$:  726-block 25
+branch 39 never executed (fallthrough)
+branch 40 never executed
+    $$$$$:  726-block 26
+    $$$$$:  726-block 27
+branch 41 never executed (fallthrough)
+branch 42 never executed
+    $$$$$:  726-block 28
+call   43 never executed
+    $$$$$:  726-block 29
+call   44 never executed
+        -:  727:
+function _Z10testconstrv called 1 returned 100% blocks executed 56%
+        1:  728:void testconstr(){
+        -:  729:    try {
+        1:  730:        RepoNou repo(-0.5f); // Probabilitatea este mai mică decât 0 => trebuie să fie aruncată o excepție
+        1:  730-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+    #####:  731:        assert(false); // Nu ar trebui să ajungem aici
+    %%%%%:  731-block  0
+call    0 never executed
+        1:  732:    } catch (const std::invalid_argument& e) {
+    $$$$$:  732-block  0
+call    0 never executed
+        1:  732-block  1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+        1:  732-block  2
+call    3 returned 1
+        -:  733:        // Excepția a fost aruncată corect, validăm mesajul
+        -:  734:        assert(true);
+        2:  735:        assert(std::string(e.what()) == "Probabilitatea trebuie sa fie intre 0 si 1.");
+        1:  735-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  735-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  735-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    $$$$$:  735-block  3
+call    9 never executed
+        1:  735-block  4
+        1:  735-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  735-block  6
+call   12 returned 1
+        1:  735-block  7
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+    $$$$$:  735-block  8
+branch 15 never executed (fallthrough)
+branch 16 never executed
+    $$$$$:  735-block  9
+call   17 never executed
+    $$$$$:  735-block 10
+    $$$$$:  735-block 11
+branch 18 never executed (fallthrough)
+branch 19 never executed
+    $$$$$:  735-block 12
+        1:  736:    }
+        1:  736-block  0
+call    0 returned 1
+    $$$$$:  736-block  1
+call    1 never executed
+        1:  737:}
+        -:  738:
+function _ZN5Teste12ruleazaTesteEv called 1 returned 100% blocks executed 100%
+        1:  739:void Teste::ruleazaTeste() {
+        1:  740:    testFilm();
+        1:  740-block  0
+call    0 returned 1
+        1:  741:    testRepo();
+call    0 returned 1
+        1:  742:    testService();
+call    0 returned 1
+        1:  743:    testRepoModifica();
+call    0 returned 1
+        1:  744:    testServiceModificaFilm();
+call    0 returned 1
+        1:  745:    testValidator();
+call    0 returned 1
+        1:  746:    testCautare();
+call    0 returned 1
+        1:  747:    testFiltrare();
+call    0 returned 1
+        1:  748:    testMyListAdd();
+call    0 returned 1
+        1:  749:    testMyListRemove();
+call    0 returned 1
+        1:  750:    testMyListUpdate();
+call    0 returned 1
+        1:  751:    testMyListOperatorIndex();
+call    0 returned 1
+        1:  752:    testMyListCapacity();
+call    0 returned 1
+        1:  753:    testMyListCopyConstructor();
+call    0 returned 1
+        1:  754:    testConstructorCopiere();
+call    0 returned 1
+        1:  755:    testOperatorAtribuire();
+call    0 returned 1
+        1:  756:    testMyListIterators();
+call    0 returned 1
+        1:  757:    testSortariFilme();
+call    0 returned 1
+        1:  758:    test_move_assignment();
+call    0 returned 1
+        1:  759:    test_move_constructor();
+call    0 returned 1
+        1:  760:    testCosFilme();
+call    0 returned 1
+        1:  761:    testCosInchirieriService();
+call    0 returned 1
+        1:  762:    test_readAllFromFile();
+call    0 returned 1
+        1:  763:    test_writeAllToFile();
+call    0 returned 1
+        1:  764:    testUndo();
+call    0 returned 1
+        1:  765:    testSetteriFilm();
+call    0 returned 1
+        1:  766:    testRepoNouFaraExceptii();
+call    0 returned 1
+        1:  767:    testRepoNouCuExceptii();
+call    0 returned 1
+        1:  768:    testSet();
+call    0 returned 1
+        1:  769:    testconstr();
+call    0 returned 1
+        -:  770:
+        1:  771:    std::cout << "Toate testele au trecut!\n";
+call    0 returned 1
+        1:  772:}

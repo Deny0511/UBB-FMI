@@ -1,0 +1,897 @@
+        -:    0:Source:/mnt/c/Users/urdad/lab2-6/teste.c
+        -:    0:Graph:/mnt/c/Users/urdad/lab2-6/cmake-build-debug-wsl-coverage/CMakeFiles/lab2_6.dir/teste.c.gcno
+        -:    0:Data:/mnt/c/Users/urdad/lab2-6/cmake-build-debug-wsl-coverage/CMakeFiles/lab2_6.dir/teste.c.gcda
+        -:    0:Runs:1
+        -:    1:#include<stdio.h>
+        -:    2:#include<string.h>
+        -:    3:#include<assert.h>
+        -:    4:#include <stdlib.h>
+        -:    5:#include "Cheltuieli.h"
+        -:    6:#include "service.h"
+        -:    7:#include "repo.h"
+        -:    8:
+        -:    9:
+function test_add called 1 returned 100% blocks executed 68%
+        1:   10:void test_add() {
+        1:   11:  ListaCheltuieli lista = {
+        -:   12:    .lungime = 0,
+        -:   13:    .capacitate = 10,
+        1:   14:    .cheltuiala = (Cheltuiala*) malloc(10 * sizeof(Cheltuiala))
+        -:   15:};
+        1:   16:  int rezultat = add(&lista, 15, 200, "mancare");
+        1:   16-block  0
+call    0 returned 1
+       1*:   17:  assert(rezultat == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   17-block  0
+call    2 never executed
+       1*:   18:  assert(lista.lungime == 1);
+        1:   18-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   18-block  1
+call    2 never executed
+       1*:   19:  assert(lista.cheltuiala[0].zi == 15);
+        1:   19-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   19-block  1
+call    2 never executed
+       1*:   20:  assert(lista.cheltuiala[0].suma == 200);
+        1:   20-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   20-block  1
+call    2 never executed
+       1*:   21:  assert(strcmp(lista.cheltuiala[0].tip, "mancare") == 0);
+        1:   21-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   21-block  1
+call    2 never executed
+        -:   22:
+      101:   23:  for (int i = 0; i < MAX_CHELTUIELI; i++) {
+        1:   23-block  0
+      101:   23-block  1
+branch  0 taken 100
+branch  1 taken 1 (fallthrough)
+      100:   24:    add(&lista, 1, 100, "altele");
+      100:   24-block  0
+call    0 returned 100
+        -:   25:  }
+        1:   26:  rezultat = add(&lista, 1, 100, "altele");
+        1:   26-block  0
+call    0 returned 1
+       1*:   27:  assert(rezultat == -1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   27-block  0
+call    2 never executed
+        1:   28:  free(lista.cheltuiala);
+        1:   29:}
+        -:   30:
+function test_modificare called 1 returned 100% blocks executed 64%
+        1:   31:void test_modificare() {
+        1:   32:  ListaCheltuieli lista = {
+        -:   33:    .lungime = 0,
+        -:   34:    .capacitate = 10,
+        1:   35:    .cheltuiala = (Cheltuiala*) malloc(10 * sizeof(Cheltuiala))
+        -:   36:};
+        1:   37:  add(&lista, 10, 150, "transport");
+        1:   37-block  0
+call    0 returned 1
+        -:   38:
+        1:   39:  int rezultat = modificare(&lista, 0, 12, 170, "telefon&internet");
+call    0 returned 1
+       1*:   40:  assert(rezultat == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   40-block  0
+call    2 never executed
+       1*:   41:  assert(lista.cheltuiala[0].zi == 12);
+        1:   41-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   41-block  1
+call    2 never executed
+       1*:   42:  assert(lista.cheltuiala[0].suma == 170);
+        1:   42-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   42-block  1
+call    2 never executed
+       1*:   43:  assert(strcmp(lista.cheltuiala[0].tip, "telefon&internet") == 0);
+        1:   43-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   43-block  1
+call    2 never executed
+        -:   44:
+        1:   45:  rezultat = modificare(&lista, 10, 15, 180, "imbracaminte");
+        1:   45-block  0
+call    0 returned 1
+       1*:   46:  assert(rezultat == -2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   46-block  0
+call    2 never executed
+        1:   47:  free(lista.cheltuiala);
+        1:   48:}
+        -:   49:
+        -:   50:
+function test_stergere called 1 returned 100% blocks executed 68%
+        1:   51:void test_stergere() {
+        1:   52:  ListaCheltuieli lista = {
+        -:   53:    .lungime = 0,
+        -:   54:    .capacitate = 10,
+        1:   55:    .cheltuiala = (Cheltuiala*) malloc(10 * sizeof(Cheltuiala))
+        -:   56:};
+        1:   57:  add(&lista, 25, 200, "mancare");
+        1:   57-block  0
+call    0 returned 1
+        -:   58:
+        1:   59:  int rezultat = stergere(&lista, 0);
+call    0 returned 1
+       1*:   60:  assert(rezultat == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   60-block  0
+call    2 never executed
+       1*:   61:  assert(lista.lungime == 0);
+        1:   61-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   61-block  1
+call    2 never executed
+        -:   62:
+        1:   63:  add(&lista, 25, 200, "mancare");
+        1:   63-block  0
+call    0 returned 1
+        1:   64:  add(&lista, 26, 200, "mancare");
+call    0 returned 1
+        1:   65:  rezultat = stergere(&lista, 0);
+call    0 returned 1
+       1*:   66:  assert(rezultat == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   66-block  0
+call    2 never executed
+       1*:   67:  assert(lista.lungime == 1);
+        1:   67-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   67-block  1
+call    2 never executed
+        -:   68:
+        1:   69:  rezultat = stergere(&lista, 0);
+        1:   69-block  0
+call    0 returned 1
+       1*:   70:  assert(rezultat == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   70-block  0
+call    2 never executed
+       1*:   71:  assert(lista.lungime == 0);
+        1:   71-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   71-block  1
+call    2 never executed
+        -:   72:
+        -:   73:
+        -:   74:
+        1:   75:  rezultat = stergere(&lista, 0);
+        1:   75-block  0
+call    0 returned 1
+       1*:   76:  assert(rezultat == -2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   76-block  0
+call    2 never executed
+        -:   77:
+        1:   78:  rezultat = stergere(&lista, 10);
+        1:   78-block  0
+call    0 returned 1
+       1*:   79:  assert(rezultat == -2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   79-block  0
+call    2 never executed
+        1:   80:  free(lista.cheltuiala);
+        1:   81:}
+        -:   82:
+function test_vizualizare called 1 returned 100% blocks executed 68%
+        1:   83:void test_vizualizare() {
+        -:   84:
+        1:   85:  ListaCheltuieli lista = {
+        -:   86:    .lungime = 0,
+        -:   87:    .capacitate = 10,
+        1:   88:    .cheltuiala = (Cheltuiala*) malloc(10 * sizeof(Cheltuiala))
+        -:   89:};
+        -:   90:
+        1:   91:  add(&lista, 15, 100, "mancare");
+        1:   91-block  0
+call    0 returned 1
+        1:   92:  add(&lista, 20, 200, "transport");
+call    0 returned 1
+        1:   93:  add(&lista, 15, 150, "telefon&internet");
+call    0 returned 1
+        -:   94:
+        -:   95:  // Test pentru zi
+        1:   96:  ListaCheltuieli *lista_filtrata = vizualizare(&lista, "zi", "15");
+call    0 returned 1
+       1*:   97:  assert(lista_filtrata != NULL);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   97-block  0
+call    2 never executed
+       1*:   98:  assert(lista_filtrata->lungime == 2);
+        1:   98-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   98-block  1
+call    2 never executed
+        1:   99:  free(lista_filtrata);
+        -:  100:
+        -:  101:  // Test pentru suma
+        1:  102:  lista_filtrata = vizualizare(&lista, "suma", "100");
+        1:  102-block  0
+call    0 returned 1
+       1*:  103:  assert(lista_filtrata != NULL);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  103-block  0
+call    2 never executed
+       1*:  104:  assert(lista_filtrata->lungime == 1);
+        1:  104-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  104-block  1
+call    2 never executed
+        1:  105:  free(lista_filtrata);
+        -:  106:
+        -:  107:  // Test pentru tip
+        1:  108:  lista_filtrata = vizualizare(&lista, "tip", "telefon&internet");
+        1:  108-block  0
+call    0 returned 1
+       1*:  109:  assert(lista_filtrata != NULL);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  109-block  0
+call    2 never executed
+       1*:  110:  assert(lista_filtrata->lungime == 1);
+        1:  110-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  110-block  1
+call    2 never executed
+        1:  111:  free(lista_filtrata);
+        -:  112:
+        -:  113:  // Test pentru suma inexistenta
+        1:  114:  lista_filtrata = vizualizare(&lista, "suma", "999.9");
+        1:  114-block  0
+call    0 returned 1
+       1*:  115:  assert(lista_filtrata == NULL);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  115-block  0
+call    2 never executed
+        -:  116:
+        -:  117:  // Test pentru tip inexistent
+        1:  118:  lista_filtrata = vizualizare(&lista, "tip", "altele");
+        1:  118-block  0
+call    0 returned 1
+       1*:  119:  assert(lista_filtrata == NULL);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  119-block  0
+call    2 never executed
+        -:  120:
+        1:  121:  free(lista_filtrata);
+        1:  122:  free(lista.cheltuiala);
+        -:  123:
+        1:  124:}
+        -:  125:
+function test_ordonare called 1 returned 100% blocks executed 70%
+        1:  126:void test_ordonare(){
+        1:  127:  ListaCheltuieli lista = creeaza_lista(5);
+        1:  127-block  0
+call    0 returned 1
+        -:  128:
+        1:  129:  add(&lista, 15, 100, "mancare");
+call    0 returned 1
+        1:  130:  add(&lista, 20, 50, "transport");
+call    0 returned 1
+        1:  131:  add(&lista, 15, 150, "telefon&internet");
+call    0 returned 1
+        1:  132:  char* criteriu = "suma";
+        1:  133:  ordonare(&lista,criteriu,compara_suma);
+call    0 returned 1
+        -:  134:
+       1*:  135:  assert(lista.cheltuiala[0].suma == 50);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  135-block  0
+call    2 never executed
+       1*:  136:  assert(lista.cheltuiala[1].suma == 100);
+        1:  136-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  136-block  1
+call    2 never executed
+       1*:  137:  assert(lista.cheltuiala[2].suma == 150);
+        1:  137-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  137-block  1
+call    2 never executed
+        -:  138:
+        1:  139:  criteriu = "tip";
+        1:  140:  ordonare(&lista,criteriu,compara_tip);
+        1:  140-block  0
+call    0 returned 1
+        -:  141:
+       1*:  142:  assert(strcmp(lista.cheltuiala[0].tip,"mancare")==0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  142-block  0
+call    2 never executed
+       1*:  143:  assert(strcmp(lista.cheltuiala[1].tip,"telefon&internet" )==0);
+        1:  143-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  143-block  1
+call    2 never executed
+       1*:  144:  assert(strcmp(lista.cheltuiala[2].tip,"transport")==0);
+        1:  144-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  144-block  1
+call    2 never executed
+        -:  145:
+        1:  146:  distruge_lista(&lista);
+        1:  146-block  0
+call    0 returned 1
+        -:  147:
+        1:  148:}
+        -:  149:
+        -:  150:
+function test_ordonare_desc called 1 returned 100% blocks executed 68%
+        1:  151:void test_ordonare_desc(){
+        1:  152:  ListaCheltuieli lista = {
+        -:  153:    .lungime = 0,
+        -:  154:    .capacitate = 10,
+        1:  155:    .cheltuiala = (Cheltuiala*) malloc(10 * sizeof(Cheltuiala))
+        -:  156:};
+        -:  157:
+        1:  158:  add(&lista, 15, 100, "mancare");
+        1:  158-block  0
+call    0 returned 1
+        1:  159:  add(&lista, 20, 50, "transport");
+call    0 returned 1
+        1:  160:  add(&lista, 15, 150, "telefon&internet");
+call    0 returned 1
+        1:  161:  char* criteriu = "suma";
+        1:  162:  ordonare_desc(&lista,criteriu,compara_suma_desc);
+call    0 returned 1
+        -:  163:
+       1*:  164:  assert(lista.cheltuiala[0].suma == 150);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  164-block  0
+call    2 never executed
+       1*:  165:  assert(lista.cheltuiala[1].suma == 100);
+        1:  165-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  165-block  1
+call    2 never executed
+       1*:  166:  assert(lista.cheltuiala[2].suma == 50);
+        1:  166-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  166-block  1
+call    2 never executed
+        -:  167:
+        1:  168:  criteriu = "tip";
+        1:  169:  ordonare_desc(&lista,criteriu,compara_tip_desc);
+        1:  169-block  0
+call    0 returned 1
+        -:  170:
+       1*:  171:  assert(strcmp(lista.cheltuiala[0].tip,"transport")==0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  171-block  0
+call    2 never executed
+       1*:  172:  assert(strcmp(lista.cheltuiala[1].tip,"telefon&internet" )==0);
+        1:  172-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  172-block  1
+call    2 never executed
+       1*:  173:  assert(strcmp(lista.cheltuiala[2].tip,"mancare")==0);
+        1:  173-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  173-block  1
+call    2 never executed
+        1:  174:  distruge_lista(&lista);
+        1:  174-block  0
+call    0 returned 1
+        1:  175:}
+        -:  176:
+function test_add_service called 1 returned 100% blocks executed 68%
+        1:  177:void test_add_service() {
+        1:  178:  ListaCheltuieli lista = {
+        -:  179:    .lungime = 0,
+        -:  180:    .capacitate = 10,
+        1:  181:    .cheltuiala = (Cheltuiala*) malloc(10 * sizeof(Cheltuiala))
+        -:  182:};
+        -:  183:
+        1:  184:  int rezultat = add_cheltuiala(&lista, 15, 200, "mancare");
+        1:  184-block  0
+call    0 returned 1
+       1*:  185:  assert(rezultat == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  185-block  0
+call    2 never executed
+       1*:  186:  assert(lista.lungime == 1);
+        1:  186-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  186-block  1
+call    2 never executed
+       1*:  187:  assert(lista.cheltuiala[0].zi == 15);
+        1:  187-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  187-block  1
+call    2 never executed
+       1*:  188:  assert(lista.cheltuiala[0].suma == 200);
+        1:  188-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  188-block  1
+call    2 never executed
+       1*:  189:  assert(strcmp(lista.cheltuiala[0].tip, "mancare") == 0);
+        1:  189-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  189-block  1
+call    2 never executed
+        -:  190:
+        1:  191:  rezultat = add_cheltuiala(&lista, 34, 100, "altele");
+        1:  191-block  0
+call    0 returned 1
+       1*:  192:  assert(rezultat == 3);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  192-block  0
+call    2 never executed
+        -:  193:
+        1:  194:  rezultat = add_cheltuiala(&lista, 4, -4, "altele");
+        1:  194-block  0
+call    0 returned 1
+       1*:  195:  assert(rezultat == 4);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  195-block  0
+call    2 never executed
+        -:  196:
+        1:  197:  rezultat = add_cheltuiala(&lista, 2, 100, "apa");
+        1:  197-block  0
+call    0 returned 1
+       1*:  198:  assert(rezultat == 5);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  198-block  0
+call    2 never executed
+        -:  199:
+      101:  200:  for (int i = 0; i < MAX_CHELTUIELI; i++) {
+        1:  200-block  0
+      101:  200-block  1
+branch  0 taken 100
+branch  1 taken 1 (fallthrough)
+      100:  201:    add(&lista, 1, 100, "altele");
+      100:  201-block  0
+call    0 returned 100
+        -:  202:  }
+        1:  203:  rezultat = add_cheltuiala(&lista, 1, 100, "altele");
+        1:  203-block  0
+call    0 returned 1
+       1*:  204:  assert(rezultat == -1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  204-block  0
+call    2 never executed
+        1:  205:  free(lista.cheltuiala);
+        1:  206:}
+        -:  207:
+function test_modificare_service called 1 returned 100% blocks executed 67%
+        1:  208:void test_modificare_service() {
+        1:  209:  ListaCheltuieli lista = creeaza_lista(10);
+        1:  209-block  0
+call    0 returned 1
+        1:  210:  add(&lista, 10, 150, "transport");
+call    0 returned 1
+        -:  211:
+        1:  212:  int rezultat = modifica_cheltuiala(&lista, 0, 12, 170, "telefon&internet");
+call    0 returned 1
+       1*:  213:  assert(rezultat == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  213-block  0
+call    2 never executed
+       1*:  214:  assert(lista.cheltuiala[0].zi == 12);
+        1:  214-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  214-block  1
+call    2 never executed
+       1*:  215:  assert(lista.cheltuiala[0].suma == 170);
+        1:  215-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  215-block  1
+call    2 never executed
+       1*:  216:  assert(strcmp(lista.cheltuiala[0].tip, "telefon&internet") == 0);
+        1:  216-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  216-block  1
+call    2 never executed
+        -:  217:
+        1:  218:  rezultat = modifica_cheltuiala(&lista, 0, 36, 170, "telefon&internet");
+        1:  218-block  0
+call    0 returned 1
+       1*:  219:  assert(rezultat == 3);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  219-block  0
+call    2 never executed
+        -:  220:
+        1:  221:  rezultat = modifica_cheltuiala(&lista, 0, 12, -170, "telefon&internet");
+        1:  221-block  0
+call    0 returned 1
+       1*:  222:  assert(rezultat == 4);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  222-block  0
+call    2 never executed
+        -:  223:
+        1:  224:  rezultat = modifica_cheltuiala(&lista, 0, 12, 170, "telefon");
+        1:  224-block  0
+call    0 returned 1
+       1*:  225:  assert(rezultat == 5);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  225-block  0
+call    2 never executed
+        -:  226:
+        1:  227:  rezultat = modifica_cheltuiala(&lista, 10, 15, 180, "imbracaminte");
+        1:  227-block  0
+call    0 returned 1
+       1*:  228:  assert(rezultat == -2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  228-block  0
+call    2 never executed
+        1:  229:  free(lista.cheltuiala);
+        1:  230:}
+        -:  231:
+function test_stergere_service called 1 returned 100% blocks executed 70%
+        1:  232:void test_stergere_service() {
+        1:  233:  ListaCheltuieli lista = {
+        -:  234:    .lungime = 0,
+        -:  235:    .capacitate = 10,
+        1:  236:    .cheltuiala = (Cheltuiala*) malloc(10 * sizeof(Cheltuiala))
+        -:  237:};
+        1:  238:  add(&lista, 25, 200, "mancare");
+        1:  238-block  0
+call    0 returned 1
+        -:  239:
+        1:  240:  int rezultat = sterge_cheltuiala(&lista, 0);
+call    0 returned 1
+       1*:  241:  assert(rezultat == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  241-block  0
+call    2 never executed
+       1*:  242:  assert(lista.lungime == 0);
+        1:  242-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  242-block  1
+call    2 never executed
+        -:  243:
+        1:  244:  rezultat = sterge_cheltuiala(&lista, 10);
+        1:  244-block  0
+call    0 returned 1
+       1*:  245:  assert(rezultat == -2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  245-block  0
+call    2 never executed
+        1:  246:  free(lista.cheltuiala);
+        1:  247:}
+function test_get_all called 1 returned 100% blocks executed 68%
+        1:  248:void test_get_all() {
+        1:  249:  ListaCheltuieli lista = creeaza_lista(3);
+        1:  249-block  0
+call    0 returned 1
+        1:  250:  add(&lista, 1, 100, "Mancare");
+call    0 returned 1
+        1:  251:  add(&lista, 2, 200, "Transport");
+call    0 returned 1
+        -:  252:
+        1:  253:  ListaCheltuieli *copia = get_all(&lista);
+call    0 returned 1
+       1*:  254:  assert(copia != NULL);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  254-block  0
+call    2 never executed
+       1*:  255:  assert(copia->lungime == lista.lungime);
+        1:  255-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  255-block  1
+call    2 never executed
+       1*:  256:  assert(copia->capacitate == lista.capacitate);
+        1:  256-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  256-block  1
+call    2 never executed
+       1*:  257:  assert(copia->cheltuiala != NULL);
+        1:  257-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  257-block  1
+call    2 never executed
+       1*:  258:  assert(copia->cheltuiala[0].zi == 1);
+        1:  258-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  258-block  1
+call    2 never executed
+       1*:  259:  assert(copia->cheltuiala[1].suma == 200);
+        1:  259-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  259-block  1
+call    2 never executed
+        -:  260:
+        1:  261:  distruge_lista(copia);
+        1:  261-block  0
+call    0 returned 1
+        1:  262:  free(copia);
+        1:  263:  distruge_lista(&lista);
+call    0 returned 1
+        1:  264:}
+        -:  265:
+        -:  266:
+function test_get_all_service called 1 returned 100% blocks executed 68%
+        1:  267:void test_get_all_service() {
+        1:  268:  ListaCheltuieli lista = creeaza_lista(3);
+        1:  268-block  0
+call    0 returned 1
+        1:  269:  add(&lista, 1, 100, "Mancare");
+call    0 returned 1
+        1:  270:  add(&lista, 2, 200, "Transport");
+call    0 returned 1
+        -:  271:
+        1:  272:  ListaCheltuieli *copia = get_all_(&lista);
+call    0 returned 1
+       1*:  273:  assert(copia != NULL);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  273-block  0
+call    2 never executed
+       1*:  274:  assert(copia->lungime == lista.lungime);
+        1:  274-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  274-block  1
+call    2 never executed
+       1*:  275:  assert(copia->capacitate == lista.capacitate);
+        1:  275-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  275-block  1
+call    2 never executed
+       1*:  276:  assert(copia->cheltuiala != NULL);
+        1:  276-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  276-block  1
+call    2 never executed
+       1*:  277:  assert(copia->cheltuiala[0].zi == 1);
+        1:  277-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  277-block  1
+call    2 never executed
+       1*:  278:  assert(copia->cheltuiala[1].suma == 200);
+        1:  278-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  278-block  1
+call    2 never executed
+        -:  279:
+        1:  280:  distruge_lista(copia);
+        1:  280-block  0
+call    0 returned 1
+        1:  281:  free(copia);
+        1:  282:  distruge_lista(&lista);
+call    0 returned 1
+        -:  283:
+        1:  284:}
+        -:  285:
+function test_creeaza_lista called 1 returned 100% blocks executed 75%
+        1:  286:void test_creeaza_lista() {
+        1:  287:  ListaCheltuieli lista = creeaza_lista(10);
+        1:  287-block  0
+call    0 returned 1
+       1*:  288:  assert(lista.lungime == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  288-block  0
+call    2 never executed
+        1:  289:  free(lista.cheltuiala);
+        -:  290:
+        1:  291:}
+        -:  292:
+function test_distruge_lista called 1 returned 100% blocks executed 80%
+        1:  293:void test_distruge_lista() {
+        1:  294:  ListaCheltuieli lista = creeaza_lista(10);
+        1:  294-block  0
+call    0 returned 1
+        1:  295:  lista.lungime = 5;
+        1:  296:  distruge_lista(&lista);
+call    0 returned 1
+       1*:  297:  assert(lista.lungime == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  297-block  0
+call    2 never executed
+        1:  298:}
+        -:  299:
+function test_redimensioneaza_lista called 1 returned 100% blocks executed 71%
+        1:  300:void test_redimensioneaza_lista() {
+        1:  301:  ListaCheltuieli lista = creeaza_lista(10);
+        1:  301-block  0
+call    0 returned 1
+        1:  302:  lista.lungime = 5;
+        1:  303:  redimensioneaza_lista(&lista);
+call    0 returned 1
+        -:  304:
+       1*:  305:  assert(lista.capacitate == 20);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  305-block  0
+call    2 never executed
+       1*:  306:  assert(lista.lungime == 5);
+        1:  306-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  306-block  1
+call    2 never executed
+        1:  307:  free(lista.cheltuiala);
+        -:  308:
+        1:  309:}
+        -:  310:
+function test_micsoreaza_lista called 1 returned 100% blocks executed 82%
+        1:  311:void test_micsoreaza_lista() {
+        1:  312:  ListaCheltuieli lista1 = creeaza_lista(2);
+        1:  312-block  0
+call    0 returned 1
+        1:  313:  micsoreaza_lista(&lista1);
+call    0 returned 1
+       1*:  314:  assert(lista1.capacitate == 2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  314-block  0
+call    2 never executed
+        1:  315:  distruge_lista(&lista1);
+        1:  315-block  0
+call    0 returned 1
+        -:  316:
+        1:  317:  ListaCheltuieli lista2 = creeaza_lista(8);
+call    0 returned 1
+        1:  318:  add(&lista2, 1, 100, "Mancare");
+call    0 returned 1
+        1:  319:  add(&lista2, 2, 200, "Transport");
+call    0 returned 1
+        -:  320:
+        1:  321:  micsoreaza_lista(&lista2);
+call    0 returned 1
+       1*:  322:  assert(lista2.capacitate == 4);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  322-block  0
+call    2 never executed
+       1*:  323:  assert(lista2.lungime == 2);
+        1:  323-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  323-block  1
+call    2 never executed
+        -:  324:
+        1:  325:  distruge_lista(&lista2);
+        1:  325-block  0
+call    0 returned 1
+        -:  326:
+        1:  327:  ListaCheltuieli lista3 = creeaza_lista(8);
+call    0 returned 1
+        1:  328:  add(&lista3, 1, 100, "Mancare");
+call    0 returned 1
+        1:  329:  free(lista3.cheltuiala);
+        -:  330:
+        1:  331:}
+        -:  332:
+function test_creeaza_cheltuiala called 1 returned 100% blocks executed 62%
+        1:  333:void test_creeaza_cheltuiala() {
+        -:  334:
+        1:  335:  Cheltuiala c = creeazaCheltuiala(12,123,"mancare");
+        1:  335-block  0
+call    0 returned 1
+       1*:  336:  assert(c.zi == 12);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  336-block  0
+call    2 never executed
+       1*:  337:  assert(c.suma == 123);
+        1:  337-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  337-block  1
+call    2 never executed
+       1*:  338:  assert(strcmp(c.tip, "mancare") == 0);
+        1:  338-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  338-block  1
+call    2 never executed
+        -:  339:
+        1:  340:}
+        -:  341:
+        -:  342:
+function ruleaza_toate_testele called 1 returned 100% blocks executed 100%
+        1:  343:void ruleaza_toate_testele() {
+        1:  344:  test_add();
+        1:  344-block  0
+call    0 returned 1
+        1:  345:  test_modificare();
+call    0 returned 1
+        1:  346:  test_stergere();
+call    0 returned 1
+        1:  347:  test_vizualizare();
+call    0 returned 1
+        1:  348:  test_ordonare();
+call    0 returned 1
+        1:  349:  test_ordonare_desc();
+call    0 returned 1
+        1:  350:  test_add_service();
+call    0 returned 1
+        1:  351:  test_modificare_service();
+call    0 returned 1
+        1:  352:  test_stergere_service();
+call    0 returned 1
+        1:  353:  test_get_all();
+call    0 returned 1
+        1:  354:  test_get_all_service();
+call    0 returned 1
+        1:  355:  test_creeaza_lista();
+call    0 returned 1
+        1:  356:  test_distruge_lista();
+call    0 returned 1
+        1:  357:  test_redimensioneaza_lista();
+call    0 returned 1
+        1:  358:  test_micsoreaza_lista();
+call    0 returned 1
+        1:  359:  test_creeaza_cheltuiala();
+call    0 returned 1
+        1:  360:}

@@ -1,0 +1,26 @@
+        -:    0:Source:/mnt/c/Users/urdad/lab2-6/main.c
+        -:    0:Graph:/mnt/c/Users/urdad/lab2-6/cmake-build-debug-wsl-coverage/CMakeFiles/lab2_6.dir/main.c.gcno
+        -:    0:Data:/mnt/c/Users/urdad/lab2-6/cmake-build-debug-wsl-coverage/CMakeFiles/lab2_6.dir/main.c.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:#include <stdio.h>
+        -:    3:#include <stdlib.h>
+        -:    4:#include "ui.h"
+        -:    5:#include "teste.h"
+        -:    6:
+        -:    7:
+function main called 1 returned 100% blocks executed 100%
+        1:    8:int main() {
+        1:    9:    printf("Rularea testelor...\n");
+        1:    9-block  0
+call    0 returned 1
+        1:   10:    ruleaza_toate_testele();
+call    0 returned 1
+        -:   11:
+        1:   12:     printf("Toate testele au fost rulate cu succes!\n");
+call    0 returned 1
+        -:   13:
+        1:   14:     ruleaza();
+call    0 returned 1
+        1:   15:    return 0;
+        -:   16:}

@@ -1,0 +1,466 @@
+        -:    0:Source:C:/Users/urdad/lab2-6/ui.c
+        -:    0:Graph:C:\Users\urdad\lab2-6\cmake-build-debug-coverage\CMakeFiles\lab2_6.dir\ui.c.gcno
+        -:    0:Data:C:\Users\urdad\lab2-6\cmake-build-debug-coverage\CMakeFiles\lab2_6.dir\ui.c.gcda
+        -:    0:Runs:1
+        -:    1:#include <stdio.h>
+        -:    2:#include <string.h>
+        -:    3:#include "ui.h"
+        -:    4:#include <stdlib.h>
+        -:    5:#include "cheltuieli.h"
+        -:    6:#include "service.h"
+        -:    7:#include "validator.h"
+        -:    8:#include "repo.h"
+        -:    9:
+        -:   10:
+function citeste_int called 0 returned 0% blocks executed 0%
+    #####:   11:int citeste_int() {
+        -:   12:    int numar;
+        -:   13:    while (1) {
+    #####:   14:        if (scanf_s("%d", &numar) == 1) {
+    %%%%%:   14-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:   15:            return numar;
+    %%%%%:   15-block  0
+        -:   16:        }
+    #####:   17:        while(getchar() != '\n'){}
+    %%%%%:   17-block  0
+    %%%%%:   17-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed (fallthrough)
+    #####:   18:        printf("Eroare! Introduceti un numar valid: ");
+    %%%%%:   18-block  0
+call    0 never executed
+        -:   19:    }
+        -:   20:}
+        -:   21:
+function citeste_float called 0 returned 0% blocks executed 0%
+    #####:   22:float citeste_float() {
+        -:   23:    float numar;
+        -:   24:    while (1) {
+    #####:   25:        if (scanf_s("%f", &numar) == 1) {
+    %%%%%:   25-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:   26:            return numar;
+    %%%%%:   26-block  0
+        -:   27:        }
+    #####:   28:        while(getchar() != '\n'){}
+    %%%%%:   28-block  0
+    %%%%%:   28-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed (fallthrough)
+    #####:   29:        printf("Eroare! Introduceti o suma valida: ");
+    %%%%%:   29-block  0
+call    0 never executed
+        -:   30:    }
+        -:   31:}
+        -:   32:
+function get_all_and_print called 0 returned 0% blocks executed 0%
+    #####:   33:void get_all_and_print(ListaCheltuieli *lista) {
+    #####:   34:    if (!lista) {
+    %%%%%:   34-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   35:        printf("Eroare: Lista este NULL!\n");
+    %%%%%:   35-block  0
+call    0 never executed
+    #####:   36:        return;
+        -:   37:    }
+        -:   38:
+    #####:   39:    if (lista->lungime == 0) {
+    %%%%%:   39-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   40:        printf("Lista de cheltuieli este goala.\n");
+    %%%%%:   40-block  0
+call    0 never executed
+    #####:   41:        return;
+        -:   42:    }
+        -:   43:
+    #####:   44:    for (int i = 0; i < lista->lungime; i++) {
+    %%%%%:   44-block  0
+    %%%%%:   44-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:   45:        printf("Zi: %d, Suma: %.2f, Tip: %s\n",
+    #####:   46:               lista->cheltuiala[i].zi,
+    #####:   47:               lista->cheltuiala[i].suma,
+    #####:   48:               lista->cheltuiala[i].tip);
+    %%%%%:   48-block  0
+call    0 never executed
+        -:   49:    }
+        -:   50:}
+        -:   51:
+function afiseaza_meniu called 1 returned 100% blocks executed 100%
+        1:   52:void afiseaza_meniu() {
+        1:   53:    printf("\n--- Meniu ---\n");
+        1:   53-block  0
+call    0 returned 1
+        1:   54:    printf("1. Adaugare cheltuiala\n");
+call    0 returned 1
+        1:   55:    printf("2. Modificare cheltuiala\n");
+call    0 returned 1
+        1:   56:    printf("3. Stergere cheltuiala\n");
+call    0 returned 1
+        1:   57:    printf("4. Vizualizare cheltuieli\n");
+call    0 returned 1
+        1:   58:    printf("5. Ordonare cheltuieli crescator\n");
+call    0 returned 1
+        1:   59:    printf("6. Ordonare cheltuieli descrescator\n");
+call    0 returned 1
+        1:   60:    printf("7. Get all\n");
+call    0 returned 1
+        1:   61:    printf("0. Iesire\n");
+call    0 returned 1
+        1:   62:    printf("Optiune: ");
+call    0 returned 1
+        1:   63:}
+        -:   64:
+function ruleaza called 1 returned 100% blocks executed 7%
+        1:   65:void ruleaza() {
+        1:   66:    ListaCheltuieli lista = {
+        -:   67:        .lungime = 0,
+        -:   68:        .capacitate = 10,
+        1:   69:        .cheltuiala = (Cheltuiala*) malloc(10 * sizeof(Cheltuiala))
+        1:   69-block  0
+        -:   70:    };
+        -:   71:    int optiune;
+        -:   72:    do {
+        1:   73:        afiseaza_meniu();
+        1:   73-block  0
+call    0 returned 1
+        1:   74:        scanf_s("%d", &optiune);
+call    0 returned 1
+        -:   75:
+        1:   76:        switch (optiune) {
+branch  0 taken 0
+branch  1 taken 0
+branch  2 taken 0
+branch  3 taken 0
+branch  4 taken 0
+branch  5 taken 0
+branch  6 taken 0
+branch  7 taken 1
+branch  8 taken 0
+    #####:   77:            case 1: {
+        -:   78:                int zi;
+        -:   79:                float suma;
+        -:   80:                char tip[50];
+        -:   81:
+        -:   82:                do {
+    #####:   83:                    printf("Introduceti ziua: ");
+    %%%%%:   83-block  0
+call    0 never executed
+    #####:   84:                    zi = citeste_int();
+call    0 never executed
+        -:   85:
+    #####:   86:                    if (valideaza_zi(zi) != 0)
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:   87:                        printf("Zi invalida! Ziua trebuie sa fie intre 1 si 31.\n");
+    %%%%%:   87-block  0
+call    0 never executed
+    #####:   88:                } while (valideaza_zi(zi) != 0);
+    %%%%%:   88-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+        -:   89:                do {
+    #####:   90:                    printf("Introduceti suma: ");
+    %%%%%:   90-block  0
+call    0 never executed
+    #####:   91:                    suma = citeste_float();
+call    0 never executed
+        -:   92:
+    #####:   93:                    if (valideaza_suma(suma) != 0)
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:   94:                        printf("Suma invalida! Suma trebuie sa fie un numar natural.\n");
+    %%%%%:   94-block  0
+call    0 never executed
+    #####:   95:                    } while (valideaza_suma(suma) != 0);
+    %%%%%:   95-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed (fallthrough)
+    #####:   96:                while (getchar() != '\n'){}
+    %%%%%:   96-block  0
+    %%%%%:   96-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed (fallthrough)
+        -:   97:
+        -:   98:                do {
+    #####:   99:                    printf("Introduceti tipul: ");
+    %%%%%:   99-block  0
+call    0 never executed
+    #####:  100:                    fgets(tip, sizeof(tip), stdin);
+call    0 never executed
+call    1 never executed
+    #####:  101:                    tip[strcspn(tip, "\n")] = 0;
+        -:  102:
+    #####:  103:                    if (valideaza_tip(tip) != 0) {
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  104:                        printf("Tip invalid! Tipuri permise: mancare, transport, telefon&internet, imbracaminte, altele.\n");
+    %%%%%:  104-block  0
+call    0 never executed
+        -:  105:                    }
+    #####:  106:                } while (valideaza_tip(tip) != 0);
+    %%%%%:  106-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed (fallthrough)
+        -:  107:
+        -:  108:
+    #####:  109:                int rezultat = add(&lista, zi, suma, tip);
+    %%%%%:  109-block  0
+call    0 never executed
+    #####:  110:                if (rezultat == 0) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  111:                    printf("Cheltuiala adaugata cu succes!\n");
+    %%%%%:  111-block  0
+call    0 never executed
+        -:  112:                }else {
+    #####:  113:                    printf("Lista este plina! Nu se mai pot adauga cheltuieli.\n");
+    %%%%%:  113-block  0
+call    0 never executed
+        -:  114:                }
+        -:  115:
+    #####:  116:                break;
+    %%%%%:  116-block  0
+        -:  117:            }
+    #####:  118:            case 2: {
+        -:  119:                int zi;
+        -:  120:                float suma;
+        -:  121:                char tip[50];
+        -:  122:
+    #####:  123:                printf("Introduceti indexul cheltuielii de modificat: ");
+    %%%%%:  123-block  0
+call    0 never executed
+    #####:  124:                int index = citeste_int();
+call    0 never executed
+        -:  125:                do {
+    #####:  126:                    printf("Introduceti ziua: ");
+    %%%%%:  126-block  0
+call    0 never executed
+    #####:  127:                    zi = citeste_int();
+call    0 never executed
+        -:  128:
+    #####:  129:                    if (valideaza_zi(zi) != 0)
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  130:                        printf("Zi invalida! Ziua trebuie sa fie intre 1 si 31.\n");
+    %%%%%:  130-block  0
+call    0 never executed
+    #####:  131:                } while (valideaza_zi(zi) != 0);
+    %%%%%:  131-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed (fallthrough)
+        -:  132:                do {
+    #####:  133:                    printf("Introduceti suma: ");
+    %%%%%:  133-block  0
+call    0 never executed
+    #####:  134:                    suma = citeste_float();
+call    0 never executed
+        -:  135:
+    #####:  136:                    if (valideaza_suma(suma) != 0)
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  137:                        printf("Suma invalida! Suma trebuie sa fie un numar natural.\n");
+    %%%%%:  137-block  0
+call    0 never executed
+    #####:  138:                } while (valideaza_suma(suma) != 0);
+    %%%%%:  138-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed (fallthrough)
+    #####:  139:                while (getchar() != '\n'){}
+    %%%%%:  139-block  0
+    %%%%%:  139-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed (fallthrough)
+        -:  140:
+        -:  141:                do {
+    #####:  142:                    printf("Introduceti tipul: ");
+    %%%%%:  142-block  0
+call    0 never executed
+    #####:  143:                    fgets(tip, sizeof(tip), stdin);
+call    0 never executed
+call    1 never executed
+    #####:  144:                    tip[strcspn(tip, "\n")] = 0;
+        -:  145:
+    #####:  146:                    if (valideaza_tip(tip) != 0) {
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  147:                        printf("Tip invalid! Tipuri permise: mancare, transport, telefon&internet, imbracaminte, altele.\n");
+    %%%%%:  147-block  0
+call    0 never executed
+        -:  148:                    }
+    #####:  149:                } while (valideaza_tip(tip) != 0);
+    %%%%%:  149-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed (fallthrough)
+        -:  150:
+        -:  151:
+        -:  152:
+    #####:  153:                int rezultat = modificare(&lista, index, zi, suma, tip);
+    %%%%%:  153-block  0
+call    0 never executed
+    #####:  154:                if (rezultat == 0) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  155:                    printf("Cheltuiala modificata cu succes!\n");
+    %%%%%:  155-block  0
+call    0 never executed
+        -:  156:                }else {
+    #####:  157:                    printf("Index invalid!\n");
+    %%%%%:  157-block  0
+call    0 never executed
+        -:  158:                }
+    #####:  159:                break;
+    %%%%%:  159-block  0
+        -:  160:            }
+    #####:  161:            case 3: {
+    #####:  162:                printf("Introduceti indexul cheltuielii de sters: ");
+    %%%%%:  162-block  0
+call    0 never executed
+    #####:  163:                int index = citeste_int();
+call    0 never executed
+    #####:  164:                int rezultat = stergere(&lista, index);
+call    0 never executed
+    #####:  165:                if (rezultat == 0) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  166:                    printf("Cheltuiala stearsa cu succes!\n");
+    %%%%%:  166-block  0
+call    0 never executed
+        -:  167:                } else {
+    #####:  168:                    printf("Index invalid!\n");
+    %%%%%:  168-block  0
+call    0 never executed
+        -:  169:                }
+    #####:  170:                break;
+    %%%%%:  170-block  0
+        -:  171:            }
+    #####:  172:            case 4: {
+        -:  173:                char criteriu[20], valoare[20];
+    #####:  174:                printf("Introduceti criteriul (zi/suma/tip): ");
+    %%%%%:  174-block  0
+call    0 never executed
+    #####:  175:                scanf("%s", criteriu);
+call    0 never executed
+    #####:  176:                printf("Introduceti valoarea: ");
+call    0 never executed
+    #####:  177:                scanf("%s", valoare);
+call    0 never executed
+    #####:  178:                ListaCheltuieli *lista_filtrata = vizualizare(&lista, criteriu, valoare);
+call    0 never executed
+        -:  179:
+    #####:  180:                if (lista_filtrata->lungime == 0) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  181:                    printf("Nu s-au gasit cheltuieli pentru criteriul %s cu valoarea %s.\n", criteriu, valoare);
+    %%%%%:  181-block  0
+call    0 never executed
+        -:  182:                } else {
+    #####:  183:                    printf("Cheltuieli gasite:\n");
+    %%%%%:  183-block  0
+call    0 never executed
+    #####:  184:                    for (int i = 0; i < lista_filtrata->lungime; i++) {
+    %%%%%:  184-block  0
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:  185:                        printf("%d: %.2f %s\n",
+    #####:  186:                            lista_filtrata->cheltuiala[i].zi,
+    #####:  187:                            lista_filtrata->cheltuiala[i].suma,
+    #####:  188:                            lista_filtrata->cheltuiala[i].tip);
+    %%%%%:  188-block  0
+call    0 never executed
+        -:  189:                    }
+        -:  190:                }
+        -:  191:
+    #####:  192:                distruge_lista(lista_filtrata);
+    %%%%%:  192-block  0
+call    0 never executed
+    #####:  193:                free(lista_filtrata);
+    #####:  194:                break;
+        -:  195:            }
+    #####:  196:            case 5:
+        -:  197:                char criteriu[20];
+    #####:  198:                printf("Introduceti criteriul (suma/tip): ");
+    %%%%%:  198-block  0
+call    0 never executed
+    #####:  199:                scanf("%s", criteriu);
+call    0 never executed
+    #####:  200:                ordonare(&lista, criteriu);
+call    0 never executed
+    #####:  201:                printf("Cheltuielile au fost ordonate!\n");
+call    0 never executed
+    #####:  202:                break;
+    #####:  203:            case 6:
+        -:  204:                char criteriul[20];
+    #####:  205:                printf("Introduceti criteriul (suma/tip): ");
+    %%%%%:  205-block  0
+call    0 never executed
+    #####:  206:                scanf("%s", criteriul);
+call    0 never executed
+    #####:  207:                ordonare_desc(&lista, criteriul);
+call    0 never executed
+    #####:  208:                printf("Cheltuielile au fost ordonate!\n");
+call    0 never executed
+    #####:  209:                break;
+    #####:  210:            case 7:
+    #####:  211:                ListaCheltuieli *lista_copie = get_all(&lista);
+    %%%%%:  211-block  0
+call    0 never executed
+    #####:  212:            if (!lista_copie) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  213:                printf("Eroare la copierea listei!\n");
+    %%%%%:  213-block  0
+call    0 never executed
+        -:  214:            } else {
+    #####:  215:                get_all_and_print(lista_copie);
+    %%%%%:  215-block  0
+call    0 never executed
+        -:  216:
+    #####:  217:                if (lista_copie->cheltuiala) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  218:                    free(lista_copie->cheltuiala);
+    %%%%%:  218-block  0
+        -:  219:                }
+    #####:  220:                free(lista_copie);
+    %%%%%:  220-block  0
+        -:  221:            }
+    #####:  222:                break;
+    %%%%%:  222-block  0
+        1:  223:            case 0:
+        1:  224:                break;
+        1:  224-block  0
+    #####:  225:            default:
+    #####:  226:                printf("Optiune invalida! Incercati din nou.\n");
+    %%%%%:  226-block  0
+call    0 never executed
+        -:  227:        }
+        1:  228:    } while (optiune != 0);
+        1:  228-block  0
+branch  0 taken 0
+branch  1 taken 1 (fallthrough)
+        1:  229:}

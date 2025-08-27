@@ -1,0 +1,681 @@
+        -:    0:Source:C:/Users/urdad/lab6_7/service.cpp
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\service.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "service.h"
+        -:    2:#include "validator.h"
+        -:    3:#include <vector>
+        -:    4:
+function _ZN7ServiceC2ER7AbsRepo called 6 returned 100% blocks executed 100%
+        6:    5:Service::Service(AbsRepo& r) : repo{ r },validator{ validator }, cosInchirieri{ cosInchirieri } {}
+        6:    5-block  0
+call    0 returned 6
+        -:    6:
+function _ZN7Service10adaugaFilmERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iS7_ called 20 returned 95% blocks executed 61%
+       20:    7:void Service::adaugaFilm(const std::string& titlu, const std::string& gen, int an, const std::string& actor) {
+        -:    8:    try {
+       20:    9:        Validator::validateTitlu(titlu);
+       20:    9-block  0
+call    0 returned 20
+branch  1 taken 20 (fallthrough)
+branch  2 taken 0 (throw)
+       20:   10:        Validator::validateAn(an);
+       20:   10-block  0
+call    0 returned 20
+branch  1 taken 20 (fallthrough)
+branch  2 taken 0 (throw)
+       20:   11:        Validator::validateActor(actor);
+       20:   11-block  0
+call    0 returned 20
+branch  1 taken 20 (fallthrough)
+branch  2 taken 0 (throw)
+       20:   12:        Validator::validateGen(gen);
+       20:   12-block  0
+call    0 returned 20
+branch  1 taken 19 (fallthrough)
+branch  2 taken 1 (throw)
+        1:   13:    }catch(const std::runtime_error& e) {
+        1:   13-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   13-block  1
+call    2 returned 1
+        3:   14:        throw ValidationException{e.what()};
+call    0 returned 1
+        1:   14-block  0
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   14-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   14-block  2
+call    8 returned 1
+        1:   14-block  3
+call    9 returned 1
+    $$$$$:   14-block  4
+call   10 never executed
+    $$$$$:   14-block  5
+    $$$$$:   14-block  6
+    $$$$$:   14-block  7
+call   11 never executed
+        1:   15:    }
+        1:   15-block  0
+call    0 returned 1
+        -:   16:
+       19:   17:    Film f{ titlu, gen, an, actor };
+       19:   17-block  0
+call    0 returned 19
+branch  1 taken 19 (fallthrough)
+branch  2 taken 0 (throw)
+       19:   18:    repo.adauga(f);
+       19:   18-block  0
+call    0 returned 19
+branch  1 taken 19 (fallthrough)
+branch  2 taken 0 (throw)
+       19:   19:    undoList.push_back(std::make_unique<UndoAdauga>(repo, f));
+       19:   19-block  0
+call    0 returned 19
+branch  1 taken 19 (fallthrough)
+branch  2 taken 0 (throw)
+       19:   19-block  1
+call    3 returned 19
+call    4 returned 19
+branch  5 taken 19 (fallthrough)
+branch  6 taken 0 (throw)
+       19:   19-block  2
+call    7 returned 19
+call    8 returned 19
+    $$$$$:   19-block  3
+call    9 never executed
+    $$$$$:   19-block  4
+call   10 never executed
+    $$$$$:   19-block  5
+    $$$$$:   19-block  6
+       19:   20:    }
+call    0 returned 19
+    $$$$$:   20-block  0
+call    1 never executed
+        -:   21:
+function _ZN7Service10stergeFilmERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi called 5 returned 100% blocks executed 64%
+        5:   22:void Service::stergeFilm(const std::string& titlu, int an) {
+        5:   23:    const Film& filmSters = repo.cauta(titlu, an);  // Obține filmul înainte să-l ștergi
+        5:   23-block  0
+call    0 returned 5
+        5:   24:    undoList.push_back(std::make_unique<UndoSterge>(repo, filmSters));
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   24-block  0
+call    3 returned 5
+call    4 returned 5
+branch  5 taken 5 (fallthrough)
+branch  6 taken 0 (throw)
+        5:   24-block  1
+call    7 returned 5
+call    8 returned 5
+    $$$$$:   24-block  2
+call    9 never executed
+    $$$$$:   24-block  3
+call   10 never executed
+    $$$$$:   24-block  4
+        5:   25:    repo.sterge(titlu, an);
+call    0 returned 5
+        -:   26:
+        5:   27:}
+        -:   28:
+function _ZN7Service12modificaFilmERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiS7_iS7_ called 4 returned 50% blocks executed 67%
+        4:   29:void Service::modificaFilm(const std::string& titlu, int an, const std::string& nouGen, int nouAn, const std::string& nouActor) {
+        4:   30:    Film filmVechi;
+        4:   30-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   31:    filmVechi = repo.cauta(titlu, an);
+        4:   31-block  0
+call    0 returned 4
+branch  1 taken 3 (fallthrough)
+branch  2 taken 1 (throw)
+        3:   31-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        -:   32:    try {
+        3:   33:        Validator::validateGen(nouGen);
+        3:   33-block  0
+call    0 returned 3
+branch  1 taken 2 (fallthrough)
+branch  2 taken 1 (throw)
+        2:   34:        Validator::validateAn(nouAn);
+        2:   34-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   35:        Validator::validateActor(nouActor);
+        2:   35-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   36:    }catch(const std::runtime_error& e) {
+        1:   36-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   36-block  1
+call    2 returned 1
+        3:   37:        throw ValidationException{e.what()};
+call    0 returned 1
+        1:   37-block  0
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   37-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   37-block  2
+call    8 returned 1
+        1:   37-block  3
+call    9 returned 1
+    $$$$$:   37-block  4
+call   10 never executed
+    $$$$$:   37-block  5
+    $$$$$:   37-block  6
+    $$$$$:   37-block  7
+call   11 never executed
+        1:   38:    }
+        1:   38-block  0
+call    0 returned 1
+        -:   39:
+        2:   40:    repo.modifica(titlu, an, nouGen, nouAn, nouActor);
+        2:   40-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   41:    undoList.push_back(std::make_unique<UndoModifica>(repo, filmVechi, titlu, nouAn));
+        2:   41-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   41-block  1
+call    3 returned 2
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   41-block  2
+call    7 returned 2
+call    8 returned 2
+    $$$$$:   41-block  3
+call    9 never executed
+    $$$$$:   41-block  4
+call   10 never executed
+    $$$$$:   41-block  5
+    $$$$$:   41-block  6
+        4:   42:}
+call    0 returned 2
+        2:   42-block  0
+call    1 returned 2
+        -:   43:
+function _ZNK7Service10cautaFilmeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_i called 8 returned 100% blocks executed 89%
+        8:   44:std::vector<Film> Service::cautaFilme(const std::string& titlu, const std::string& gen, int an)const {
+        8:   45:    std::vector<Film> rezultate;
+        8:   46:    const auto& all = repo.getAll();
+        8:   46-block  0
+call    0 returned 8
+function _ZZNK7Service10cautaFilmeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iENKUlRK4FilmE_clESA_ called 24 returned 100% blocks executed 100%
+        8:   47:    std::copy_if(all.begin(), all.end(),std::back_inserter(rezultate),[&](const Film& f) {
+call    0 returned 8
+branch  1 taken 8 (fallthrough)
+branch  2 taken 0 (throw)
+        8:   47-block  0
+call    3 returned 8
+call    4 returned 8
+call    5 returned 8
+branch  6 taken 8 (fallthrough)
+branch  7 taken 0 (throw)
+       24:   48:        bool titluOK = titlu.empty() || f.getTitlu() == titlu;
+       24:   48-block  0
+call    0 returned 24
+branch  1 taken 18 (fallthrough)
+branch  2 taken 6
+       18:   48-block  1
+call    3 returned 18
+call    4 returned 18
+branch  5 taken 5 (fallthrough)
+branch  6 taken 13
+       11:   48-block  2
+       13:   48-block  3
+       24:   49:        bool genOK = gen.empty() || f.getGen() == gen;
+       24:   49-block  0
+call    0 returned 24
+branch  1 taken 3 (fallthrough)
+branch  2 taken 21
+        3:   49-block  1
+call    3 returned 3
+call    4 returned 3
+branch  5 taken 2 (fallthrough)
+branch  6 taken 1
+       23:   49-block  2
+        1:   49-block  3
+       24:   50:        bool anOK = (an < 0 || f.getAn() == an);
+       24:   50-block  0
+branch  0 taken 6 (fallthrough)
+branch  1 taken 18
+        6:   50-block  1
+call    2 returned 6
+branch  3 taken 2 (fallthrough)
+branch  4 taken 4
+       20:   50-block  2
+        4:   50-block  3
+       24:   51:        return titluOK && genOK && anOK;
+       24:   51-block  0
+branch  0 taken 11 (fallthrough)
+branch  1 taken 13
+       11:   51-block  1
+branch  2 taken 10 (fallthrough)
+branch  3 taken 1
+       10:   51-block  2
+branch  4 taken 8 (fallthrough)
+branch  5 taken 2
+        8:   51-block  3
+       16:   51-block  4
+       24:   51-block  5
+        -:   52:    });
+        8:   53:    return rezultate;}
+        8:   53-block  0
+        8:   53-block  1
+    $$$$$:   53-block  2
+call    0 never executed
+        -:   54:
+        -:   55:
+function _ZN7Service4undoEv called 6 returned 83% blocks executed 92%
+        6:   56:void Service::undo() {
+        6:   57:    if (undoList.empty()) {
+        6:   57-block  0
+call    0 returned 6
+branch  1 taken 1 (fallthrough)
+branch  2 taken 5
+        1:   58:        throw std::runtime_error("Nu exista operatii pentru a fi facute undo.");
+        1:   58-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   58-block  1
+call    4 returned 0
+    $$$$$:   58-block  2
+call    5 never executed
+        -:   59:    }
+        -:   60:    // Apel polimorf pentru a executa undo
+        5:   61:    undoList.back()->doUndo();
+        5:   61-block  0
+call    0 returned 5
+call    1 returned 5
+call    2 returned 5
+        5:   62:    undoList.pop_back(); // Elimina ultima actiune din lista
+call    0 returned 5
+        5:   63:}
+        -:   64:
+        -:   65:
+        -:   66:
+function _ZNK7Service8getFilmeEv called 30 returned 100% blocks executed 100%
+       30:   67:const std::vector<Film>& Service::getFilme() const {
+       30:   68:    return repo.getAll();
+       30:   68-block  0
+call    0 returned 30
+        -:   69:}
+        -:   70:
+        -:   71:
+function _ZNK7Service13filtrareFilmeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi called 4 returned 100% blocks executed 89%
+        4:   72:std::vector<Film> Service::filtrareFilme(const std::string& titlu, int an) const {
+        4:   73:    std::vector<Film> rezultate;
+        4:   74:    const auto& all = repo.getAll();
+        4:   74-block  0
+call    0 returned 4
+        4:   75:    std::copy_if(all.begin(), all.end(), std::back_inserter(rezultate),
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   75-block  0
+call    3 returned 4
+call    4 returned 4
+call    5 returned 4
+branch  6 taken 4 (fallthrough)
+branch  7 taken 0 (throw)
+function _ZZNK7Service13filtrareFilmeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiENKUlRK4FilmE_clESA_ called 12 returned 100% blocks executed 100%
+       12:   76:        [&](const Film& f) {
+       12:   77:            bool titluOk = titlu.empty() || f.getTitlu() == titlu;
+       12:   77-block  0
+call    0 returned 12
+branch  1 taken 9 (fallthrough)
+branch  2 taken 3
+        9:   77-block  1
+call    3 returned 9
+call    4 returned 9
+branch  5 taken 2 (fallthrough)
+branch  6 taken 7
+        5:   77-block  2
+        7:   77-block  3
+       12:   78:            bool anOk = (an < 0) || f.getAn() == an;
+       12:   78-block  0
+branch  0 taken 9 (fallthrough)
+branch  1 taken 3
+        9:   78-block  1
+call    2 returned 9
+branch  3 taken 2 (fallthrough)
+branch  4 taken 7
+        5:   78-block  2
+        7:   78-block  3
+       12:   79:            return titluOk && anOk;
+       12:   79-block  0
+branch  0 taken 5 (fallthrough)
+branch  1 taken 7
+        5:   79-block  1
+branch  2 taken 3 (fallthrough)
+branch  3 taken 2
+        3:   79-block  2
+        9:   79-block  3
+       12:   79-block  4
+        -:   80:        }
+        -:   81:    );
+        4:   82:    return rezultate;}
+        4:   82-block  0
+        4:   82-block  1
+    $$$$$:   82-block  2
+call    0 never executed
+        -:   83:
+        -:   84:
+        -:   85:
+        -:   86:
+        -:   87:
+function _ZL8cmpAnGenRK4FilmS1_ called 6 returned 100% blocks executed 100%
+        6:   88:static bool cmpAnGen(const Film& a, const Film& b) {
+        6:   89:    if (a.getAn() != b.getAn()) return a.getAn() < b.getAn();
+        6:   89-block  0
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 4 (fallthrough)
+branch  3 taken 2
+        4:   89-block  1
+call    4 returned 4
+call    5 returned 4
+        2:   90:    return a.getGen() < b.getGen();
+        2:   90-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   90-block  1
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   90-block  2
+call    7 returned 2
+call    8 returned 2
+        -:   91:}
+        -:   92:
+function _ZL8cmpTitluRK4FilmS1_ called 8 returned 100% blocks executed 100%
+        8:   93:static bool cmpTitlu(const Film& a, const Film& b) {
+        8:   94:    return a.getTitlu() < b.getTitlu();
+        8:   94-block  0
+call    0 returned 8
+call    1 returned 8
+branch  2 taken 8 (fallthrough)
+branch  3 taken 0 (throw)
+        8:   94-block  1
+call    4 returned 8
+branch  5 taken 8 (fallthrough)
+branch  6 taken 0 (throw)
+        8:   94-block  2
+call    7 returned 8
+call    8 returned 8
+        8:   94-block  3
+        -:   95:}
+        -:   96:
+function _ZL8cmpActorRK4FilmS1_ called 7 returned 100% blocks executed 100%
+        7:   97:static bool cmpActor(const Film& a, const Film& b) {
+        7:   98:    return a.getActor() < b.getActor();
+        7:   98-block  0
+call    0 returned 7
+call    1 returned 7
+branch  2 taken 7 (fallthrough)
+branch  3 taken 0 (throw)
+        7:   98-block  1
+call    4 returned 7
+branch  5 taken 7 (fallthrough)
+branch  6 taken 0 (throw)
+        7:   98-block  2
+call    7 returned 7
+call    8 returned 7
+        7:   98-block  3
+        -:   99:}
+        -:  100:
+function _ZNK7Service23sortareFilmeDupaAnSiGenEv called 1 returned 100% blocks executed 83%
+        1:  101:void Service::sortareFilmeDupaAnSiGen() const {
+        1:  102:    auto copy = repo.getAll();
+        1:  102-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  103:    std::sort(copy.begin(), copy.end(), cmpAnGen);
+        1:  103-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  104:    repo.setAll(std::move(copy));
+        1:  104-block  0
+call    0 returned 1
+call    1 returned 1
+        1:  105:}
+call    0 returned 1
+    $$$$$:  105-block  0
+call    1 never executed
+        -:  106:
+function _ZNK7Service21sortareFilmeDupaTitluEv called 1 returned 100% blocks executed 83%
+        1:  107:void Service::sortareFilmeDupaTitlu() const {
+        1:  108:    auto copy = repo.getAll();
+        1:  108-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  109:    std::sort(copy.begin(), copy.end(), cmpTitlu);
+        1:  109-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  110:    repo.setAll(std::move(copy));
+        1:  110-block  0
+call    0 returned 1
+call    1 returned 1
+        1:  111:}
+call    0 returned 1
+    $$$$$:  111-block  0
+call    1 never executed
+        -:  112:
+function _ZNK7Service21sortareFilmeDupaActorEv called 1 returned 100% blocks executed 83%
+        1:  113:void Service::sortareFilmeDupaActor() const {
+        1:  114:    auto copy = repo.getAll();
+        1:  114-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  115:    std::sort(copy.begin(), copy.end(), cmpActor);
+        1:  115-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  116:    repo.setAll(std::move(copy));
+        1:  116-block  0
+call    0 returned 1
+call    1 returned 1
+        1:  117:}
+call    0 returned 1
+    $$$$$:  117-block  0
+call    1 never executed
+        -:  118:
+        -:  119:
+        -:  120:
+        -:  121:
+        -:  122:
+        -:  123:
+        -:  124:
+        -:  125:
+        -:  126:
+function _ZN7Service25adaugaFilmInCosInchirieriERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 4 returned 75% blocks executed 69%
+        4:  127:const std::vector<Film>& Service::adaugaFilmInCosInchirieri(const std::string& titluFilm) {
+        4:  127-block  0
+        4:  128:    auto rezultate = cautaFilme(titluFilm);
+        4:  128-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  128-block  1
+call    3 returned 4
+branch  4 taken 4 (fallthrough)
+branch  5 taken 0 (throw)
+        4:  128-block  2
+call    6 returned 4
+    $$$$$:  128-block  3
+call    7 never executed
+    $$$$$:  128-block  4
+    $$$$$:  128-block  5
+        6:  129:    if (rezultate.empty()) throw RepositoryException("Filmul nu exista!"); ;
+        4:  129-block  0
+call    0 returned 4
+branch  1 taken 1 (fallthrough)
+branch  2 taken 3
+        1:  129-block  1
+call    3 returned 1
+        1:  129-block  2
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  129-block  3
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:  129-block  4
+call   10 returned 1
+        1:  129-block  5
+call   11 returned 1
+    $$$$$:  129-block  6
+call   12 never executed
+    $$$$$:  129-block  7
+    $$$$$:  129-block  8
+    $$$$$:  129-block  9
+call   13 never executed
+        3:  130:    const Film& filmCautat = rezultate.front();
+        3:  130-block  0
+call    0 returned 3
+        3:  131:    auto& cos = cosInchirieri.getCosFilme();
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+function _ZZN7Service25adaugaFilmInCosInchirieriERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK4FilmE_clESA_ called 1 returned 100% blocks executed 100%
+        4:  132:    bool deja = std::any_of(cos.begin(), cos.end(), [&](const Film& f) { return f == filmCautat; });
+        3:  132-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+branch  3 taken 3 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  132-block  1
+call    5 returned 1
+        3:  133:    if (!deja) cosInchirieri.adaugaCosFilme(filmCautat);
+        3:  133-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 1
+        2:  133-block  1
+call    2 returned 2
+branch  3 taken 2 (fallthrough)
+branch  4 taken 0 (throw)
+        6:  134:    return cosInchirieri.getCosFilme();
+        3:  134-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  134-block  1
+        3:  134-block  2
+        4:  135:}
+        3:  135-block  0
+call    0 returned 3
+        1:  135-block  1
+call    1 returned 1
+        -:  136:
+function _ZN7Service20golesteCosInchirieriEv called 1 returned 100% blocks executed 100%
+        1:  137:const std::vector<Film>& Service::golesteCosInchirieri() {
+        1:  138:    cosInchirieri.golesteCosFilme();
+        1:  138-block  0
+call    0 returned 1
+        1:  139:    return cosInchirieri.getCosFilme();
+call    0 returned 1
+        -:  140:}
+        -:  141:
+function _ZN7Service24umpleRandomCosInchirieriEi called 1 returned 100% blocks executed 100%
+        1:  142:const std::vector<Film>& Service::umpleRandomCosInchirieri(int dimensiune) {
+        1:  143:    cosInchirieri.umpleRandomCosFilme(dimensiune, repo.getAll());
+        1:  143-block  0
+call    0 returned 1
+call    1 returned 1
+        1:  144:    return cosInchirieri.getCosFilme();
+call    0 returned 1
+        -:  145:}
+        -:  146:
+function _ZN7Service19getAllCosInchirieriEv called 1 returned 100% blocks executed 100%
+        1:  147:const std::vector<Film>& Service::getAllCosInchirieri() {
+        1:  148:    return cosInchirieri.getCosFilme();
+        1:  148-block  0
+call    0 returned 1
+        -:  149:}
+        -:  150:
+function _ZNK7Service13exportaCosCSVERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 100%
+        1:  151:void Service::exportaCosCSV(const std::string& numeFisier) const {
+        1:  152:    cosInchirieri.exportCSV(numeFisier);
+        1:  152-block  0
+call    0 returned 1
+        1:  153:}
+        -:  154:
+        -:  155:
+function _ZNK7Service12nrFilmeCuGenERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 100%
+        1:  156:int Service::nrFilmeCuGen(const std::string& gen) const {
+        1:  157:    int count = 0;
+        9:  158:    for (const auto& film : getFilme()) {
+        1:  158-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        8:  158-block  1
+call    3 returned 8
+        8:  158-block  2
+call    4 returned 8
+        9:  158-block  3
+call    5 returned 9
+branch  6 taken 8
+branch  7 taken 1 (fallthrough)
+        8:  159:        if (film.getGen() == gen) {
+call    0 returned 8
+branch  1 taken 8 (fallthrough)
+branch  2 taken 0 (throw)
+        8:  159-block  0
+call    3 returned 8
+branch  4 taken 2 (fallthrough)
+branch  5 taken 6
+        2:  160:            count++;
+        2:  160-block  0
+        -:  161:        }
+        -:  162:    }
+        1:  163:    return count;
+        1:  163-block  0
+        1:  163-block  1
+        -:  164:}

@@ -1,0 +1,328 @@
+        -:    0:Source:C:/Users/urdad/lab2-6/service.c
+        -:    0:Graph:C:\Users\urdad\lab2-6\cmake-build-debug-coverage\CMakeFiles\lab2_6.dir\service.c.gcno
+        -:    0:Data:C:\Users\urdad\lab2-6\cmake-build-debug-coverage\CMakeFiles\lab2_6.dir\service.c.gcda
+        -:    0:Runs:1
+        -:    1:#include<stdio.h>
+        -:    2:#include "service.h"
+        -:    3:#include <stdlib.h>
+        -:    4:#include <string.h>
+        -:    5:#include "repo.h"
+        -:    6:#include "validator.h"
+        -:    7:
+function add_cheltuiala called 5 returned 100% blocks executed 100%
+        5:    8:int add_cheltuiala(ListaCheltuieli *lista, int zi, float suma, const char *tip) {
+        -:    9:    /**
+        -:   10:     * Adauga o cheltuiala in lista, dupa ce aceasta este validata.
+        -:   11:     *
+        -:   12:     * @param lista Pointer catre lista de cheltuieli.
+        -:   13:     * @param zi Ziua cheltuielii.
+        -:   14:     * @param suma Suma cheltuielii.
+        -:   15:     * @param tip Tipul cheltuielii.
+        -:   16:     *
+        -:   17:     * @return 0 daca adaugarea a avut succes,
+        -:   18:     *         eroare daca este invalida (zi, suma, tip).
+        -:   19:     */
+        -:   20:
+        5:   21:    int eroare = valideaza_zi(zi);
+        5:   21-block  0
+call    0 returned 5
+        5:   22:    if (eroare != 0) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 4
+        1:   23:        return eroare;
+        1:   23-block  0
+        -:   24:    }
+        -:   25:
+        4:   26:    eroare = valideaza_suma(suma);
+        4:   26-block  0
+call    0 returned 4
+        4:   27:    if (eroare != 0) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 3
+        1:   28:        return eroare;
+        1:   28-block  0
+        -:   29:    }
+        -:   30:
+        3:   31:    eroare = valideaza_tip(tip);
+        3:   31-block  0
+call    0 returned 3
+        3:   32:    if (eroare != 0) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 2
+        1:   33:        return eroare;
+        1:   33-block  0
+        -:   34:    }
+        -:   35:
+        -:   36:
+        2:   37:    return add(lista, zi, suma, tip);
+        2:   37-block  0
+call    0 returned 2
+        -:   38:}
+        -:   39:
+function modifica_cheltuiala called 5 returned 100% blocks executed 100%
+        5:   40:int modifica_cheltuiala(ListaCheltuieli *lista, int index, int zi, float suma, const char *tip) {
+        -:   41:    /**
+        -:   42:     * Modifica o cheltuiala din lista, dupa ce aceasta este validata.
+        -:   43:     *
+        -:   44:     * @param lista Pointer catre lista de cheltuieli.
+        -:   45:     * @param index Indexul cheltuielii de modificat.
+        -:   46:     * @param zi Noua zi a cheltuielii.
+        -:   47:     * @param suma Noua suma a cheltuielii.
+        -:   48:     * @param tip Noul tip al cheltuielii.
+        -:   49:     *
+        -:   50:     * @return 0 daca modificarea a avut succes,
+        -:   51:     *         eroare daca este invalida (zi, suma, tip).
+        -:   52:     */
+        5:   53:    int eroare = valideaza_zi(zi);
+        5:   53-block  0
+call    0 returned 5
+        5:   54:    if (eroare != 0) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 4
+        1:   55:        return eroare;
+        1:   55-block  0
+        -:   56:    }
+        -:   57:
+        4:   58:    eroare = valideaza_suma(suma);
+        4:   58-block  0
+call    0 returned 4
+        4:   59:    if (eroare != 0) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 3
+        1:   60:        return eroare;
+        1:   60-block  0
+        -:   61:    }
+        -:   62:
+        3:   63:    eroare = valideaza_tip(tip);
+        3:   63-block  0
+call    0 returned 3
+        3:   64:    if (eroare != 0) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 2
+        1:   65:        return eroare;
+        1:   65-block  0
+        -:   66:    }
+        -:   67:
+        2:   68:    return modificare(lista, index, zi, suma, tip);
+        2:   68-block  0
+call    0 returned 2
+        -:   69:}
+        -:   70:
+function sterge_cheltuiala called 2 returned 100% blocks executed 100%
+        2:   71:int sterge_cheltuiala(ListaCheltuieli *lista, int index) {
+        -:   72:    /**
+        -:   73:     * Sterge o cheltuiala din lista.
+        -:   74:     *
+        -:   75:     * @param lista Pointer catre lista de cheltuieli.
+        -:   76:     * @param index Indexul cheltuielii de sters.
+        -:   77:     *
+        -:   78:     * @return 0 daca stergerea a avut succes.
+        -:   79:     */
+        2:   80:    return stergere(lista, index);
+        2:   80-block  0
+call    0 returned 2
+        -:   81:}
+function vizualizare called 5 returned 100% blocks executed 94%
+        5:   82:ListaCheltuieli* vizualizare(ListaCheltuieli *lista, const char *criteriu, const char *valoare) {
+        -:   83:    /**
+        -:   84:     * Vizualizeaza cheltuieli pe baza unui criteriu (zi, suma, tip).
+        -:   85:     *
+        -:   86:     * @param lista Pointer catre lista de cheltuieli.
+        -:   87:     * @param criteriu Criteriul dupa care se face cautarea (zi, suma, tip).
+        -:   88:     * @param valoare Valoarea asociata criteriului.
+        -:   89:     *
+        -:   90:     * @return 0 daca au fost gasite cheltuieli,
+        -:   91:     *        -1 daca nu au fost gasite.
+        -:   92:     */
+        5:   93:    ListaCheltuieli *lista_filtrata = (ListaCheltuieli*) malloc(sizeof(ListaCheltuieli));
+       5*:   94:    if (!lista_filtrata) return NULL;
+        5:   94-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 5
+    %%%%%:   94-block  1
+        -:   95:
+        5:   96:    lista_filtrata->capacitate = lista->capacitate;
+        5:   97:    lista_filtrata->lungime = 0;
+        5:   98:    lista_filtrata->cheltuiala = (Cheltuiala*) malloc(lista->capacitate * sizeof(Cheltuiala));
+        -:   99:
+        -:  100:
+       20:  101:    for (int i = 0; i < lista->lungime; i++) {
+        5:  101-block  0
+       15:  101-block  1
+       20:  101-block  2
+branch  0 taken 15
+branch  1 taken 5 (fallthrough)
+       15:  102:        if ((strcmp(criteriu, "zi") == 0 && lista->cheltuiala[i].zi == atoi(valoare)) ||
+       15:  102-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 12
+        3:  102-block  1
+call    2 returned 3
+branch  3 taken 1 (fallthrough)
+branch  4 taken 2
+       13:  103:            (strcmp(criteriu, "suma") == 0 && lista->cheltuiala[i].suma == atof(valoare)) ||
+       13:  103-block  0
+branch  0 taken 6 (fallthrough)
+branch  1 taken 7
+        6:  103-block  1
+call    2 returned 6
+branch  3 taken 5 (fallthrough)
+branch  4 taken 1
+       12:  104:            (strcmp(criteriu, "tip") == 0 && strcmp(lista->cheltuiala[i].tip, valoare) == 0)) {
+       12:  104-block  0
+branch  0 taken 6 (fallthrough)
+branch  1 taken 6
+        6:  104-block  1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 5
+        -:  105:
+        4:  106:            lista_filtrata->cheltuiala[lista_filtrata->lungime] = lista->cheltuiala[i];
+        4:  107:            lista_filtrata->lungime++;
+        4:  107-block  0
+        -:  108:            }
+        -:  109:    }
+        -:  110:
+        5:  111:    if (lista_filtrata->lungime == 0) {
+        5:  111-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 3
+        2:  112:        free(lista_filtrata->cheltuiala);
+        2:  113:        free(lista_filtrata);
+        2:  114:        return NULL;
+        2:  114-block  0
+        -:  115:    }
+        -:  116:
+        3:  117:    return lista_filtrata;
+        3:  117-block  0
+        -:  118:}
+        -:  119:
+        -:  120:
+function compara_suma called 3 returned 100% blocks executed 100%
+        3:  121:int compara_suma(const void *a, const void *b) {
+        -:  122:    /**
+        -:  123:     * Compara doua cheltuieli pe baza sumei pentru ordonare.
+        -:  124:     *
+        -:  125:     * @param a Primul element.
+        -:  126:     * @param b Al doilea element.
+        -:  127:     *
+        -:  128:     * @return Diferenta intre sumele celor doua cheltuieli.
+        -:  129:     */
+        3:  130:    return ((Cheltuiala *)a)->suma - ((Cheltuiala *)b)->suma;
+        3:  130-block  0
+        -:  131:}
+        -:  132:
+function compara_suma_descrescator called 3 returned 100% blocks executed 100%
+        3:  133:int compara_suma_descrescator(const void *a, const void *b) {
+        -:  134:    /**
+        -:  135:     * Compara doua cheltuieli pe baza sumei pentru ordonare.
+        -:  136:     *
+        -:  137:     * @param a Primul element.
+        -:  138:     * @param b Al doilea element.
+        -:  139:     *
+        -:  140:     * @return Diferenta intre sumele celor doua cheltuieli.
+        -:  141:     */
+        3:  142:    return ((Cheltuiala *)b)->suma - ((Cheltuiala *)a)->suma;
+        3:  142-block  0
+        -:  143:}
+        -:  144:
+function compara_tip called 3 returned 100% blocks executed 100%
+        3:  145:int compara_tip(const void *a, const void *b) {
+        -:  146:    /**
+        -:  147:     * Compara doua cheltuieli pe baza tipului pentru ordonare.
+        -:  148:     *
+        -:  149:     * @param a Primul element.
+        -:  150:     * @param b Al doilea element.
+        -:  151:     *
+        -:  152:    * @return - < 0 daca tipul cheltuielii din a este mai mic  decat tipul cheltuielii din b.
+        -:  153:     *          - 0 daca tipurile celor doua cheltuieli sunt egale.
+        -:  154:     *          - > 0 daca tipul cheltuielii din a este mai mare decat tipul cheltuielii din b.
+        -:  155:     */
+        3:  156:    return strcmp(((Cheltuiala *)a)->tip, ((Cheltuiala *)b)->tip);
+        3:  156-block  0
+        -:  157:}
+        -:  158:
+function compara_tip_descrescator called 3 returned 100% blocks executed 100%
+        3:  159:int compara_tip_descrescator(const void *a, const void *b) {
+        -:  160:    /**
+        -:  161:     * Compara doua cheltuieli pe baza tipului pentru ordonare.
+        -:  162:     *
+        -:  163:     * @param a Primul element.
+        -:  164:     * @param b Al doilea element.
+        -:  165:     * @return  - < 0 daca tipul cheltuielii din b este mai mic  decat tipul cheltuielii din a.
+        -:  166:     *          - 0 daca tipurile celor doua cheltuieli sunt egale.
+        -:  167:     *          - > 0 daca tipul cheltuielii din b este mai mare decat tipul cheltuielii din a.
+        -:  168:     */
+        3:  169:    return strcmp(((Cheltuiala *)b)->tip, ((Cheltuiala *)a)->tip);
+        3:  169-block  0
+        -:  170:}
+        -:  171:
+function ordonare called 2 returned 100% blocks executed 100%
+        2:  172:void ordonare(ListaCheltuieli *lista, const char *criteriu) {
+        -:  173:    /**
+        -:  174:     * Ordoneaza lista de cheltuieli crescator dupa suma acestora sau dupa tip.
+        -:  175:     *
+        -:  176:     * @param lista Pointer catre lista de cheltuieli.
+        -:  177:     */
+        2:  178:    if (strcmp(criteriu, "suma") == 0) {
+        2:  178-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  179:        qsort(lista->cheltuiala, lista->lungime, sizeof(Cheltuiala), compara_suma);
+        1:  179-block  0
+call    0 returned 1
+        1:  180:    } else if (strcmp(criteriu, "tip") == 0) {
+        1:  180-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:  181:        qsort(lista->cheltuiala, lista->lungime, sizeof(Cheltuiala), compara_tip);
+        1:  181-block  0
+call    0 returned 1
+        -:  182:    }
+        2:  183:}
+        -:  184:
+        -:  185:
+function ordonare_desc called 2 returned 100% blocks executed 100%
+        2:  186:void ordonare_desc(ListaCheltuieli *lista,const char *criteriu) {
+        -:  187:    /**
+        -:  188:     * Ordoneaza lista de cheltuieli descrescator dupa suma acestora sau dupa tip.
+        -:  189:     *
+        -:  190:     * @param lista Pointer catre lista de cheltuieli.
+        -:  191:     */
+        2:  192:    if (lista && lista->cheltuiala) {
+        2:  192-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 0
+        2:  192-block  1
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0
+        2:  193:        if (strcmp(criteriu, "suma") == 0) {
+        2:  193-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  194:            qsort(lista->cheltuiala, lista->lungime, sizeof(Cheltuiala), compara_suma_descrescator);
+        1:  194-block  0
+call    0 returned 1
+        1:  195:        } else if (strcmp(criteriu, "tip") == 0) {
+        1:  195-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:  196:            qsort(lista->cheltuiala, lista->lungime, sizeof(Cheltuiala), compara_tip_descrescator);
+        1:  196-block  0
+call    0 returned 1
+        -:  197:        }
+        -:  198:    }
+        2:  199:}
+        -:  200:
+function get_all_ called 1 returned 100% blocks executed 100%
+        1:  201:ListaCheltuieli* get_all_(ListaCheltuieli *lista) {
+        -:  202:    /**
+        -:  203:     * Obtine lista completa de cheltuieli.
+        -:  204:     *
+        -:  205:     * @param lista Pointer catre lista de cheltuieli.
+        -:  206:     *
+        -:  207:     * @return Pointer catre lista de cheltuieli.
+        -:  208:     */
+        1:  209:    return get_all(lista);
+        1:  209-block  0
+call    0 returned 1
+        -:  210:}

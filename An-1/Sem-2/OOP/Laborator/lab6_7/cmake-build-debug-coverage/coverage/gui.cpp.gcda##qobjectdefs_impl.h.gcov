@@ -1,0 +1,973 @@
+        -:    0:Source:C:/Qt/6.9.0/mingw_64/include/QtCore/qobjectdefs_impl.h
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\gui.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\gui.cpp.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright (C) 2016 The Qt Company Ltd.
+        -:    2:// Copyright (C) 2013 Olivier Goffart <ogoffart@woboq.com>
+        -:    3:// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+        -:    4:
+        -:    5:#ifndef QOBJECTDEFS_H
+        -:    6:#error Do not include qobjectdefs_impl.h directly
+        -:    7:#include <QtCore/qnamespace.h>
+        -:    8:#endif
+        -:    9:
+        -:   10:#if 0
+        -:   11:#pragma qt_sync_skip_header_check
+        -:   12:#pragma qt_sync_stop_processing
+        -:   13:#endif
+        -:   14:
+        -:   15:#include <QtCore/qfunctionaltools_impl.h>
+        -:   16:
+        -:   17:#include <memory>
+        -:   18:
+        -:   19:QT_BEGIN_NAMESPACE
+        -:   20:class QObject;
+        -:   21:class QObjectPrivate;
+        -:   22:class QMetaMethod;
+        -:   23:class QByteArray;
+        -:   24:
+        -:   25:namespace QtPrivate {
+        -:   26:    template <typename T> struct RemoveRef { typedef T Type; };
+        -:   27:    template <typename T> struct RemoveRef<T&> { typedef T Type; };
+        -:   28:    template <typename T> struct RemoveConstRef { typedef T Type; };
+        -:   29:    template <typename T> struct RemoveConstRef<const T&> { typedef T Type; };
+        -:   30:
+        -:   31:    /*
+        -:   32:       The following List classes are used to help to handle the list of arguments.
+        -:   33:       It follow the same principles as the lisp lists.
+        -:   34:       List_Left<L,N> take a list and a number as a parameter and returns (via the Value typedef,
+        -:   35:       the list composed of the first N element of the list
+        -:   36:     */
+        -:   37:    // With variadic template, lists are represented using a variadic template argument instead of the lisp way
+        -:   38:    template <typename... Ts> struct List { static constexpr size_t size = sizeof...(Ts); };
+        -:   39:    template<typename T> struct SizeOfList { static constexpr size_t value = 1; };
+        -:   40:    template<> struct SizeOfList<List<>> { static constexpr size_t value = 0; };
+        -:   41:    template<typename ...Ts> struct SizeOfList<List<Ts...>>  { static constexpr size_t value = List<Ts...>::size; };
+        -:   42:    template <typename Head, typename... Tail> struct List<Head, Tail...> {
+        -:   43:        static constexpr size_t size = 1 + sizeof...(Tail);
+        -:   44:        typedef Head Car; typedef List<Tail...> Cdr;
+        -:   45:    };
+        -:   46:    template <typename, typename> struct List_Append;
+        -:   47:    template <typename... L1, typename...L2> struct List_Append<List<L1...>, List<L2...>> { typedef List<L1..., L2...> Value; };
+        -:   48:    template <typename L, int N> struct List_Left {
+        -:   49:        typedef typename List_Append<List<typename L::Car>,typename List_Left<typename L::Cdr, N - 1>::Value>::Value Value;
+        -:   50:    };
+        -:   51:    template <typename L> struct List_Left<L, 0> { typedef List<> Value; };
+        -:   52:
+        -:   53:    /*
+        -:   54:        This is used to store the return value from a slot, whether the caller
+        -:   55:        wants to store this value (QMetaObject::invokeMethod() with
+        -:   56:        qReturnArg() or non-void signal ) or not.
+        -:   57:     */
+        -:   58:    struct FunctorCallBase
+        -:   59:    {
+        -:   60:        template <typename R, typename Lambda>
+        9:   61:        static void call_internal([[maybe_unused]] void **args, Lambda &&fn)
+        -:   62:            noexcept(std::is_nothrow_invocable_v<Lambda>)
+        -:   63:        {
+        -:   64:            if constexpr (std::is_void_v<R> || std::is_void_v<std::invoke_result_t<Lambda>>) {
+        9:   65:                std::forward<Lambda>(fn)();
+        -:   66:            } else {
+        -:   67:                if (args[0])
+        -:   68:                    *reinterpret_cast<R *>(args[0]) = std::forward<Lambda>(fn)();
+        -:   69:                else
+        -:   70:                    [[maybe_unused]] auto r = std::forward<Lambda>(fn)();
+        -:   71:            }
+        9:   72:        }
+------------------
+_ZN9QtPrivate15FunctorCallBase13call_internalIvZNS_11FunctorCallISt16integer_sequenceIyJEENS_4ListIJEEEvZN3GUI18regenereazaButoaneEvEUlvE_E4callERS8_PPvEUlvE_EEvSC_OT0_:
+function _ZN9QtPrivate15FunctorCallBase13call_internalIvZNS_11FunctorCallISt16integer_sequenceIyJEENS_4ListIJEEEvZN3GUI18regenereazaButoaneEvEUlvE_E4callERS8_PPvEUlvE_EEvSC_OT0_ called 1 returned 100% blocks executed 100%
+        1:   61:        static void call_internal([[maybe_unused]] void **args, Lambda &&fn)
+        -:   62:            noexcept(std::is_nothrow_invocable_v<Lambda>)
+        -:   63:        {
+        -:   64:            if constexpr (std::is_void_v<R> || std::is_void_v<std::invoke_result_t<Lambda>>) {
+        1:   65:                std::forward<Lambda>(fn)();
+        1:   65-block  0
+call    0 returned 1
+call    1 returned 1
+        -:   66:            } else {
+        -:   67:                if (args[0])
+        -:   68:                    *reinterpret_cast<R *>(args[0]) = std::forward<Lambda>(fn)();
+        -:   69:                else
+        -:   70:                    [[maybe_unused]] auto r = std::forward<Lambda>(fn)();
+        -:   71:            }
+        1:   72:        }
+------------------
+_ZN9QtPrivate15FunctorCallBase13call_internalIvZNS_11FunctorCallISt16integer_sequenceIyJEENS_4ListIJEEEvZN3GUI19genereazaButoaneGenEvEUlvE_E4callERS8_PPvEUlvE_EEvSC_OT0_:
+function _ZN9QtPrivate15FunctorCallBase13call_internalIvZNS_11FunctorCallISt16integer_sequenceIyJEENS_4ListIJEEEvZN3GUI19genereazaButoaneGenEvEUlvE_E4callERS8_PPvEUlvE_EEvSC_OT0_ called 2 returned 100% blocks executed 100%
+        2:   61:        static void call_internal([[maybe_unused]] void **args, Lambda &&fn)
+        -:   62:            noexcept(std::is_nothrow_invocable_v<Lambda>)
+        -:   63:        {
+        -:   64:            if constexpr (std::is_void_v<R> || std::is_void_v<std::invoke_result_t<Lambda>>) {
+        2:   65:                std::forward<Lambda>(fn)();
+        2:   65-block  0
+call    0 returned 2
+call    1 returned 2
+        -:   66:            } else {
+        -:   67:                if (args[0])
+        -:   68:                    *reinterpret_cast<R *>(args[0]) = std::forward<Lambda>(fn)();
+        -:   69:                else
+        -:   70:                    [[maybe_unused]] auto r = std::forward<Lambda>(fn)();
+        -:   71:            }
+        2:   72:        }
+------------------
+_ZN9QtPrivate15FunctorCallBase13call_internalIvZNS_11FunctorCallISt16integer_sequenceIyJEENS_4ListIJEEEvM3GUIFvvEE4callES9_PS7_PPvEUlvE_EEvSD_OT0_:
+function _ZN9QtPrivate15FunctorCallBase13call_internalIvZNS_11FunctorCallISt16integer_sequenceIyJEENS_4ListIJEEEvM3GUIFvvEE4callES9_PS7_PPvEUlvE_EEvSD_OT0_ called 6 returned 100% blocks executed 100%
+        6:   61:        static void call_internal([[maybe_unused]] void **args, Lambda &&fn)
+        -:   62:            noexcept(std::is_nothrow_invocable_v<Lambda>)
+        -:   63:        {
+        -:   64:            if constexpr (std::is_void_v<R> || std::is_void_v<std::invoke_result_t<Lambda>>) {
+        6:   65:                std::forward<Lambda>(fn)();
+        6:   65-block  0
+call    0 returned 6
+call    1 returned 6
+        -:   66:            } else {
+        -:   67:                if (args[0])
+        -:   68:                    *reinterpret_cast<R *>(args[0]) = std::forward<Lambda>(fn)();
+        -:   69:                else
+        -:   70:                    [[maybe_unused]] auto r = std::forward<Lambda>(fn)();
+        -:   71:            }
+        6:   72:        }
+------------------
+        -:   73:    };
+        -:   74:
+        -:   75:    /*
+        -:   76:      The FunctionPointer<Func> struct is a type trait for function pointer.
+        -:   77:        - ArgumentCount  is the number of argument, or -1 if it is unknown
+        -:   78:        - the Object typedef is the Object of a pointer to member function
+        -:   79:        - the Arguments typedef is the list of argument (in a QtPrivate::List)
+        -:   80:        - the Function typedef is an alias to the template parameter Func
+        -:   81:        - the call<Args, R>(f,o,args) method is used to call that slot
+        -:   82:            Args is the list of argument of the signal
+        -:   83:            R is the return type of the signal
+        -:   84:            f is the function pointer
+        -:   85:            o is the receiver object
+        -:   86:            and args is the array of pointer to arguments, as used in qt_metacall
+        -:   87:
+        -:   88:       The Functor<Func,N> struct is the helper to call a functor of N argument.
+        -:   89:       Its call function is the same as the FunctionPointer::call function.
+        -:   90:     */
+        -:   91:    template<typename Func> struct FunctionPointer { enum {ArgumentCount = -1, IsPointerToMemberFunction = false}; };
+        -:   92:
+        -:   93:    template<typename ObjPrivate> inline void assertObjectType(QObjectPrivate *d);
+function _ZN9QtPrivate16assertObjectTypeI3GUIEEvP7QObject called 6 returned 100% blocks executed 67%
+        6:   94:    template<typename Obj> inline void assertObjectType(QObject *o)
+        -:   95:    {
+        -:   96:        // ensure all three compile
+        -:   97:        [[maybe_unused]] auto staticcast = [](QObject *obj) { return static_cast<Obj *>(obj); };
+        -:   98:        [[maybe_unused]] auto qobjcast = [](QObject *obj) { return Obj::staticMetaObject.cast(obj); };
+        -:   99:#ifdef __cpp_rtti
+function _ZZN9QtPrivate16assertObjectTypeI3GUIEEvP7QObjectENKUlS3_E1_clES3_ called 6 returned 100% blocks executed 80%
+       6*:  100:        [[maybe_unused]] auto dyncast = [](QObject *obj) { return dynamic_cast<Obj *>(obj); };
+        6:  100-block  0
+branch  0 taken 6 (fallthrough)
+branch  1 taken 0
+        6:  100-block  1
+    %%%%%:  100-block  2
+        6:  100-block  3
+        -:  101:        auto cast = dyncast;
+        -:  102:#else
+        -:  103:        auto cast = qobjcast;
+        -:  104:#endif
+       6*:  105:        Q_ASSERT_X(cast(o), Obj::staticMetaObject.className(),
+        6:  105-block  0
+call    0 returned 6
+branch  1 taken 0 (fallthrough)
+branch  2 taken 6
+    %%%%%:  105-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  105-block  2
+call    6 never executed
+        -:  106:                   "Called object is not of the correct type (class destructor may have already run)");
+        6:  107:    }
+        6:  107-block  0
+        -:  108:
+        -:  109:    template <typename, typename, typename, typename> struct FunctorCall;
+        -:  110:    template <size_t... II, typename... SignalArgs, typename R, typename Function>
+        -:  111:    struct FunctorCall<std::index_sequence<II...>, List<SignalArgs...>, R, Function> : FunctorCallBase
+        -:  112:    {
+        3:  113:        static void call(Function &f, void **arg)
+        -:  114:        {
+        6:  115:            call_internal<R>(arg, [&] {
+        3:  116:                return f((*reinterpret_cast<typename RemoveRef<SignalArgs>::Type *>(arg[II+1]))...);
+        1:  116-block  0
+call    0 returned 1
+        2:  116-block  1
+call    1 returned 2
+        -:  117:            });
+        3:  118:        }
+------------------
+_ZN9QtPrivate11FunctorCallISt16integer_sequenceIyJEENS_4ListIJEEEvZN3GUI18regenereazaButoaneEvEUlvE_E4callERS6_PPv:
+function _ZN9QtPrivate11FunctorCallISt16integer_sequenceIyJEENS_4ListIJEEEvZN3GUI18regenereazaButoaneEvEUlvE_E4callERS6_PPv called 1 returned 100% blocks executed 100%
+        1:  113:        static void call(Function &f, void **arg)
+        -:  114:        {
+        1:  115:            call_internal<R>(arg, [&] {
+        1:  115-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  116:                return f((*reinterpret_cast<typename RemoveRef<SignalArgs>::Type *>(arg[II+1]))...);
+        -:  117:            });
+        1:  118:        }
+        1:  118-block  0
+------------------
+_ZN9QtPrivate11FunctorCallISt16integer_sequenceIyJEENS_4ListIJEEEvZN3GUI19genereazaButoaneGenEvEUlvE_E4callERS6_PPv:
+function _ZN9QtPrivate11FunctorCallISt16integer_sequenceIyJEENS_4ListIJEEEvZN3GUI19genereazaButoaneGenEvEUlvE_E4callERS6_PPv called 2 returned 100% blocks executed 100%
+        2:  113:        static void call(Function &f, void **arg)
+        -:  114:        {
+        2:  115:            call_internal<R>(arg, [&] {
+        2:  115-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  116:                return f((*reinterpret_cast<typename RemoveRef<SignalArgs>::Type *>(arg[II+1]))...);
+        -:  117:            });
+        2:  118:        }
+        2:  118-block  0
+------------------
+        -:  119:    };
+        -:  120:    template <size_t... II, typename... SignalArgs, typename R, typename... SlotArgs, typename SlotRet, class Obj>
+        -:  121:    struct FunctorCall<std::index_sequence<II...>, List<SignalArgs...>, R, SlotRet (Obj::*)(SlotArgs...)> : FunctorCallBase
+        -:  122:    {
+function _ZN9QtPrivate11FunctorCallISt16integer_sequenceIyJEENS_4ListIJEEEvM3GUIFvvEE4callES7_PS5_PPv called 6 returned 100% blocks executed 100%
+        6:  123:        static void call(SlotRet (Obj::*f)(SlotArgs...), Obj *o, void **arg)
+        -:  124:        {
+        6:  125:            assertObjectType<Obj>(o);
+        6:  125-block  0
+call    0 returned 6
+function _ZZN9QtPrivate11FunctorCallISt16integer_sequenceIyJEENS_4ListIJEEEvM3GUIFvvEE4callES7_PS5_PPvENKUlvE_clEv called 6 returned 100% blocks executed 80%
+        6:  126:            call_internal<R>(arg, [&] {
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+       6*:  127:                return (o->*f)((*reinterpret_cast<typename RemoveRef<SignalArgs>::Type *>(arg[II+1]))...);
+        6:  127-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 6
+    %%%%%:  127-block  1
+        6:  127-block  2
+        6:  127-block  3
+call    2 returned 6
+        -:  128:            });
+        6:  129:        }
+        6:  129-block  0
+        -:  130:    };
+        -:  131:    template <size_t... II, typename... SignalArgs, typename R, typename... SlotArgs, typename SlotRet, class Obj>
+        -:  132:    struct FunctorCall<std::index_sequence<II...>, List<SignalArgs...>, R, SlotRet (Obj::*)(SlotArgs...) const> : FunctorCallBase
+        -:  133:    {
+        -:  134:        static void call(SlotRet (Obj::*f)(SlotArgs...) const, Obj *o, void **arg)
+        -:  135:        {
+        -:  136:            assertObjectType<Obj>(o);
+        -:  137:            call_internal<R>(arg, [&] {
+        -:  138:                return (o->*f)((*reinterpret_cast<typename RemoveRef<SignalArgs>::Type *>(arg[II+1]))...);
+        -:  139:            });
+        -:  140:        }
+        -:  141:    };
+        -:  142:    template <size_t... II, typename... SignalArgs, typename R, typename... SlotArgs, typename SlotRet, class Obj>
+        -:  143:    struct FunctorCall<std::index_sequence<II...>, List<SignalArgs...>, R, SlotRet (Obj::*)(SlotArgs...) noexcept> : FunctorCallBase
+        -:  144:    {
+        -:  145:        static void call(SlotRet (Obj::*f)(SlotArgs...) noexcept, Obj *o, void **arg)
+        -:  146:        {
+        -:  147:            assertObjectType<Obj>(o);
+        -:  148:            call_internal<R>(arg, [&]() noexcept {
+        -:  149:                return (o->*f)((*reinterpret_cast<typename RemoveRef<SignalArgs>::Type *>(arg[II+1]))...);
+        -:  150:            });
+        -:  151:        }
+        -:  152:    };
+        -:  153:    template <size_t... II, typename... SignalArgs, typename R, typename... SlotArgs, typename SlotRet, class Obj>
+        -:  154:    struct FunctorCall<std::index_sequence<II...>, List<SignalArgs...>, R, SlotRet (Obj::*)(SlotArgs...) const noexcept> : FunctorCallBase
+        -:  155:    {
+        -:  156:        static void call(SlotRet (Obj::*f)(SlotArgs...) const noexcept, Obj *o, void **arg)
+        -:  157:        {
+        -:  158:            assertObjectType<Obj>(o);
+        -:  159:            call_internal<R>(arg, [&]() noexcept {
+        -:  160:                return (o->*f)((*reinterpret_cast<typename RemoveRef<SignalArgs>::Type *>(arg[II+1]))...);
+        -:  161:            });
+        -:  162:        }
+        -:  163:    };
+        -:  164:
+        -:  165:    template<class Obj, typename Ret, typename... Args> struct FunctionPointer<Ret (Obj::*) (Args...)>
+        -:  166:    {
+        -:  167:        typedef Obj Object;
+        -:  168:        typedef List<Args...>  Arguments;
+        -:  169:        typedef Ret ReturnType;
+        -:  170:        typedef Ret (Obj::*Function) (Args...);
+        -:  171:        enum {ArgumentCount = sizeof...(Args), IsPointerToMemberFunction = true};
+        -:  172:        template <typename SignalArgs, typename R>
+function _ZN9QtPrivate15FunctionPointerIM3GUIFvvEE4callINS_4ListIJEEEvEEvS3_PS1_PPv called 6 returned 100% blocks executed 100%
+        6:  173:        static void call(Function f, Obj *o, void **arg) {
+        6:  174:            FunctorCall<std::index_sequence_for<Args...>, SignalArgs, R, Function>::call(f, o, arg);
+        6:  174-block  0
+call    0 returned 6
+        6:  175:        }
+        -:  176:    };
+        -:  177:    template<class Obj, typename Ret, typename... Args> struct FunctionPointer<Ret (Obj::*) (Args...) const>
+        -:  178:    {
+        -:  179:        typedef Obj Object;
+        -:  180:        typedef List<Args...>  Arguments;
+        -:  181:        typedef Ret ReturnType;
+        -:  182:        typedef Ret (Obj::*Function) (Args...) const;
+        -:  183:        enum {ArgumentCount = sizeof...(Args), IsPointerToMemberFunction = true};
+        -:  184:        template <typename SignalArgs, typename R>
+        -:  185:        static void call(Function f, Obj *o, void **arg) {
+        -:  186:            FunctorCall<std::index_sequence_for<Args...>, SignalArgs, R, Function>::call(f, o, arg);
+        -:  187:        }
+        -:  188:    };
+        -:  189:
+        -:  190:    template<typename Ret, typename... Args> struct FunctionPointer<Ret (*) (Args...)>
+        -:  191:    {
+        -:  192:        typedef List<Args...> Arguments;
+        -:  193:        typedef Ret ReturnType;
+        -:  194:        typedef Ret (*Function) (Args...);
+        -:  195:        enum {ArgumentCount = sizeof...(Args), IsPointerToMemberFunction = false};
+        -:  196:        template <typename SignalArgs, typename R>
+        -:  197:        static void call(Function f, void *, void **arg) {
+        -:  198:            FunctorCall<std::index_sequence_for<Args...>, SignalArgs, R, Function>::call(f, arg);
+        -:  199:        }
+        -:  200:    };
+        -:  201:
+        -:  202:    template<class Obj, typename Ret, typename... Args> struct FunctionPointer<Ret (Obj::*) (Args...) noexcept>
+        -:  203:    {
+        -:  204:        typedef Obj Object;
+        -:  205:        typedef List<Args...>  Arguments;
+        -:  206:        typedef Ret ReturnType;
+        -:  207:        typedef Ret (Obj::*Function) (Args...) noexcept;
+        -:  208:        enum {ArgumentCount = sizeof...(Args), IsPointerToMemberFunction = true};
+        -:  209:        template <typename SignalArgs, typename R>
+        -:  210:        static void call(Function f, Obj *o, void **arg) {
+        -:  211:            FunctorCall<std::index_sequence_for<Args...>, SignalArgs, R, Function>::call(f, o, arg);
+        -:  212:        }
+        -:  213:    };
+        -:  214:    template<class Obj, typename Ret, typename... Args> struct FunctionPointer<Ret (Obj::*) (Args...) const noexcept>
+        -:  215:    {
+        -:  216:        typedef Obj Object;
+        -:  217:        typedef List<Args...>  Arguments;
+        -:  218:        typedef Ret ReturnType;
+        -:  219:        typedef Ret (Obj::*Function) (Args...) const noexcept;
+        -:  220:        enum {ArgumentCount = sizeof...(Args), IsPointerToMemberFunction = true};
+        -:  221:        template <typename SignalArgs, typename R>
+        -:  222:        static void call(Function f, Obj *o, void **arg) {
+        -:  223:            FunctorCall<std::index_sequence_for<Args...>, SignalArgs, R, Function>::call(f, o, arg);
+        -:  224:        }
+        -:  225:    };
+        -:  226:
+        -:  227:    template<typename Ret, typename... Args> struct FunctionPointer<Ret (*) (Args...) noexcept>
+        -:  228:    {
+        -:  229:        typedef List<Args...> Arguments;
+        -:  230:        typedef Ret ReturnType;
+        -:  231:        typedef Ret (*Function) (Args...) noexcept;
+        -:  232:        enum {ArgumentCount = sizeof...(Args), IsPointerToMemberFunction = false};
+        -:  233:        template <typename SignalArgs, typename R>
+        -:  234:        static void call(Function f, void *, void **arg) {
+        -:  235:            FunctorCall<std::index_sequence_for<Args...>, SignalArgs, R, Function>::call(f, arg);
+        -:  236:        }
+        -:  237:    };
+        -:  238:
+        -:  239:    // Traits to detect if there is a conversion between two types,
+        -:  240:    // and that conversion does not include a narrowing conversion.
+        -:  241:    template <typename T>
+        -:  242:    struct NarrowingDetector { T t[1]; }; // from P0608
+        -:  243:
+        -:  244:    template <typename From, typename To, typename Enable = void>
+        -:  245:    struct IsConvertibleWithoutNarrowing : std::false_type {};
+        -:  246:
+        -:  247:    template <typename From, typename To>
+        -:  248:    struct IsConvertibleWithoutNarrowing<From, To,
+        -:  249:            std::void_t< decltype( NarrowingDetector<To>{ {std::declval<From>()} } ) >
+        -:  250:        > : std::true_type {};
+        -:  251:
+        -:  252:    // Check for the actual arguments. If they are exactly the same,
+        -:  253:    // then don't bother checking for narrowing; as a by-product,
+        -:  254:    // this solves the problem of incomplete types (which must be supported,
+        -:  255:    // or they would error out in the trait above).
+        -:  256:    template <typename From, typename To, typename Enable = void>
+        -:  257:    struct AreArgumentsConvertibleWithoutNarrowingBase : std::false_type {};
+        -:  258:
+        -:  259:    template <typename From, typename To>
+        -:  260:    struct AreArgumentsConvertibleWithoutNarrowingBase<From, To,
+        -:  261:        std::enable_if_t<
+        -:  262:            std::disjunction_v<std::is_same<From, To>, IsConvertibleWithoutNarrowing<From, To>>
+        -:  263:        >
+        -:  264:    > : std::true_type {};
+        -:  265:
+        -:  266:    /*
+        -:  267:       Logic that check if the arguments of the slot matches the argument of the signal.
+        -:  268:       To be used like this:
+        -:  269:       static_assert(CheckCompatibleArguments<FunctionPointer<Signal>::Arguments, FunctionPointer<Slot>::Arguments>::value)
+        -:  270:    */
+        -:  271:    template<typename A1, typename A2> struct AreArgumentsCompatible {
+        -:  272:        static int test(const std::remove_reference_t<A2>&);
+        -:  273:        static char test(...);
+        -:  274:        enum { value = sizeof(test(std::declval<std::remove_reference_t<A1>>())) == sizeof(int) };
+        -:  275:#ifdef QT_NO_NARROWING_CONVERSIONS_IN_CONNECT
+        -:  276:        using AreArgumentsConvertibleWithoutNarrowing = AreArgumentsConvertibleWithoutNarrowingBase<std::decay_t<A1>, std::decay_t<A2>>;
+        -:  277:        static_assert(AreArgumentsConvertibleWithoutNarrowing::value, "Signal and slot arguments are not compatible (narrowing)");
+        -:  278:#endif
+        -:  279:    };
+        -:  280:    template<typename A1, typename A2> struct AreArgumentsCompatible<A1, A2&> { enum { value = false }; };
+        -:  281:    template<typename A> struct AreArgumentsCompatible<A&, A&> { enum { value = true }; };
+        -:  282:    // void as a return value
+        -:  283:    template<typename A> struct AreArgumentsCompatible<void, A> { enum { value = true }; };
+        -:  284:    template<typename A> struct AreArgumentsCompatible<A, void> { enum { value = true }; };
+        -:  285:    template<> struct AreArgumentsCompatible<void, void> { enum { value = true }; };
+        -:  286:
+        -:  287:    template <typename List1, typename List2> struct CheckCompatibleArguments { enum { value = false }; };
+        -:  288:    template <> struct CheckCompatibleArguments<List<>, List<>> { enum { value = true }; };
+        -:  289:    template <typename List1> struct CheckCompatibleArguments<List1, List<>> { enum { value = true }; };
+        -:  290:    template <typename Arg1, typename Arg2, typename... Tail1, typename... Tail2>
+        -:  291:    struct CheckCompatibleArguments<List<Arg1, Tail1...>, List<Arg2, Tail2...>>
+        -:  292:    {
+        -:  293:        enum { value = AreArgumentsCompatible<typename RemoveConstRef<Arg1>::Type, typename RemoveConstRef<Arg2>::Type>::value
+        -:  294:                    && CheckCompatibleArguments<List<Tail1...>, List<Tail2...>>::value };
+        -:  295:    };
+        -:  296:
+        -:  297:    /*
+        -:  298:       Find the maximum number of arguments a functor object can take and be still compatible with
+        -:  299:       the arguments from the signal.
+        -:  300:       Value is the number of arguments, or -1 if nothing matches.
+        -:  301:     */
+        -:  302:    template <typename Functor, typename ArgList> struct ComputeFunctorArgumentCount;
+        -:  303:
+        -:  304:    template <typename Functor, typename ArgList, bool Done> struct ComputeFunctorArgumentCountHelper
+        -:  305:    { enum { Value = -1 }; };
+        -:  306:    template <typename Functor, typename First, typename... ArgList>
+        -:  307:    struct ComputeFunctorArgumentCountHelper<Functor, List<First, ArgList...>, false>
+        -:  308:        : ComputeFunctorArgumentCount<Functor,
+        -:  309:            typename List_Left<List<First, ArgList...>, sizeof...(ArgList)>::Value> {};
+        -:  310:
+        -:  311:    template <typename Functor, typename... ArgList> struct ComputeFunctorArgumentCount<Functor, List<ArgList...>>
+        -:  312:    {
+        -:  313:        template <typename F> static auto test(F f) -> decltype(((f.operator()((std::declval<ArgList>())...)), int()));
+        -:  314:        static char test(...);
+        -:  315:        enum {
+        -:  316:            Ok = sizeof(test(std::declval<Functor>())) == sizeof(int),
+        -:  317:            Value = Ok ? int(sizeof...(ArgList)) : int(ComputeFunctorArgumentCountHelper<Functor, List<ArgList...>, Ok>::Value)
+        -:  318:        };
+        -:  319:    };
+        -:  320:
+        -:  321:    /* get the return type of a functor, given the signal argument list  */
+        -:  322:    template <typename Functor, typename ArgList> struct FunctorReturnType;
+        -:  323:    template <typename Functor, typename... ArgList> struct FunctorReturnType<Functor, List<ArgList...>>
+        -:  324:        : std::invoke_result<Functor, ArgList...>
+        -:  325:    { };
+        -:  326:
+        -:  327:    template<typename Func, typename... Args>
+        -:  328:    struct FunctorCallable
+        -:  329:    {
+        -:  330:        using ReturnType = std::invoke_result_t<Func, Args...>;
+        -:  331:        using Function = ReturnType(*)(Args...);
+        -:  332:        enum {ArgumentCount = sizeof...(Args)};
+        -:  333:        using Arguments = QtPrivate::List<Args...>;
+        -:  334:
+        -:  335:        template <typename SignalArgs, typename R>
+        3:  336:        static void call(Func &f, void *, void **arg) {
+        3:  337:            FunctorCall<std::index_sequence_for<Args...>, SignalArgs, R, Func>::call(f, arg);
+        3:  338:        }
+------------------
+_ZN9QtPrivate15FunctorCallableIZN3GUI18regenereazaButoaneEvEUlvE_JEE4callINS_4ListIJEEEvEEvRS2_PvPS8_:
+function _ZN9QtPrivate15FunctorCallableIZN3GUI18regenereazaButoaneEvEUlvE_JEE4callINS_4ListIJEEEvEEvRS2_PvPS8_ called 1 returned 100% blocks executed 100%
+        1:  336:        static void call(Func &f, void *, void **arg) {
+        1:  337:            FunctorCall<std::index_sequence_for<Args...>, SignalArgs, R, Func>::call(f, arg);
+        1:  337-block  0
+call    0 returned 1
+        1:  338:        }
+------------------
+_ZN9QtPrivate15FunctorCallableIZN3GUI19genereazaButoaneGenEvEUlvE_JEE4callINS_4ListIJEEEvEEvRS2_PvPS8_:
+function _ZN9QtPrivate15FunctorCallableIZN3GUI19genereazaButoaneGenEvEUlvE_JEE4callINS_4ListIJEEEvEEvRS2_PvPS8_ called 2 returned 100% blocks executed 100%
+        2:  336:        static void call(Func &f, void *, void **arg) {
+        2:  337:            FunctorCall<std::index_sequence_for<Args...>, SignalArgs, R, Func>::call(f, arg);
+        2:  337-block  0
+call    0 returned 2
+        2:  338:        }
+------------------
+        -:  339:    };
+        -:  340:
+        -:  341:    template <typename Functor, typename... Args>
+        -:  342:    struct HasCallOperatorAcceptingArgs
+        -:  343:    {
+        -:  344:    private:
+        -:  345:        template <typename F, typename = void>
+        -:  346:        struct Test : std::false_type
+        -:  347:        {
+        -:  348:        };
+        -:  349:        // We explicitly use .operator() to not return true for pointers to free/static function
+        -:  350:        template <typename F>
+        -:  351:        struct Test<F, std::void_t<decltype(std::declval<F>().operator()(std::declval<Args>()...))>>
+        -:  352:            : std::true_type
+        -:  353:        {
+        -:  354:        };
+        -:  355:
+        -:  356:    public:
+        -:  357:        using Type = Test<Functor>;
+        -:  358:        static constexpr bool value = Type::value;
+        -:  359:    };
+        -:  360:
+        -:  361:    template <typename Functor, typename... Args>
+        -:  362:    constexpr bool
+        -:  363:            HasCallOperatorAcceptingArgs_v = HasCallOperatorAcceptingArgs<Functor, Args...>::value;
+        -:  364:
+        -:  365:    template <typename Func, typename... Args>
+        -:  366:    struct CallableHelper
+        -:  367:    {
+        -:  368:    private:
+        -:  369:        // Could've been std::conditional_t, but that requires all branches to
+        -:  370:        // be valid
+        -:  371:        static auto Resolve(std::true_type CallOperator) -> FunctorCallable<Func, Args...>;
+        -:  372:        static auto Resolve(std::false_type CallOperator) -> FunctionPointer<std::decay_t<Func>>;
+        -:  373:
+        -:  374:    public:
+        -:  375:        using Type = decltype(Resolve(typename HasCallOperatorAcceptingArgs<std::decay_t<Func>,
+        -:  376:                Args...>::Type{}));
+        -:  377:    };
+        -:  378:
+        -:  379:    template<typename Func, typename... Args>
+        -:  380:    struct Callable : CallableHelper<Func, Args...>::Type
+        -:  381:    {};
+        -:  382:    template<typename Func, typename... Args>
+        -:  383:    struct Callable<Func, List<Args...>> : CallableHelper<Func, Args...>::Type
+        -:  384:    {};
+        -:  385:
+        -:  386:    /*
+        -:  387:        Wrapper around ComputeFunctorArgumentCount and CheckCompatibleArgument,
+        -:  388:        depending on whether \a Functor is a PMF or not. Returns -1 if \a Func is
+        -:  389:        not compatible with the \a ExpectedArguments, otherwise returns >= 0.
+        -:  390:    */
+        -:  391:    template<typename Prototype, typename Functor>
+        -:  392:    inline constexpr std::enable_if_t<!std::disjunction_v<std::is_convertible<Prototype, const char *>,
+        -:  393:                                                          std::is_same<std::decay_t<Prototype>, QMetaMethod>,
+        -:  394:                                                          std::is_convertible<Functor, const char *>,
+        -:  395:                                                          std::is_same<std::decay_t<Functor>, QMetaMethod>
+        -:  396:                                                         >,
+        -:  397:                                      int>
+        -:  398:    countMatchingArguments()
+        -:  399:    {
+        -:  400:        using ExpectedArguments = typename QtPrivate::FunctionPointer<Prototype>::Arguments;
+        -:  401:        using Actual = std::decay_t<Functor>;
+        -:  402:
+        -:  403:        if constexpr (QtPrivate::FunctionPointer<Actual>::IsPointerToMemberFunction
+        -:  404:                   || QtPrivate::FunctionPointer<Actual>::ArgumentCount >= 0) {
+        -:  405:            // PMF or free function
+        -:  406:            using ActualArguments = typename QtPrivate::FunctionPointer<Actual>::Arguments;
+        -:  407:            if constexpr (QtPrivate::CheckCompatibleArguments<ExpectedArguments, ActualArguments>::value)
+        -:  408:                return QtPrivate::FunctionPointer<Actual>::ArgumentCount;
+        -:  409:            else
+        -:  410:                return -1;
+        -:  411:        } else {
+        -:  412:            // lambda or functor
+        -:  413:            return QtPrivate::ComputeFunctorArgumentCount<Actual, ExpectedArguments>::Value;
+        -:  414:        }
+        -:  415:    }
+        -:  416:
+        -:  417:    // internal base class (interface) containing functions required to call a slot managed by a pointer to function.
+        -:  418:    class QSlotObjectBase
+        -:  419:    {
+        -:  420:        // Don't use virtual functions here; we don't want the
+        -:  421:        // compiler to create tons of per-polymorphic-class stuff that
+        -:  422:        // we'll never need. We just use one function pointer, and the
+        -:  423:        // Operations enum below to distinguish requests
+        -:  424:#if QT_VERSION < QT_VERSION_CHECK(7, 0, 0)
+        -:  425:        QAtomicInt m_ref = 1;
+        -:  426:        typedef void (*ImplFn)(int which, QSlotObjectBase* this_, QObject *receiver, void **args, bool *ret);
+        -:  427:        const ImplFn m_impl;
+        -:  428:#else
+        -:  429:        using ImplFn = void (*)(QSlotObjectBase* this_, QObject *receiver, void **args, int which, bool *ret);
+        -:  430:        const ImplFn m_impl;
+        -:  431:        QAtomicInt m_ref = 1;
+        -:  432:#endif
+        -:  433:    protected:
+        -:  434:        // The operations that can be requested by calls to m_impl,
+        -:  435:        // see the member functions that call m_impl below for details
+        -:  436:        enum Operation {
+        -:  437:            Destroy,
+        -:  438:            Call,
+        -:  439:            Compare,
+        -:  440:
+        -:  441:            NumOperations
+        -:  442:        };
+        -:  443:    public:
+function _ZN9QtPrivate15QSlotObjectBaseC2EPFviPS0_P7QObjectPPvPbE called 46 returned 100% blocks executed 100%
+       46:  444:        explicit QSlotObjectBase(ImplFn fn) : m_impl(fn) {}
+       46:  444-block  0
+call    0 returned 46
+        -:  445:
+        -:  446:        // A custom deleter compatible with std protocols (op()()) we well as
+        -:  447:        // the legacy QScopedPointer protocol (cleanup()).
+        -:  448:        struct Deleter {
+        -:  449:            void operator()(QSlotObjectBase *p) const noexcept
+        -:  450:            { if (p) p->destroyIfLastRef(); }
+        -:  451:            // for the non-standard QScopedPointer protocol:
+        -:  452:            static void cleanup(QSlotObjectBase *p) noexcept { Deleter{}(p); }
+        -:  453:        };
+        -:  454:
+        -:  455:        bool ref() noexcept { return m_ref.ref(); }
+        -:  456:#if QT_VERSION < QT_VERSION_CHECK(7, 0, 0)
+        -:  457:        inline void destroyIfLastRef() noexcept
+        -:  458:        { if (!m_ref.deref()) m_impl(Destroy, this, nullptr, nullptr, nullptr); }
+        -:  459:
+        -:  460:        inline bool compare(void **a) { bool ret = false; m_impl(Compare, this, nullptr, a, &ret); return ret; }
+        -:  461:        inline void call(QObject *r, void **a)  { m_impl(Call, this, r, a, nullptr); }
+        -:  462:#else
+        -:  463:        inline void destroyIfLastRef() noexcept
+        -:  464:        { if (!m_ref.deref()) m_impl(this, nullptr, nullptr, Destroy, nullptr); }
+        -:  465:
+        -:  466:        inline bool compare(void **a)
+        -:  467:        {
+        -:  468:            bool ret = false;
+        -:  469:            m_impl(this, nullptr, a, Compare, &ret);
+        -:  470:            return ret;
+        -:  471:        }
+        -:  472:        inline void call(QObject *r, void **a)  { m_impl(this, r, a, Call, nullptr); }
+        -:  473:#endif
+        -:  474:        bool isImpl(ImplFn f) const { return m_impl == f; }
+        -:  475:    protected:
+function _ZN9QtPrivate15QSlotObjectBaseD2Ev called 46 returned 100% blocks executed 100%
+       46:  476:        ~QSlotObjectBase() {}
+        -:  477:    private:
+        -:  478:        Q_DISABLE_COPY_MOVE(QSlotObjectBase)
+        -:  479:    };
+        -:  480:
+        -:  481:    using SlotObjUniquePtr = std::unique_ptr<QSlotObjectBase,
+        -:  482:                                             QSlotObjectBase::Deleter>;
+        -:  483:    inline SlotObjUniquePtr copy(const SlotObjUniquePtr &other) noexcept
+        -:  484:    {
+        -:  485:        if (other)
+        -:  486:            other->ref();
+        -:  487:        return SlotObjUniquePtr{other.get()};
+        -:  488:    }
+        -:  489:
+        -:  490:    class SlotObjSharedPtr {
+        -:  491:        SlotObjUniquePtr obj;
+        -:  492:    public:
+        -:  493:        Q_NODISCARD_CTOR Q_IMPLICIT SlotObjSharedPtr() noexcept = default;
+        -:  494:        Q_NODISCARD_CTOR Q_IMPLICIT SlotObjSharedPtr(std::nullptr_t) noexcept : SlotObjSharedPtr() {}
+        -:  495:        Q_NODISCARD_CTOR explicit SlotObjSharedPtr(SlotObjUniquePtr o)
+        -:  496:            : obj(std::move(o))
+        -:  497:        {
+        -:  498:            // does NOT ref() (takes unique_ptr by value)
+        -:  499:            // (that's why (QSlotObjectBase*) ctor doesn't exisit: don't know whether that one _should_)
+        -:  500:        }
+        -:  501:        Q_NODISCARD_CTOR SlotObjSharedPtr(const SlotObjSharedPtr &other) noexcept
+        -:  502:            : obj{copy(other.obj)} {}
+        -:  503:        SlotObjSharedPtr &operator=(const SlotObjSharedPtr &other) noexcept
+        -:  504:        { auto copy = other; swap(copy); return *this; }
+        -:  505:
+        -:  506:        Q_NODISCARD_CTOR SlotObjSharedPtr(SlotObjSharedPtr &&other) noexcept = default;
+        -:  507:        SlotObjSharedPtr &operator=(SlotObjSharedPtr &&other) noexcept = default;
+        -:  508:        ~SlotObjSharedPtr() = default;
+        -:  509:
+        -:  510:        void swap(SlotObjSharedPtr &other) noexcept { obj.swap(other.obj); }
+        -:  511:
+        -:  512:        auto get() const noexcept { return obj.get(); }
+        -:  513:        auto operator->() const noexcept { return get(); }
+        -:  514:
+        -:  515:        explicit operator bool() const noexcept { return bool(obj); }
+        -:  516:    };
+        -:  517:
+        -:  518:
+        -:  519:    // Implementation of QSlotObjectBase for which the slot is a callable (function, PMF, functor, or lambda).
+        -:  520:    // Args and R are the List of arguments and the return type of the signal to which the slot is connected.
+        -:  521:    template <typename Func, typename Args, typename R>
+        -:  522:    class QCallableObject : public QSlotObjectBase,
+        -:  523:                            private QtPrivate::CompactStorage<std::decay_t<Func>>
+        -:  524:    {
+        -:  525:        using FunctorValue = std::decay_t<Func>;
+        -:  526:        using Storage = QtPrivate::CompactStorage<FunctorValue>;
+        -:  527:        using FuncType = Callable<Func, Args>;
+        -:  528:
+        -:  529:#if QT_VERSION < QT_VERSION_CHECK(7, 0, 0)
+       55:  530:        Q_DECL_HIDDEN static void impl(int which, QSlotObjectBase *this_, QObject *r, void **a, bool *ret)
+        -:  531:#else
+        -:  532:        // Design note: the first three arguments match those for typical Call
+        -:  533:        // and Destroy uses. We return void to enable tail call optimization
+        -:  534:        // for those too.
+        -:  535:        Q_DECL_HIDDEN static void impl(QSlotObjectBase *this_, QObject *r, void **a, int which, bool *ret)
+        -:  536:#endif
+        -:  537:        {
+       55:  538:            const auto that = static_cast<QCallableObject*>(this_);
+       55:  539:            switch (which) {
+       46:  540:            case Destroy:
+       46:  541:                delete that;
+       46:  542:                break;
+        9:  543:            case Call:
+        -:  544:                if constexpr (std::is_member_function_pointer_v<FunctorValue>)
+        6:  545:                    FuncType::template call<Args, R>(that->object(), static_cast<typename FuncType::Object *>(r), a);
+        -:  546:                else
+        3:  547:                    FuncType::template call<Args, R>(that->object(), r, a);
+        9:  548:                break;
+      45*:  549:            case Compare:
+        -:  550:                if constexpr (std::is_member_function_pointer_v<FunctorValue>) {
+    #####:  551:                    *ret = *reinterpret_cast<FunctorValue *>(a) == that->object();
+    #####:  552:                    break;
+        -:  553:                }
+        -:  554:                // not implemented otherwise
+        -:  555:                Q_FALLTHROUGH();
+       10:  556:            case NumOperations:
+        -:  557:                Q_UNUSED(ret);
+        -:  558:            }
+       55:  559:        }
+------------------
+_ZN9QtPrivate15QCallableObjectIZN3GUI18regenereazaButoaneEvEUlvE_NS_4ListIJEEEvE4implEiPNS_15QSlotObjectBaseEP7QObjectPPvPb:
+function _ZN9QtPrivate15QCallableObjectIZN3GUI18regenereazaButoaneEvEUlvE_NS_4ListIJEEEvE4implEiPNS_15QSlotObjectBaseEP7QObjectPPvPb called 38 returned 100% blocks executed 100%
+       38:  530:        Q_DECL_HIDDEN static void impl(int which, QSlotObjectBase *this_, QObject *r, void **a, bool *ret)
+        -:  531:#else
+        -:  532:        // Design note: the first three arguments match those for typical Call
+        -:  533:        // and Destroy uses. We return void to enable tail call optimization
+        -:  534:        // for those too.
+        -:  535:        Q_DECL_HIDDEN static void impl(QSlotObjectBase *this_, QObject *r, void **a, int which, bool *ret)
+        -:  536:#endif
+        -:  537:        {
+       38:  538:            const auto that = static_cast<QCallableObject*>(this_);
+       38:  539:            switch (which) {
+       38:  539-block  0
+branch  0 taken 37
+branch  1 taken 1
+branch  2 taken 0
+       37:  540:            case Destroy:
+       37:  541:                delete that;
+       37:  541-block  0
+branch  0 taken 37 (fallthrough)
+branch  1 taken 0
+       37:  541-block  1
+call    2 returned 37
+call    3 returned 37
+       37:  542:                break;
+       37:  542-block  0
+        1:  543:            case Call:
+        -:  544:                if constexpr (std::is_member_function_pointer_v<FunctorValue>)
+        -:  545:                    FuncType::template call<Args, R>(that->object(), static_cast<typename FuncType::Object *>(r), a);
+        -:  546:                else
+        1:  547:                    FuncType::template call<Args, R>(that->object(), r, a);
+        1:  547-block  0
+call    0 returned 1
+call    1 returned 1
+        1:  548:                break;
+       38:  549:            case Compare:
+        -:  550:                if constexpr (std::is_member_function_pointer_v<FunctorValue>) {
+        -:  551:                    *ret = *reinterpret_cast<FunctorValue *>(a) == that->object();
+        -:  552:                    break;
+        -:  553:                }
+        -:  554:                // not implemented otherwise
+        -:  555:                Q_FALLTHROUGH();
+        -:  556:            case NumOperations:
+        -:  557:                Q_UNUSED(ret);
+        -:  558:            }
+       38:  559:        }
+------------------
+_ZN9QtPrivate15QCallableObjectIZN3GUI19genereazaButoaneGenEvEUlvE_NS_4ListIJEEEvE4implEiPNS_15QSlotObjectBaseEP7QObjectPPvPb:
+function _ZN9QtPrivate15QCallableObjectIZN3GUI19genereazaButoaneGenEvEUlvE_NS_4ListIJEEEvE4implEiPNS_15QSlotObjectBaseEP7QObjectPPvPb called 7 returned 100% blocks executed 100%
+        7:  530:        Q_DECL_HIDDEN static void impl(int which, QSlotObjectBase *this_, QObject *r, void **a, bool *ret)
+        -:  531:#else
+        -:  532:        // Design note: the first three arguments match those for typical Call
+        -:  533:        // and Destroy uses. We return void to enable tail call optimization
+        -:  534:        // for those too.
+        -:  535:        Q_DECL_HIDDEN static void impl(QSlotObjectBase *this_, QObject *r, void **a, int which, bool *ret)
+        -:  536:#endif
+        -:  537:        {
+        7:  538:            const auto that = static_cast<QCallableObject*>(this_);
+        7:  539:            switch (which) {
+        7:  539-block  0
+branch  0 taken 5
+branch  1 taken 2
+branch  2 taken 0
+        5:  540:            case Destroy:
+        5:  541:                delete that;
+        5:  541-block  0
+branch  0 taken 5 (fallthrough)
+branch  1 taken 0
+        5:  541-block  1
+call    2 returned 5
+call    3 returned 5
+        5:  542:                break;
+        5:  542-block  0
+        2:  543:            case Call:
+        -:  544:                if constexpr (std::is_member_function_pointer_v<FunctorValue>)
+        -:  545:                    FuncType::template call<Args, R>(that->object(), static_cast<typename FuncType::Object *>(r), a);
+        -:  546:                else
+        2:  547:                    FuncType::template call<Args, R>(that->object(), r, a);
+        2:  547-block  0
+call    0 returned 2
+call    1 returned 2
+        2:  548:                break;
+        7:  549:            case Compare:
+        -:  550:                if constexpr (std::is_member_function_pointer_v<FunctorValue>) {
+        -:  551:                    *ret = *reinterpret_cast<FunctorValue *>(a) == that->object();
+        -:  552:                    break;
+        -:  553:                }
+        -:  554:                // not implemented otherwise
+        -:  555:                Q_FALLTHROUGH();
+        -:  556:            case NumOperations:
+        -:  557:                Q_UNUSED(ret);
+        -:  558:            }
+        7:  559:        }
+------------------
+_ZN9QtPrivate15QCallableObjectIM3GUIFvvENS_4ListIJEEEvE4implEiPNS_15QSlotObjectBaseEP7QObjectPPvPb:
+function _ZN9QtPrivate15QCallableObjectIM3GUIFvvENS_4ListIJEEEvE4implEiPNS_15QSlotObjectBaseEP7QObjectPPvPb called 10 returned 100% blocks executed 56%
+       10:  530:        Q_DECL_HIDDEN static void impl(int which, QSlotObjectBase *this_, QObject *r, void **a, bool *ret)
+        -:  531:#else
+        -:  532:        // Design note: the first three arguments match those for typical Call
+        -:  533:        // and Destroy uses. We return void to enable tail call optimization
+        -:  534:        // for those too.
+        -:  535:        Q_DECL_HIDDEN static void impl(QSlotObjectBase *this_, QObject *r, void **a, int which, bool *ret)
+        -:  536:#endif
+        -:  537:        {
+       10:  538:            const auto that = static_cast<QCallableObject*>(this_);
+       10:  539:            switch (which) {
+       10:  539-block  0
+branch  0 taken 4
+branch  1 taken 6
+branch  2 taken 0
+branch  3 taken 0
+        4:  540:            case Destroy:
+        4:  541:                delete that;
+        4:  541-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 0
+        4:  541-block  1
+call    2 returned 4
+call    3 returned 4
+        4:  542:                break;
+        4:  542-block  0
+        6:  543:            case Call:
+        -:  544:                if constexpr (std::is_member_function_pointer_v<FunctorValue>)
+        6:  545:                    FuncType::template call<Args, R>(that->object(), static_cast<typename FuncType::Object *>(r), a);
+        6:  545-block  0
+call    0 returned 6
+call    1 returned 6
+        -:  546:                else
+        -:  547:                    FuncType::template call<Args, R>(that->object(), r, a);
+        6:  548:                break;
+    #####:  549:            case Compare:
+        -:  550:                if constexpr (std::is_member_function_pointer_v<FunctorValue>) {
+    #####:  551:                    *ret = *reinterpret_cast<FunctorValue *>(a) == that->object();
+    %%%%%:  551-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    %%%%%:  551-block  1
+branch  3 never executed (fallthrough)
+branch  4 never executed
+    %%%%%:  551-block  2
+branch  5 never executed (fallthrough)
+branch  6 never executed
+    %%%%%:  551-block  3
+    %%%%%:  551-block  4
+    #####:  552:                    break;
+    %%%%%:  552-block  0
+        -:  553:                }
+        -:  554:                // not implemented otherwise
+        -:  555:                Q_FALLTHROUGH();
+       10:  556:            case NumOperations:
+        -:  557:                Q_UNUSED(ret);
+        -:  558:            }
+       10:  559:        }
+------------------
+        -:  560:    public:
+       46:  561:        explicit QCallableObject(Func &&f) : QSlotObjectBase(&impl), Storage{std::move(f)} {}
+------------------
+_ZN9QtPrivate15QCallableObjectIZN3GUI18regenereazaButoaneEvEUlvE_NS_4ListIJEEEvEC2EOS2_:
+function _ZN9QtPrivate15QCallableObjectIZN3GUI18regenereazaButoaneEvEUlvE_NS_4ListIJEEEvEC2EOS2_ called 37 returned 100% blocks executed 100%
+       37:  561:        explicit QCallableObject(Func &&f) : QSlotObjectBase(&impl), Storage{std::move(f)} {}
+       37:  561-block  0
+call    0 returned 37
+call    1 returned 37
+call    2 returned 37
+------------------
+_ZN9QtPrivate15QCallableObjectIZN3GUI19genereazaButoaneGenEvEUlvE_NS_4ListIJEEEvEC2EOS2_:
+function _ZN9QtPrivate15QCallableObjectIZN3GUI19genereazaButoaneGenEvEUlvE_NS_4ListIJEEEvEC2EOS2_ called 5 returned 100% blocks executed 83%
+        5:  561:        explicit QCallableObject(Func &&f) : QSlotObjectBase(&impl), Storage{std::move(f)} {}
+        5:  561-block  0
+call    0 returned 5
+call    1 returned 5
+call    2 returned 5
+branch  3 taken 5 (fallthrough)
+branch  4 taken 0 (throw)
+        5:  561-block  1
+    $$$$$:  561-block  2
+call    5 never executed
+------------------
+_ZN9QtPrivate15QCallableObjectIM3GUIFvvENS_4ListIJEEEvEC1EOS3_:
+function _ZN9QtPrivate15QCallableObjectIM3GUIFvvENS_4ListIJEEEvEC1EOS3_ called 4 returned 100% blocks executed 100%
+        4:  561:        explicit QCallableObject(Func &&f) : QSlotObjectBase(&impl), Storage{std::move(f)} {}
+        4:  561-block  0
+call    0 returned 4
+call    1 returned 4
+------------------
+        -:  562:        explicit QCallableObject(const Func &f) : QSlotObjectBase(&impl), Storage{f} {}
+        -:  563:    };
+        -:  564:
+        -:  565:    // Helper to detect the context object type based on the functor type:
+        -:  566:    // QObject for free functions and lambdas; the callee for member function
+        -:  567:    // pointers. The default declaration doesn't have the ContextType typedef,
+        -:  568:    // and so non-functor APIs (like old-style string-based slots) are removed
+        -:  569:    // from the overload set.
+        -:  570:    template <typename Func, typename = void>
+        -:  571:    struct ContextTypeForFunctor {};
+        -:  572:
+        -:  573:    template <typename Func>
+        -:  574:    struct ContextTypeForFunctor<Func,
+        -:  575:        std::enable_if_t<!std::disjunction_v<std::is_convertible<Func, const char *>,
+        -:  576:                                             std::is_member_function_pointer<Func>
+        -:  577:                                            >
+        -:  578:                        >
+        -:  579:    >
+        -:  580:    {
+        -:  581:        using ContextType = QObject;
+        -:  582:    };
+        -:  583:    template <typename Func>
+        -:  584:    struct ContextTypeForFunctor<Func,
+        -:  585:        std::enable_if_t<std::conjunction_v<std::negation<std::is_convertible<Func, const char *>>,
+        -:  586:                                            std::is_member_function_pointer<Func>,
+        -:  587:                                            std::is_convertible<typename QtPrivate::FunctionPointer<Func>::Object *, QObject *>
+        -:  588:                                           >
+        -:  589:                        >
+        -:  590:    >
+        -:  591:    {
+        -:  592:        using ContextType = typename QtPrivate::FunctionPointer<Func>::Object;
+        -:  593:    };
+        -:  594:
+        -:  595:    /*
+        -:  596:        Returns a suitable QSlotObjectBase object that holds \a func, if possible.
+        -:  597:
+        -:  598:        Not available (and thus produces compile-time errors) if the Functor provided is
+        -:  599:        not compatible with the expected Prototype.
+        -:  600:    */
+        -:  601:    template <typename Prototype, typename Functor>
+        -:  602:    static constexpr std::enable_if_t<QtPrivate::countMatchingArguments<Prototype, Functor>() >= 0,
+        -:  603:        QtPrivate::QSlotObjectBase *>
+       46:  604:    makeCallableObject(Functor &&func)
+        -:  605:    {
+        -:  606:        using ExpectedSignature = QtPrivate::FunctionPointer<Prototype>;
+        -:  607:        using ExpectedReturnType = typename ExpectedSignature::ReturnType;
+        -:  608:        using ExpectedArguments = typename ExpectedSignature::Arguments;
+        -:  609:
+        -:  610:        using ActualSignature = QtPrivate::FunctionPointer<Functor>;
+       46:  611:        constexpr int MatchingArgumentCount = QtPrivate::countMatchingArguments<Prototype, Functor>();
+        -:  612:        using ActualArguments  = typename QtPrivate::List_Left<ExpectedArguments, MatchingArgumentCount>::Value;
+        -:  613:
+        -:  614:        static_assert(int(ActualSignature::ArgumentCount) <= int(ExpectedSignature::ArgumentCount),
+        -:  615:            "Functor requires more arguments than what can be provided.");
+        -:  616:
+        -:  617:        // NOLINTNEXTLINE(clang-analyzer-cplusplus.NewDeleteLeaks)
+       46:  618:        return new QtPrivate::QCallableObject<std::decay_t<Functor>, ActualArguments, ExpectedReturnType>(std::forward<Functor>(func));
+        -:  619:    }
+        -:  620:
+        -:  621:    template<typename Prototype, typename Functor, typename = void>
+        -:  622:    struct AreFunctionsCompatible : std::false_type {};
+        -:  623:    template<typename Prototype, typename Functor>
+        -:  624:    struct AreFunctionsCompatible<Prototype, Functor, std::enable_if_t<
+        -:  625:        std::is_same_v<decltype(QtPrivate::makeCallableObject<Prototype>(std::forward<Functor>(std::declval<Functor>()))),
+        -:  626:        QtPrivate::QSlotObjectBase *>>
+        -:  627:    > : std::true_type {};
+        -:  628:
+        -:  629:    template<typename Prototype, typename Functor>
+        -:  630:    inline constexpr bool AssertCompatibleFunctions() {
+        -:  631:        static_assert(AreFunctionsCompatible<Prototype, Functor>::value,
+        -:  632:                      "Functor is not compatible with expected prototype!");
+        -:  633:        return true;
+        -:  634:    }
+        -:  635:}
+        -:  636:
+        -:  637:QT_END_NAMESPACE
+        -:  638:

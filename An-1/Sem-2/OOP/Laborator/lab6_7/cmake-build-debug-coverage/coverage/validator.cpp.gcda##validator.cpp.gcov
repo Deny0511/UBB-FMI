@@ -1,0 +1,131 @@
+        -:    0:Source:C:/Users/urdad/lab6_7/validator.cpp
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\validator.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\validator.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "validator.h"
+        -:    2:
+function _ZN9Validator13validateTitluERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 21 returned 95% blocks executed 63%
+       21:    3:void Validator::validateTitlu(const std::string& titlu) {
+       21:    4:    if (titlu.empty())
+       21:    4-block  0
+call    0 returned 21
+branch  1 taken 1 (fallthrough)
+branch  2 taken 20
+        3:    5:        throw ValidationException("Titlul nu poate fi gol!");
+        1:    5-block  0
+call    0 returned 1
+        1:    5-block  1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:    5-block  2
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:    5-block  3
+call    7 returned 1
+        1:    5-block  4
+call    8 returned 0
+    $$$$$:    5-block  5
+call    9 never executed
+    $$$$$:    5-block  6
+    $$$$$:    5-block  7
+    $$$$$:    5-block  8
+call   10 never executed
+       20:    6:}
+       20:    6-block  0
+        -:    7:
+function _ZN9Validator11validateGenERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 24 returned 88% blocks executed 63%
+       24:    8:void Validator::validateGen(const std::string& gen) {
+       24:    9:    if (gen.empty())
+       24:    9-block  0
+call    0 returned 24
+branch  1 taken 3 (fallthrough)
+branch  2 taken 21
+        9:   10:        throw ValidationException("Genul nu poate fi gol!");
+        3:   10-block  0
+call    0 returned 3
+        3:   10-block  1
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0 (throw)
+        3:   10-block  2
+call    4 returned 3
+branch  5 taken 3 (fallthrough)
+branch  6 taken 0 (throw)
+        3:   10-block  3
+call    7 returned 3
+        3:   10-block  4
+call    8 returned 0
+    $$$$$:   10-block  5
+call    9 never executed
+    $$$$$:   10-block  6
+    $$$$$:   10-block  7
+    $$$$$:   10-block  8
+call   10 never executed
+       21:   11:}
+       21:   11-block  0
+        -:   12:
+function _ZN9Validator10validateAnEi called 23 returned 96% blocks executed 63%
+       23:   13:void Validator::validateAn(int an) {
+       23:   14:    if (an < 1900 || an > 2100)
+       23:   14-block  0
+branch  0 taken 22 (fallthrough)
+branch  1 taken 1
+       22:   14-block  1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 22
+        3:   15:        throw ValidationException("Anul trebuie sa fie intre 1900 si 2100!");
+        1:   15-block  0
+call    0 returned 1
+        1:   15-block  1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   15-block  2
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   15-block  3
+call    7 returned 1
+        1:   15-block  4
+call    8 returned 0
+    $$$$$:   15-block  5
+call    9 never executed
+    $$$$$:   15-block  6
+    $$$$$:   15-block  7
+    $$$$$:   15-block  8
+call   10 never executed
+       22:   16:}
+       22:   16-block  0
+        -:   17:
+function _ZN9Validator13validateActorERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 23 returned 96% blocks executed 63%
+       23:   18:void Validator::validateActor(const std::string& actor) {
+       23:   19:    if (actor.empty())
+       23:   19-block  0
+call    0 returned 23
+branch  1 taken 1 (fallthrough)
+branch  2 taken 22
+        3:   20:        throw ValidationException("Actorul principal nu poate fi gol!");
+        1:   20-block  0
+call    0 returned 1
+        1:   20-block  1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   20-block  2
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   20-block  3
+call    7 returned 1
+        1:   20-block  4
+call    8 returned 0
+    $$$$$:   20-block  5
+call    9 never executed
+    $$$$$:   20-block  6
+    $$$$$:   20-block  7
+    $$$$$:   20-block  8
+call   10 never executed
+       22:   21:}
+       22:   21-block  0

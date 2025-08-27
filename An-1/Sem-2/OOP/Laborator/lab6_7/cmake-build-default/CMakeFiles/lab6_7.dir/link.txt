@@ -1,0 +1,1 @@
+/usr/bin/g++ -rdynamic CMakeFiles/lab6_7.dir/main.cpp.o CMakeFiles/lab6_7.dir/teste.cpp.o CMakeFiles/lab6_7.dir/domain.cpp.o CMakeFiles/lab6_7.dir/repo.cpp.o CMakeFiles/lab6_7.dir/service.cpp.o CMakeFiles/lab6_7.dir/ui.cpp.o CMakeFiles/lab6_7.dir/validator.cpp.o CMakeFiles/lab6_7.dir/CosFilme.cpp.o CMakeFiles/lab6_7.dir/gui.cpp.o -o lab6_7 

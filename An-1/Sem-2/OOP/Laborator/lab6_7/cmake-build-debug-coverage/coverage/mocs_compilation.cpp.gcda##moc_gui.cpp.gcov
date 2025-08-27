@@ -1,0 +1,120 @@
+        -:    0:Source:C:/Users/urdad/lab6_7/cmake-build-debug-coverage/lab6_7_autogen/EWIEGA46WW/moc_gui.cpp
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\lab6_7_autogen\mocs_compilation.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\lab6_7_autogen\mocs_compilation.cpp.gcda
+        -:    0:Runs:1
+        -:    1:/****************************************************************************
+        -:    2:** Meta object code from reading C++ file 'gui.h'
+        -:    3:**
+        -:    4:** Created by: The Qt Meta Object Compiler version 69 (Qt 6.9.0)
+        -:    5:**
+        -:    6:** WARNING! All changes made in this file will be lost!
+        -:    7:*****************************************************************************/
+        -:    8:
+        -:    9:#include "../../../gui.h"
+        -:   10:#include <QtGui/qtextcursor.h>
+        -:   11:#include <QtCore/qmetatype.h>
+        -:   12:
+        -:   13:#include <QtCore/qtmochelpers.h>
+        -:   14:
+        -:   15:#include <memory>
+        -:   16:
+        -:   17:
+        -:   18:#include <QtCore/qxptype_traits.h>
+        -:   19:#if !defined(Q_MOC_OUTPUT_REVISION)
+        -:   20:#error "The header file 'gui.h' doesn't include <QObject>."
+        -:   21:#elif Q_MOC_OUTPUT_REVISION != 69
+        -:   22:#error "This file was generated using the moc from 6.9.0. It"
+        -:   23:#error "cannot be used with the include files from this version of Qt."
+        -:   24:#error "(The moc has changed too much.)"
+        -:   25:#endif
+        -:   26:
+        -:   27:#ifndef Q_CONSTINIT
+        -:   28:#define Q_CONSTINIT
+        -:   29:#endif
+        -:   30:
+        -:   31:QT_WARNING_PUSH
+        -:   32:QT_WARNING_DISABLE_DEPRECATED
+        -:   33:QT_WARNING_DISABLE_GCC("-Wuseless-cast")
+        -:   34:namespace {
+        -:   35:struct qt_meta_tag_ZN3GUIE_t {};
+        -:   36:} // unnamed namespace
+        -:   37:
+        -:   38:template <> constexpr inline auto GUI::qt_create_metaobjectdata<qt_meta_tag_ZN3GUIE_t>()
+        -:   39:{
+        -:   40:    namespace QMC = QtMocConstants;
+        -:   41:    QtMocHelpers::StringRefStorage qt_stringData {
+        -:   42:        "GUI"
+        -:   43:    };
+        -:   44:
+        -:   45:    QtMocHelpers::UintData qt_methods {
+        -:   46:    };
+        -:   47:    QtMocHelpers::UintData qt_properties {
+        -:   48:    };
+        -:   49:    QtMocHelpers::UintData qt_enums {
+        -:   50:    };
+        -:   51:    return QtMocHelpers::metaObjectData<GUI, qt_meta_tag_ZN3GUIE_t>(QMC::MetaObjectFlag{}, qt_stringData,
+        -:   52:            qt_methods, qt_properties, qt_enums);
+        -:   53:}
+        -:   54:Q_CONSTINIT const QMetaObject GUI::staticMetaObject = { {
+        -:   55:    QMetaObject::SuperData::link<QWidget::staticMetaObject>(),
+        -:   56:    qt_staticMetaObjectStaticContent<qt_meta_tag_ZN3GUIE_t>.stringdata,
+        -:   57:    qt_staticMetaObjectStaticContent<qt_meta_tag_ZN3GUIE_t>.data,
+        -:   58:    qt_static_metacall,
+        -:   59:    nullptr,
+        -:   60:    qt_staticMetaObjectRelocatingContent<qt_meta_tag_ZN3GUIE_t>.metaTypes,
+        -:   61:    nullptr
+        -:   62:} };
+        -:   63:
+function _ZN3GUI18qt_static_metacallEP7QObjectN11QMetaObject4CallEiPPv called 0 returned 0% blocks executed 0%
+    #####:   64:void GUI::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+        -:   65:{
+    #####:   66:    auto *_t = static_cast<GUI *>(_o);
+        -:   67:    (void)_t;
+        -:   68:    (void)_c;
+        -:   69:    (void)_id;
+        -:   70:    (void)_a;
+    #####:   71:}
+        -:   72:
+function _ZNK3GUI10metaObjectEv called 6519 returned 100% blocks executed 62%
+     6519:   73:const QMetaObject *GUI::metaObject() const
+        -:   74:{
+    6519*:   75:    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+     6519:   75-block  0
+call    0 returned 6519
+branch  1 taken 0 (fallthrough)
+branch  2 taken 6519
+    %%%%%:   75-block  1
+call    3 never executed
+call    4 never executed
+     6519:   75-block  2
+     6519:   75-block  3
+        -:   76:}
+        -:   77:
+function _ZN3GUI11qt_metacastEPKc called 1018 returned 100% blocks executed 71%
+     1018:   78:void *GUI::qt_metacast(const char *_clname)
+        -:   79:{
+    1018*:   80:    if (!_clname) return nullptr;
+     1018:   80-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1018
+    %%%%%:   80-block  1
+     1018:   81:    if (!strcmp(_clname, qt_staticMetaObjectStaticContent<qt_meta_tag_ZN3GUIE_t>.strings))
+     1018:   81-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1018
+    #####:   82:        return static_cast<void*>(this);
+    %%%%%:   82-block  0
+     1018:   83:    return QWidget::qt_metacast(_clname);
+     1018:   83-block  0
+call    0 returned 1018
+        -:   84:}
+        -:   85:
+function _ZN3GUI11qt_metacallEN11QMetaObject4CallEiPPv called 0 returned 0% blocks executed 0%
+    #####:   86:int GUI::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+        -:   87:{
+    #####:   88:    _id = QWidget::qt_metacall(_c, _id, _a);
+    %%%%%:   88-block  0
+call    0 never executed
+    #####:   89:    return _id;
+        -:   90:}
+        -:   91:QT_WARNING_POP

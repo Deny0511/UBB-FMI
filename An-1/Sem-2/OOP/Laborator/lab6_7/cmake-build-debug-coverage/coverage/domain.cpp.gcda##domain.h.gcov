@@ -1,0 +1,57 @@
+        -:    0:Source:C:/Users/urdad/lab6_7/domain.h
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\domain.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\domain.cpp.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:
+        -:    3:#ifndef DOMAIN_H
+        -:    4:#define DOMAIN_H
+        -:    5:
+        -:    6:#include <string>
+        -:    7:
+        -:    8:class Film {
+        -:    9:private:
+        -:   10:    std::string titlu, gen, actor_principal;
+        -:   11:    int an;
+        -:   12:public:
+        -:   13:    Film() : titlu(""), gen(""), an(0), actor_principal("") {}
+        -:   14:    Film(const std::string& titlu, const std::string& gen, int an, const std::string& actor);
+        -:   15:    Film(const Film& other);
+        -:   16:
+        -:   17:    const std::string& getTitlu() const;
+        -:   18:    void setGen(const std::string& nouGen) { gen = nouGen; }
+        -:   19:    const std::string& getGen() const;
+        -:   20:    void setAn(const int nouAn) { an = nouAn; }
+        -:   21:    int getAn() const;
+        -:   22:    void setActor(const std::string& nouActor) { actor_principal = nouActor; }
+        -:   23:    const std::string& getActor() const;
+        -:   24:
+        -:   25:    bool operator==(const Film& other) const;
+    #####:   26:    virtual ~Film() = default;
+------------------
+_ZN4FilmD0Ev:
+function _ZN4FilmD0Ev called 0 returned 0% blocks executed 0%
+    #####:   26:    virtual ~Film() = default;
+    %%%%%:   26-block  0
+call    0 never executed
+call    1 never executed
+------------------
+_ZN4FilmD1Ev:
+function _ZN4FilmD1Ev called 0 returned 0% blocks executed 0%
+    #####:   26:    virtual ~Film() = default;
+    %%%%%:   26-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+------------------
+        -:   27:};
+        -:   28:
+        -:   29:
+        -:   30:
+        -:   31:
+        -:   32:
+        -:   33:
+        -:   34:
+        -:   35:
+        -:   36:
+        -:   37:#endif //DOMAIN_H

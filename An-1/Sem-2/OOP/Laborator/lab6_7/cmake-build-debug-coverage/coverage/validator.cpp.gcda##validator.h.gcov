@@ -1,0 +1,33 @@
+        -:    0:Source:C:/Users/urdad/lab6_7/validator.h
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\validator.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\validator.cpp.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:#ifndef VALIDATOR_H
+        -:    3:#define VALIDATOR_H
+        -:    4:
+        -:    5:
+        -:    6:
+        -:    7:#include <string>
+        -:    8:#include <stdexcept>
+        -:    9:
+        -:   10:class ValidationException : public std::runtime_error {
+        -:   11:public:
+function _ZN19ValidationExceptionC1ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   12:    explicit ValidationException(const std::string& msg)
+    #####:   13:        : std::runtime_error(msg) {}
+    %%%%%:   13-block  0
+call    0 never executed
+        -:   14:};
+        -:   15:
+        -:   16:
+        -:   17:class Validator {
+        -:   18:public:
+        -:   19:    static void validateTitlu(const std::string& titlu);
+        -:   20:    static void validateGen(const std::string& gen);
+        -:   21:    static void validateAn(int an);
+        -:   22:    static void validateActor(const std::string& actor);
+        -:   23:
+        -:   24:};
+        -:   25:
+        -:   26:#endif //VALIDATOR_H

@@ -1,0 +1,514 @@
+        -:    0:Source:C:/Qt/6.9.0/mingw_64/include/QtCore/qcontainertools_impl.h
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\gui.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\gui.cpp.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright (C) 2018 Klarälvdalens Datakonsult AB, a KDAB Group company, info@kdab.com, author Marc Mutz <marc.mutz@kdab.com>
+        -:    2:// Copyright (C) 2018 Klarälvdalens Datakonsult AB, a KDAB Group company, info@kdab.com, author Giuseppe D'Angelo <giuseppe.dangelo@kdab.com>
+        -:    3:// Copyright (C) 2020 The Qt Company Ltd.
+        -:    4:// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+        -:    5:
+        -:    6:#if 0
+        -:    7:#pragma qt_sync_skip_header_check
+        -:    8:#pragma qt_sync_stop_processing
+        -:    9:#endif
+        -:   10:
+        -:   11:#ifndef QCONTAINERTOOLS_IMPL_H
+        -:   12:#define QCONTAINERTOOLS_IMPL_H
+        -:   13:
+        -:   14:#include <QtCore/qglobal.h>
+        -:   15:#include <QtCore/qtypeinfo.h>
+        -:   16:
+        -:   17:#include <QtCore/qxptype_traits.h>
+        -:   18:
+        -:   19:#include <cstring>
+        -:   20:#include <iterator>
+        -:   21:#include <memory>
+        -:   22:#include <algorithm>
+        -:   23:
+        -:   24:QT_BEGIN_NAMESPACE
+        -:   25:
+        -:   26:namespace QtPrivate
+        -:   27:{
+        -:   28:
+        -:   29:/*!
+        -:   30:  \internal
+        -:   31:
+        -:   32:  Returns whether \a p is within a range [b, e). In simplest form equivalent to:
+        -:   33:  b <= p < e.
+        -:   34:*/
+        -:   35:template<typename T, typename Cmp = std::less<>>
+function _ZN9QtPrivateL19q_points_into_rangeI7QStringSt4lessIvEEEbPKT_S6_S6_T0_ called 0 returned 0% blocks executed 0%
+    #####:   36:static constexpr bool q_points_into_range(const T *p, const T *b, const T *e,
+        -:   37:                                          Cmp less = {}) noexcept
+        -:   38:{
+    #####:   39:    return !less(p, b) && less(p, e);
+    %%%%%:   39-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    %%%%%:   39-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    %%%%%:   39-block  2
+    %%%%%:   39-block  3
+    %%%%%:   39-block  4
+        -:   40:}
+        -:   41:
+        -:   42:/*!
+        -:   43:  \internal
+        -:   44:
+        -:   45:  Returns whether \a p is within container \a c. In its simplest form equivalent to:
+        -:   46:  c.data() <= p < c.data() + c.size()
+        -:   47:*/
+        -:   48:template <typename C, typename T>
+function _ZN9QtPrivateL19q_points_into_rangeI17QArrayDataPointerI7QStringEPKS2_EEbRKT0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:   49:static constexpr bool q_points_into_range(const T &p, const C &c) noexcept
+    %%%%%:   49-block  0
+call    0 never executed
+        -:   50:{
+        -:   51:    static_assert(std::is_same_v<decltype(std::data(c)), T>);
+        -:   52:
+        -:   53:    // std::distance because QArrayDataPointer has a "qsizetype size"
+        -:   54:    // member but no size() function
+    #####:   55:    return q_points_into_range(p, std::data(c),
+    %%%%%:   55-block  0
+call    0 never executed
+    #####:   56:                               std::data(c) + std::distance(std::begin(c), std::end(c)));
+    %%%%%:   56-block  0
+call    0 never executed
+    %%%%%:   56-block  1
+call    1 never executed
+    %%%%%:   56-block  2
+    %%%%%:   56-block  3
+call    2 never executed
+        -:   57:}
+        -:   58:
+        -:   59:QT_WARNING_PUSH
+        -:   60:QT_WARNING_DISABLE_GCC("-Wmaybe-uninitialized")
+        -:   61:
+        -:   62:template <typename T, typename N>
+        -:   63:void q_uninitialized_move_if_noexcept_n(T* first, N n, T* out)
+        -:   64:{
+        -:   65:    if constexpr (std::is_nothrow_move_constructible_v<T> || !std::is_copy_constructible_v<T>)
+        -:   66:        std::uninitialized_move_n(first, n, out);
+        -:   67:    else
+        -:   68:        std::uninitialized_copy_n(first, n, out);
+        -:   69:}
+        -:   70:
+        -:   71:template <typename T, typename N>
+        -:   72:void q_uninitialized_relocate_n(T* first, N n, T* out)
+        -:   73:{
+        -:   74:    if constexpr (QTypeInfo<T>::isRelocatable) {
+        -:   75:        static_assert(std::is_copy_constructible_v<T> || std::is_move_constructible_v<T>,
+        -:   76:                      "Refusing to relocate this non-copy/non-move-constructible type.");
+        -:   77:        if (n != N(0)) { // even if N == 0, out == nullptr or first == nullptr are UB for memcpy()
+        -:   78:            std::memcpy(static_cast<void *>(out),
+        -:   79:                        static_cast<const void *>(first),
+        -:   80:                        n * sizeof(T));
+        -:   81:        }
+        -:   82:    } else {
+        -:   83:        q_uninitialized_move_if_noexcept_n(first, n, out);
+        -:   84:        if constexpr (QTypeInfo<T>::isComplex)
+        -:   85:            std::destroy_n(first, n);
+        -:   86:    }
+        -:   87:}
+        -:   88:
+        -:   89:QT_WARNING_POP
+        -:   90:
+        -:   91:/*!
+        -:   92:    \internal
+        -:   93:
+        -:   94:    A wrapper around std::rotate(), with an optimization for
+        -:   95:    Q_RELOCATABLE_TYPEs. We omit the return value, as it would be more work to
+        -:   96:    compute in the Q_RELOCATABLE_TYPE case and, unlike std::rotate on
+        -:   97:    ForwardIterators, callers can compute the result in constant time
+        -:   98:    themselves.
+        -:   99:*/
+        -:  100:template <typename T>
+        -:  101:void q_rotate(T *first, T *mid, T *last)
+        -:  102:{
+        -:  103:    if constexpr (QTypeInfo<T>::isRelocatable) {
+        -:  104:        const auto cast = [](T *p) { return reinterpret_cast<uchar*>(p); };
+        -:  105:        std::rotate(cast(first), cast(mid), cast(last));
+        -:  106:    } else {
+        -:  107:        std::rotate(first, mid, last);
+        -:  108:    }
+        -:  109:}
+        -:  110:
+        -:  111:/*!
+        -:  112:    \internal
+        -:  113:    Copies all elements, except the ones for which \a pred returns \c true, from
+        -:  114:    range [first, last), to the uninitialized memory buffer starting at \a out.
+        -:  115:
+        -:  116:    It's undefined behavior if \a out points into [first, last).
+        -:  117:
+        -:  118:    Returns a pointer one past the last copied element.
+        -:  119:
+        -:  120:    If an exception is thrown, all the already copied elements in the destination
+        -:  121:    buffer are destroyed.
+        -:  122:*/
+        -:  123:template <typename T, typename Predicate>
+        -:  124:T *q_uninitialized_remove_copy_if(T *first, T *last, T *out, Predicate &pred)
+        -:  125:{
+        -:  126:    static_assert(std::is_nothrow_destructible_v<T>,
+        -:  127:                  "This algorithm requires that T has a non-throwing destructor");
+        -:  128:    Q_ASSERT(!q_points_into_range(out, first, last));
+        -:  129:
+        -:  130:    T *dest_begin = out;
+        -:  131:    QT_TRY {
+        -:  132:        while (first != last) {
+        -:  133:            if (!pred(*first)) {
+        -:  134:                new (std::addressof(*out)) T(*first);
+        -:  135:                ++out;
+        -:  136:            }
+        -:  137:            ++first;
+        -:  138:        }
+        -:  139:    } QT_CATCH (...) {
+        -:  140:        std::destroy(std::reverse_iterator(out), std::reverse_iterator(dest_begin));
+        -:  141:        QT_RETHROW;
+        -:  142:    }
+        -:  143:    return out;
+        -:  144:}
+        -:  145:
+        -:  146:template<typename iterator, typename N>
+        -:  147:void q_relocate_overlap_n_left_move(iterator first, N n, iterator d_first)
+        -:  148:{
+        -:  149:    // requires: [first, n) is a valid range
+        -:  150:    // requires: d_first + n is reachable from d_first
+        -:  151:    // requires: iterator is at least a random access iterator
+        -:  152:    // requires: value_type(iterator) has a non-throwing destructor
+        -:  153:
+        -:  154:    Q_ASSERT(n);
+        -:  155:    Q_ASSERT(d_first < first); // only allow moves to the "left"
+        -:  156:    using T = typename std::iterator_traits<iterator>::value_type;
+        -:  157:
+        -:  158:    // Watches passed iterator. Unless commit() is called, all the elements that
+        -:  159:    // the watched iterator passes through are deleted at the end of object
+        -:  160:    // lifetime. freeze() could be used to stop watching the passed iterator and
+        -:  161:    // remain at current place.
+        -:  162:    //
+        -:  163:    // requires: the iterator is expected to always point to an invalid object
+        -:  164:    //           (to uninitialized memory)
+        -:  165:    struct Destructor
+        -:  166:    {
+        -:  167:        iterator *iter;
+        -:  168:        iterator end;
+        -:  169:        iterator intermediate;
+        -:  170:
+        -:  171:        Destructor(iterator &it) noexcept : iter(std::addressof(it)), end(it) { }
+        -:  172:        void commit() noexcept { iter = std::addressof(end); }
+        -:  173:        void freeze() noexcept
+        -:  174:        {
+        -:  175:            intermediate = *iter;
+        -:  176:            iter = std::addressof(intermediate);
+        -:  177:        }
+        -:  178:        ~Destructor() noexcept
+        -:  179:        {
+        -:  180:            for (const int step = *iter < end ? 1 : -1; *iter != end;) {
+        -:  181:                std::advance(*iter, step);
+        -:  182:                (*iter)->~T();
+        -:  183:            }
+        -:  184:        }
+        -:  185:    } destroyer(d_first);
+        -:  186:
+        -:  187:    const iterator d_last = d_first + n;
+        -:  188:    // Note: use pair and explicitly copy iterators from it to prevent
+        -:  189:    // accidental reference semantics instead of copy. equivalent to:
+        -:  190:    //
+        -:  191:    // auto [overlapBegin, overlapEnd] = std::minmax(d_last, first);
+        -:  192:    auto pair = std::minmax(d_last, first);
+        -:  193:
+        -:  194:    // overlap area between [d_first, d_first + n) and [first, first + n) or an
+        -:  195:    // uninitialized memory area between the two ranges
+        -:  196:    iterator overlapBegin = pair.first;
+        -:  197:    iterator overlapEnd = pair.second;
+        -:  198:
+        -:  199:    // move construct elements in uninitialized region
+        -:  200:    while (d_first != overlapBegin) {
+        -:  201:        // account for std::reverse_iterator, cannot use new(d_first) directly
+        -:  202:        new (std::addressof(*d_first)) T(std::move_if_noexcept(*first));
+        -:  203:        ++d_first;
+        -:  204:        ++first;
+        -:  205:    }
+        -:  206:
+        -:  207:    // cannot commit but have to stop - there might be an overlap region
+        -:  208:    // which we don't want to delete (because it's part of existing data)
+        -:  209:    destroyer.freeze();
+        -:  210:
+        -:  211:    // move assign elements in overlap region
+        -:  212:    while (d_first != d_last) {
+        -:  213:        *d_first = std::move_if_noexcept(*first);
+        -:  214:        ++d_first;
+        -:  215:        ++first;
+        -:  216:    }
+        -:  217:
+        -:  218:    Q_ASSERT(d_first == destroyer.end + n);
+        -:  219:    destroyer.commit(); // can commit here as ~T() below does not throw
+        -:  220:
+        -:  221:    while (first != overlapEnd)
+        -:  222:        (--first)->~T();
+        -:  223:}
+        -:  224:
+        -:  225:/*!
+        -:  226:  \internal
+        -:  227:
+        -:  228:  Relocates a range [first, n) to [d_first, n) taking care of potential memory
+        -:  229:  overlaps. This is a generic equivalent of memmove.
+        -:  230:
+        -:  231:  If an exception is thrown during the relocation, all the relocated elements
+        -:  232:  are destroyed and [first, n) may contain valid but unspecified values,
+        -:  233:  including moved-from values (basic exception safety).
+        -:  234:*/
+        -:  235:template<typename T, typename N>
+function _ZN9QtPrivate20q_relocate_overlap_nI7QStringxEEvPT_T0_S3_ called 0 returned 0% blocks executed 0%
+    #####:  236:void q_relocate_overlap_n(T *first, N n, T *d_first)
+        -:  237:{
+        -:  238:    static_assert(std::is_nothrow_destructible_v<T>,
+        -:  239:                  "This algorithm requires that T has a non-throwing destructor");
+        -:  240:
+    #####:  241:    if (n == N(0) || first == d_first || first == nullptr || d_first == nullptr)
+    %%%%%:  241-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  241-block  1
+branch  2 never executed (fallthrough)
+branch  3 never executed
+    %%%%%:  241-block  2
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    %%%%%:  241-block  3
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    #####:  242:        return;
+    %%%%%:  242-block  0
+        -:  243:
+        -:  244:    if constexpr (QTypeInfo<T>::isRelocatable) {
+    #####:  245:        std::memmove(static_cast<void *>(d_first), static_cast<const void *>(first), n * sizeof(T));
+    %%%%%:  245-block  0
+        -:  246:    } else { // generic version has to be used
+        -:  247:        if (d_first < first) {
+        -:  248:            q_relocate_overlap_n_left_move(first, n, d_first);
+        -:  249:        } else { // first < d_first
+        -:  250:            auto rfirst = std::make_reverse_iterator(first + n);
+        -:  251:            auto rd_first = std::make_reverse_iterator(d_first + n);
+        -:  252:            q_relocate_overlap_n_left_move(rfirst, n, rd_first);
+        -:  253:        }
+        -:  254:    }
+        -:  255:}
+        -:  256:
+        -:  257:template <typename T>
+        -:  258:struct ArrowProxy
+        -:  259:{
+        -:  260:    T t;
+        -:  261:    T *operator->() noexcept { return &t; }
+        -:  262:};
+        -:  263:
+        -:  264:template <typename Iterator>
+        -:  265:using IfIsInputIterator = typename std::enable_if<
+        -:  266:    std::is_convertible<typename std::iterator_traits<Iterator>::iterator_category, std::input_iterator_tag>::value,
+        -:  267:    bool>::type;
+        -:  268:
+        -:  269:template <typename Iterator>
+        -:  270:using IfIsForwardIterator = typename std::enable_if<
+        -:  271:    std::is_convertible<typename std::iterator_traits<Iterator>::iterator_category, std::forward_iterator_tag>::value,
+        -:  272:    bool>::type;
+        -:  273:
+        -:  274:template <typename Iterator>
+        -:  275:using IfIsNotForwardIterator = typename std::enable_if<
+        -:  276:    !std::is_convertible<typename std::iterator_traits<Iterator>::iterator_category, std::forward_iterator_tag>::value,
+        -:  277:    bool>::type;
+        -:  278:
+        -:  279:template <typename Container,
+        -:  280:          typename InputIterator,
+        -:  281:          IfIsNotForwardIterator<InputIterator> = true>
+        -:  282:void reserveIfForwardIterator(Container *, InputIterator, InputIterator)
+        -:  283:{
+        -:  284:}
+        -:  285:
+        -:  286:template <typename Container,
+        -:  287:          typename ForwardIterator,
+        -:  288:          IfIsForwardIterator<ForwardIterator> = true>
+        -:  289:void reserveIfForwardIterator(Container *c, ForwardIterator f, ForwardIterator l)
+        -:  290:{
+        -:  291:    c->reserve(static_cast<typename Container::size_type>(std::distance(f, l)));
+        -:  292:}
+        -:  293:
+        -:  294:template <typename Iterator>
+        -:  295:using KeyAndValueTest = decltype(
+        -:  296:    std::declval<Iterator &>().key(),
+        -:  297:    std::declval<Iterator &>().value()
+        -:  298:);
+        -:  299:
+        -:  300:template <typename Iterator>
+        -:  301:using FirstAndSecondTest = decltype(
+        -:  302:    (*std::declval<Iterator &>()).first,
+        -:  303:    (*std::declval<Iterator &>()).second
+        -:  304:);
+        -:  305:
+        -:  306:template <typename Iterator>
+        -:  307:using IfAssociativeIteratorHasKeyAndValue =
+        -:  308:    std::enable_if_t<qxp::is_detected_v<KeyAndValueTest, Iterator>, bool>;
+        -:  309:
+        -:  310:template <typename Iterator>
+        -:  311:using IfAssociativeIteratorHasFirstAndSecond =
+        -:  312:    std::enable_if_t<
+        -:  313:        std::conjunction_v<
+        -:  314:            std::negation<qxp::is_detected<KeyAndValueTest, Iterator>>,
+        -:  315:            qxp::is_detected<FirstAndSecondTest, Iterator>
+        -:  316:        >, bool>;
+        -:  317:
+        -:  318:template <typename Iterator>
+        -:  319:using MoveBackwardsTest = decltype(
+        -:  320:    std::declval<Iterator &>().operator--()
+        -:  321:);
+        -:  322:
+        -:  323:template <typename Iterator>
+        -:  324:using IfIteratorCanMoveBackwards =
+        -:  325:    std::enable_if_t<qxp::is_detected_v<MoveBackwardsTest, Iterator>, bool>;
+        -:  326:
+        -:  327:template <typename T, typename U>
+        -:  328:using IfIsNotSame =
+        -:  329:    typename std::enable_if<!std::is_same<T, U>::value, bool>::type;
+        -:  330:
+        -:  331:template<typename T, typename U>
+        -:  332:using IfIsNotConvertible = typename std::enable_if<!std::is_convertible<T, U>::value, bool>::type;
+        -:  333:
+        -:  334:template <typename Container, typename Predicate>
+        -:  335:auto sequential_erase_if(Container &c, Predicate &pred)
+        -:  336:{
+        -:  337:    // This is remove_if() modified to perform the find_if step on
+        -:  338:    // const_iterators to avoid shared container detaches if nothing needs to
+        -:  339:    // be removed. We cannot run remove_if after find_if: doing so would apply
+        -:  340:    // the predicate to the first matching element twice!
+        -:  341:
+        -:  342:    const auto cbegin = c.cbegin();
+        -:  343:    const auto cend = c.cend();
+        -:  344:    const auto t_it = std::find_if(cbegin, cend, pred);
+        -:  345:    auto result = std::distance(cbegin, t_it);
+        -:  346:    if (result == c.size())
+        -:  347:        return result - result; // `0` of the right type
+        -:  348:
+        -:  349:    // now detach:
+        -:  350:    const auto e = c.end();
+        -:  351:
+        -:  352:    auto it = std::next(c.begin(), result);
+        -:  353:    auto dest = it;
+        -:  354:
+        -:  355:    // Loop Invariants:
+        -:  356:    // - it != e
+        -:  357:    // - [next(it), e[ still to be checked
+        -:  358:    // - [c.begin(), dest[ are result
+        -:  359:    while (++it != e) {
+        -:  360:        if (!pred(*it)) {
+        -:  361:            *dest = std::move(*it);
+        -:  362:            ++dest;
+        -:  363:        }
+        -:  364:    }
+        -:  365:
+        -:  366:    result = std::distance(dest, e);
+        -:  367:    c.erase(dest, e);
+        -:  368:    return result;
+        -:  369:}
+        -:  370:
+        -:  371:template <typename Container, typename T>
+        -:  372:auto sequential_erase(Container &c, const T &t)
+        -:  373:{
+        -:  374:    // use the equivalence relation from http://eel.is/c++draft/list.erasure#1
+        -:  375:    auto cmp = [&](auto &e) { return e == t; };
+        -:  376:    return sequential_erase_if(c, cmp); // can't pass rvalues!
+        -:  377:}
+        -:  378:
+        -:  379:template <typename Container, typename T>
+        -:  380:auto sequential_erase_with_copy(Container &c, const T &t)
+        -:  381:{
+        -:  382:    using CopyProxy = std::conditional_t<std::is_copy_constructible_v<T>, T, const T &>;
+        -:  383:    return sequential_erase(c, CopyProxy(t));
+        -:  384:}
+        -:  385:
+        -:  386:template <typename Container, typename T>
+        -:  387:auto sequential_erase_one(Container &c, const T &t)
+        -:  388:{
+        -:  389:    const auto cend = c.cend();
+        -:  390:    const auto it = std::find(c.cbegin(), cend, t);
+        -:  391:    if (it == cend)
+        -:  392:        return false;
+        -:  393:    c.erase(it);
+        -:  394:    return true;
+        -:  395:}
+        -:  396:
+        -:  397:template <typename T, typename Predicate>
+        -:  398:qsizetype qset_erase_if(QSet<T> &set, Predicate &pred)
+        -:  399:{
+        -:  400:    qsizetype result = 0;
+        -:  401:    auto it = set.cbegin();
+        -:  402:    auto e = set.cend(); // stable across detach (QHash::end() is a stateless sentinel)...
+        -:  403:    while (it != e) {
+        -:  404:        if (pred(*it)) {
+        -:  405:            ++result;
+        -:  406:            it = set.erase(it);
+        -:  407:            e = set.cend(); // ...but re-set nonetheless, in case at some point it won't be
+        -:  408:        } else {
+        -:  409:            ++it;
+        -:  410:        }
+        -:  411:    }
+        -:  412:    return result;
+        -:  413:}
+        -:  414:
+        -:  415:
+        -:  416:// Prerequisite: F is invocable on ArgTypes
+        -:  417:template <typename R, typename F, typename ... ArgTypes>
+        -:  418:struct is_invoke_result_explicitly_convertible : std::is_constructible<R, std::invoke_result_t<F, ArgTypes...>>
+        -:  419:{};
+        -:  420:
+        -:  421:// is_invocable_r checks for implicit conversions, but we need to check
+        -:  422:// for explicit conversions in remove_if. So, roll our own trait.
+        -:  423:template <typename R, typename F, typename ... ArgTypes>
+        -:  424:constexpr bool is_invocable_explicit_r_v = std::conjunction_v<
+        -:  425:    std::is_invocable<F, ArgTypes...>,
+        -:  426:    is_invoke_result_explicitly_convertible<R, F, ArgTypes...>
+        -:  427:>;
+        -:  428:
+        -:  429:template <typename Container, typename Predicate>
+        -:  430:auto associative_erase_if(Container &c, Predicate &pred)
+        -:  431:{
+        -:  432:    // we support predicates callable with either Container::iterator
+        -:  433:    // or with std::pair<const Key &, Value &>
+        -:  434:    using Iterator = typename Container::iterator;
+        -:  435:    using Key = typename Container::key_type;
+        -:  436:    using Value = typename Container::mapped_type;
+        -:  437:    using KeyValuePair = std::pair<const Key &, Value &>;
+        -:  438:
+        -:  439:    typename Container::size_type result = 0;
+        -:  440:
+        -:  441:    auto it = c.begin();
+        -:  442:    const auto e = c.end();
+        -:  443:    while (it != e) {
+        -:  444:        if constexpr (is_invocable_explicit_r_v<bool, Predicate &, Iterator &>) {
+        -:  445:            if (pred(it)) {
+        -:  446:                it = c.erase(it);
+        -:  447:                ++result;
+        -:  448:            } else {
+        -:  449:                ++it;
+        -:  450:            }
+        -:  451:        } else if constexpr (is_invocable_explicit_r_v<bool, Predicate &, KeyValuePair &&>) {
+        -:  452:            KeyValuePair p(it.key(), it.value());
+        -:  453:            if (pred(std::move(p))) {
+        -:  454:                it = c.erase(it);
+        -:  455:                ++result;
+        -:  456:            } else {
+        -:  457:                ++it;
+        -:  458:            }
+        -:  459:        } else {
+        -:  460:            static_assert(sizeof(Container) == 0, "Predicate has an incompatible signature");
+        -:  461:        }
+        -:  462:    }
+        -:  463:
+        -:  464:    return result;
+        -:  465:}
+        -:  466:
+        -:  467:} // namespace QtPrivate
+        -:  468:
+        -:  469:QT_END_NAMESPACE
+        -:  470:
+        -:  471:#endif // QCONTAINERTOOLS_IMPL_H

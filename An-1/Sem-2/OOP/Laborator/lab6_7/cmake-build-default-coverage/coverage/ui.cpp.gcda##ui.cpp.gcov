@@ -1,0 +1,1321 @@
+        -:    0:Source:/mnt/c/Users/urdad/lab6_7/ui.cpp
+        -:    0:Graph:/mnt/c/Users/urdad/lab6_7/cmake-build-default-coverage/CMakeFiles/lab6_7.dir/ui.cpp.gcno
+        -:    0:Data:/mnt/c/Users/urdad/lab6_7/cmake-build-default-coverage/CMakeFiles/lab6_7.dir/ui.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "ui.h"
+        -:    2:#include <iostream>
+        -:    3:#include "validator.h"
+        -:    4:#include "repo.h"
+        -:    5:#include <string>
+        -:    6:#include <vector>
+        -:    7:
+        -:    8:
+        -:    9:
+function _ZNK2UI10adaugaFilmEv called 0 returned 0% blocks executed 0%
+    #####:   10:void UI::adaugaFilm()const {
+    #####:   11:    std::string titlu, gen, actor;
+    %%%%%:   11-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   12:    int an;
+    #####:   13:    std::cout << "Titlu: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   14:    std::cin>>titlu;
+    %%%%%:   14-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   15:    std::cout << "Gen: ";
+    %%%%%:   15-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   16:    std::cin >>gen;
+    %%%%%:   16-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   17:    std::cout << "An: ";
+    %%%%%:   17-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   18:    std::cin >> an;
+    %%%%%:   18-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   19:    std::cout << "Actor principal: ";
+    %%%%%:   19-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   20:    std::cin>>actor;
+    %%%%%:   20-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   21:
+        -:   22:    try {
+    #####:   23:        service.adaugaFilm(titlu, gen, an, actor);
+    %%%%%:   23-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   24:        std::cout << "Filmul a fost adaugat cu succes!\n";
+    %%%%%:   24-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:   25:    } catch (const ValidationException& e) {
+    $$$$$:   25-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   25-block  1
+call    4 never executed
+    =====:   26:        std::cout << "Eroare validare: " << e.what() << "\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   26-block  0
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    $$$$$:   26-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    =====:   27:    } catch (const RepositoryException& e) {
+    $$$$$:   27-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   27-block  1
+call    3 never executed
+    $$$$$:   27-block  2
+call    4 never executed
+    =====:   28:        std::cout << "Eroare repo: " << e.what() << "\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   28-block  0
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    $$$$$:   28-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    =====:   29:    }catch (const std::exception& ex) {
+    $$$$$:   29-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   29-block  1
+call    3 never executed
+    $$$$$:   29-block  2
+call    4 never executed
+    =====:   30:        std::cout << "Eroare: " << ex.what() << "\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   30-block  0
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    $$$$$:   30-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    =====:   31:    }
+    $$$$$:   31-block  0
+call    0 never executed
+    $$$$$:   31-block  1
+call    1 never executed
+    #####:   32:}
+    %%%%%:   32-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:   32-block  1
+call    3 never executed
+    $$$$$:   32-block  2
+call    4 never executed
+    $$$$$:   32-block  3
+call    5 never executed
+        -:   33:
+function _ZNK2UI10stergeFilmEv called 0 returned 0% blocks executed 0%
+    #####:   34:void UI::stergeFilm()const {
+        -:   35:
+    #####:   36:        std::string titlu;
+    %%%%%:   36-block  0
+call    0 never executed
+        -:   37:        int an;
+    #####:   38:        std::cout << "Titlu: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   39:        std::cin>> titlu;
+    %%%%%:   39-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   40:        std::cout << "An: ";
+    %%%%%:   40-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   41:        std::cin >> an;
+    %%%%%:   41-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   42:
+        -:   43:        try {
+    #####:   44:            service.stergeFilm(titlu, an);
+    %%%%%:   44-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   45:            std::cout << "Filmul a fost sters cu succes!\n";
+    %%%%%:   45-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:   46:        } catch (const RepositoryException& e) {
+    $$$$$:   46-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   46-block  1
+call    3 never executed
+    =====:   47:            std::cout << "Eroare repo: " << e.what() << "\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   47-block  0
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    $$$$$:   47-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    =====:   48:        }catch (const std::exception& ex) {
+    $$$$$:   48-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   48-block  1
+call    3 never executed
+    $$$$$:   48-block  2
+call    4 never executed
+    =====:   49:            std::cout << "Eroare: " << ex.what() << "\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   49-block  0
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    $$$$$:   49-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    =====:   50:        }
+    $$$$$:   50-block  0
+call    0 never executed
+    $$$$$:   50-block  1
+call    1 never executed
+    #####:   51:}
+    %%%%%:   51-block  0
+call    0 never executed
+    $$$$$:   51-block  1
+call    1 never executed
+        -:   52:
+function _ZNK2UI13afiseazaFilmeEv called 0 returned 0% blocks executed 0%
+    #####:   53:void UI::afiseazaFilme()const {
+    #####:   54:        const auto& filme = service.getFilme();
+    %%%%%:   54-block  0
+call    0 never executed
+    #####:   55:        if (filme.empty()) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   56:            std::cout << "Nu exista filme in lista.\n";
+    %%%%%:   56-block  0
+call    0 never executed
+    #####:   57:            return;
+        -:   58:        }
+        -:   59:
+    #####:   60:        for (const auto& film : filme) {
+    %%%%%:   60-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:   60-block  1
+call    2 never executed
+    %%%%%:   60-block  2
+call    3 never executed
+    %%%%%:   60-block  3
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:   61:            std::cout << "Titlu: " << film.getTitlu()
+    #####:   62:                      << ", Gen: " << film.getGen()
+    #####:   63:                      << ", An: " << film.getAn()
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   63-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   63-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   63-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:   63-block  3
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:   63-block  4
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    %%%%%:   63-block  5
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+    #####:   64:                      << ", Actor: " << film.getActor() << "\n";
+    %%%%%:   64-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   64-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   64-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   64-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:   64-block  4
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:   64-block  5
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+        -:   65:        }
+        -:   66:}
+        -:   67:
+function _ZNK2UI12modificaFilmEv called 0 returned 0% blocks executed 0%
+    #####:   68:void UI::modificaFilm()const {
+    #####:   69:    std::string titlu, nouGen, nouActor;
+    %%%%%:   69-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   70:    int an, nouAn;
+    #####:   71:    std::cout << "Titlu film de modificat: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   72:    std::cin>>titlu;
+    %%%%%:   72-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   73:    std::cout << "Anul filmului: ";
+    %%%%%:   73-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   74:    std::cin >> an;
+    %%%%%:   74-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   75:    std::cout << "Gen nou: ";
+    %%%%%:   75-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   76:    std::cin>> nouGen;
+    %%%%%:   76-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   77:    std::cout << "An nou: ";
+    %%%%%:   77-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   78:    std::cin >> nouAn;
+    %%%%%:   78-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   79:    std::cout << "Actor principal nou: ";
+    %%%%%:   79-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   80:    std::cin>>nouActor;
+    %%%%%:   80-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   81:
+        -:   82:    try {
+    #####:   83:        service.modificaFilm(titlu, an, nouGen, nouAn, nouActor);
+    %%%%%:   83-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   84:        std::cout << "Filmul a fost modificat cu succes!\n";
+    %%%%%:   84-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:   85:    } catch (const ValidationException& e) {
+    $$$$$:   85-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   85-block  1
+call    3 never executed
+    =====:   86:        std::cout << "Eroare validare: " << e.what() << "\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   86-block  0
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    $$$$$:   86-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    =====:   87:    }catch (const RepositoryException& e) {
+    $$$$$:   87-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   87-block  1
+call    3 never executed
+    $$$$$:   87-block  2
+call    4 never executed
+    =====:   88:        std::cout << "Eroare repo: " << e.what() << "\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   88-block  0
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    $$$$$:   88-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    =====:   89:    }
+    $$$$$:   89-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   89-block  1
+call    3 never executed
+    #####:   90:}
+    %%%%%:   90-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:   90-block  1
+call    3 never executed
+    $$$$$:   90-block  2
+call    4 never executed
+    $$$$$:   90-block  3
+call    5 never executed
+        -:   91:
+function _ZNK2UI10cautaFilmeEv called 0 returned 0% blocks executed 0%
+    #####:   92:void UI::cautaFilme()const {
+    #####:   93:    std::string titlu, gen;
+    %%%%%:   93-block  0
+call    0 never executed
+call    1 never executed
+        -:   94:    int an;
+        -:   95:
+    #####:   96:    std::cout << "Introduceti titlul filmului (sau lasati gol pentru a nu filtra dupa titlu): ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   97:    std::cin.ignore(); // Curatam bufferul
+    %%%%%:   97-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   98:    std::getline(std::cin, titlu); // Citim titlul (poate fi gol)
+    %%%%%:   98-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   99:
+    #####:  100:    std::cout << "Introduceti genul filmului (sau lasati gol pentru a nu filtra dupa gen): ";
+    %%%%%:  100-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  101:    std::getline(std::cin, gen); // Citim genul (poate fi gol)
+    %%%%%:  101-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  102:
+    #####:  103:    std::cout << "Introduceti anul filmului (sau -1 pentru a nu filtra dupa an): ";
+    %%%%%:  103-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  104:    std::cin >> an;
+    %%%%%:  104-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  105:
+        -:  106:    // Căutăm filmele folosind funcția din Service
+    #####:  107:    auto rezultate = service.cautaFilme(titlu, gen, an);
+    %%%%%:  107-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  108:
+    #####:  109:    if (rezultate.empty()) {
+    %%%%%:  109-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  110:        std::cout << "Nu au fost gasite filme care sa corespunda criteriilor!\n";
+    %%%%%:  110-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  111:        return;
+    %%%%%:  111-block  0
+        -:  112:    }
+    #####:  113:    std::cout << "Filme gasite:\n";
+    %%%%%:  113-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  114:    for (const auto& film : rezultate) {
+    %%%%%:  114-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  114-block  1
+call    2 never executed
+    %%%%%:  114-block  2
+call    3 never executed
+    %%%%%:  114-block  3
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  115:            std::cout << "Titlu: " << film.getTitlu()
+    #####:  116:                      << ", Gen: " << film.getGen()
+    #####:  117:                      << ", An: " << film.getAn()
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  117-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  117-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  117-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  117-block  3
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  117-block  4
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    %%%%%:  117-block  5
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+    #####:  118:                      << ", Actor principal: " << film.getActor() << "\n";
+    %%%%%:  118-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  118-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  118-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  118-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  118-block  4
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  118-block  5
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+        -:  119:        }
+    #####:  120:}
+    %%%%%:  120-block  0
+    %%%%%:  120-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  120-block  2
+    %%%%%:  120-block  3
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  120-block  4
+    %%%%%:  120-block  5
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    $$$$$:  120-block  6
+call    9 never executed
+    $$$$$:  120-block  7
+call   10 never executed
+    $$$$$:  120-block  8
+call   11 never executed
+        -:  121:
+        -:  122:
+function _ZNK2UI13filtrareFilmeEv called 0 returned 0% blocks executed 0%
+    #####:  123:void UI::filtrareFilme()const {
+        -:  124:
+    #####:  125:        std::string titlu;
+    %%%%%:  125-block  0
+call    0 never executed
+        -:  126:        int an;
+        -:  127:
+    #####:  128:        std::cout << "Introduceti titlul filmului (sau lasati gol pentru a nu filtra dupa titlu): ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  129:        std::cin.ignore(); // Curatam bufferul
+    %%%%%:  129-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  130:        std::getline(std::cin, titlu); // Citim titlul (poate fi gol)
+    %%%%%:  130-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  131:
+    #####:  132:        std::cout << "Introduceti anul filmului (sau -1 pentru a nu filtra dupa an): ";
+    %%%%%:  132-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  133:        std::cin >> an;
+    %%%%%:  133-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  134:
+        -:  135:        // Filtrăm filmele folosind funcția din Service
+    #####:  136:        auto rezultate = service.filtrareFilme(titlu, an);
+    %%%%%:  136-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  137:
+    #####:  138:        if (rezultate.empty()) {
+    %%%%%:  138-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  139:            std::cout << "Nu au fost gasite filme care sa corespunda criteriilor!\n";
+    %%%%%:  139-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  140:            return;
+    %%%%%:  140-block  0
+        -:  141:        }
+    #####:  142:        std::cout << "Filme gasite:\n";
+    %%%%%:  142-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  143:        for (const auto& film : rezultate) {
+    %%%%%:  143-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  143-block  1
+call    2 never executed
+    %%%%%:  143-block  2
+call    3 never executed
+    %%%%%:  143-block  3
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  144:                std::cout << "Titlu: " << film.getTitlu()
+    #####:  145:                          << ", Gen: " << film.getGen()
+    #####:  146:                          << ", An: " << film.getAn()
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  146-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  146-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  146-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  146-block  3
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  146-block  4
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    %%%%%:  146-block  5
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+    #####:  147:                          << ", Actor principal: " << film.getActor() << "\n";
+    %%%%%:  147-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  147-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  147-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  147-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  147-block  4
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  147-block  5
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+        -:  148:            }
+    #####:  149:}
+    %%%%%:  149-block  0
+    %%%%%:  149-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  149-block  2
+    %%%%%:  149-block  3
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  149-block  4
+call    6 never executed
+    $$$$$:  149-block  5
+call    7 never executed
+        -:  150:
+        -:  151:
+function _ZN2UI7sortariEv called 0 returned 0% blocks executed 0%
+    #####:  152:void UI::sortari() {
+        -:  153:    int optiuneSortare;
+    #####:  154:    std::cout << "Alege criteriul de sortare:\n";
+    %%%%%:  154-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  155:    std::cout << "1. Titlu\n";
+    %%%%%:  155-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  156:    std::cout << "2. Actor principal\n";
+    %%%%%:  156-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  157:    std::cout << "3. Anul apariției și gen\n";
+    %%%%%:  157-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  158:    std::cout << "0. Inapoi\n";
+    %%%%%:  158-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  159:    std::cin >> optiuneSortare;
+    %%%%%:  159-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  160:
+    #####:  161:    switch (optiuneSortare) {
+    %%%%%:  161-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:  162:        case 1:
+    #####:  163:            service.sortareFilmeDupaTitlu();
+    %%%%%:  163-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  164:        break;
+    %%%%%:  164-block  0
+    #####:  165:        case 2:
+    #####:  166:            service.sortareFilmeDupaActor();
+    %%%%%:  166-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  167:        break;
+    %%%%%:  167-block  0
+    #####:  168:        case 3:
+    #####:  169:            service.sortareFilmeDupaAnSiGen();
+    %%%%%:  169-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  170:        break;
+    %%%%%:  170-block  0
+    #####:  171:        case 0:
+    #####:  172:            return;
+    %%%%%:  172-block  0
+    #####:  173:        default:
+    #####:  174:            std::cout << "Optiune invalida. Incercati din nou.\n";
+    %%%%%:  174-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  175:        break;
+    %%%%%:  175-block  0
+        -:  176:    }
+        -:  177:
+        -:  178:}
+        -:  179:
+        -:  180:
+        -:  181:
+        -:  182:
+        -:  183:
+        -:  184:
+function _ZN2UI15adaugaFilmInCosEv called 0 returned 0% blocks executed 0%
+    #####:  185:void UI::adaugaFilmInCos() {
+    #####:  186:    std::string titluFilm;
+    %%%%%:  186-block  0
+call    0 never executed
+    #####:  187:    std::cin.ignore();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  188:    std::cout << "Introduceti titlul filmului pentru a-l adauga in cosul de inchirieri: ";
+    %%%%%:  188-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  189:    getline(std::cin, titluFilm);
+    %%%%%:  189-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  190:    service.adaugaFilmInCosInchirieri(titluFilm);
+    %%%%%:  190-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  191:    std::cout << "Total filme in cos: " << service.getAllCosInchirieri().size() << "\n";
+    %%%%%:  191-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  191-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  191-block  2
+call    6 never executed
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  191-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+        -:  192:
+    #####:  193:}
+    %%%%%:  193-block  0
+call    0 never executed
+    $$$$$:  193-block  1
+call    1 never executed
+        -:  194:
+        -:  195:
+function _ZN2UI16umple_random_cosEv called 0 returned 0% blocks executed 0%
+    #####:  196:void UI::umple_random_cos() {
+        -:  197:    int dimensiune;
+    #####:  198:    std::cin.ignore();
+    %%%%%:  198-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  199:    std::cout << "Ibtroduceti numarul de filme de adaugat:";
+    %%%%%:  199-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  200:    std::cin >> dimensiune;
+    %%%%%:  200-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  201:    afiseazaFilmCos(service.umpleRandomCosInchirieri(dimensiune));
+    %%%%%:  201-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  201-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  202:    std::cout << "Total filme in cos: " << service.getAllCosInchirieri().size() << "\n";
+    %%%%%:  202-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  202-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  202-block  2
+call    6 never executed
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  202-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+        -:  203:
+        -:  204:
+    #####:  205:}
+    %%%%%:  205-block  0
+        -:  206:
+function _ZN2UI15afiseazaFilmCosERKSt6vectorI4FilmSaIS1_EE called 0 returned 0% blocks executed 0%
+    #####:  207:void UI::afiseazaFilmCos(const std::vector<Film>& filme) {
+    #####:  208:    if (filme.size() == 0) {
+    %%%%%:  208-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  209:        std::cout << "Nu exista filme in lista!";
+    %%%%%:  209-block  0
+call    0 never executed
+    #####:  210:        return;
+        -:  211:    }
+    #####:  212:    std::cout<<"Filme:\n";
+    %%%%%:  212-block  0
+call    0 never executed
+    #####:  213:    int i =0;
+    #####:  214:    for (const auto& filme : filme) {
+call    0 never executed
+call    1 never executed
+    %%%%%:  214-block  0
+call    2 never executed
+    %%%%%:  214-block  1
+call    3 never executed
+    %%%%%:  214-block  2
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  215:        i++;
+    #####:  216:        std::cout << i <<". Titlu:" << filme.getTitlu() <<"; Gen:"<<  filme.getGen() <<"; An:"<<  filme.getAn() << "; Actor principal:" << filme.getActor() << "\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  216-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  216-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  216-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  216-block  3
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  216-block  4
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    %%%%%:  216-block  5
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+    %%%%%:  216-block  6
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+    %%%%%:  216-block  7
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+    %%%%%:  216-block  8
+call   27 never executed
+branch 28 never executed
+branch 29 never executed
+    %%%%%:  216-block  9
+call   30 never executed
+branch 31 never executed
+branch 32 never executed
+    %%%%%:  216-block 10
+call   33 never executed
+branch 34 never executed
+branch 35 never executed
+    %%%%%:  216-block 11
+call   36 never executed
+branch 37 never executed
+branch 38 never executed
+    %%%%%:  216-block 12
+call   39 never executed
+branch 40 never executed
+branch 41 never executed
+        -:  217:    }
+    #####:  218:    std::cout << "Total filme in cos: " << service.getAllCosInchirieri().size() << "\n";
+    %%%%%:  218-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+        -:  219:
+        -:  220:
+        -:  221:}
+        -:  222:
+function _ZN2UI10exportaCosEv called 0 returned 0% blocks executed 0%
+    #####:  223:void UI::exportaCos() {
+    #####:  224:    std::cout << "Introduceti numele fisierului pentru export (ex: cos.csv): ";
+    %%%%%:  224-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  225:    std::string numeFisier;
+    %%%%%:  225-block  0
+call    0 never executed
+    #####:  226:    std::cin >> numeFisier;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  227:
+        -:  228:    try {
+    #####:  229:        service.exportaCosCSV(numeFisier);
+    %%%%%:  229-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  230:        std::cout << "Export realizat cu succes in fisier "<< "\n";
+    %%%%%:  230-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  230-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    =====:  231:    } catch (const std::exception& ex) {
+    $$$$$:  231-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  231-block  1
+call    2 never executed
+    =====:  232:        std::cout << "Eroare la export: " << ex.what() << "\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  232-block  0
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    $$$$$:  232-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    =====:  233:    }
+    $$$$$:  233-block  0
+call    0 never executed
+    $$$$$:  233-block  1
+call    1 never executed
+    #####:  234:    std::cout << "Total filme in cos: " << service.getAllCosInchirieri().size() << "\n";
+    %%%%%:  234-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  234-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  234-block  2
+call    6 never executed
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  234-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    #####:  235:}
+    %%%%%:  235-block  0
+call    0 never executed
+    $$$$$:  235-block  1
+call    1 never executed
+        -:  236:
+        -:  237:
+        -:  238:
+function _ZN2UI4undoEv called 0 returned 0% blocks executed 0%
+    #####:  239:void UI::undo() {
+        -:  240:
+        -:  241:    try {
+    #####:  242:        service.undo();
+    %%%%%:  242-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  243:        std::cout << "Undo efectuat cu succes!" << std::endl;
+    %%%%%:  243-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  243-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    =====:  244:    } catch (const std::runtime_error& e) {
+    $$$$$:  244-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  244-block  1
+call    2 never executed
+    =====:  245:        std::cout << "Eroare: " << e.what() << std::endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  245-block  0
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    $$$$$:  245-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    =====:  246:    }
+    $$$$$:  246-block  0
+call    0 never executed
+    $$$$$:  246-block  1
+call    1 never executed
+    #####:  247:}
+    %%%%%:  247-block  0
+        -:  248:
+function _ZN2UI3runEv called 1 returned 100% blocks executed 16%
+        1:  249:void UI::run() {
+        -:  250:    while (true) {
+        -:  251:        std::cout << "\n1. Adauga film\n"
+        -:  252:                     "2. Sterge film\n"
+        -:  253:                     "3. Afiseaza filme\n"
+        -:  254:                     "4. Modifica film\n"
+        -:  255:                     "5. Cauta filme\n"
+        -:  256:                     "6. Filtreaza filme\n"
+        -:  257:                     "7. Sorteaza filme\n"
+        -:  258:                     "8. Adauga in cos inchirieri\n"
+        -:  259:                     "9. Golire cos inchirieri\n"
+        -:  260:                     "10. Umple random cos inchiriei\n"
+        -:  261:                     "11. Afisare cos inchiriei\n"
+        -:  262:                     "12. Exporta film in fisier CSV.\n"
+        -:  263:                     "13. Undo.\n"
+        1:  264:                     "0. Iesire\nAlege o optiune: ";
+        1:  264-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  265:        int optiune;
+        1:  266:        std::cin >> optiune;
+        1:  266-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  267:
+        1:  268:        switch (optiune) {
+        1:  268-block  0
+branch  0 taken 0
+branch  1 taken 0
+branch  2 taken 0
+branch  3 taken 0
+branch  4 taken 0
+branch  5 taken 0
+branch  6 taken 0
+branch  7 taken 0
+branch  8 taken 0
+branch  9 taken 0
+branch 10 taken 0
+branch 11 taken 0
+branch 12 taken 0
+branch 13 taken 1
+branch 14 taken 0
+    #####:  269:            case 1: adaugaFilm(); break;
+    %%%%%:  269-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  269-block  1
+    #####:  270:            case 2: stergeFilm(); break;
+    %%%%%:  270-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  270-block  1
+    #####:  271:            case 3: afiseazaFilme(); break;
+    %%%%%:  271-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  271-block  1
+    #####:  272:            case 4: modificaFilm(); break;
+    %%%%%:  272-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  272-block  1
+    #####:  273:            case 5: cautaFilme();break;
+    %%%%%:  273-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  273-block  1
+    #####:  274:            case 6: filtrareFilme();break;
+    %%%%%:  274-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  274-block  1
+    #####:  275:            case 7: sortari();break;
+    %%%%%:  275-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  275-block  1
+    #####:  276:            case 8: adaugaFilmInCos();break;
+    %%%%%:  276-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  276-block  1
+    #####:  277:            case 9: afiseazaFilmCos(service.golesteCosInchirieri());
+    %%%%%:  277-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  277-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  278:                    std::cout << "\nCos golit cu succes! ";
+    %%%%%:  278-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  279:                     break;
+    %%%%%:  279-block  0
+    #####:  280:            case 10: umple_random_cos();break;
+    %%%%%:  280-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  280-block  1
+    #####:  281:            case 11: afiseazaFilmCos(service.getAllCosInchirieri());break;
+    %%%%%:  281-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  281-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  281-block  2
+    #####:  282:            case 12: exportaCos() ;break;
+    %%%%%:  282-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  282-block  1
+    #####:  283:            case 13: undo();break;
+    %%%%%:  283-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  283-block  1
+        1:  284:            case 0: return;
+        1:  284-block  0
+        1:  284-block  1
+    #####:  285:            default: std::cout << "Optiune invalida!\n";
+    %%%%%:  285-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  286:        }
+    #####:  287:    }
+    %%%%%:  287-block  0
+        -:  288:}

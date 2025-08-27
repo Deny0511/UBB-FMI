@@ -1,0 +1,114 @@
+        -:    0:Source:C:/Users/urdad/lab6_7/domain.cpp
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\domain.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\domain.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "domain.h"
+        -:    2:#include <iostream>
+        -:    3:
+function _ZN4FilmC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iS7_ called 55 returned 100% blocks executed 62%
+       55:    4:Film::Film(const std::string& titlu, const std::string& gen, int an, const std::string& actor)
+       55:    5:    : titlu{ titlu }, gen{ gen }, an{ an }, actor_principal{ actor } {}
+       55:    5-block  0
+call    0 returned 55
+call    1 returned 55
+branch  2 taken 55 (fallthrough)
+branch  3 taken 0 (throw)
+       55:    5-block  1
+call    4 returned 55
+branch  5 taken 55 (fallthrough)
+branch  6 taken 0 (throw)
+       55:    5-block  2
+    $$$$$:    5-block  3
+call    7 never executed
+    $$$$$:    5-block  4
+call    8 never executed
+        -:    6:
+function _ZN4FilmC2ERKS_ called 187 returned 100% blocks executed 74%
+      187:    7:Film::Film(const Film& other)
+      187:    8:    : titlu{ other.titlu }, gen{ other.gen }, an{ other.an }, actor_principal{ other.actor_principal } {
+      187:    8-block  0
+call    0 returned 187
+call    1 returned 187
+branch  2 taken 187 (fallthrough)
+branch  3 taken 0 (throw)
+      187:    8-block  1
+call    4 returned 187
+branch  5 taken 187 (fallthrough)
+branch  6 taken 0 (throw)
+        -:    9:    std::cout << "Constructor de copiere apelat. Copiem filmul: "
+      187:   10:              << other.titlu << ", " << other.gen << ", " << other.an << ", " << other.actor_principal << std::endl;
+      187:   10-block  0
+call    0 returned 187
+branch  1 taken 187 (fallthrough)
+branch  2 taken 0 (throw)
+      187:   10-block  1
+call    3 returned 187
+branch  4 taken 187 (fallthrough)
+branch  5 taken 0 (throw)
+      187:   10-block  2
+call    6 returned 187
+branch  7 taken 187 (fallthrough)
+branch  8 taken 0 (throw)
+      187:   10-block  3
+call    9 returned 187
+branch 10 taken 187 (fallthrough)
+branch 11 taken 0 (throw)
+      187:   10-block  4
+call   12 returned 187
+branch 13 taken 187 (fallthrough)
+branch 14 taken 0 (throw)
+      187:   10-block  5
+call   15 returned 187
+branch 16 taken 187 (fallthrough)
+branch 17 taken 0 (throw)
+      187:   10-block  6
+call   18 returned 187
+branch 19 taken 187 (fallthrough)
+branch 20 taken 0 (throw)
+      187:   10-block  7
+call   21 returned 187
+branch 22 taken 187 (fallthrough)
+branch 23 taken 0 (throw)
+      187:   10-block  8
+call   24 returned 187
+branch 25 taken 187 (fallthrough)
+branch 26 taken 0 (throw)
+      187:   11:}
+      187:   11-block  0
+    $$$$$:   11-block  1
+call    0 never executed
+    $$$$$:   11-block  2
+call    1 never executed
+    $$$$$:   11-block  3
+call    2 never executed
+        -:   12:
+        -:   13:
+function _ZNK4Film8getTitluB5cxx11Ev called 181 returned 100% blocks executed 100%
+      181:   14:const std::string& Film::getTitlu() const { return titlu; }
+      181:   14-block  0
+function _ZNK4Film6getGenB5cxx11Ev called 178 returned 100% blocks executed 100%
+      178:   15:const std::string& Film::getGen() const { return gen; }
+      178:   15-block  0
+function _ZNK4Film5getAnEv called 168 returned 100% blocks executed 100%
+      168:   16:int Film::getAn() const { return an; }
+      168:   16-block  0
+function _ZNK4Film8getActorB5cxx11Ev called 117 returned 100% blocks executed 100%
+      117:   17:const std::string& Film::getActor() const { return actor_principal; }
+      117:   17-block  0
+        -:   18:
+function _ZNK4FilmeqERKS_ called 65 returned 100% blocks executed 100%
+       65:   19:bool Film::operator==(const Film& other) const {
+       65:   20:    return titlu == other.titlu && an == other.an;
+       65:   20-block  0
+call    0 returned 65
+branch  1 taken 15 (fallthrough)
+branch  2 taken 50
+       15:   20-block  1
+branch  3 taken 15 (fallthrough)
+branch  4 taken 0
+       15:   20-block  2
+       50:   20-block  3
+       65:   20-block  4
+        -:   21:}
+        -:   22:
+        -:   23:

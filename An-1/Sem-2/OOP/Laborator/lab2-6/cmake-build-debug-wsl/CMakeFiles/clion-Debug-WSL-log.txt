@@ -1,0 +1,4 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles" -S /mnt/c/Users/urdad/lab2-6 -B /mnt/c/Users/urdad/lab2-6/cmake-build-debug-wsl
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/c/Users/urdad/lab2-6/cmake-build-debug-wsl

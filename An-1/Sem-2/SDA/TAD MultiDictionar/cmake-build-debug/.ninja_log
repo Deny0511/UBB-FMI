@@ -1,0 +1,6 @@
+# ninja log v6
+13	41	7679811124940387	clean	a912d6e803ee3202
+10	1559	7679811129037291	CMakeFiles/lab3_sda.dir/main.cpp.obj	893dcf07794c523
+37	1148	7679811732696433	CMakeFiles/lab3_sda.dir/TestScurt.cpp.obj	963f5df3bf035904
+26	1176	7679811732582027	CMakeFiles/lab3_sda.dir/MD.cpp.obj	bc614508682429a0
+48	1244	7679811732799062	CMakeFiles/lab3_sda.dir/TestExtins.cpp.obj	3906f1ee7458894

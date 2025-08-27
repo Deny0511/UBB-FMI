@@ -1,0 +1,10 @@
+# ninja log v6
+103	453	7642486543650692	CMakeFiles/lab2_6.dir/teste.c.obj	f8d4b7be643aec19
+69	285	7642486543301204	CMakeFiles/lab2_6.dir/main.c.obj	1b22bbaabf8b9d1
+78	296	7642486543401200	CMakeFiles/lab2_6.dir/validator.c.obj	2294fb1912e5869b
+124	412	7642486543856955	CMakeFiles/lab2_6.dir/service.c.obj	7accd5039e828e32
+114	380	7642486543754083	CMakeFiles/lab2_6.dir/repo.c.obj	da9b9c94776fbd5a
+90	288	7642486543523968	CMakeFiles/lab2_6.dir/Cheltuieli.c.obj	f5270db2ec4a907c
+136	447	7642486543978241	CMakeFiles/lab2_6.dir/ui.c.obj	ed466f486367cd1
+453	672	7642486547142501	lab2_6.exe	be1d09b6a173e184
+21	625	7642516238155141	build.ninja	a24f2ece1a40627a

@@ -1,0 +1,255 @@
+        -:    0:Source:/mnt/c/Users/urdad/lab2-6/repo.c
+        -:    0:Graph:/mnt/c/Users/urdad/lab2-6/cmake-build-debug-wsl-coverage/CMakeFiles/lab2_6.dir/repo.c.gcno
+        -:    0:Data:/mnt/c/Users/urdad/lab2-6/cmake-build-debug-wsl-coverage/CMakeFiles/lab2_6.dir/repo.c.gcda
+        -:    0:Runs:1
+        -:    1:#include <string.h>
+        -:    2:#include "repo.h"
+        -:    3:#include <stdlib.h>
+        -:    4:#include "Cheltuieli.h"
+        -:    5:
+        -:    6:
+function creeaza_lista called 11 returned 100% blocks executed 100%
+       11:    7:ListaCheltuieli creeaza_lista(int capacitate_initiala) {
+        -:    8:    /**
+        -:    9:     * Creeaza o lista de cheltuieli cu o capacitate initiala specificata.
+        -:   10:     *
+        -:   11:     * @param capacitate_initiala Capacitatea initiala a listei.
+        -:   12:     *
+        -:   13:     * @return O lista de cheltuieli cu capacitatea initiala alocata si lungimea 0.
+        -:   14:     */
+        -:   15:    ListaCheltuieli lista;
+       11:   16:    lista.lungime = 0;
+       11:   17:    lista.capacitate = capacitate_initiala;
+       11:   18:    lista.cheltuiala = (Cheltuiala*) malloc(capacitate_initiala * sizeof(Cheltuiala));
+        -:   19:
+       11:   20:    return lista;
+       11:   20-block  0
+        -:   21:}
+        -:   22:
+function distruge_lista called 9 returned 100% blocks executed 100%
+        9:   23:void distruge_lista(ListaCheltuieli *lista) {
+        -:   24:    /**
+        -:   25:     * Distruge lista de cheltuieli, eliberand memoria alocata pentru aceasta.
+        -:   26:     *
+        -:   27:     * @param lista Pointer catre lista de cheltuieli ce trebuie distrusa.
+        -:   28:     *
+        -:   29:     * Aceasta functie elibereaza memoria ocupata de lista si reseteaza campurile listei la valori implicite.
+        -:   30:     */
+        9:   31:    free(lista->cheltuiala);
+        9:   32:    lista->cheltuiala = NULL;
+        9:   33:    lista->lungime = 0;
+        9:   34:    lista->capacitate = 0;
+        9:   35:}
+        -:   36:
+function redimensioneaza_lista called 9 returned 100% blocks executed 100%
+        9:   37:void redimensioneaza_lista(ListaCheltuieli *lista) {
+        -:   38:    /**
+        -:   39:     * Redimensioneaza lista de cheltuieli, dubland capacitatea acesteia.
+        -:   40:     *
+        -:   41:     * @param lista Pointer catre lista de cheltuieli ce urmeaza a fi redimensionata.
+        -:   42:     *
+        -:   43:     * Aceasta functie dubleaza capacitatea listei, alocand o noua memorie de dimensiune mai mare.
+        -:   44:     */
+        -:   45:
+        9:   46:    lista->capacitate *= 2;
+        9:   47:    Cheltuiala *noua_cheltuiala = realloc(lista->cheltuiala, lista->capacitate * sizeof(Cheltuiala));
+        -:   48:
+        9:   49:    lista->cheltuiala = noua_cheltuiala;
+        9:   50:}
+        -:   51:
+        -:   52:
+function micsoreaza_lista called 5 returned 100% blocks executed 100%
+        5:   53:void micsoreaza_lista(ListaCheltuieli *lista) {
+        -:   54:    /**
+        -:   55:     * Micsoreaza lista de cheltuieli, reducand capacitatea acesteia la jumatate.
+        -:   56:     * Daca capacitatea noua este mai mica decat 2, lista nu este redimensionata.
+        -:   57:     *
+        -:   58:     * @param lista Pointer catre lista de cheltuieli ce urmeaza a fi micsorata.
+        -:   59:     *
+        -:   60:     * Aceasta functie reduce capacitatea listei la jumatate si elibereaza memoria neutilizata.
+        -:   61:     */
+        -:   62:
+        5:   63:    int noua_capacitate = lista->capacitate / 2;
+        5:   64:    if (noua_capacitate < 2) {
+        5:   64-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 4
+        1:   65:        return;
+        1:   65-block  0
+        -:   66:    }
+        -:   67:
+        4:   68:    Cheltuiala *noua_lista = (Cheltuiala*) malloc( noua_capacitate * sizeof(Cheltuiala));
+        -:   69:
+        -:   70:
+        6:   71:    for (int i = 0; i < lista->lungime; i++) {
+        4:   71-block  0
+        6:   71-block  1
+branch  0 taken 2
+branch  1 taken 4 (fallthrough)
+        2:   72:        noua_lista[i] = lista->cheltuiala[i];
+        2:   72-block  0
+        -:   73:    }
+        -:   74:
+        4:   75:    free(lista->cheltuiala);
+        4:   76:    lista->cheltuiala = noua_lista;
+        4:   77:    lista->capacitate = noua_capacitate;
+        4:   77-block  0
+        -:   78:}
+        -:   79:
+        -:   80:
+        -:   81:
+        -:   82:
+        -:   83:
+        -:   84:
+        -:   85:
+        -:   86:
+        -:   87:
+function add called 226 returned 100% blocks executed 100%
+      226:   88:int add(ListaCheltuieli *lista, int zi, float suma, const char *tip) {
+        -:   89:    /**
+        -:   90:     * Adauga o noua cheltuiala in lista de cheltuieli.
+        -:   91:     *
+        -:   92:     * @param lista Pointer catre lista de cheltuieli.
+        -:   93:     * @param zi Ziua cheltuielii.
+        -:   94:     * @param suma Suma cheltuielii.
+        -:   95:     * @param tip Tipul cheltuielii.
+        -:   96:     *
+        -:   97:     * @return 0 daca adaugarea a fost cu succes,
+        -:   98:     *        -1 daca lista este plina.
+        -:   99:     */
+      226:  100:    if (lista->lungime < MAX_CHELTUIELI) {
+      226:  100-block  0
+branch  0 taken 222 (fallthrough)
+branch  1 taken 4
+      222:  101:        if (lista->lungime == lista->capacitate) {
+      222:  101-block  0
+branch  0 taken 8 (fallthrough)
+branch  1 taken 214
+        8:  102:            redimensioneaza_lista(lista);
+        8:  102-block  0
+call    0 returned 8
+        -:  103:        }
+      222:  104:        lista->cheltuiala[lista->lungime].zi = zi;
+      222:  105:        lista->cheltuiala[lista->lungime].suma = suma;
+      222:  106:        strcpy(lista->cheltuiala[lista->lungime].tip, tip);
+      222:  107:        lista->lungime++;
+      222:  108:        return 0;
+      222:  108-block  0
+        -:  109:    }
+        4:  110:    return -1;
+        4:  110-block  0
+        -:  111:}
+        -:  112:
+function modificare called 4 returned 100% blocks executed 100%
+        4:  113:int modificare(ListaCheltuieli *lista, int index, int zi, float suma, const char *tip) {
+        -:  114:    /**
+        -:  115:     * Modifica o cheltuiala existenta din lista.
+        -:  116:     *
+        -:  117:     * @param lista Pointer catre lista de cheltuieli.
+        -:  118:     * @param index Indexul cheltuielii de modificat.
+        -:  119:     * @param zi Noua zi a cheltuielii.
+        -:  120:     * @param suma Noua suma a cheltuielii.
+        -:  121:     * @param tip Noul tip al cheltuielii.
+        -:  122:     *
+        -:  123:     * @return 0 daca modificarea a avut succes,
+        -:  124:     *         -2 daca indexul este invalid.
+        -:  125:     */
+        4:  126:    if (index >= 0 && index < lista->lungime) {
+        4:  126-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 0
+        4:  126-block  1
+branch  2 taken 2 (fallthrough)
+branch  3 taken 2
+        2:  127:        lista->cheltuiala[index].zi = zi;
+        2:  128:        lista->cheltuiala[index].suma = suma;
+        2:  129:        strncpy(lista->cheltuiala[index].tip, tip, 50);
+        2:  130:        return 0;
+        2:  130-block  0
+        -:  131:    } else {
+        2:  132:        return -2;
+        2:  132-block  0
+        -:  133:    }
+        -:  134:}
+        -:  135:
+function stergere called 7 returned 100% blocks executed 100%
+        7:  136:int stergere(ListaCheltuieli *lista, int index) {
+        -:  137:    /**
+        -:  138:     * Sterge o cheltuiala din lista.
+        -:  139:     *
+        -:  140:     * @param lista Pointer catre lista de cheltuieli.
+        -:  141:     * @param index Indexul cheltuielii de sters.
+        -:  142:     *
+        -:  143:     * @return 0 daca stergerea a avut succes,
+        -:  144:     *        -2 daca indexul este invalid.
+        -:  145:     */
+        7:  146:    if (index < 0 || index >= lista->lungime) {
+        7:  146-block  0
+branch  0 taken 7 (fallthrough)
+branch  1 taken 0
+        7:  146-block  1
+branch  2 taken 3 (fallthrough)
+branch  3 taken 4
+        3:  147:        return -2;
+        3:  147-block  0
+        -:  148:    }
+        -:  149:
+        5:  150:    for (int i = index; i < lista->lungime - 1; i++) {
+        4:  150-block  0
+        5:  150-block  1
+branch  0 taken 1
+branch  1 taken 4 (fallthrough)
+        1:  151:        lista->cheltuiala[i] = lista->cheltuiala[i + 1];
+        1:  151-block  0
+        -:  152:    }
+        -:  153:
+        4:  154:    lista->lungime--;
+        -:  155:
+        4:  156:    if (lista->lungime < lista->capacitate / 4 && lista->capacitate > 2) {
+        4:  156-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 1
+        3:  156-block  1
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0
+        3:  157:        micsoreaza_lista(lista);
+        3:  157-block  0
+call    0 returned 3
+        -:  158:    }
+        -:  159:
+        4:  160:    return 0;
+        4:  160-block  0
+        -:  161:}
+        -:  162:
+function get_all called 2 returned 100% blocks executed 83%
+        2:  163:ListaCheltuieli* get_all(ListaCheltuieli *lista) {
+        -:  164:    /**
+        -:  165:     * Returneaza intreaga lista de cheltuieli.
+        -:  166:     *
+        -:  167:     * @param lista Pointer catre lista de cheltuieli.
+        -:  168:     *
+        -:  169:     * @return Pointer catre lista de cheltuieli.
+        -:  170:     */
+       2*:  171:    if (!lista) return NULL;
+        2:  171-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 2
+    %%%%%:  171-block  1
+        2:  172:    ListaCheltuieli *copia = (ListaCheltuieli*) malloc(sizeof(ListaCheltuieli));
+        -:  173:
+        -:  174:
+        2:  175:    copia->capacitate = lista->capacitate;
+        2:  176:    copia->lungime = lista->lungime;
+        2:  177:    copia->cheltuiala = NULL;
+        2:  178:    if (lista->lungime > 0) {
+        2:  178-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 0
+        2:  179:        copia->cheltuiala = (Cheltuiala*) malloc(lista->lungime * sizeof(Cheltuiala));
+        -:  180:
+        2:  181:        memcpy(copia->cheltuiala, lista->cheltuiala, lista->lungime * sizeof(Cheltuiala));
+        2:  181-block  0
+        -:  182:    }
+        2:  183:   return copia;
+        2:  183-block  0
+        -:  184:}

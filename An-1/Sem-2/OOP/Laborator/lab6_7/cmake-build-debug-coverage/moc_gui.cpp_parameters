@@ -1,0 +1,4 @@
+-DWIN32
+-o
+C:/Users/urdad/lab6_7/cmake-build-debug-coverage/moc_gui.cpp
+C:/Users/urdad/lab6_7/gui.h

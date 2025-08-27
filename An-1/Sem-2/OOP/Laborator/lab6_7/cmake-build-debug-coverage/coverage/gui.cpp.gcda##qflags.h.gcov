@@ -1,0 +1,352 @@
+        -:    0:Source:C:/Qt/6.9.0/mingw_64/include/QtCore/qflags.h
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\gui.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\gui.cpp.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright (C) 2016 The Qt Company Ltd.
+        -:    2:// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+        -:    3:
+        -:    4:#ifndef QFLAGS_H
+        -:    5:#define QFLAGS_H
+        -:    6:
+        -:    7:#include <QtCore/qcompare_impl.h>
+        -:    8:#include <QtCore/qtypeinfo.h>
+        -:    9:
+        -:   10:#include <algorithm>
+        -:   11:#include <initializer_list>
+        -:   12:
+        -:   13:QT_BEGIN_NAMESPACE
+        -:   14:
+        -:   15:template<typename Enum> class QFlags;
+        -:   16:
+        -:   17:class QFlag
+        -:   18:{
+        -:   19:    int i;
+        -:   20:public:
+        -:   21:    constexpr inline Q_IMPLICIT QFlag(int value) noexcept : i(value) {}
+        -:   22:    constexpr inline Q_IMPLICIT operator int() const noexcept { return i; }
+        -:   23:
+        -:   24:#if !defined(Q_CC_MSVC)
+        -:   25:    // Microsoft Visual Studio has buggy behavior when it comes to
+        -:   26:    // unsigned enums: even if the enum is unsigned, the enum tags are
+        -:   27:    // always signed
+        -:   28:#  if !defined(__LP64__) && !defined(Q_QDOC)
+        -:   29:    constexpr inline Q_IMPLICIT QFlag(long value) noexcept : i(int(value)) {}
+        -:   30:    constexpr inline Q_IMPLICIT QFlag(ulong value) noexcept : i(int(long(value))) {}
+        -:   31:#  endif
+        -:   32:    constexpr inline Q_IMPLICIT QFlag(uint value) noexcept : i(int(value)) {}
+        -:   33:    constexpr inline Q_IMPLICIT QFlag(short value) noexcept : i(int(value)) {}
+        -:   34:    constexpr inline Q_IMPLICIT QFlag(ushort value) noexcept : i(int(uint(value))) {}
+        -:   35:    constexpr inline Q_IMPLICIT operator uint() const noexcept { return uint(i); }
+        -:   36:#endif
+        -:   37:};
+        -:   38:Q_DECLARE_TYPEINFO(QFlag, Q_PRIMITIVE_TYPE);
+        -:   39:
+        -:   40:class QIncompatibleFlag
+        -:   41:{
+        -:   42:    int i;
+        -:   43:public:
+        -:   44:    constexpr inline explicit QIncompatibleFlag(int i) noexcept;
+        -:   45:    constexpr inline Q_IMPLICIT operator int() const noexcept { return i; }
+        -:   46:};
+        -:   47:Q_DECLARE_TYPEINFO(QIncompatibleFlag, Q_PRIMITIVE_TYPE);
+        -:   48:
+        -:   49:constexpr inline QIncompatibleFlag::QIncompatibleFlag(int value) noexcept : i(value) {}
+        -:   50:
+        -:   51:namespace QtPrivate {
+        -:   52:template <typename T> struct IsQFlags : std::false_type {};
+        -:   53:template <typename E> struct IsQFlags<QFlags<E>> : std::true_type {};
+        -:   54:
+        -:   55:template<typename Enum>
+        -:   56:class QFlagsStorage
+        -:   57:{
+        -:   58:    static_assert(sizeof(Enum) <= sizeof(quint64),
+        -:   59:                  "Only enumerations 64 bits or smaller are supported.");
+        -:   60:    static_assert((std::is_enum<Enum>::value), "QFlags is only usable on enumeration types.");
+        -:   61:
+        -:   62:    static constexpr size_t IntegerSize = (std::max)(sizeof(Enum), sizeof(int));
+        -:   63:    using Integers = QIntegerForSize<IntegerSize>;
+        -:   64:
+        -:   65:protected:
+        -:   66:    typedef typename std::conditional<
+        -:   67:            std::is_unsigned<typename std::underlying_type<Enum>::type>::value,
+        -:   68:            typename Integers::Unsigned,
+        -:   69:            typename Integers::Signed
+        -:   70:        >::type Int;
+        -:   71:
+        -:   72:    Int i = 0;
+        -:   73:
+        -:   74:    QT_DECLARE_RO5_SMF_AS_DEFAULTED(QFlagsStorage)
+        -:   75:public:
+       55:   76:    constexpr inline QFlagsStorage() noexcept = default;
+------------------
+_ZN9QtPrivate13QFlagsStorageIN2Qt13AlignmentFlagEEC2Ev:
+function _ZN9QtPrivate13QFlagsStorageIN2Qt13AlignmentFlagEEC2Ev called 54 returned 100% blocks executed 100%
+       54:   76:    constexpr inline QFlagsStorage() noexcept = default;
+------------------
+_ZN9QtPrivate13QFlagsStorageIN2Qt10WindowTypeEEC2Ev:
+function _ZN9QtPrivate13QFlagsStorageIN2Qt10WindowTypeEEC2Ev called 1 returned 100% blocks executed 100%
+        1:   76:    constexpr inline QFlagsStorage() noexcept = default;
+------------------
+       16:   77:    constexpr inline explicit QFlagsStorage(std::in_place_t, Int v) : i(v) {}
+------------------
+_ZN9QtPrivate13QFlagsStorageIN11QMessageBox14StandardButtonEEC2ESt10in_place_ti:
+function _ZN9QtPrivate13QFlagsStorageIN11QMessageBox14StandardButtonEEC2ESt10in_place_ti called 9 returned 100% blocks executed 100%
+        9:   77:    constexpr inline explicit QFlagsStorage(std::in_place_t, Int v) : i(v) {}
+------------------
+_ZN9QtPrivate13QFlagsStorageIN10QArrayData11ArrayOptionEEC2ESt10in_place_tj:
+function _ZN9QtPrivate13QFlagsStorageIN10QArrayData11ArrayOptionEEC2ESt10in_place_tj called 7 returned 100% blocks executed 100%
+        7:   77:    constexpr inline explicit QFlagsStorage(std::in_place_t, Int v) : i(v) {}
+------------------
+        -:   78:};
+        -:   79:
+        -:   80:template <typename Enum, int Size = sizeof(QFlagsStorage<Enum>)>
+        -:   81:struct QFlagsStorageHelper : QFlagsStorage<Enum>
+        -:   82:{
+        -:   83:    using QFlagsStorage<Enum>::QFlagsStorage;
+        -:   84:protected:
+        -:   85:    QT_DECLARE_RO5_SMF_AS_DEFAULTED(QFlagsStorageHelper)
+        -:   86:};
+        -:   87:template <typename Enum> struct QFlagsStorageHelper<Enum, sizeof(int)> : QFlagsStorage<Enum>
+        -:   88:{
+        -:   89:    using QFlagsStorage<Enum>::QFlagsStorage;
+        -:   90:
+        -:   91:    // For compatibility with Qt 3, moc goes through QFlag in order to
+        -:   92:    // read/write properties of type QFlags; so a conversion to QFlag is also
+        -:   93:    // needed here. (It otherwise goes through a QFlags->int->QFlag conversion
+        -:   94:    // sequence.)
+        -:   95:    constexpr inline Q_IMPLICIT QFlagsStorageHelper(QFlag flag) noexcept
+        -:   96:        : QFlagsStorage<Enum>(std::in_place, flag) {}
+        -:   97:#ifdef QT_TYPESAFE_FLAGS
+        -:   98:    constexpr inline explicit operator QFlag() const noexcept { return QFlag(this->i); }
+        -:   99:#endif
+        -:  100:protected:
+        -:  101:    QT_DECLARE_RO5_SMF_AS_DEFAULTED(QFlagsStorageHelper)
+        -:  102:};
+        -:  103:} // namespace QtPrivate
+        -:  104:
+        -:  105:template<typename Enum>
+        -:  106:class QFlags : public QtPrivate::QFlagsStorageHelper<Enum>
+        -:  107:{
+        -:  108:    using Base = QtPrivate::QFlagsStorageHelper<Enum>;
+        -:  109:public:
+        -:  110:    typedef Enum enum_type;
+        -:  111:    using Int = typename Base::Int;
+        -:  112:    using Base::Base;
+        -:  113:
+        -:  114:    // compiler-generated copy/move ctor/assignment operators are fine!
+       55:  115:    constexpr inline QFlags() noexcept = default;
+------------------
+_ZN6QFlagsIN2Qt13AlignmentFlagEEC1Ev:
+function _ZN6QFlagsIN2Qt13AlignmentFlagEEC1Ev called 54 returned 100% blocks executed 100%
+       54:  115:    constexpr inline QFlags() noexcept = default;
+       54:  115-block  0
+call    0 returned 54
+------------------
+_ZN6QFlagsIN2Qt10WindowTypeEEC1Ev:
+function _ZN6QFlagsIN2Qt10WindowTypeEEC1Ev called 1 returned 100% blocks executed 100%
+        1:  115:    constexpr inline QFlags() noexcept = default;
+        1:  115-block  0
+call    0 returned 1
+------------------
+        -:  116:
+       16:  117:    constexpr inline Q_IMPLICIT QFlags(Enum flags) noexcept : Base(std::in_place, Int(flags)) {}
+------------------
+_ZN6QFlagsIN11QMessageBox14StandardButtonEEC1ES1_:
+function _ZN6QFlagsIN11QMessageBox14StandardButtonEEC1ES1_ called 9 returned 100% blocks executed 100%
+        9:  117:    constexpr inline Q_IMPLICIT QFlags(Enum flags) noexcept : Base(std::in_place, Int(flags)) {}
+        9:  117-block  0
+call    0 returned 9
+------------------
+_ZN6QFlagsIN10QArrayData11ArrayOptionEEC1ES1_:
+function _ZN6QFlagsIN10QArrayData11ArrayOptionEEC1ES1_ called 7 returned 100% blocks executed 100%
+        7:  117:    constexpr inline Q_IMPLICIT QFlags(Enum flags) noexcept : Base(std::in_place, Int(flags)) {}
+        7:  117-block  0
+call    0 returned 7
+------------------
+        -:  118:
+        -:  119:#ifdef Q_QDOC
+        -:  120:    constexpr inline Q_IMPLICIT QFlags(std::in_place_t, Int flags) noexcept;
+        -:  121:    constexpr inline Q_IMPLICIT QFlags(QFlag flag) noexcept
+        -:  122:        requires(sizeof(Enum) == sizeof(int));
+        -:  123:#endif
+        -:  124:
+        -:  125:    constexpr inline QFlags(std::initializer_list<Enum> flags) noexcept
+        -:  126:        : Base(std::in_place, initializer_list_helper(flags.begin(), flags.end())) {}
+        -:  127:
+        -:  128:    constexpr static inline QFlags fromInt(Int i) noexcept { return QFlags(std::in_place, i); }
+        -:  129:    constexpr inline Int toInt() const noexcept { return i; }
+        -:  130:
+        -:  131:#ifndef QT_TYPESAFE_FLAGS
+        -:  132:    constexpr inline QFlags &operator&=(int mask) noexcept { i &= mask; return *this; }
+        -:  133:    constexpr inline QFlags &operator&=(uint mask) noexcept { i &= mask; return *this; }
+        -:  134:#endif
+        -:  135:    constexpr inline QFlags &operator&=(QFlags mask) noexcept { i &= mask.i; return *this; }
+        -:  136:    constexpr inline QFlags &operator&=(Enum mask) noexcept { i &= Int(mask); return *this; }
+        -:  137:    constexpr inline QFlags &operator|=(QFlags other) noexcept { i |= other.i; return *this; }
+        -:  138:    constexpr inline QFlags &operator|=(Enum other) noexcept { i |= Int(other); return *this; }
+        -:  139:    constexpr inline QFlags &operator^=(QFlags other) noexcept { i ^= other.i; return *this; }
+        -:  140:    constexpr inline QFlags &operator^=(Enum other) noexcept { i ^= Int(other); return *this; }
+        -:  141:
+        -:  142:#ifdef QT_TYPESAFE_FLAGS
+        -:  143:    constexpr inline explicit operator Int() const noexcept { return i; }
+        -:  144:    constexpr inline explicit operator bool() const noexcept { return i; }
+        -:  145:#else
+function _ZNK6QFlagsIN10QArrayData11ArrayOptionEEcvjEv called 0 returned 0% blocks executed 0%
+    #####:  146:    constexpr inline Q_IMPLICIT operator Int() const noexcept { return i; }
+    %%%%%:  146-block  0
+        -:  147:    constexpr inline bool operator!() const noexcept { return !i; }
+        -:  148:#endif
+        -:  149:
+        -:  150:    constexpr inline QFlags operator|(QFlags other) const noexcept { return QFlags(std::in_place, i | other.i); }
+        -:  151:    constexpr inline QFlags operator|(Enum other) const noexcept { return QFlags(std::in_place, i | Int(other)); }
+        -:  152:    constexpr inline QFlags operator^(QFlags other) const noexcept { return QFlags(std::in_place, i ^ other.i); }
+        -:  153:    constexpr inline QFlags operator^(Enum other) const noexcept { return QFlags(std::in_place, i ^ Int(other)); }
+        -:  154:#ifndef QT_TYPESAFE_FLAGS
+        -:  155:    constexpr inline QFlags operator&(int mask) const noexcept { return QFlags(std::in_place, i & mask); }
+        -:  156:    constexpr inline QFlags operator&(uint mask) const noexcept { return QFlags(std::in_place, i & mask); }
+        -:  157:#endif
+        -:  158:    constexpr inline QFlags operator&(QFlags other) const noexcept { return QFlags(std::in_place, i & other.i); }
+function _ZNK6QFlagsIN10QArrayData11ArrayOptionEEanES1_ called 0 returned 0% blocks executed 0%
+    #####:  159:    constexpr inline QFlags operator&(Enum other) const noexcept { return QFlags(std::in_place, i & Int(other)); }
+    %%%%%:  159-block  0
+call    0 never executed
+    %%%%%:  159-block  1
+        -:  160:    constexpr inline QFlags operator~() const noexcept { return QFlags(std::in_place, ~i); }
+        -:  161:
+        -:  162:    constexpr inline void operator+(QFlags other) const noexcept = delete;
+        -:  163:    constexpr inline void operator+(Enum other) const noexcept = delete;
+        -:  164:    constexpr inline void operator+(int other) const noexcept = delete;
+        -:  165:    constexpr inline void operator-(QFlags other) const noexcept = delete;
+        -:  166:    constexpr inline void operator-(Enum other) const noexcept = delete;
+        -:  167:    constexpr inline void operator-(int other) const noexcept = delete;
+        -:  168:
+        -:  169:    constexpr inline bool testFlag(Enum flag) const noexcept { return testFlags(flag); }
+        -:  170:    constexpr inline bool testFlags(QFlags flags) const noexcept { return flags.i ? ((i & flags.i) == flags.i) : i == Int(0); }
+        -:  171:    constexpr inline bool testAnyFlag(Enum flag) const noexcept { return testAnyFlags(flag); }
+        -:  172:    constexpr inline bool testAnyFlags(QFlags flags) const noexcept { return (i & flags.i) != Int(0); }
+        -:  173:    constexpr inline QFlags &setFlag(Enum flag, bool on = true) noexcept
+        -:  174:    {
+        -:  175:        return on ? (*this |= flag) : (*this &= ~QFlags(flag));
+        -:  176:    }
+        -:  177:
+        -:  178:    friend constexpr inline bool operator==(QFlags lhs, QFlags rhs) noexcept
+        -:  179:    { return lhs.i == rhs.i; }
+        -:  180:    friend constexpr inline bool operator!=(QFlags lhs, QFlags rhs) noexcept
+        -:  181:    { return lhs.i != rhs.i; }
+        -:  182:    friend constexpr inline bool operator==(QFlags lhs, Enum rhs) noexcept
+        -:  183:    { return lhs == QFlags(rhs); }
+        -:  184:    friend constexpr inline bool operator!=(QFlags lhs, Enum rhs) noexcept
+        -:  185:    { return lhs != QFlags(rhs); }
+        -:  186:    friend constexpr inline bool operator==(Enum lhs, QFlags rhs) noexcept
+        -:  187:    { return QFlags(lhs) == rhs; }
+        -:  188:    friend constexpr inline bool operator!=(Enum lhs, QFlags rhs) noexcept
+        -:  189:    { return QFlags(lhs) != rhs; }
+        -:  190:
+        -:  191:#ifdef QT_TYPESAFE_FLAGS
+        -:  192:    // Provide means of comparing flags against a literal 0; opt-in
+        -:  193:    // because otherwise they're ambiguous against operator==(int,int)
+        -:  194:    // after a QFlags->int conversion.
+        -:  195:    friend constexpr inline bool operator==(QFlags flags, QtPrivate::CompareAgainstLiteralZero) noexcept
+        -:  196:    { return flags.i == Int(0); }
+        -:  197:    friend constexpr inline bool operator!=(QFlags flags, QtPrivate::CompareAgainstLiteralZero) noexcept
+        -:  198:    { return flags.i != Int(0); }
+        -:  199:    friend constexpr inline bool operator==(QtPrivate::CompareAgainstLiteralZero, QFlags flags) noexcept
+        -:  200:    { return Int(0) == flags.i; }
+        -:  201:    friend constexpr inline bool operator!=(QtPrivate::CompareAgainstLiteralZero, QFlags flags) noexcept
+        -:  202:    { return Int(0) != flags.i; }
+        -:  203:#endif
+        -:  204:
+        -:  205:private:
+        -:  206:    constexpr static inline Int initializer_list_helper(typename std::initializer_list<Enum>::const_iterator it,
+        -:  207:                                                               typename std::initializer_list<Enum>::const_iterator end)
+        -:  208:    noexcept
+        -:  209:    {
+        -:  210:        return (it == end ? Int(0) : (Int(*it) | initializer_list_helper(it + 1, end)));
+        -:  211:    }
+        -:  212:
+        -:  213:    using Base::i;
+        -:  214:};
+        -:  215:
+        -:  216:#ifndef Q_MOC_RUN
+        -:  217:#define Q_DECLARE_FLAGS(Flags, Enum)\
+        -:  218:typedef QFlags<Enum> Flags;
+        -:  219:#endif
+        -:  220:
+        -:  221:#ifdef QT_TYPESAFE_FLAGS
+        -:  222:
+        -:  223:// These are opt-in, for backwards compatibility
+        -:  224:#define QT_DECLARE_TYPESAFE_OPERATORS_FOR_FLAGS_ENUM(Flags) \
+        -:  225:[[maybe_unused]] \
+        -:  226:constexpr inline Flags operator~(Flags::enum_type e) noexcept \
+        -:  227:{ return ~Flags(e); } \
+        -:  228:[[maybe_unused]] \
+        -:  229:constexpr inline void operator|(Flags::enum_type f1, int f2) noexcept = delete;
+        -:  230:#else
+        -:  231:#define QT_DECLARE_TYPESAFE_OPERATORS_FOR_FLAGS_ENUM(Flags) \
+        -:  232:[[maybe_unused]] \
+        -:  233:constexpr inline QIncompatibleFlag operator|(Flags::enum_type f1, int f2) noexcept \
+        -:  234:{ return QIncompatibleFlag(int(f1) | f2); }
+        -:  235:#endif
+        -:  236:
+        -:  237:#define Q_DECLARE_OPERATORS_FOR_FLAGS(Flags) \
+        -:  238:[[maybe_unused]] \
+        -:  239:constexpr inline QFlags<Flags::enum_type> operator|(Flags::enum_type f1, Flags::enum_type f2) noexcept \
+        -:  240:{ return QFlags<Flags::enum_type>(f1) | f2; } \
+        -:  241:[[maybe_unused]] \
+        -:  242:constexpr inline QFlags<Flags::enum_type> operator|(Flags::enum_type f1, QFlags<Flags::enum_type> f2) noexcept \
+        -:  243:{ return f2 | f1; } \
+        -:  244:[[maybe_unused]] \
+        -:  245:constexpr inline QFlags<Flags::enum_type> operator&(Flags::enum_type f1, Flags::enum_type f2) noexcept \
+        -:  246:{ return QFlags<Flags::enum_type>(f1) & f2; } \
+        -:  247:[[maybe_unused]] \
+        -:  248:constexpr inline QFlags<Flags::enum_type> operator&(Flags::enum_type f1, QFlags<Flags::enum_type> f2) noexcept \
+        -:  249:{ return f2 & f1; } \
+        -:  250:[[maybe_unused]] \
+        -:  251:constexpr inline QFlags<Flags::enum_type> operator^(Flags::enum_type f1, Flags::enum_type f2) noexcept \
+        -:  252:{ return QFlags<Flags::enum_type>(f1) ^ f2; } \
+        -:  253:[[maybe_unused]] \
+        -:  254:constexpr inline QFlags<Flags::enum_type> operator^(Flags::enum_type f1, QFlags<Flags::enum_type> f2) noexcept \
+        -:  255:{ return f2 ^ f1; } \
+        -:  256:constexpr inline void operator+(Flags::enum_type f1, Flags::enum_type f2) noexcept = delete; \
+        -:  257:constexpr inline void operator+(Flags::enum_type f1, QFlags<Flags::enum_type> f2) noexcept = delete; \
+        -:  258:constexpr inline void operator+(int f1, QFlags<Flags::enum_type> f2) noexcept = delete; \
+        -:  259:constexpr inline void operator-(Flags::enum_type f1, Flags::enum_type f2) noexcept = delete; \
+        -:  260:constexpr inline void operator-(Flags::enum_type f1, QFlags<Flags::enum_type> f2) noexcept = delete; \
+        -:  261:constexpr inline void operator-(int f1, QFlags<Flags::enum_type> f2) noexcept = delete; \
+        -:  262:constexpr inline void operator+(int f1, Flags::enum_type f2) noexcept = delete; \
+        -:  263:constexpr inline void operator+(Flags::enum_type f1, int f2) noexcept = delete; \
+        -:  264:constexpr inline void operator-(int f1, Flags::enum_type f2) noexcept = delete; \
+        -:  265:constexpr inline void operator-(Flags::enum_type f1, int f2) noexcept = delete; \
+        -:  266:QT_DECLARE_TYPESAFE_OPERATORS_FOR_FLAGS_ENUM(Flags)
+        -:  267:
+        -:  268:// restore bit-wise enum-enum operators deprecated in C++20,
+        -:  269:// but used in a few places in the API
+        -:  270:#if __cplusplus > 201702L // assume compilers don't warn if in C++17 mode
+        -:  271:  // in C++20 mode, provide user-defined operators to override the deprecated operations:
+        -:  272:# define Q_DECLARE_MIXED_ENUM_OPERATOR(op, Ret, LHS, RHS) \
+        -:  273:    [[maybe_unused]] \
+        -:  274:    constexpr inline Ret operator op (LHS lhs, RHS rhs) noexcept \
+        -:  275:    { return static_cast<Ret>(qToUnderlying(lhs) op qToUnderlying(rhs)); } \
+        -:  276:    /* end */
+        -:  277:#else
+        -:  278:  // in C++17 mode, statically-assert that this compiler's result of the
+        -:  279:  // operation is the same that the C++20 version would produce:
+        -:  280:# define Q_DECLARE_MIXED_ENUM_OPERATOR(op, Ret, LHS, RHS) \
+        -:  281:    static_assert(std::is_same_v<decltype(std::declval<LHS>() op std::declval<RHS>()), Ret>);
+        -:  282:#endif
+        -:  283:
+        -:  284:#define Q_DECLARE_MIXED_ENUM_OPERATORS(Ret, Flags, Enum) \
+        -:  285:    Q_DECLARE_MIXED_ENUM_OPERATOR(|, Ret, Flags, Enum) \
+        -:  286:    Q_DECLARE_MIXED_ENUM_OPERATOR(&, Ret, Flags, Enum) \
+        -:  287:    Q_DECLARE_MIXED_ENUM_OPERATOR(^, Ret, Flags, Enum) \
+        -:  288:    /* end */
+        -:  289:
+        -:  290:#define Q_DECLARE_MIXED_ENUM_OPERATORS_SYMMETRIC(Ret, Flags, Enum) \
+        -:  291:    Q_DECLARE_MIXED_ENUM_OPERATORS(Ret, Flags, Enum) \
+        -:  292:    Q_DECLARE_MIXED_ENUM_OPERATORS(Ret, Enum, Flags) \
+        -:  293:    /* end */
+        -:  294:
+        -:  295:
+        -:  296:QT_END_NAMESPACE
+        -:  297:
+        -:  298:#endif // QFLAGS_H

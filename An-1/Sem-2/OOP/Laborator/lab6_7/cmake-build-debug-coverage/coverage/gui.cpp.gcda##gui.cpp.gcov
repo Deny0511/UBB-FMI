@@ -1,0 +1,1535 @@
+        -:    0:Source:C:/Users/urdad/lab6_7/gui.cpp
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\gui.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\gui.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "gui.h"
+        -:    2:#include <QMessageBox>
+        -:    3:#include <QListView>
+        -:    4:#include <QStringListModel>
+        -:    5:#include <QLineEdit>
+        -:    6:#include <QPushButton>
+        -:    7:#include <QVBoxLayout>
+        -:    8:#include <QHBoxLayout>
+        -:    9:
+function _ZN3GUIC2ER7ServiceP7QWidget called 1 returned 100% blocks executed 50%
+        1:   10:GUI::GUI(Service& srv, QWidget* parent)
+        1:   11:    : QWidget(parent), service(srv)
+        1:   11-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   11-block  1
+call    4 returned 1
+    $$$$$:   11-block  2
+call    5 never executed
+        -:   12:{
+        1:   13:    mainLayout = new QVBoxLayout{this};
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   13-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   13-block  1
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:   13-block  2
+call    8 never executed
+        -:   14:
+        -:   15:    // Câmpuri de text pentru introducerea datelor
+        1:   16:    titluEdit = new QLineEdit{this};
+        1:   16-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   16-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   16-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:   16-block  3
+call    8 never executed
+        1:   17:    genEdit = new QLineEdit{this};
+        1:   17-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   17-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   17-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:   17-block  3
+call    8 never executed
+        1:   18:    genNouEdit = new QLineEdit{this};
+        1:   18-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   18-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   18-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:   18-block  3
+call    8 never executed
+        1:   19:    anEdit = new QLineEdit{this};
+        1:   19-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   19-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   19-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:   19-block  3
+call    8 never executed
+        1:   20:    anNouEdit = new QLineEdit{this};
+        1:   20-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   20-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   20-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:   20-block  3
+call    8 never executed
+        1:   21:    actorEdit = new QLineEdit{this};
+        1:   21-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   21-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   21-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:   21-block  3
+call    8 never executed
+        1:   22:    actorNouEdit = new QLineEdit{this};
+        1:   22-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   22-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   22-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:   22-block  3
+call    8 never executed
+        -:   23:
+        -:   24:    // Setare etichete
+        1:   25:    titluEdit->setPlaceholderText("Titlu");
+        1:   25-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   25-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   25-block  2
+call    6 returned 1
+    $$$$$:   25-block  3
+call    7 never executed
+    $$$$$:   25-block  4
+        1:   26:    genEdit->setPlaceholderText("Gen");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   26-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   26-block  1
+call    6 returned 1
+    $$$$$:   26-block  2
+call    7 never executed
+    $$$$$:   26-block  3
+        1:   27:    genNouEdit->setPlaceholderText("Gen Nou");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   27-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   27-block  1
+call    6 returned 1
+    $$$$$:   27-block  2
+call    7 never executed
+    $$$$$:   27-block  3
+        1:   28:    anEdit->setPlaceholderText("An");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   28-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   28-block  1
+call    6 returned 1
+    $$$$$:   28-block  2
+call    7 never executed
+    $$$$$:   28-block  3
+        1:   29:    anNouEdit->setPlaceholderText("An Nou");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   29-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   29-block  1
+call    6 returned 1
+    $$$$$:   29-block  2
+call    7 never executed
+    $$$$$:   29-block  3
+        1:   30:    actorEdit->setPlaceholderText("Actor");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   30-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   30-block  1
+call    6 returned 1
+    $$$$$:   30-block  2
+call    7 never executed
+    $$$$$:   30-block  3
+        1:   31:    actorNouEdit->setPlaceholderText("Actor Nou");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   31-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   31-block  1
+call    6 returned 1
+    $$$$$:   31-block  2
+call    7 never executed
+    $$$$$:   31-block  3
+        -:   32:
+        -:   33:    // Butoane
+        1:   34:    adaugaButton = new QPushButton("Adaugă Film", this);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   34-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   34-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   34-block  2
+call    9 returned 1
+    $$$$$:   34-block  3
+call   10 never executed
+    $$$$$:   34-block  4
+    $$$$$:   34-block  5
+branch 11 never executed (fallthrough)
+branch 12 never executed
+    $$$$$:   34-block  6
+call   13 never executed
+        1:   35:    stergeButton = new QPushButton("Șterge Film", this);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   35-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   35-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   35-block  2
+call    9 returned 1
+    $$$$$:   35-block  3
+call   10 never executed
+    $$$$$:   35-block  4
+    $$$$$:   35-block  5
+branch 11 never executed (fallthrough)
+branch 12 never executed
+    $$$$$:   35-block  6
+call   13 never executed
+        1:   36:    modificaButton = new QPushButton("Modifică Film", this);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   36-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   36-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   36-block  2
+call    9 returned 1
+    $$$$$:   36-block  3
+call   10 never executed
+    $$$$$:   36-block  4
+    $$$$$:   36-block  5
+branch 11 never executed (fallthrough)
+branch 12 never executed
+    $$$$$:   36-block  6
+call   13 never executed
+        1:   37:    undoButton = new QPushButton("Undo", this);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   37-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   37-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   37-block  2
+call    9 returned 1
+    $$$$$:   37-block  3
+call   10 never executed
+    $$$$$:   37-block  4
+    $$$$$:   37-block  5
+branch 11 never executed (fallthrough)
+branch 12 never executed
+    $$$$$:   37-block  6
+call   13 never executed
+        -:   38:
+        -:   39:    // ListView pentru filme
+        1:   40:    listView = new QListView{this};
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   40-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   40-block  1
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:   40-block  2
+call    8 never executed
+        1:   41:    model = new QStringListModel(this);
+        1:   41-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   41-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   41-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:   41-block  3
+call    8 never executed
+        1:   42:    listView->setModel(model);
+        1:   42-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   43:
+        -:   44:    // Layout pentru câmpuri și butoane
+        1:   45:    auto* inputLayout = new QVBoxLayout;
+        1:   45-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   45-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   45-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:   45-block  3
+call    8 never executed
+        1:   46:    inputLayout->addWidget(titluEdit);
+        1:   46-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   46-block  1
+        1:   47:    inputLayout->addWidget(genEdit);
+        1:   47-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   47-block  1
+        1:   48:    inputLayout->addWidget(genNouEdit);
+        1:   48-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   48-block  1
+        1:   49:    inputLayout->addWidget(anEdit);
+        1:   49-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   49-block  1
+        1:   50:    inputLayout->addWidget(anNouEdit);
+        1:   50-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   50-block  1
+        1:   51:    inputLayout->addWidget(actorEdit);
+        1:   51-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   51-block  1
+        1:   52:    inputLayout->addWidget(actorNouEdit);
+        1:   52-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   52-block  1
+        -:   53:
+        1:   54:    auto* buttonLayout = new QHBoxLayout;
+        1:   54-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   54-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   54-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:   54-block  3
+call    8 never executed
+        1:   55:    buttonLayout->addWidget(adaugaButton);
+        1:   55-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   55-block  1
+        1:   56:    buttonLayout->addWidget(stergeButton);
+        1:   56-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   56-block  1
+        1:   57:    buttonLayout->addWidget(modificaButton);
+        1:   57-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   57-block  1
+        1:   58:    buttonLayout->addWidget(undoButton);
+        1:   58-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   58-block  1
+        -:   59:
+        1:   60:    mainLayout->addLayout(inputLayout);
+        1:   60-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   61:    mainLayout->addLayout(buttonLayout);
+        1:   61-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   62:    mainLayout->addWidget(listView);
+        1:   62-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   62-block  1
+        -:   63:
+        -:   64:    ///
+        1:   65:    layoutButoaneGen = new QVBoxLayout{};
+        1:   65-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   65-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   65-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:   65-block  3
+call    8 never executed
+        1:   66:    mainLayout->addLayout(layoutButoaneGen);
+        1:   66-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   67:    ///
+        -:   68:
+        -:   69:
+        -:   70:    // Conectare semnale
+        1:   71:    connect(adaugaButton, &QPushButton::clicked, this, &GUI::adaugaFilm);
+        1:   71-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   71-block  1
+call    3 returned 1
+    $$$$$:   71-block  2
+    $$$$$:   71-block  3
+        1:   72:    connect(stergeButton, &QPushButton::clicked, this, &GUI::stergeFilm);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   72-block  0
+call    3 returned 1
+    $$$$$:   72-block  1
+    $$$$$:   72-block  2
+        1:   73:    connect(modificaButton, &QPushButton::clicked, this, &GUI::modificaFilm);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   73-block  0
+call    3 returned 1
+    $$$$$:   73-block  1
+    $$$$$:   73-block  2
+        1:   74:    connect(undoButton, &QPushButton::clicked, this, &GUI::undo);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   74-block  0
+call    3 returned 1
+    $$$$$:   74-block  1
+    $$$$$:   74-block  2
+        -:   75:
+        1:   76:    actualizeazaListaFilme();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   77:    genereazaButoaneGen();
+        1:   77-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   78:}
+        1:   78-block  0
+    $$$$$:   78-block  1
+call    0 never executed
+    $$$$$:   78-block  2
+call    1 never executed
+        -:   79:
+function _ZN3GUI10adaugaFilmEv called 2 returned 100% blocks executed 36%
+        2:   80:void GUI::adaugaFilm() {
+        2:   81:    QString titlu = titluEdit->text();
+        2:   81-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   82:    QString gen = genEdit->text();
+        2:   82-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   83:    int an = anEdit->text().toInt();
+        2:   83-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   83-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   83-block  2
+call    6 returned 2
+    $$$$$:   83-block  3
+call    7 never executed
+    $$$$$:   83-block  4
+        2:   84:    QString actor = actorEdit->text();
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   85:
+        -:   86:    try {
+        2:   87:        service.adaugaFilm(titlu.toStdString(), gen.toStdString(), an, actor.toStdString());
+        2:   87-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   87-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   87-block  2
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:   87-block  3
+call    9 returned 2
+branch 10 taken 2 (fallthrough)
+branch 11 taken 0 (throw)
+        2:   87-block  4
+call   12 returned 2
+call   13 returned 2
+call   14 returned 2
+    $$$$$:   87-block  5
+call   15 never executed
+    $$$$$:   87-block  6
+    $$$$$:   87-block  7
+call   16 never executed
+    $$$$$:   87-block  8
+    $$$$$:   87-block  9
+call   17 never executed
+    $$$$$:   87-block 10
+        2:   88:        QMessageBox::information(this, "Succes", "Film adăugat!");
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   88-block  0
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   88-block  1
+call    7 returned 2
+branch  8 taken 2 (fallthrough)
+branch  9 taken 0 (throw)
+        2:   88-block  2
+call   10 returned 2
+call   11 returned 2
+    $$$$$:   88-block  3
+call   12 never executed
+    $$$$$:   88-block  4
+    $$$$$:   88-block  5
+call   13 never executed
+    $$$$$:   88-block  6
+    $$$$$:   88-block  7
+        2:   89:        actualizeazaListaFilme();
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+    =====:   90:    } catch (const std::exception& e) {
+    $$$$$:   90-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    $$$$$:   90-block  1
+call    2 never executed
+    =====:   91:        QMessageBox::warning(this, "Eroare", e.what());
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed (throw)
+    $$$$$:   91-block  0
+call    5 never executed
+branch  6 never executed (fallthrough)
+branch  7 never executed (throw)
+    $$$$$:   91-block  1
+call    8 never executed
+branch  9 never executed (fallthrough)
+branch 10 never executed (throw)
+    $$$$$:   91-block  2
+call   11 never executed
+call   12 never executed
+    $$$$$:   91-block  3
+call   13 never executed
+    $$$$$:   91-block  4
+    $$$$$:   91-block  5
+call   14 never executed
+    $$$$$:   91-block  6
+    $$$$$:   91-block  7
+    =====:   92:    }
+call    0 never executed
+    $$$$$:   92-block  0
+call    1 never executed
+        2:   93:}
+        2:   93-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+    $$$$$:   93-block  1
+call    3 never executed
+    $$$$$:   93-block  2
+call    4 never executed
+    $$$$$:   93-block  3
+call    5 never executed
+        -:   94:
+function _ZN3GUI10stergeFilmEv called 3 returned 100% blocks executed 33%
+        3:   95:void GUI::stergeFilm() {
+        3:   96:    QString titlu = titluEdit->text();
+        3:   96-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   97:    int an = anEdit->text().toInt();
+        3:   97-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   97-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:   97-block  2
+call    6 returned 3
+    $$$$$:   97-block  3
+call    7 never executed
+    $$$$$:   97-block  4
+        -:   98:
+        -:   99:    try {
+        3:  100:        service.stergeFilm(titlu.toStdString(), an);
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  100-block  0
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  100-block  1
+call    6 returned 3
+    $$$$$:  100-block  2
+call    7 never executed
+    $$$$$:  100-block  3
+        3:  101:        QMessageBox::information(this, "Succes", "Film șters!");
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0 (throw)
+        3:  101-block  0
+call    4 returned 3
+branch  5 taken 3 (fallthrough)
+branch  6 taken 0 (throw)
+        3:  101-block  1
+call    7 returned 3
+branch  8 taken 3 (fallthrough)
+branch  9 taken 0 (throw)
+        3:  101-block  2
+call   10 returned 3
+call   11 returned 3
+    $$$$$:  101-block  3
+call   12 never executed
+    $$$$$:  101-block  4
+    $$$$$:  101-block  5
+call   13 never executed
+    $$$$$:  101-block  6
+    $$$$$:  101-block  7
+        3:  102:        actualizeazaListaFilme();
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+    =====:  103:    } catch (const std::exception& e) {
+    $$$$$:  103-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    $$$$$:  103-block  1
+call    2 never executed
+    =====:  104:        QMessageBox::warning(this, "Eroare", e.what());
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed (throw)
+    $$$$$:  104-block  0
+call    5 never executed
+branch  6 never executed (fallthrough)
+branch  7 never executed (throw)
+    $$$$$:  104-block  1
+call    8 never executed
+branch  9 never executed (fallthrough)
+branch 10 never executed (throw)
+    $$$$$:  104-block  2
+call   11 never executed
+call   12 never executed
+    $$$$$:  104-block  3
+call   13 never executed
+    $$$$$:  104-block  4
+    $$$$$:  104-block  5
+call   14 never executed
+    $$$$$:  104-block  6
+    $$$$$:  104-block  7
+    =====:  105:    }
+call    0 never executed
+    $$$$$:  105-block  0
+call    1 never executed
+        3:  106:}
+        3:  106-block  0
+call    0 returned 3
+    $$$$$:  106-block  1
+call    1 never executed
+        -:  107:
+function _ZN3GUI12modificaFilmEv called 0 returned 0% blocks executed 0%
+    #####:  108:void GUI::modificaFilm() {
+    #####:  109:    QString titlu = titluEdit->text();
+    %%%%%:  109-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  110:    int an = anEdit->text().toInt();
+    %%%%%:  110-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  110-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  110-block  2
+call    6 never executed
+    $$$$$:  110-block  3
+call    7 never executed
+    $$$$$:  110-block  4
+    #####:  111:    QString nouGen = genNouEdit->text();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  112:    int nouAn = anNouEdit->text().toInt();
+    %%%%%:  112-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  112-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  112-block  2
+call    6 never executed
+    $$$$$:  112-block  3
+call    7 never executed
+    $$$$$:  112-block  4
+    #####:  113:    QString nouActor = actorNouEdit->text();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  114:
+        -:  115:    try {
+    #####:  116:        service.modificaFilm(titlu.toStdString(), an, nouGen.toStdString(), nouAn, nouActor.toStdString());
+    %%%%%:  116-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  116-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  116-block  2
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  116-block  3
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:  116-block  4
+call   12 never executed
+call   13 never executed
+call   14 never executed
+    $$$$$:  116-block  5
+call   15 never executed
+    $$$$$:  116-block  6
+    $$$$$:  116-block  7
+call   16 never executed
+    $$$$$:  116-block  8
+    $$$$$:  116-block  9
+call   17 never executed
+    $$$$$:  116-block 10
+    #####:  117:        QMessageBox::information(this, "Succes", "Film modificat!");
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    %%%%%:  117-block  0
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+    %%%%%:  117-block  1
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:  117-block  2
+call   10 never executed
+call   11 never executed
+    $$$$$:  117-block  3
+call   12 never executed
+    $$$$$:  117-block  4
+    $$$$$:  117-block  5
+call   13 never executed
+    $$$$$:  117-block  6
+    $$$$$:  117-block  7
+    #####:  118:        actualizeazaListaFilme();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    =====:  119:    } catch (const std::exception& e) {
+    $$$$$:  119-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    $$$$$:  119-block  1
+call    2 never executed
+    =====:  120:        QMessageBox::warning(this, "Eroare", e.what());
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed (throw)
+    $$$$$:  120-block  0
+call    5 never executed
+branch  6 never executed (fallthrough)
+branch  7 never executed (throw)
+    $$$$$:  120-block  1
+call    8 never executed
+branch  9 never executed (fallthrough)
+branch 10 never executed (throw)
+    $$$$$:  120-block  2
+call   11 never executed
+call   12 never executed
+    $$$$$:  120-block  3
+call   13 never executed
+    $$$$$:  120-block  4
+    $$$$$:  120-block  5
+call   14 never executed
+    $$$$$:  120-block  6
+    $$$$$:  120-block  7
+    =====:  121:    }
+call    0 never executed
+    $$$$$:  121-block  0
+call    1 never executed
+    #####:  122:}
+    %%%%%:  122-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:  122-block  1
+call    3 never executed
+    $$$$$:  122-block  2
+call    4 never executed
+    $$$$$:  122-block  3
+call    5 never executed
+        -:  123:
+        -:  124:
+function _ZN3GUI22actualizeazaListaFilmeEv called 7 returned 100% blocks executed 53%
+        7:  125:void GUI::actualizeazaListaFilme() {
+        7:  126:    const auto& filme = service.getFilme();
+        7:  126-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+        7:  127:    QStringList filmeList;
+       52:  128:    for (const auto& film : filme) {
+        7:  128-block  0
+call    0 returned 7
+call    1 returned 7
+       45:  128-block  1
+call    2 returned 45
+call    3 returned 45
+       52:  128-block  2
+call    4 returned 52
+branch  5 taken 45
+branch  6 taken 7 (fallthrough)
+       90:  129:        QString filmInfo = QString::fromStdString(film.getTitlu()) + ", "
+       45:  129-block  0
+call    0 returned 45
+branch  1 taken 45 (fallthrough)
+branch  2 taken 0 (throw)
+       45:  129-block  1
+call    3 returned 45
+branch  4 taken 45 (fallthrough)
+branch  5 taken 0 (throw)
+       45:  129-block  2
+call    6 returned 45
+branch  7 taken 45 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 45
+call   10 returned 45
+    $$$$$:  129-block  3
+call   11 never executed
+    $$$$$:  129-block  4
+call   12 never executed
+    $$$$$:  129-block  5
+    $$$$$:  129-block  6
+      180:  130:                         + QString::fromStdString(film.getGen()) + ", "
+       45:  130-block  0
+call    0 returned 45
+branch  1 taken 45 (fallthrough)
+branch  2 taken 0 (throw)
+       45:  130-block  1
+call    3 returned 45
+branch  4 taken 45 (fallthrough)
+branch  5 taken 0 (throw)
+       45:  130-block  2
+call    6 returned 45
+branch  7 taken 45 (fallthrough)
+branch  8 taken 0 (throw)
+       45:  130-block  3
+call    9 returned 45
+branch 10 taken 45 (fallthrough)
+branch 11 taken 0 (throw)
+call   12 returned 45
+call   13 returned 45
+call   14 returned 45
+    $$$$$:  130-block  4
+call   15 never executed
+    $$$$$:  130-block  5
+call   16 never executed
+    $$$$$:  130-block  6
+call   17 never executed
+    $$$$$:  130-block  7
+    $$$$$:  130-block  8
+    $$$$$:  130-block  9
+      180:  131:                         + QString::number(film.getAn()) + ", "
+       45:  131-block  0
+call    0 returned 45
+branch  1 taken 45 (fallthrough)
+branch  2 taken 0 (throw)
+       45:  131-block  1
+call    3 returned 45
+branch  4 taken 45 (fallthrough)
+branch  5 taken 0 (throw)
+       45:  131-block  2
+call    6 returned 45
+branch  7 taken 45 (fallthrough)
+branch  8 taken 0 (throw)
+       45:  131-block  3
+call    9 returned 45
+branch 10 taken 45 (fallthrough)
+branch 11 taken 0 (throw)
+       45:  131-block  4
+call   12 returned 45
+call   13 returned 45
+call   14 returned 45
+    $$$$$:  131-block  5
+call   15 never executed
+    $$$$$:  131-block  6
+call   16 never executed
+    $$$$$:  131-block  7
+call   17 never executed
+    $$$$$:  131-block  8
+    $$$$$:  131-block  9
+    $$$$$:  131-block 10
+      135:  132:                         + QString::fromStdString(film.getActor());
+call    0 returned 45
+branch  1 taken 45 (fallthrough)
+branch  2 taken 0 (throw)
+       45:  132-block  0
+call    3 returned 45
+branch  4 taken 45 (fallthrough)
+branch  5 taken 0 (throw)
+       45:  132-block  1
+call    6 returned 45
+branch  7 taken 45 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 45
+    $$$$$:  132-block  2
+call   10 never executed
+    $$$$$:  132-block  3
+        -:  133:
+       45:  134:        filmeList.append(filmInfo);
+call    0 returned 45
+branch  1 taken 45 (fallthrough)
+branch  2 taken 0 (throw)
+       45:  135:    }
+       45:  135-block  0
+call    0 returned 45
+    $$$$$:  135-block  1
+call    1 never executed
+        7:  136:    model->setStringList(filmeList);
+        7:  136-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+        7:  137:    regenereazaButoane();
+        7:  137-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+        7:  138:}
+        7:  138-block  0
+call    0 returned 7
+    $$$$$:  138-block  1
+call    1 never executed
+        -:  139:
+function _ZN3GUI4undoEv called 1 returned 100% blocks executed 28%
+        1:  140:void GUI::undo() {
+        -:  141:    try {
+        1:  142:        service.undo();
+        1:  142-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  143:        QMessageBox::information(this, "Succes", "Undo realizat!");
+        1:  143-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  143-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  143-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:  143-block  3
+call   10 returned 1
+call   11 returned 1
+    $$$$$:  143-block  4
+call   12 never executed
+    $$$$$:  143-block  5
+    $$$$$:  143-block  6
+call   13 never executed
+    $$$$$:  143-block  7
+    $$$$$:  143-block  8
+        1:  144:        actualizeazaListaFilme();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    =====:  145:    } catch (const std::runtime_error& e) {
+    $$$$$:  145-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    $$$$$:  145-block  1
+call    2 never executed
+    =====:  146:        QMessageBox::warning(this, "Eroare", e.what());
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed (throw)
+    $$$$$:  146-block  0
+call    5 never executed
+branch  6 never executed (fallthrough)
+branch  7 never executed (throw)
+    $$$$$:  146-block  1
+call    8 never executed
+branch  9 never executed (fallthrough)
+branch 10 never executed (throw)
+    $$$$$:  146-block  2
+call   11 never executed
+call   12 never executed
+    $$$$$:  146-block  3
+call   13 never executed
+    $$$$$:  146-block  4
+    $$$$$:  146-block  5
+call   14 never executed
+    $$$$$:  146-block  6
+    $$$$$:  146-block  7
+    =====:  147:    }
+call    0 never executed
+    $$$$$:  147-block  0
+call    1 never executed
+        1:  148:}
+        1:  148-block  0
+        -:  149:
+        -:  150:
+function _ZN3GUI19genereazaButoaneGenEv called 1 returned 100% blocks executed 70%
+        1:  151:void GUI::genereazaButoaneGen() {
+        -:  152:    // Șterge butoanele vechi
+        -:  153:    QLayoutItem* item;
+        6:  154:    while ((item = layoutButoaneGen->takeAt(0)) != nullptr) {
+        1:  154-block  0
+        6:  154-block  1
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        6:  154-block  2
+branch  3 taken 5
+branch  4 taken 1 (fallthrough)
+        5:  155:        delete item->widget();
+        5:  155-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:  155-block  1
+branch  3 taken 5 (fallthrough)
+branch  4 taken 0
+        5:  155-block  2
+call    5 returned 5
+        5:  156:        delete item;
+        5:  156-block  0
+branch  0 taken 5 (fallthrough)
+branch  1 taken 0
+        5:  156-block  1
+call    2 returned 5
+        -:  157:    }
+        -:  158:
+        1:  159:    std::set<std::string> genuriDistincte;
+        1:  159-block  0
+call    0 returned 1
+        7:  160:    for (const auto& film : service.getFilme()) {
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  160-block  0
+call    3 returned 1
+call    4 returned 1
+        6:  160-block  1
+call    5 returned 6
+        7:  160-block  2
+call    6 returned 7
+branch  7 taken 6
+branch  8 taken 1 (fallthrough)
+        6:  161:        genuriDistincte.insert(film.getGen());
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        6:  161-block  0
+call    3 returned 6
+branch  4 taken 6 (fallthrough)
+branch  5 taken 0 (throw)
+        6:  161-block  1
+call    6 returned 6
+    $$$$$:  161-block  2
+        -:  162:    }
+        -:  163:
+        6:  164:    for (const auto& gen : genuriDistincte) {
+        1:  164-block  0
+call    0 returned 1
+call    1 returned 1
+        5:  164-block  1
+call    2 returned 5
+        6:  164-block  2
+call    3 returned 6
+branch  4 taken 5
+branch  5 taken 1 (fallthrough)
+        5:  165:        auto* btn = new QPushButton(QString::fromStdString(gen), this);
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:  165-block  0
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+        5:  165-block  1
+call    6 returned 5
+branch  7 taken 5 (fallthrough)
+branch  8 taken 0 (throw)
+        5:  165-block  2
+call    9 returned 5
+    $$$$$:  165-block  3
+call   10 never executed
+    $$$$$:  165-block  4
+    $$$$$:  165-block  5
+branch 11 never executed (fallthrough)
+branch 12 never executed
+    $$$$$:  165-block  6
+call   13 never executed
+        5:  166:        layoutButoaneGen->addWidget(btn);
+call    0 returned 5
+call    1 returned 5
+branch  2 taken 5 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  166-block  0
+        -:  167:
+function _ZZN3GUI19genereazaButoaneGenEvENKUlvE_clEv called 2 returned 100% blocks executed 56%
+        5:  168:        connect(btn, &QPushButton::clicked, this, [this, gen]() {
+        5:  168-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:  168-block  1
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+        5:  168-block  2
+call    6 returned 5
+call    7 returned 5
+call    8 returned 5
+    $$$$$:  168-block  3
+call    9 never executed
+    $$$$$:  168-block  4
+    $$$$$:  168-block  5
+        2:  169:            int count = std::count_if(service.getFilme().begin(), service.getFilme().end(),
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+function _ZZZN3GUI19genereazaButoaneGenEvENKUlvE_clEvENKUlRKT_E_clI4FilmEEDaS3_ called 12 returned 100% blocks executed 100%
+        2:  170:                                      [&gen](const auto& film) {
+        2:  170-block  0
+call    0 returned 2
+       12:  171:                                          return film.getGen() == gen;
+       12:  171-block  0
+call    0 returned 12
+call    1 returned 12
+        2:  172:                                      });
+        4:  173:            QMessageBox::information(this, "Info",
+call    0 returned 2
+        2:  173-block  0
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:  173-block  1
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:  173-block  2
+call    7 returned 2
+    $$$$$:  173-block  3
+call    8 never executed
+    $$$$$:  173-block  4
+        4:  174:      QString("Există %1 filme cu genul %2").arg(QString::number(count), QString::fromStdString(gen)));
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  174-block  0
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:  174-block  1
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:  174-block  2
+call    9 returned 2
+branch 10 taken 2 (fallthrough)
+branch 11 taken 0 (throw)
+call   12 returned 2
+call   13 returned 2
+call   14 returned 2
+call   15 returned 2
+    $$$$$:  174-block  3
+call   16 never executed
+    $$$$$:  174-block  4
+call   17 never executed
+    $$$$$:  174-block  5
+    $$$$$:  174-block  6
+call   18 never executed
+    $$$$$:  174-block  7
+    $$$$$:  174-block  8
+call   19 never executed
+    $$$$$:  174-block  9
+    $$$$$:  174-block 10
+        -:  175:
+        2:  176:        });
+        -:  177:    }
+        1:  178:}
+        1:  178-block  0
+call    0 returned 1
+    $$$$$:  178-block  1
+call    1 never executed
+        -:  179:
+function _ZN3GUI18regenereazaButoaneEv called 7 returned 100% blocks executed 71%
+        7:  180:void GUI::regenereazaButoane() {
+        -:  181:    // Elimină butoanele vechi
+        -:  182:    QLayoutItem* item;
+       39:  183:    while ((item = layoutButoaneGen->takeAt(0)) != nullptr) {
+        7:  183-block  0
+       39:  183-block  1
+call    0 returned 39
+branch  1 taken 39 (fallthrough)
+branch  2 taken 0 (throw)
+       39:  183-block  2
+branch  3 taken 32
+branch  4 taken 7 (fallthrough)
+       32:  184:        delete item->widget();
+       32:  184-block  0
+call    0 returned 32
+branch  1 taken 32 (fallthrough)
+branch  2 taken 0 (throw)
+       32:  184-block  1
+branch  3 taken 32 (fallthrough)
+branch  4 taken 0
+       32:  184-block  2
+call    5 returned 32
+       32:  185:        delete item;
+       32:  185-block  0
+branch  0 taken 32 (fallthrough)
+branch  1 taken 0
+       32:  185-block  1
+call    2 returned 32
+        -:  186:    }
+        7:  187:    butoaneGen.clear();
+        7:  187-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  188:
+        -:  189:    // Creează butoane pentru genurile actuale
+        7:  190:    std::set<std::string> genuri;
+        7:  190-block  0
+call    0 returned 7
+       52:  191:    for (const auto& film : service.getFilme()) {
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+        7:  191-block  0
+call    3 returned 7
+call    4 returned 7
+       45:  191-block  1
+call    5 returned 45
+       52:  191-block  2
+call    6 returned 52
+branch  7 taken 45
+branch  8 taken 7 (fallthrough)
+       45:  192:        genuri.insert(film.getGen());
+call    0 returned 45
+branch  1 taken 45 (fallthrough)
+branch  2 taken 0 (throw)
+       45:  192-block  0
+call    3 returned 45
+branch  4 taken 45 (fallthrough)
+branch  5 taken 0 (throw)
+       45:  192-block  1
+call    6 returned 45
+    $$$$$:  192-block  2
+        -:  193:    }
+        -:  194:
+       44:  195:    for (const auto& gen : genuri) {
+        7:  195-block  0
+call    0 returned 7
+call    1 returned 7
+       37:  195-block  1
+call    2 returned 37
+call    3 returned 37
+       44:  195-block  2
+call    4 returned 44
+branch  5 taken 37
+branch  6 taken 7 (fallthrough)
+       37:  196:        QString qgen = QString::fromStdString(gen);
+call    0 returned 37
+branch  1 taken 37 (fallthrough)
+branch  2 taken 0 (throw)
+       37:  197:        auto* buton = new QPushButton(qgen, this);
+       37:  197-block  0
+call    0 returned 37
+branch  1 taken 37 (fallthrough)
+branch  2 taken 0 (throw)
+       37:  197-block  1
+call    3 returned 37
+branch  4 taken 37 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  197-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  197-block  3
+call    8 never executed
+       37:  198:        layoutButoaneGen->addWidget(buton);
+       37:  198-block  0
+call    0 returned 37
+call    1 returned 37
+branch  2 taken 37 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  198-block  1
+       37:  199:        butoaneGen[qgen] = buton;
+       37:  199-block  0
+call    0 returned 37
+branch  1 taken 37 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  200:
+function _ZZN3GUI18regenereazaButoaneEvENKUlvE_clEv called 1 returned 100% blocks executed 50%
+       37:  201:        connect(buton, &QPushButton::clicked, this, [this, qgen]() {
+       37:  201-block  0
+call    0 returned 37
+call    1 returned 37
+branch  2 taken 37 (fallthrough)
+branch  3 taken 0 (throw)
+       37:  201-block  1
+call    4 returned 37
+call    5 returned 37
+    $$$$$:  201-block  2
+call    6 never executed
+    $$$$$:  201-block  3
+    $$$$$:  201-block  4
+        1:  202:            int nr = service.nrFilmeCuGen(qgen.toStdString());
+        1:  202-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  202-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  202-block  2
+call    6 returned 1
+    $$$$$:  202-block  3
+call    7 never executed
+    $$$$$:  202-block  4
+call    8 never executed
+        2:  203:QMessageBox::information(this, "Filme cu genul",
+call    0 returned 1
+        1:  203-block  0
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  203-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  203-block  2
+call    7 returned 1
+    $$$$$:  203-block  3
+call    8 never executed
+    $$$$$:  203-block  4
+        2:  204:    QString("Există %1 filme cu genul %2").arg(QString::number(nr), qgen));
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  204-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  204-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 1
+call   10 returned 1
+call   11 returned 1
+    $$$$$:  204-block  2
+call   12 never executed
+    $$$$$:  204-block  3
+call   13 never executed
+    $$$$$:  204-block  4
+    $$$$$:  204-block  5
+call   14 never executed
+    $$$$$:  204-block  6
+    $$$$$:  204-block  7
+        -:  205:
+        1:  206:        });
+       37:  207:    }
+call    0 returned 37
+    $$$$$:  207-block  0
+call    1 never executed
+        7:  208:}
+        7:  208-block  0
+call    0 returned 7
+    $$$$$:  208-block  1
+call    1 never executed
+        -:  209:

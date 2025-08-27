@@ -1,0 +1,76 @@
+        -:    0:Source:/mnt/c/Users/urdad/lab6_7/main.cpp
+        -:    0:Graph:/mnt/c/Users/urdad/lab6_7/cmake-build-default-coverage/CMakeFiles/lab6_7.dir/main.cpp.gcno
+        -:    0:Data:/mnt/c/Users/urdad/lab6_7/cmake-build-default-coverage/CMakeFiles/lab6_7.dir/main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "teste.h"
+        -:    2:#include "ui.h"
+        -:    3:#include "validator.h"
+        -:    4:#include "CosFilme.h"
+        -:    5:#include <fstream>
+        -:    6:
+        -:    7://#include <QApplication>
+        -:    8://#include <QWidget>
+        -:    9:
+        -:   10:
+function main called 1 returned 100% blocks executed 56%
+        1:   11:int main() {
+        -:   12:
+        1:   13:    Teste::ruleazaTeste();
+        1:   13-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   14:
+        -:   15:  //  QApplication app(argc, argv);
+        -:   16:
+        1:   17:    Repo repo;
+        1:   17-block  0
+call    0 returned 1
+        1:   18:    RepoNou repo_nou{0};
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   19:    RepoFile repo_file{"filme1.txt"};
+        1:   19-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   19-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 1
+    $$$$$:   19-block  2
+    $$$$$:   19-block  3
+        -:   20:    Validator validator;
+        1:   21:    CosFilm cosInchiriei;
+call    0 returned 1
+        1:   22:    Service service{ repo_file, validator, cosInchiriei };
+call    0 returned 1
+        1:   23:    UI ui{ service };
+call    0 returned 1
+        1:   24:    ui.run();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   25:    return 0;
+        -:   26:
+        -:   27:    //return app.exec();
+        1:   28:}
+        1:   28-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+    $$$$$:   28-block  1
+call    5 never executed
+    $$$$$:   28-block  2
+call    6 never executed
+    $$$$$:   28-block  3
+call    7 never executed
+    $$$$$:   28-block  4
+call    8 never executed
+    $$$$$:   28-block  5
+call    9 never executed

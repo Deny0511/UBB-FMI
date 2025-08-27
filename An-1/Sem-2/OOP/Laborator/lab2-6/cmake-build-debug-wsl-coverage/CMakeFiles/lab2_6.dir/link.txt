@@ -1,0 +1,1 @@
+/usr/bin/cc --coverage -Wall -Wextra -g CMakeFiles/lab2_6.dir/main.c.o CMakeFiles/lab2_6.dir/validator.c.o CMakeFiles/lab2_6.dir/Cheltuieli.c.o CMakeFiles/lab2_6.dir/teste.c.o CMakeFiles/lab2_6.dir/repo.c.o CMakeFiles/lab2_6.dir/service.c.o CMakeFiles/lab2_6.dir/ui.c.o -o lab2_6 

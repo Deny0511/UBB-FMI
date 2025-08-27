@@ -1,0 +1,234 @@
+        -:    0:Source:C:/Users/urdad/lab6_7/CosFilme.cpp
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\CosFilme.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\CosFilme.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "CosFilme.h"
+        -:    2:#include<fstream>
+        -:    3:#include <vector>
+        -:    4:#include <string>
+        -:    5:#include <algorithm>
+        -:    6:
+        -:    7:
+        -:    8:
+        -:    9:
+function _ZN7CosFilm14adaugaCosFilmeERK4Film called 3 returned 100% blocks executed 100%
+        3:   10:void CosFilm::adaugaCosFilme(const Film& filme) {
+        3:   11:  this->cosFilme.push_back(filme);
+        3:   11-block  0
+call    0 returned 3
+        -:   12:
+        3:   13:}
+        -:   14:
+function _ZN7CosFilm15golesteCosFilmeEv called 2 returned 100% blocks executed 100%
+        2:   15:void CosFilm::golesteCosFilme() {
+        2:   16:  this->cosFilme.clear();
+        2:   16-block  0
+call    0 returned 2
+        -:   17:
+        2:   18:}
+        -:   19:
+function _ZN7CosFilm19umpleRandomCosFilmeEyRKSt6vectorI4FilmSaIS1_EE called 3 returned 100% blocks executed 80%
+        3:   20:void CosFilm::umpleRandomCosFilme(size_t dimensiune, const std::vector<Film>& listaFilme) {
+        3:   21:  std::vector<Film> listaFilmeAuxiliara = listaFilme;
+        3:   21-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   22:  std::shuffle(listaFilmeAuxiliara.begin(), listaFilmeAuxiliara.end(), std::default_random_engine(std::random_device{}()));
+        3:   22-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   22-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:   22-block  2
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:   22-block  3
+call    9 returned 3
+call   10 returned 3
+call   11 returned 3
+branch 12 taken 3 (fallthrough)
+branch 13 taken 0 (throw)
+        3:   22-block  4
+call   14 returned 3
+    $$$$$:   22-block  5
+call   15 never executed
+    $$$$$:   22-block  6
+    $$$$$:   22-block  7
+        -:   23:
+        3:   24:  this->cosFilme.clear();
+call    0 returned 3
+        -:   25:
+       15:   26:  while ((this->cosFilme.size() < dimensiune) && !listaFilmeAuxiliara.empty()) {
+       15:   26-block  0
+call    0 returned 15
+branch  1 taken 12 (fallthrough)
+branch  2 taken 3
+       12:   26-block  1
+call    3 returned 12
+branch  4 taken 12 (fallthrough)
+branch  5 taken 0
+       12:   26-block  2
+        3:   26-block  3
+       15:   26-block  4
+branch  6 taken 12
+branch  7 taken 3 (fallthrough)
+       12:   27:    this->cosFilme.push_back(listaFilmeAuxiliara.back());
+       12:   27-block  0
+call    0 returned 12
+call    1 returned 12
+branch  2 taken 12 (fallthrough)
+branch  3 taken 0 (throw)
+       12:   28:    listaFilmeAuxiliara.pop_back();
+       12:   28-block  0
+call    0 returned 12
+        -:   29:
+       12:   30:    if (listaFilmeAuxiliara.empty() && this->cosFilme.size() < dimensiune) {
+call    0 returned 12
+branch  1 taken 2 (fallthrough)
+branch  2 taken 10
+        2:   30-block  0
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0
+        2:   30-block  1
+       10:   30-block  2
+       12:   30-block  3
+branch  6 taken 2 (fallthrough)
+branch  7 taken 10
+        2:   31:      listaFilmeAuxiliara = listaFilme;
+        2:   31-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   32:      std::shuffle(listaFilmeAuxiliara.begin(), listaFilmeAuxiliara.end(), std::default_random_engine(std::random_device{}()));
+        2:   32-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   32-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   32-block  2
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:   32-block  3
+call    9 returned 2
+call   10 returned 2
+call   11 returned 2
+branch 12 taken 2 (fallthrough)
+branch 13 taken 0 (throw)
+        2:   32-block  4
+call   14 returned 2
+    $$$$$:   32-block  5
+call   15 never executed
+    $$$$$:   32-block  6
+    $$$$$:   32-block  7
+        -:   33:    }
+        -:   34:  }
+        -:   35:
+        3:   36:}
+        3:   36-block  0
+call    0 returned 3
+    $$$$$:   36-block  1
+call    1 never executed
+        -:   37:
+function _ZNK7CosFilm11getCosFilmeEv called 14 returned 100% blocks executed 100%
+       14:   38:const std::vector<Film>& CosFilm::getCosFilme() const {
+       14:   39:  return this->cosFilme;
+       14:   39-block  0
+        -:   40:}
+        -:   41:
+        -:   42:
+function _ZNK7CosFilm9exportCSVERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 2 returned 100% blocks executed 88%
+        2:   43:void CosFilm::exportCSV(const std::string& numeFisier) const {
+        2:   44:  std::ofstream out(numeFisier);
+        2:   44-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   45:
+        8:   46:  for (const auto& film : cosFilme) {
+        2:   46-block  0
+call    0 returned 2
+call    1 returned 2
+        6:   46-block  1
+call    2 returned 6
+        6:   46-block  2
+call    3 returned 6
+        8:   46-block  3
+call    4 returned 8
+branch  5 taken 6
+branch  6 taken 2 (fallthrough)
+        6:   47:    out << film.getTitlu() << ","
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        6:   48:        << film.getGen() << ","
+        6:   48-block  0
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        6:   48-block  1
+call    3 returned 6
+branch  4 taken 6 (fallthrough)
+branch  5 taken 0 (throw)
+        6:   48-block  2
+call    6 returned 6
+branch  7 taken 6 (fallthrough)
+branch  8 taken 0 (throw)
+        6:   48-block  3
+call    9 returned 6
+branch 10 taken 6 (fallthrough)
+branch 11 taken 0 (throw)
+        6:   48-block  4
+call   12 returned 6
+branch 13 taken 6 (fallthrough)
+branch 14 taken 0 (throw)
+        -:   49:        << film.getAn() << ","
+        6:   50:        << film.getActor() << "\n";
+        6:   50-block  0
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        6:   50-block  1
+call    3 returned 6
+branch  4 taken 6 (fallthrough)
+branch  5 taken 0 (throw)
+        6:   50-block  2
+call    6 returned 6
+branch  7 taken 6 (fallthrough)
+branch  8 taken 0 (throw)
+        6:   50-block  3
+call    9 returned 6
+branch 10 taken 6 (fallthrough)
+branch 11 taken 0 (throw)
+        6:   50-block  4
+call   12 returned 6
+branch 13 taken 6 (fallthrough)
+branch 14 taken 0 (throw)
+        6:   50-block  5
+call   15 returned 6
+branch 16 taken 6 (fallthrough)
+branch 17 taken 0 (throw)
+        -:   51:  }
+        2:   52:  out.close();
+        2:   52-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   53:}
+        2:   53-block  0
+call    0 returned 2
+    $$$$$:   53-block  1
+call    1 never executed
+        -:   54:
+        -:   55:
+        -:   56:
+        -:   57:

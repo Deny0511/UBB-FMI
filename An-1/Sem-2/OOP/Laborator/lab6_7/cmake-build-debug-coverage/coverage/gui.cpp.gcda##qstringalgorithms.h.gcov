@@ -1,0 +1,219 @@
+        -:    0:Source:C:/Qt/6.9.0/mingw_64/include/QtCore/qstringalgorithms.h
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\gui.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\gui.cpp.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright (C) 2017 Klarälvdalens Datakonsult AB, a KDAB Group company, info@kdab.com, author Marc Mutz <marc.mutz@kdab.com>
+        -:    2:// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+        -:    3:
+        -:    4:#ifndef QSTRINGALGORITHMS_H
+        -:    5:#define QSTRINGALGORITHMS_H
+        -:    6:
+        -:    7:#include <QtCore/qbytearrayalgorithms.h>
+        -:    8:#include <QtCore/qcontainerfwd.h>
+        -:    9:#include <QtCore/qnamespace.h>
+        -:   10:#include <QtCore/qstringfwd.h>
+        -:   11:#if 0
+        -:   12:#pragma qt_class(QStringAlgorithms)
+        -:   13:#endif
+        -:   14:
+        -:   15:#include <algorithm>        // std::find
+        -:   16:#include <iterator>         // std::size
+        -:   17:
+        -:   18:#include <QtCore/q20type_traits.h>      // q20::is_constant_evaluated
+        -:   19:
+        -:   20:QT_BEGIN_NAMESPACE
+        -:   21:
+        -:   22:namespace QtPrivate {
+        -:   23:
+        -:   24:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION qsizetype qustrlen(const char16_t *str) noexcept;
+        -:   25:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION qsizetype qustrnlen(const char16_t *str, qsizetype maxlen) noexcept;
+        -:   26:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION const char16_t *qustrchr(QStringView str, char16_t ch) noexcept;
+        -:   27:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION const char16_t *qustrcasechr(QStringView str, char16_t ch) noexcept;
+        -:   28:
+        -:   29:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION int compareStrings(QStringView   lhs, QStringView   rhs, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   30:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION int compareStrings(QStringView   lhs, QLatin1StringView rhs, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   31:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION int compareStrings(QStringView   lhs, QBasicUtf8StringView<false> rhs, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   32:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION int compareStrings(QLatin1StringView lhs, QStringView   rhs, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   33:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION int compareStrings(QLatin1StringView lhs, QLatin1StringView rhs, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   34:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION int compareStrings(QLatin1StringView lhs, QBasicUtf8StringView<false> rhs, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   35:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION int compareStrings(QBasicUtf8StringView<false> lhs, QStringView   rhs, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   36:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION int compareStrings(QBasicUtf8StringView<false> lhs, QLatin1StringView rhs, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   37:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION int compareStrings(QBasicUtf8StringView<false> lhs, QBasicUtf8StringView<false> rhs, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   38:
+        -:   39:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool equalStrings(QStringView   lhs, QStringView   rhs) noexcept;
+        -:   40:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool equalStrings(QStringView   lhs, QLatin1StringView rhs) noexcept;
+        -:   41:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool equalStrings(QStringView   lhs, QBasicUtf8StringView<false> rhs) noexcept;
+        -:   42:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool equalStrings(QLatin1StringView lhs, QStringView   rhs) noexcept;
+        -:   43:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool equalStrings(QLatin1StringView lhs, QLatin1StringView rhs) noexcept;
+        -:   44:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool equalStrings(QLatin1StringView lhs, QBasicUtf8StringView<false> rhs) noexcept;
+        -:   45:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool equalStrings(QBasicUtf8StringView<false> lhs, QStringView   rhs) noexcept;
+        -:   46:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool equalStrings(QBasicUtf8StringView<false> lhs, QLatin1StringView rhs) noexcept;
+        -:   47:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool equalStrings(QBasicUtf8StringView<false> lhs, QBasicUtf8StringView<false> rhs) noexcept;
+        -:   48:
+        -:   49:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool startsWith(QStringView   haystack, QStringView   needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   50:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool startsWith(QStringView   haystack, QLatin1StringView needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   51:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool startsWith(QLatin1StringView haystack, QStringView   needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   52:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool startsWith(QLatin1StringView haystack, QLatin1StringView needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   53:
+        -:   54:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool endsWith(QStringView   haystack, QStringView   needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   55:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool endsWith(QStringView   haystack, QLatin1StringView needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   56:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool endsWith(QLatin1StringView haystack, QStringView   needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   57:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool endsWith(QLatin1StringView haystack, QLatin1StringView needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   58:
+        -:   59:[[nodiscard]]                             inline qsizetype findString(QStringView str, qsizetype from, QChar needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   60:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION qsizetype findString(QStringView haystack, qsizetype from, QStringView needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   61:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION qsizetype findString(QStringView haystack, qsizetype from, QLatin1StringView needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   62:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION qsizetype findString(QLatin1StringView haystack, qsizetype from, QStringView needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   63:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION qsizetype findString(QLatin1StringView haystack, qsizetype from, QLatin1StringView needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   64:
+        -:   65:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION qsizetype lastIndexOf(QStringView haystack, qsizetype from, char16_t needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   66:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION qsizetype lastIndexOf(QStringView haystack, qsizetype from, QStringView needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   67:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION qsizetype lastIndexOf(QStringView haystack, qsizetype from, QLatin1StringView needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   68:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION qsizetype lastIndexOf(QLatin1StringView haystack, qsizetype from, QStringView needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   69:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION qsizetype lastIndexOf(QLatin1StringView haystack, qsizetype from, QLatin1StringView needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   70:
+        -:   71:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION QStringView   trimmed(QStringView   s) noexcept;
+        -:   72:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION QLatin1StringView trimmed(QLatin1StringView s) noexcept;
+        -:   73:
+        -:   74:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool isLower(QStringView s) noexcept;
+        -:   75:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool isUpper(QStringView s) noexcept;
+        -:   76:
+        -:   77:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION qsizetype count(QStringView haystack, QChar needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   78:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION qsizetype count(QStringView haystack, QStringView needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   79:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION qsizetype count(QStringView haystack, QLatin1StringView needle, Qt::CaseSensitivity cs = Qt::CaseSensitive);
+        -:   80:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION qsizetype count(QLatin1StringView haystack, QLatin1StringView needle, Qt::CaseSensitivity cs = Qt::CaseSensitive);
+        -:   81:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION qsizetype count(QLatin1StringView haystack, QStringView needle, Qt::CaseSensitivity cs = Qt::CaseSensitive);
+        -:   82:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION qsizetype count(QLatin1StringView haystack, QChar needle, Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept;
+        -:   83:
+        -:   84:#if QT_CONFIG(regularexpression)
+        -:   85:// ### Qt 7: unify these overloads;
+        -:   86:// remove the ones taking only a QStringView, export the others, adjust callers
+        -:   87:[[nodiscard]] qsizetype indexOf(QStringView viewHaystack,
+        -:   88:                                const QString *stringHaystack,
+        -:   89:                                const QRegularExpression &re,
+        -:   90:                                qsizetype from = 0,
+        -:   91:                                QRegularExpressionMatch *rmatch = nullptr);
+        -:   92:[[nodiscard]] Q_CORE_EXPORT qsizetype indexOf(QStringView haystack,
+        -:   93:                                              const QRegularExpression &re,
+        -:   94:                                              qsizetype from = 0,
+        -:   95:                                              QRegularExpressionMatch *rmatch = nullptr);
+        -:   96:[[nodiscard]] qsizetype lastIndexOf(QStringView viewHaystack,
+        -:   97:                                    const QString *stringHaystack,
+        -:   98:                                    const QRegularExpression &re,
+        -:   99:                                    qsizetype from = -1,
+        -:  100:                                    QRegularExpressionMatch *rmatch = nullptr);
+        -:  101:[[nodiscard]] Q_CORE_EXPORT qsizetype lastIndexOf(QStringView haystack,
+        -:  102:                                                  const QRegularExpression &re,
+        -:  103:                                                  qsizetype from = -1,
+        -:  104:                                                  QRegularExpressionMatch *rmatch = nullptr);
+        -:  105:[[nodiscard]] bool contains(QStringView viewHaystack,
+        -:  106:                            const QString *stringHaystack,
+        -:  107:                            const QRegularExpression &re,
+        -:  108:                            QRegularExpressionMatch *rmatch = nullptr);
+        -:  109:[[nodiscard]] Q_CORE_EXPORT bool contains(QStringView haystack,
+        -:  110:                                          const QRegularExpression &re,
+        -:  111:                                          QRegularExpressionMatch *rmatch = nullptr);
+        -:  112:[[nodiscard]] Q_CORE_EXPORT qsizetype count(QStringView haystack, const QRegularExpression &re);
+        -:  113:#endif
+        -:  114:
+        -:  115:[[nodiscard]] Q_CORE_EXPORT QString convertToQString(QAnyStringView s);
+        -:  116:
+        -:  117:[[nodiscard]] Q_CORE_EXPORT QByteArray convertToLatin1(QStringView str);
+        -:  118:[[nodiscard]] Q_CORE_EXPORT QByteArray convertToUtf8(QStringView str);
+        -:  119:[[nodiscard]] Q_CORE_EXPORT QByteArray convertToLocal8Bit(QStringView str);
+        -:  120:[[nodiscard]] Q_CORE_EXPORT QList<uint> convertToUcs4(QStringView str); // ### Qt 7 char32_t
+        -:  121:
+        -:  122:[[nodiscard]] Q_CORE_EXPORT QByteArray convertToUtf8(QLatin1StringView str);
+        -:  123:
+        -:  124:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool isRightToLeft(QStringView string) noexcept;
+        -:  125:
+        -:  126:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool isAscii(QLatin1StringView s) noexcept;
+        -:  127:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool isAscii(QStringView   s) noexcept;
+        -:  128:[[nodiscard]] constexpr inline                   bool isLatin1(QLatin1StringView s) noexcept;
+        -:  129:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool isLatin1(QStringView   s) noexcept;
+        -:  130:[[nodiscard]] Q_CORE_EXPORT Q_DECL_PURE_FUNCTION bool isValidUtf16(QStringView s) noexcept;
+        -:  131:
+        -:  132:template <typename Char, size_t N> [[nodiscard]] constexpr Q_ALWAYS_INLINE
+        -:  133:qsizetype lengthHelperContainerLoop(const Char (&str)[N])
+        -:  134:{
+        -:  135:#if defined(__cpp_lib_constexpr_algorithms) && defined(Q_CC_GNU_ONLY)
+        -:  136:    // libstdc++'s std::find / std::find_if manages to execute more steps
+        -:  137:    // than the loop below
+        -:  138:    const auto it = std::find(str, str + N, Char(0));
+        -:  139:    return it - str;
+        -:  140:#else
+        -:  141:    // std::char_traits<C> is deprecated for C not one of the standard char
+        -:  142:    // types, so we have to roll out our own loop.
+        -:  143:    for (size_t i = 0; i < N; ++i) {
+        -:  144:        if (str[i] == Char(0))
+        -:  145:            return qsizetype(i);
+        -:  146:    }
+        -:  147:    return qsizetype(N);
+        -:  148:#endif
+        -:  149:}
+        -:  150:
+        -:  151:template <typename Char, size_t N> [[nodiscard]] constexpr Q_ALWAYS_INLINE
+        -:  152:std::enable_if_t<sizeof(Char) == sizeof(char16_t), qsizetype>
+        -:  153:lengthHelperContainer(const Char (&str)[N])
+        -:  154:{
+        -:  155:    // The following values were empirically determined to detect the threshold
+        -:  156:    // at which the compiler gives up pre-calculating the std::find() below and
+        -:  157:    // instead inserts code to be executed at runtime.
+        -:  158:    constexpr size_t RuntimeThreshold =
+        -:  159:#if defined(Q_CC_CLANG)
+        -:  160:            // tested on Clang 15, 16 & 17
+        -:  161:            1023
+        -:  162:#elif defined(Q_CC_GNU)
+        -:  163:            // tested through GCC 13.1 at -O3 compilation level
+        -:  164:            // note: at -O2, GCC always generates a loop!
+        -:  165:            __cplusplus >= 202002L ? 39 : 17
+        -:  166:#else
+        -:  167:            0
+        -:  168:#endif
+        -:  169:            ;
+        -:  170:    if constexpr (N == 1) {
+        -:  171:        return str[0] == Char(0) ? 0 : 1;
+        -:  172:    } else if constexpr (N > RuntimeThreshold) {
+        -:  173:#ifdef QT_SUPPORTS_IS_CONSTANT_EVALUATED
+        -:  174:        if (!q20::is_constant_evaluated())
+        -:  175:            return QtPrivate::qustrnlen(reinterpret_cast<const char16_t *>(str), N);
+        -:  176:#endif
+        -:  177:    }
+        -:  178:
+        -:  179:    return lengthHelperContainerLoop(str);
+        -:  180:}
+        -:  181:
+        -:  182:inline qsizetype qstrnlen_helper(const char *str, size_t maxlen)
+        -:  183:{
+        -:  184:#if !defined(Q_COMPILER_SLOW_QSTRNLEN_COMPILATION)
+        -:  185:    return qstrnlen(str, maxlen);
+        -:  186:#else
+        -:  187:    return strnlen_s(str, maxlen);
+        -:  188:#endif
+        -:  189:}
+        -:  190:
+        -:  191:template <typename Char, size_t N> [[nodiscard]] constexpr inline
+        -:  192:std::enable_if_t<sizeof(Char) == 1, qsizetype> lengthHelperContainer(const Char (&str)[N])
+        -:  193:{
+        -:  194:#ifdef QT_SUPPORTS_IS_CONSTANT_EVALUATED
+        -:  195:    if (!q20::is_constant_evaluated())
+        -:  196:        return qstrnlen_helper(reinterpret_cast<const char *>(str), N);
+        -:  197:#endif
+        -:  198:
+        -:  199:    return lengthHelperContainerLoop(str);
+        -:  200:}
+        -:  201:
+        -:  202:template <typename Container>
+function _ZN9QtPrivate21lengthHelperContainerI11QStringViewEExRKT_ called 3 returned 100% blocks executed 100%
+        3:  203:constexpr qsizetype lengthHelperContainer(const Container &c) noexcept
+        3:  203-block  0
+call    0 returned 3
+        -:  204:{
+        3:  205:    return qsizetype(std::size(c));
+        3:  205-block  0
+        -:  206:}
+        -:  207:} // namespace QtPrivate
+        -:  208:
+        -:  209:QT_END_NAMESPACE
+        -:  210:
+        -:  211:#endif // QSTRINGALGORTIHMS_H

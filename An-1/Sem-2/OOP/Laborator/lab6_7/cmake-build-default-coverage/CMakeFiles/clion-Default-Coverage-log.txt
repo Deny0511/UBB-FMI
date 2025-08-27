@@ -1,0 +1,76 @@
+/usr/bin/cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_CXX_FLAGS=--coverage -DCMAKE_C_FLAGS=--coverage -G "Unix Makefiles" -S /mnt/c/Users/urdad/lab6_7 -B /mnt/c/Users/urdad/lab6_7/cmake-build-default-coverage
+-- Could NOT find OpenGL (missing: OPENGL_INCLUDE_DIR) 
+-- Could NOT find WrapOpenGL (missing: WrapOpenGL_FOUND) 
+CMake Warning at /usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6Config.cmake:219 (find_package):
+  Found package configuration file:
+
+    /usr/lib/x86_64-linux-gnu/cmake/Qt6Gui/Qt6GuiConfig.cmake
+
+  but it set Qt6Gui_FOUND to FALSE so package "Qt6Gui" is considered to be
+  NOT FOUND.  Reason given by package:
+
+  Qt6Gui could not be found because dependency WrapOpenGL could not be found.
+
+Call Stack (most recent call first):
+  CMakeLists.txt:12 (find_package)
+
+
+-- Could NOT find OpenGL (missing: OPENGL_INCLUDE_DIR) 
+-- Could NOT find WrapOpenGL (missing: WrapOpenGL_FOUND) 
+CMake Warning at /usr/share/cmake-3.22/Modules/CMakeFindDependencyMacro.cmake:47 (find_package):
+  Found package configuration file:
+
+    /usr/lib/x86_64-linux-gnu/cmake/Qt6Gui/Qt6GuiConfig.cmake
+
+  but it set Qt6Gui_FOUND to FALSE so package "Qt6Gui" is considered to be
+  NOT FOUND.  Reason given by package:
+
+  Qt6Gui could not be found because dependency WrapOpenGL could not be found.
+
+Call Stack (most recent call first):
+  /usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicDependencyHelpers.cmake:14 (find_dependency)
+  /usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:96 (_qt_internal_find_dependencies)
+  /usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:50 (include)
+  /usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6Config.cmake:219 (find_package)
+  CMakeLists.txt:12 (find_package)
+
+
+CMake Warning at /usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6Config.cmake:219 (find_package):
+  Found package configuration file:
+
+    /usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake
+
+  but it set Qt6Widgets_FOUND to FALSE so package "Qt6Widgets" is considered
+  to be NOT FOUND.  Reason given by package:
+
+  Qt6Widgets could not be found because dependency Qt6Gui could not be found.
+
+Call Stack (most recent call first):
+  CMakeLists.txt:12 (find_package)
+
+
+CMake Error at CMakeLists.txt:12 (find_package):
+  Found package configuration file:
+
+    /usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6Config.cmake
+
+  but it set Qt6_FOUND to FALSE so package "Qt6" is considered to be NOT
+  FOUND.  Reason given by package:
+
+  Failed to find Qt component "Gui".
+
+  Expected Config file at
+  "/usr/lib/x86_64-linux-gnu/cmake/Qt6Gui/Qt6GuiConfig.cmake" exists
+
+  Failed to find Qt component "Widgets".
+
+  Expected Config file at
+  "/usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake" exists
+
+  
+
+
+
+-- Configuring incomplete, errors occurred!
+See also "/mnt/c/Users/urdad/lab6_7/cmake-build-default-coverage/CMakeFiles/CMakeOutput.log".
+See also "/mnt/c/Users/urdad/lab6_7/cmake-build-default-coverage/CMakeFiles/CMakeError.log".

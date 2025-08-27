@@ -1,0 +1,475 @@
+        -:    0:Source:C:/Qt/6.9.0/mingw_64/include/QtCore/qutf8stringview.h
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\gui.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\gui.cpp.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright (C) 2020 Klarälvdalens Datakonsult AB, a KDAB Group company, info@kdab.com, author Marc Mutz <marc.mutz@kdab.com>
+        -:    2:// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+        -:    3:#ifndef QUTF8STRINGVIEW_H
+        -:    4:#define QUTF8STRINGVIEW_H
+        -:    5:
+        -:    6:#if 0
+        -:    7:#pragma qt_class(QUtf8StringView)
+        -:    8:#endif
+        -:    9:
+        -:   10:#include <QtCore/qstringalgorithms.h>
+        -:   11:#include <QtCore/qstringfwd.h>
+        -:   12:#include <QtCore/qarraydata.h> // for QContainerImplHelper
+        -:   13:#include <QtCore/qbytearrayview.h>
+        -:   14:#include <QtCore/qcompare.h>
+        -:   15:#include <QtCore/qcontainerfwd.h>
+        -:   16:
+        -:   17:#include <string>
+        -:   18:#include <string_view>
+        -:   19:#include <QtCore/q20type_traits.h>
+        -:   20:
+        -:   21:QT_BEGIN_NAMESPACE
+        -:   22:
+        -:   23:namespace QtPrivate {
+        -:   24:template <typename Char>
+        -:   25:using IsCompatibleChar8TypeHelper = std::disjunction<
+        -:   26:#ifdef __cpp_char8_t
+        -:   27:        std::is_same<Char, char8_t>,
+        -:   28:#endif
+        -:   29:        std::is_same<Char, char>,
+        -:   30:        std::is_same<Char, uchar>,
+        -:   31:        std::is_same<Char, signed char>
+        -:   32:    >;
+        -:   33:template <typename Char>
+        -:   34:using IsCompatibleChar8Type
+        -:   35:    = IsCompatibleChar8TypeHelper<q20::remove_cvref_t<Char>>;
+        -:   36:
+        -:   37:template <typename Pointer>
+        -:   38:struct IsCompatiblePointer8Helper : std::false_type {};
+        -:   39:template <typename Char>
+        -:   40:struct IsCompatiblePointer8Helper<Char*>
+        -:   41:    : IsCompatibleChar8Type<Char> {};
+        -:   42:template <typename Pointer>
+        -:   43:using IsCompatiblePointer8
+        -:   44:    = IsCompatiblePointer8Helper<q20::remove_cvref_t<Pointer>>;
+        -:   45:
+        -:   46:template <typename T, typename Enable = void>
+        -:   47:struct IsContainerCompatibleWithQUtf8StringView : std::false_type {};
+        -:   48:
+        -:   49:template <typename T>
+        -:   50:struct IsContainerCompatibleWithQUtf8StringView<T, std::enable_if_t<std::conjunction_v<
+        -:   51:        // lacking concepts and ranges, we accept any T whose std::data yields a suitable pointer ...
+        -:   52:        IsCompatiblePointer8<decltype(std::data(std::declval<const T &>()))>,
+        -:   53:        // ... and that has a suitable size ...
+        -:   54:        std::is_convertible<
+        -:   55:            decltype(std::size(std::declval<const T &>())),
+        -:   56:            qsizetype
+        -:   57:        >,
+        -:   58:        // ... and it's a range as it defines an iterator-like API
+        -:   59:        IsCompatibleChar8Type<typename std::iterator_traits<
+        -:   60:            decltype(std::begin(std::declval<const T &>()))>::value_type
+        -:   61:        >,
+        -:   62:        std::is_convertible<
+        -:   63:            decltype( std::begin(std::declval<const T &>()) != std::end(std::declval<const T &>()) ),
+        -:   64:            bool
+        -:   65:        >,
+        -:   66:
+        -:   67:        // This needs to be treated specially due to the empty vs null distinction
+        -:   68:        std::negation<std::is_same<std::decay_t<T>, QByteArray>>,
+        -:   69:
+        -:   70:        // This has a compatible value_type, but explicitly a different encoding
+        -:   71:        std::negation<std::is_same<std::decay_t<T>, QLatin1StringView>>,
+        -:   72:
+        -:   73:        // Don't make an accidental copy constructor
+        -:   74:        std::negation<std::disjunction<
+        -:   75:            std::is_same<std::decay_t<T>, QBasicUtf8StringView<true>>,
+        -:   76:            std::is_same<std::decay_t<T>, QBasicUtf8StringView<false>>
+        -:   77:        >>
+        -:   78:    >>> : std::true_type {};
+        -:   79:
+        -:   80:struct hide_char8_t {
+        -:   81:#ifdef __cpp_char8_t
+        -:   82:    using type = char8_t;
+        -:   83:#endif
+        -:   84:};
+        -:   85:
+        -:   86:struct wrap_char { using type = char; };
+        -:   87:
+        -:   88:} // namespace QtPrivate
+        -:   89:
+        -:   90:#ifdef Q_QDOC
+        -:   91:#define QBasicUtf8StringView QUtf8StringView
+        -:   92:#else
+        -:   93:template <bool UseChar8T>
+        -:   94:#endif
+        -:   95:class QBasicUtf8StringView
+        -:   96:{
+        -:   97:public:
+        -:   98:#ifndef Q_QDOC
+        -:   99:    using storage_type = typename std::conditional<UseChar8T,
+        -:  100:            QtPrivate::hide_char8_t,
+        -:  101:            QtPrivate::wrap_char
+        -:  102:        >::type::type;
+        -:  103:#else
+        -:  104:    using storage_type = typename QtPrivate::hide_char8_t;
+        -:  105:#endif
+        -:  106:    typedef const storage_type value_type;
+        -:  107:    typedef qptrdiff difference_type;
+        -:  108:    typedef qsizetype size_type;
+        -:  109:    typedef value_type &reference;
+        -:  110:    typedef value_type &const_reference;
+        -:  111:    typedef value_type *pointer;
+        -:  112:    typedef value_type *const_pointer;
+        -:  113:
+        -:  114:    typedef pointer iterator;
+        -:  115:    typedef const_pointer const_iterator;
+        -:  116:    typedef std::reverse_iterator<iterator> reverse_iterator;
+        -:  117:    typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
+        -:  118:
+        -:  119:private:
+        -:  120:    template <typename Char>
+        -:  121:    using if_compatible_char = std::enable_if_t<QtPrivate::IsCompatibleChar8Type<Char>::value, bool>;
+        -:  122:
+        -:  123:    template <typename Pointer>
+        -:  124:    using if_compatible_pointer = std::enable_if_t<QtPrivate::IsCompatiblePointer8<Pointer>::value, bool>;
+        -:  125:
+        -:  126:    template <typename T>
+        -:  127:    using if_compatible_qstring_like = std::enable_if_t<std::is_same_v<T, QByteArray>, bool>;
+        -:  128:
+        -:  129:    template <typename T>
+        -:  130:    using if_compatible_container = std::enable_if_t<QtPrivate::IsContainerCompatibleWithQUtf8StringView<T>::value, bool>;
+        -:  131:
+        -:  132:    template <typename Container>
+        -:  133:    static constexpr qsizetype lengthHelperContainer(const Container &c) noexcept
+        -:  134:    {
+        -:  135:        return qsizetype(std::size(c));
+        -:  136:    }
+        -:  137:
+        -:  138:    // Note: Do not replace with std::size(const Char (&)[N]), because the result
+        -:  139:    // will be of by one.
+        -:  140:    template <typename Char, size_t N>
+        -:  141:    static constexpr qsizetype lengthHelperContainer(const Char (&str)[N]) noexcept
+        -:  142:    {
+        -:  143:        return QtPrivate::lengthHelperContainer(str);
+        -:  144:    }
+        -:  145:
+        -:  146:    template <typename Char>
+        -:  147:    static const storage_type *castHelper(const Char *str) noexcept
+        -:  148:    { return reinterpret_cast<const storage_type*>(str); }
+function _ZN20QBasicUtf8StringViewILb0EE10castHelperEPKc called 135 returned 100% blocks executed 100%
+      135:  149:    static constexpr const storage_type *castHelper(const storage_type *str) noexcept
+      135:  150:    { return str; }
+      135:  150-block  0
+        -:  151:
+        -:  152:public:
+        -:  153:    constexpr QBasicUtf8StringView() noexcept
+        -:  154:        : m_data(nullptr), m_size(0) {}
+        -:  155:    constexpr QBasicUtf8StringView(std::nullptr_t) noexcept
+        -:  156:        : QBasicUtf8StringView() {}
+        -:  157:
+        -:  158:    template <typename Char, if_compatible_char<Char> = true>
+function _ZN20QBasicUtf8StringViewILb0EEC1IcLb1EEEPKT_x called 135 returned 100% blocks executed 57%
+      135:  159:    constexpr QBasicUtf8StringView(const Char *str, qsizetype len)
+      135:  160:        : m_data(castHelper(str)),
+      135:  160-block  0
+call    0 returned 135
+     135*:  161:          m_size((Q_ASSERT(len >= 0), Q_ASSERT(str || !len), len)) {}
+branch  0 taken 0 (fallthrough)
+branch  1 taken 135
+    %%%%%:  161-block  0
+call    2 never executed
+      135:  161-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 135
+    %%%%%:  161-block  2
+branch  5 never executed (fallthrough)
+branch  6 never executed
+    %%%%%:  161-block  3
+call    7 never executed
+        -:  162:
+        -:  163:    template <typename Char, if_compatible_char<Char> = true>
+        -:  164:    constexpr QBasicUtf8StringView(const Char *f, const Char *l)
+        -:  165:        : QBasicUtf8StringView(f, l - f) {}
+        -:  166:
+        -:  167:#ifdef Q_QDOC
+        -:  168:    template <typename Char, size_t N>
+        -:  169:    constexpr QBasicUtf8StringView(const Char (&array)[N]) noexcept;
+        -:  170:
+        -:  171:    template <typename Char>
+        -:  172:    constexpr QBasicUtf8StringView(const Char *str) noexcept;
+        -:  173:#else
+        -:  174:    template <typename Pointer, if_compatible_pointer<Pointer> = true>
+function _ZN20QBasicUtf8StringViewILb0EEC1IPKcLb1EEERKT_ called 135 returned 100% blocks executed 100%
+      135:  175:    constexpr QBasicUtf8StringView(const Pointer &str) noexcept
+      135:  176:        : QBasicUtf8StringView(str, QtPrivate::lengthHelperPointer(str)) {}
+      135:  176-block  0
+call    0 returned 135
+call    1 returned 135
+        -:  177:
+        -:  178:    template <typename Char, if_compatible_char<Char> = true>
+        -:  179:    constexpr QBasicUtf8StringView(const Char (&str)[]) noexcept
+        -:  180:        : QBasicUtf8StringView(&*str) {} // decay to pointer
+        -:  181:#endif
+        -:  182:
+        -:  183:#ifdef Q_QDOC
+        -:  184:    QBasicUtf8StringView(const QByteArray &str) noexcept;
+        -:  185:    constexpr QBasicUtf8StringView(const storage_type *d, qsizetype n) noexcept {};
+        -:  186:#else
+        -:  187:    template <typename String, if_compatible_qstring_like<String> = true>
+        -:  188:    QBasicUtf8StringView(const String &str) noexcept
+        -:  189:        : QBasicUtf8StringView{str.begin(), str.size()} {}
+        -:  190:#endif
+        -:  191:
+        -:  192:    template <typename Container, if_compatible_container<Container> = true>
+        -:  193:    constexpr QBasicUtf8StringView(const Container &c) noexcept
+        -:  194:        : QBasicUtf8StringView(std::data(c), lengthHelperContainer(c)) {}
+        -:  195:
+        -:  196:#if defined(__cpp_char8_t) && !defined(Q_QDOC)
+        -:  197:    constexpr QBasicUtf8StringView(QBasicUtf8StringView<!UseChar8T> other)
+        -:  198:        : QBasicUtf8StringView(other.data(), other.size()) {}
+        -:  199:#endif
+        -:  200:
+        -:  201:    template <typename Char, size_t Size, if_compatible_char<Char> = true>
+        -:  202:    [[nodiscard]] constexpr static QBasicUtf8StringView fromArray(const Char (&string)[Size]) noexcept
+        -:  203:    { return QBasicUtf8StringView(string, Size); }
+        -:  204:
+        -:  205:    [[nodiscard]] inline QString toString() const; // defined in qstring.h
+        -:  206:
+        -:  207:    [[nodiscard]] constexpr qsizetype size() const noexcept { return m_size; }
+        -:  208:    [[nodiscard]] constexpr const_pointer data() const noexcept { return m_data; }
+        -:  209:#ifdef __cpp_char8_t
+        -:  210:    [[nodiscard]] const char8_t *utf8() const noexcept { return reinterpret_cast<const char8_t*>(m_data); }
+        -:  211:#endif
+        -:  212:
+        -:  213:    [[nodiscard]] constexpr storage_type operator[](qsizetype n) const
+        -:  214:    { verify(n, 1); return m_data[n]; }
+        -:  215:
+        -:  216:    //
+        -:  217:    // QString API
+        -:  218:    //
+        -:  219:
+        -:  220:    [[nodiscard]] constexpr storage_type at(qsizetype n) const { return (*this)[n]; }
+        -:  221:
+        -:  222:    template <typename...Args>
+        -:  223:    [[nodiscard]] inline QString arg(Args &&...args) const;
+        -:  224:
+        -:  225:    [[nodiscard]]
+        -:  226:    constexpr QBasicUtf8StringView mid(qsizetype pos, qsizetype n = -1) const
+        -:  227:    {
+        -:  228:        using namespace QtPrivate;
+        -:  229:        auto result = QContainerImplHelper::mid(size(), &pos, &n);
+        -:  230:        return result == QContainerImplHelper::Null ? QBasicUtf8StringView() : QBasicUtf8StringView(m_data + pos, n);
+        -:  231:    }
+        -:  232:    [[nodiscard]]
+        -:  233:    constexpr QBasicUtf8StringView left(qsizetype n) const
+        -:  234:    {
+        -:  235:        if (size_t(n) >= size_t(size()))
+        -:  236:            n = size();
+        -:  237:        return QBasicUtf8StringView(m_data, n);
+        -:  238:    }
+        -:  239:    [[nodiscard]]
+        -:  240:    constexpr QBasicUtf8StringView right(qsizetype n) const
+        -:  241:    {
+        -:  242:        if (size_t(n) >= size_t(size()))
+        -:  243:            n = size();
+        -:  244:        return QBasicUtf8StringView(m_data + m_size - n, n);
+        -:  245:    }
+        -:  246:
+        -:  247:    [[nodiscard]] constexpr QBasicUtf8StringView sliced(qsizetype pos) const
+        -:  248:    { verify(pos, 0); return QBasicUtf8StringView{m_data + pos, m_size - pos}; }
+        -:  249:    [[nodiscard]] constexpr QBasicUtf8StringView sliced(qsizetype pos, qsizetype n) const
+        -:  250:    { verify(pos, n); return QBasicUtf8StringView(m_data + pos, n); }
+        -:  251:    [[nodiscard]] constexpr QBasicUtf8StringView first(qsizetype n) const
+        -:  252:    { verify(0, n); return sliced(0, n); }
+        -:  253:    [[nodiscard]] constexpr QBasicUtf8StringView last(qsizetype n) const
+        -:  254:    { verify(0, n); return sliced(m_size - n, n); }
+        -:  255:    [[nodiscard]] constexpr QBasicUtf8StringView chopped(qsizetype n) const
+        -:  256:    { verify(0, n); return sliced(0, m_size - n); }
+        -:  257:
+        -:  258:    constexpr QBasicUtf8StringView &slice(qsizetype pos)
+        -:  259:    { *this = sliced(pos); return *this; }
+        -:  260:    constexpr QBasicUtf8StringView &slice(qsizetype pos, qsizetype n)
+        -:  261:    { *this = sliced(pos, n); return *this; }
+        -:  262:
+        -:  263:    constexpr void truncate(qsizetype n)
+        -:  264:    { verify(0, n); m_size = n; }
+        -:  265:    constexpr void chop(qsizetype n)
+        -:  266:    { verify(0, n); m_size -= n; }
+        -:  267:
+        -:  268:    [[nodiscard]] inline bool isValidUtf8() const noexcept
+        -:  269:    {
+        -:  270:        return QByteArrayView(reinterpret_cast<const char *>(data()), size()).isValidUtf8();
+        -:  271:    }
+        -:  272:
+        -:  273:    //
+        -:  274:    // STL compatibility API:
+        -:  275:    //
+        -:  276:    [[nodiscard]] const_iterator begin()   const noexcept { return data(); }
+        -:  277:    [[nodiscard]] const_iterator end()     const noexcept { return data() + size(); }
+        -:  278:    [[nodiscard]] const_iterator cbegin()  const noexcept { return begin(); }
+        -:  279:    [[nodiscard]] const_iterator cend()    const noexcept { return end(); }
+        -:  280:    [[nodiscard]] const_reverse_iterator rbegin()  const noexcept { return const_reverse_iterator(end()); }
+        -:  281:    [[nodiscard]] const_reverse_iterator rend()    const noexcept { return const_reverse_iterator(begin()); }
+        -:  282:    [[nodiscard]] const_reverse_iterator crbegin() const noexcept { return rbegin(); }
+        -:  283:    [[nodiscard]] const_reverse_iterator crend()   const noexcept { return rend(); }
+        -:  284:
+        -:  285:    [[nodiscard]] constexpr bool empty() const noexcept { return size() == 0; }
+        -:  286:    [[nodiscard]] constexpr storage_type front() const { return Q_ASSERT(!empty()), m_data[0]; }
+        -:  287:    [[nodiscard]] constexpr storage_type back()  const { return Q_ASSERT(!empty()), m_data[m_size - 1]; }
+        -:  288:
+        -:  289:    [[nodiscard]] Q_IMPLICIT operator std::basic_string_view<storage_type>() const noexcept
+        -:  290:    { return std::basic_string_view<storage_type>(data(), size_t(size())); }
+        -:  291:
+        -:  292:    [[nodiscard]] constexpr qsizetype max_size() const noexcept { return maxSize(); }
+        -:  293:
+        -:  294:    //
+        -:  295:    // Qt compatibility API:
+        -:  296:    //
+        -:  297:    [[nodiscard]] constexpr bool isNull() const noexcept { return !m_data; }
+        -:  298:    [[nodiscard]] constexpr bool isEmpty() const noexcept { return empty(); }
+        -:  299:    [[nodiscard]] constexpr qsizetype length() const noexcept
+        -:  300:    { return size(); }
+        -:  301:
+        -:  302:    [[nodiscard]] int compare(QBasicUtf8StringView other,
+        -:  303:                              Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept
+        -:  304:    {
+        -:  305:        return QtPrivate::compareStrings(*this, other, cs);
+        -:  306:    }
+        -:  307:
+        -:  308:    // all defined in qstring.h
+        -:  309:    [[nodiscard]] inline int compare(QChar other,
+        -:  310:                                     Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept;
+        -:  311:    [[nodiscard]] inline int compare(QStringView other,
+        -:  312:                                     Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept;
+        -:  313:    [[nodiscard]] inline int compare(QLatin1StringView other,
+        -:  314:                                     Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept;
+        -:  315:    [[nodiscard]] inline int compare(const QByteArray &other,
+        -:  316:                                     Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept;
+        -:  317:
+        -:  318:    [[nodiscard]] inline bool equal(QChar other) const noexcept;
+        -:  319:    [[nodiscard]] inline bool equal(QStringView other) const noexcept;
+        -:  320:    [[nodiscard]] inline bool equal(QLatin1StringView other) const noexcept;
+        -:  321:    [[nodiscard]] inline bool equal(const QByteArray &other) const noexcept;
+        -:  322:    // end defined in qstring.h
+        -:  323:
+        -:  324:    [[nodiscard]] static constexpr qsizetype maxSize() noexcept
+        -:  325:    {
+        -:  326:        // -1 to deal with the pointer one-past-the-end;
+        -:  327:        return QtPrivate::MaxAllocSize - 1;
+        -:  328:    }
+        -:  329:
+        -:  330:private:
+        -:  331:    [[nodiscard]] static inline int compare(QBasicUtf8StringView lhs, QBasicUtf8StringView rhs) noexcept
+        -:  332:    {
+        -:  333:        return QtPrivate::compareStrings(QBasicUtf8StringView<false>(lhs.data(), lhs.size()),
+        -:  334:                                         QBasicUtf8StringView<false>(rhs.data(), rhs.size()));
+        -:  335:    }
+        -:  336:
+        -:  337:    friend bool
+        -:  338:    comparesEqual(const QBasicUtf8StringView &lhs, const QBasicUtf8StringView &rhs) noexcept
+        -:  339:    {
+        -:  340:        return lhs.size() == rhs.size()
+        -:  341:                && QtPrivate::equalStrings(QBasicUtf8StringView<false>(lhs.data(), lhs.size()),
+        -:  342:                                           QBasicUtf8StringView<false>(rhs.data(), rhs.size()));
+        -:  343:    }
+        -:  344:    friend Qt::strong_ordering
+        -:  345:    compareThreeWay(const QBasicUtf8StringView &lhs, const QBasicUtf8StringView &rhs) noexcept
+        -:  346:    {
+        -:  347:        const int res = QBasicUtf8StringView::compare(lhs, rhs);
+        -:  348:        return Qt::compareThreeWay(res, 0);
+        -:  349:    }
+        -:  350:    Q_DECLARE_STRONGLY_ORDERED(QBasicUtf8StringView)
+        -:  351:
+        -:  352:    friend bool
+        -:  353:    comparesEqual(const QBasicUtf8StringView &lhs, const QLatin1StringView &rhs) noexcept
+        -:  354:    {
+        -:  355:        return lhs.equal(rhs);
+        -:  356:    }
+        -:  357:    friend Qt::strong_ordering
+        -:  358:    compareThreeWay(const QBasicUtf8StringView &lhs, const QLatin1StringView &rhs) noexcept
+        -:  359:    {
+        -:  360:        const int res = lhs.compare(rhs);
+        -:  361:        return Qt::compareThreeWay(res, 0);
+        -:  362:    }
+        -:  363:    Q_DECLARE_STRONGLY_ORDERED(QBasicUtf8StringView, QLatin1StringView)
+        -:  364:
+        -:  365:    friend bool
+        -:  366:    comparesEqual(const QBasicUtf8StringView &lhs, const QStringView &rhs) noexcept
+        -:  367:    { return lhs.equal(rhs); }
+        -:  368:    friend Qt::strong_ordering
+        -:  369:    compareThreeWay(const QBasicUtf8StringView &lhs, const QStringView &rhs) noexcept
+        -:  370:    {
+        -:  371:        const int res = lhs.compare(rhs);
+        -:  372:        return Qt::compareThreeWay(res, 0);
+        -:  373:    }
+        -:  374:    Q_DECLARE_STRONGLY_ORDERED(QBasicUtf8StringView, QStringView)
+        -:  375:
+        -:  376:    friend bool comparesEqual(const QBasicUtf8StringView &lhs, const QChar &rhs) noexcept
+        -:  377:    { return lhs.equal(rhs); }
+        -:  378:    friend Qt::strong_ordering
+        -:  379:    compareThreeWay(const QBasicUtf8StringView &lhs, const QChar &rhs) noexcept
+        -:  380:    {
+        -:  381:        const int res = lhs.compare(rhs);
+        -:  382:        return Qt::compareThreeWay(res, 0);
+        -:  383:    }
+        -:  384:    Q_DECLARE_STRONGLY_ORDERED(QBasicUtf8StringView, QChar)
+        -:  385:    Q_DECLARE_STRONGLY_ORDERED(QBasicUtf8StringView, char16_t)
+        -:  386:
+        -:  387:#if !defined(QT_NO_CAST_FROM_ASCII) && !defined(QT_RESTRICTED_CAST_FROM_ASCII)
+        -:  388:    friend bool
+        -:  389:    comparesEqual(const QBasicUtf8StringView &lhs, const QByteArrayView &rhs) noexcept
+        -:  390:    {
+        -:  391:        return lhs.size() == rhs.size()
+        -:  392:                && QtPrivate::equalStrings(QBasicUtf8StringView<false>(lhs.data(), lhs.size()),
+        -:  393:                                           QBasicUtf8StringView<false>(rhs.data(), rhs.size()));
+        -:  394:    }
+        -:  395:    friend Qt::strong_ordering
+        -:  396:    compareThreeWay(const QBasicUtf8StringView &lhs, const QByteArrayView &rhs) noexcept
+        -:  397:    {
+        -:  398:        const int res = QtPrivate::compareStrings(QBasicUtf8StringView<false>(lhs.data(), lhs.size()),
+        -:  399:                                                  QBasicUtf8StringView<false>(rhs.data(), rhs.size()));
+        -:  400:        return Qt::compareThreeWay(res, 0);
+        -:  401:    }
+        -:  402:    Q_DECLARE_STRONGLY_ORDERED(QBasicUtf8StringView, QByteArrayView, QT_ASCII_CAST_WARN)
+        -:  403:
+        -:  404:    friend bool
+        -:  405:    comparesEqual(const QBasicUtf8StringView &lhs, const QByteArray &rhs) noexcept
+        -:  406:    {
+        -:  407:        return lhs.equal(rhs);
+        -:  408:    }
+        -:  409:    friend Qt::strong_ordering
+        -:  410:    compareThreeWay(const QBasicUtf8StringView &lhs, const QByteArray &rhs) noexcept
+        -:  411:    {
+        -:  412:        const int res = lhs.compare(rhs);
+        -:  413:        return Qt::compareThreeWay(res, 0);
+        -:  414:    }
+        -:  415:    Q_DECLARE_STRONGLY_ORDERED(QBasicUtf8StringView, QByteArray, QT_ASCII_CAST_WARN)
+        -:  416:
+        -:  417:    friend bool comparesEqual(const QBasicUtf8StringView &lhs, const char *rhs) noexcept
+        -:  418:    { return comparesEqual(lhs, QByteArrayView(rhs)); }
+        -:  419:    friend Qt::strong_ordering
+        -:  420:    compareThreeWay(const QBasicUtf8StringView &lhs, const char *rhs) noexcept
+        -:  421:    { return compareThreeWay(lhs, QByteArrayView(rhs)); }
+        -:  422:    Q_DECLARE_STRONGLY_ORDERED(QBasicUtf8StringView, const char *, QT_ASCII_CAST_WARN)
+        -:  423:#endif // !defined(QT_NO_CAST_FROM_ASCII) && !defined(QT_RESTRICTED_CAST_FROM_ASCII)
+        -:  424:
+        -:  425:    Q_ALWAYS_INLINE constexpr void verify([[maybe_unused]] qsizetype pos = 0,
+        -:  426:                                          [[maybe_unused]] qsizetype n = 1) const
+        -:  427:    {
+        -:  428:        Q_ASSERT(pos >= 0);
+        -:  429:        Q_ASSERT(pos <= size());
+        -:  430:        Q_ASSERT(n >= 0);
+        -:  431:        Q_ASSERT(n <= size() - pos);
+        -:  432:    }
+        -:  433:    const storage_type *m_data;
+        -:  434:    qsizetype m_size;
+        -:  435:};
+        -:  436:
+        -:  437:#ifdef Q_QDOC
+        -:  438:#undef QBasicUtf8StringView
+        -:  439:#else
+        -:  440:template <bool UseChar8T>
+        -:  441:Q_DECLARE_TYPEINFO_BODY(QBasicUtf8StringView<UseChar8T>, Q_PRIMITIVE_TYPE);
+        -:  442:
+        -:  443:template <typename QStringLike, std::enable_if_t<std::is_same_v<QStringLike, QByteArray>, bool> = true>
+        -:  444:[[nodiscard]] inline q_no_char8_t::QUtf8StringView qToUtf8StringViewIgnoringNull(const QStringLike &s) noexcept
+        -:  445:{ return q_no_char8_t::QUtf8StringView(s.begin(), s.size()); }
+        -:  446:#endif // Q_QDOC
+        -:  447:
+        -:  448:QT_END_NAMESPACE
+        -:  449:
+        -:  450:#endif /* QUTF8STRINGVIEW_H */

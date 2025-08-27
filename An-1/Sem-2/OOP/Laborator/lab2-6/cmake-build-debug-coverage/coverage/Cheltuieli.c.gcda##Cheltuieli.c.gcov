@@ -1,0 +1,17 @@
+        -:    0:Source:C:/Users/urdad/lab2-6/Cheltuieli.c
+        -:    0:Graph:C:\Users\urdad\lab2-6\cmake-build-debug-coverage\CMakeFiles\lab2_6.dir\Cheltuieli.c.gcno
+        -:    0:Data:C:\Users\urdad\lab2-6\cmake-build-debug-coverage\CMakeFiles\lab2_6.dir\Cheltuieli.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "Cheltuieli.h"
+        -:    2:#include <string.h>
+        -:    3:
+function creeazaCheltuiala called 1 returned 100% blocks executed 100%
+        1:    4:Cheltuiala creeazaCheltuiala(int zi,float suma,const char* tip) {
+        -:    5:    Cheltuiala c;
+        1:    6:    c.zi = zi;
+        1:    7:    c.suma = suma;
+        1:    8:    strcpy(c.tip,tip);
+        1:    9:    return c;
+        1:    9-block  0
+        -:   10:}
+        -:   11:

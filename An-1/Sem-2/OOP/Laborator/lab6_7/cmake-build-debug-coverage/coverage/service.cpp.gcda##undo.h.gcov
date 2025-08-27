@@ -1,0 +1,108 @@
+        -:    0:Source:C:/Users/urdad/lab6_7/undo.h
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\service.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef UNDO_H
+        -:    2:#define UNDO_H
+        -:    3:
+        -:    4:#include "repo.h"
+        -:    5:#include "domain.h"
+        -:    6:#include <memory>
+        -:    7:
+        -:    8:class ActiuneUndo {
+        -:    9:public:
+function _ZN11ActiuneUndoD2Ev called 26 returned 100% blocks executed 100%
+       26:   10:    virtual ~ActiuneUndo() = default;
+        -:   11:    virtual void doUndo() = 0;
+        -:   12:};
+        -:   13:
+        -:   14:class UndoAdauga : public ActiuneUndo {
+        -:   15:private:
+        -:   16:    AbsRepo& repo;
+        -:   17:    Film filmAdaugat;
+        -:   18:
+        -:   19:public:
+function _ZN10UndoAdaugaC1ER7AbsRepoRK4Film called 19 returned 100% blocks executed 80%
+       19:   20:    UndoAdauga(AbsRepo& r, const Film& f) : repo(r), filmAdaugat(f) {}
+       19:   20-block  0
+call    0 returned 19
+call    1 returned 19
+branch  2 taken 19 (fallthrough)
+branch  3 taken 0 (throw)
+       19:   20-block  1
+    $$$$$:   20-block  2
+call    4 never executed
+        -:   21:
+function _ZN10UndoAdauga6doUndoEv called 2 returned 100% blocks executed 100%
+        2:   22:    void doUndo() override {
+        2:   23:        repo.sterge(filmAdaugat.getTitlu(), filmAdaugat.getAn());
+        2:   23-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+        2:   24:    }
+        -:   25:};
+        -:   26:
+        -:   27:class UndoSterge : public ActiuneUndo {
+        -:   28:private:
+        -:   29:    AbsRepo& repo;
+        -:   30:    Film filmSters;
+        -:   31:
+        -:   32:public:
+function _ZN10UndoStergeC1ER7AbsRepoRK4Film called 5 returned 100% blocks executed 80%
+        5:   33:    UndoSterge(AbsRepo& r, const Film& f) : repo(r), filmSters(f) {}
+        5:   33-block  0
+call    0 returned 5
+call    1 returned 5
+branch  2 taken 5 (fallthrough)
+branch  3 taken 0 (throw)
+        5:   33-block  1
+    $$$$$:   33-block  2
+call    4 never executed
+        -:   34:
+function _ZN10UndoSterge6doUndoEv called 2 returned 100% blocks executed 100%
+        2:   35:    void doUndo() override {
+        2:   36:        repo.adauga(filmSters);
+        2:   36-block  0
+call    0 returned 2
+        2:   37:    }
+        -:   38:};
+        -:   39:
+        -:   40:class UndoModifica : public ActiuneUndo {
+        -:   41:private:
+        -:   42:    AbsRepo& repo;
+        -:   43:    Film filmVeche;
+        -:   44:    std::string titlu;
+        -:   45:    int an;
+        -:   46:
+        -:   47:public:
+function _ZN12UndoModificaC1ER7AbsRepoRK4FilmRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi called 2 returned 100% blocks executed 62%
+        2:   48:    UndoModifica(AbsRepo& r, const Film& f, const std::string& t, int a)
+        2:   49:        : repo(r), filmVeche(f), titlu(t), an(a) {}
+        2:   49-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   49-block  1
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   49-block  2
+    $$$$$:   49-block  3
+call    7 never executed
+    $$$$$:   49-block  4
+call    8 never executed
+        -:   50:
+function _ZN12UndoModifica6doUndoEv called 1 returned 100% blocks executed 100%
+        1:   51:    void doUndo() override {
+        1:   52:        repo.modifica(titlu, an, filmVeche.getGen(), filmVeche.getAn(), filmVeche.getActor());
+        1:   52-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        1:   53:    }
+        -:   54:};
+        -:   55:
+        -:   56:#endif // UNDO_H

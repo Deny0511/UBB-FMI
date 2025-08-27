@@ -1,0 +1,64 @@
+        -:    0:Source:C:/Users/urdad/lab6_7/service.h
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:#ifndef SERVICE_H
+        -:    3:#define SERVICE_H
+        -:    4:
+        -:    5:#include "repo.h"
+        -:    6:#include "CosFilme.h"
+        -:    7:#include "validator.h"
+        -:    8:#include "MyList.h"
+        -:    9:#include <vector>
+        -:   10:#include <random>
+        -:   11:#include <memory>
+        -:   12:#include "undo.h"
+        -:   13:
+        -:   14:
+        -:   15:
+        -:   16:
+        -:   17:class Service {
+        -:   18:private:
+        -:   19:    AbsRepo& repo;
+        -:   20:    //Repo& repo;
+        -:   21:    Validator& validator;
+        -:   22:    CosFilm& cosInchirieri;
+        -:   23:    std::vector<std::unique_ptr<ActiuneUndo>> undoList;
+        -:   24:public:
+function _ZN7ServiceC1ER7AbsRepoR9ValidatorR7CosFilm called 2 returned 100% blocks executed 100%
+        2:   25:    Service(AbsRepo& repository, Validator& validator, CosFilm& cosInchirieri) noexcept : repo{ repository }, validator{ validator }, cosInchirieri{ cosInchirieri } {}
+        2:   25-block  0
+call    0 returned 2
+        -:   26:    Service(AbsRepo& r);
+        -:   27:
+        -:   28:    CosFilm& getCosInchirieri() {
+        -:   29:        return cosInchirieri;
+        -:   30:    }
+        -:   31:
+        -:   32:    void adaugaFilm(const std::string& titlu, const std::string& gen, int an, const std::string& actor);
+        -:   33:    void stergeFilm(const std::string& titlu, int an);
+        -:   34:    void modificaFilm(const std::string& titlu, int an, const std::string& nouGen, int nouAn, const std::string& nouActor);
+        -:   35:    void undo();
+        -:   36:    const std::vector<Film>& getFilme() const;
+        -:   37:    std::vector<Film> cautaFilme(const std::string& titlu = "", const std::string& gen = "", int an = -1)const;
+        -:   38:    std::vector<Film> filtrareFilme(const std::string& titlu, int an) const;
+        -:   39:    void sortareFilmeDupaAnSiGen() const;
+        -:   40:    void sortareFilmeDupaTitlu() const;
+        -:   41:    void sortareFilmeDupaActor() const;
+        -:   42:
+        -:   43:
+        -:   44:    const std::vector<Film>& adaugaFilmInCosInchirieri(const std::string& titluFilm);
+        -:   45:
+        -:   46:    const std::vector<Film>& golesteCosInchirieri();
+        -:   47:
+        -:   48:    const std::vector<Film>& umpleRandomCosInchirieri(int dimensiune);
+        -:   49:
+        -:   50:    const std::vector<Film>& getAllCosInchirieri();
+        -:   51:
+        -:   52:    void exportaCosCSV(const std::string& numeFisier) const;
+        -:   53:
+        -:   54:    int nrFilmeCuGen(const std::string& gen) const;
+        -:   55:};
+        -:   56:
+        -:   57:#endif //SERVICE_H

@@ -1,0 +1,70 @@
+        -:    0:Source:C:/Qt/6.9.0/mingw_64/include/QtCore/qswap.h
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\gui.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\gui.cpp.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright (C) 2022 The Qt Company Ltd.
+        -:    2:// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+        -:    3:
+        -:    4:#ifndef QTCORE_QSWAP_H
+        -:    5:#define QTCORE_QSWAP_H
+        -:    6:
+        -:    7:#include <QtCore/qtconfigmacros.h>
+        -:    8:
+        -:    9:#include <type_traits>
+        -:   10:#include <utility>
+        -:   11:
+        -:   12:#if 0
+        -:   13:#pragma qt_class(QtSwap)
+        -:   14:#pragma qt_sync_stop_processing
+        -:   15:#endif
+        -:   16:
+        -:   17:QT_BEGIN_NAMESPACE
+        -:   18:
+        -:   19:template <typename T>
+        -:   20:constexpr void qSwap(T &value1, T &value2)
+        -:   21:    noexcept(std::is_nothrow_swappable_v<T>)
+        -:   22:{
+        -:   23:    using std::swap;
+        -:   24:    swap(value1, value2);
+        -:   25:}
+        -:   26:
+        -:   27:// pure compile-time micro-optimization for our own headers, so not documented:
+        -:   28:template <typename T>
+      14*:   29:constexpr inline void qt_ptr_swap(T* &lhs, T* &rhs) noexcept
+        -:   30:{
+      14*:   31:    T *tmp = lhs;
+      14*:   32:    lhs = rhs;
+      14*:   33:    rhs = tmp;
+      14*:   34:}
+------------------
+_Z11qt_ptr_swapI7QStringEvRPT_S3_:
+function _Z11qt_ptr_swapI7QStringEvRPT_S3_ called 7 returned 100% blocks executed 100%
+        7:   29:constexpr inline void qt_ptr_swap(T* &lhs, T* &rhs) noexcept
+        -:   30:{
+        7:   31:    T *tmp = lhs;
+        7:   32:    lhs = rhs;
+        7:   33:    rhs = tmp;
+        7:   34:}
+------------------
+_Z11qt_ptr_swapI15QTypedArrayDataI7QStringEEvRPT_S5_:
+function _Z11qt_ptr_swapI15QTypedArrayDataI7QStringEEvRPT_S5_ called 7 returned 100% blocks executed 100%
+        7:   29:constexpr inline void qt_ptr_swap(T* &lhs, T* &rhs) noexcept
+        -:   30:{
+        7:   31:    T *tmp = lhs;
+        7:   32:    lhs = rhs;
+        7:   33:    rhs = tmp;
+        7:   34:}
+------------------
+_Z11qt_ptr_swapI8QMapDataISt3mapI7QStringP11QPushButtonSt4lessIS2_ESaISt4pairIKS2_S4_EEEEEvRPT_SF_:
+function _Z11qt_ptr_swapI8QMapDataISt3mapI7QStringP11QPushButtonSt4lessIS2_ESaISt4pairIKS2_S4_EEEEEvRPT_SF_ called 0 returned 0% blocks executed 0%
+    #####:   29:constexpr inline void qt_ptr_swap(T* &lhs, T* &rhs) noexcept
+        -:   30:{
+    #####:   31:    T *tmp = lhs;
+    #####:   32:    lhs = rhs;
+    #####:   33:    rhs = tmp;
+    #####:   34:}
+------------------
+        -:   35:
+        -:   36:QT_END_NAMESPACE
+        -:   37:
+        -:   38:#endif // QTCORE_QSWAP_H

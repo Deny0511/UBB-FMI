@@ -1,0 +1,28 @@
+        -:    0:Source:C:/Users/urdad/lab6_7/CosFilme.h
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\teste.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\teste.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include "domain.h"
+        -:    4:#include "observator.h"
+        -:    5:#include <vector>
+        -:    6:#include <random>
+        -:    7:
+        -:    8:
+        -:    9:class CosFilm : public Observabil {
+        -:   10:  private:
+        -:   11:    std::vector<Film> cosFilme;
+        -:   12:  public:
+        -:   13:    CosFilm() = default;
+        -:   14:    void adaugaCosFilme(const Film& filme);
+        -:   15:    void golesteCosFilme() ;
+        -:   16:    void umpleRandomCosFilme(size_t dimensiune,const std::vector<Film>& listaFilme);
+        -:   17:    const std::vector<Film>& getCosFilme() const;
+        -:   18:    void exportCSV(const std::string& numeFisier) const;
+function _ZN7CosFilmD1Ev called 0 returned 0% blocks executed 0%
+    #####:   19:    ~CosFilm() = default;
+    %%%%%:   19-block  0
+call    0 never executed
+call    1 never executed
+        -:   20:};

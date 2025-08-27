@@ -1,0 +1,32 @@
+        -:    0:Source:/mnt/c/Users/urdad/lab6_7/ui.h
+        -:    0:Graph:/mnt/c/Users/urdad/lab6_7/cmake-build-default-coverage/CMakeFiles/lab6_7.dir/main.cpp.gcno
+        -:    0:Data:/mnt/c/Users/urdad/lab6_7/cmake-build-default-coverage/CMakeFiles/lab6_7.dir/main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:#ifndef UI_H
+        -:    3:#define UI_H
+        -:    4:#include "service.h"
+        -:    5:
+        -:    6:
+        -:    7:class UI {
+        -:    8:private:
+        -:    9:    Service& service;
+        -:   10:    void adaugaFilm()const;
+        -:   11:    void stergeFilm()const;
+        -:   12:    void afiseazaFilme()const;
+        -:   13:    void modificaFilm()const;
+        -:   14:    void cautaFilme()const;
+        -:   15:    void filtrareFilme()const;
+        -:   16:    void sortari();
+        -:   17:    void adaugaFilmInCos();
+        -:   18:    void umple_random_cos();
+        -:   19:    void afiseazaFilmCos(const std::vector<Film>& filme);
+        -:   20:    void exportaCos();
+        -:   21:    void undo();
+        -:   22:public:
+function _ZN2UIC2ER7Service called 1 returned 100% blocks executed 100%
+        1:   23:    explicit UI(Service& service) noexcept : service{ service } {}
+        -:   24:    void run();
+        -:   25:};
+        -:   26:#endif //UI_H
+        -:   27:

@@ -1,0 +1,181 @@
+        -:    0:Source:C:/Users/urdad/lab6_7/repo.h
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\repo.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\repo.cpp.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:#ifndef REPO_H
+        -:    3:#define REPO_H
+        -:    4:
+        -:    5:#include "domain.h"
+        -:    6:#include "MyList.h"
+        -:    7:#include <vector>
+        -:    8:#include <algorithm>
+        -:    9:#include <stdexcept>
+        -:   10:#include <map>
+        -:   11:#include <string>
+        -:   12:#include <functional>
+        -:   13:#include <random>
+        -:   14:
+        -:   15:
+        -:   16:class RepositoryException : public std::runtime_error {
+        -:   17:public:
+function _ZN19RepositoryExceptionC1ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   18:    explicit RepositoryException(const std::string& msg) : std::runtime_error(msg) {}
+    %%%%%:   18-block  0
+call    0 never executed
+        -:   19:};
+        -:   20:
+        -:   21:
+        -:   22:class AbsRepo{
+        -:   23:public:
+        -:   24:    virtual void adauga(const Film& a)=0;
+        -:   25:
+        -:   26:    virtual void modifica(const std::string& titlu, int an, const std::string& nouGen, int nouAn, const std::string& nouActor)=0;
+        -:   27:
+        -:   28:    virtual void sterge(const std::string& titlu, int an)=0;
+        -:   29:
+        -:   30:    virtual const std::vector<Film>& getAll() const noexcept = 0;
+        -:   31:    virtual void setAll(const std::vector<Film>& filmeNoi) noexcept=0;
+        -:   32:    virtual const Film& cauta(const std::string& titlu, int an) const =0;
+        -:   33:
+function _ZN7AbsRepoD2Ev called 0 returned 0% blocks executed 0%
+    #####:   34:    virtual ~AbsRepo()=default;
+        -:   35:};
+        -:   36:
+        -:   37:
+        -:   38:
+        -:   39:class Repo : public AbsRepo{
+        -:   40:private:
+        -:   41:    std::vector<Film> filme;
+        -:   42:
+        -:   43:public:
+        -:   44:    Repo() = default;
+        -:   45:    virtual void adauga(const Film& film);
+        -:   46:    virtual void sterge(const std::string& titlu, int an);
+        -:   47:    virtual void modifica(const std::string& titlu, int an, const std::string& nouGen, int nouAn, const std::string& nouActor);
+        -:   48:    virtual const Film& cauta(const std::string& titlu, int an) const;
+function _ZNK4Repo6getAllEv called 0 returned 0% blocks executed 0%
+    #####:   49:    virtual const std::vector<Film>& getAll() const noexcept {return filme;}
+    %%%%%:   49-block  0
+function _ZN4Repo6setAllERKSt6vectorI4FilmSaIS1_EE called 0 returned 0% blocks executed 0%
+    #####:   50:    virtual void setAll(const std::vector<Film>& filmeNoi) noexcept{
+    #####:   51:        filme = std::move(filmeNoi);
+    %%%%%:   51-block  0
+call    0 never executed
+call    1 never executed
+    #####:   52:    }
+        -:   53:    virtual ~Repo();
+        -:   54:};
+        -:   55:
+        -:   56:class RepoFile :public Repo {
+        -:   57:private:
+        -:   58:
+        -:   59:    std::string numeFisier;
+        -:   60:
+        -:   61:
+        -:   62:public:
+        -:   63:    void writeAllToFile();
+        -:   64:
+        -:   65:    void readAllFromFile();
+        -:   66:    RepoFile(std::string numeFisier) :Repo(), numeFisier{ numeFisier } {
+        -:   67:        readAllFromFile();
+        -:   68:    }
+        -:   69:
+        -:   70:    void adauga(const Film& film) override {
+        -:   71:        Repo::adauga(film);
+        -:   72:        writeAllToFile();
+        -:   73:    }
+        -:   74:
+        -:   75:    void modifica(const std::string& titlu, int an, const std::string& nouGen, int nouAn, const std::string& nouActor) override {
+        -:   76:        Repo::modifica(titlu,an,nouGen,nouAn,nouActor);
+        -:   77:        writeAllToFile();
+        -:   78:    }
+        -:   79:
+        -:   80:    void sterge(const std::string& titlu, int an) override {
+        -:   81:        Repo::sterge(titlu,an);
+        -:   82:        writeAllToFile();
+        -:   83:    }
+        -:   84:
+        -:   85:
+        -:   86:    ~RepoFile() override {
+        -:   87:    }
+        -:   88:};
+        -:   89:
+        -:   90:class RepoNou : public AbsRepo {
+        -:   91:private:
+        -:   92:
+        -:   93:	std::map<std::string, Film> filme;
+        -:   94:	float probabilitate;
+        -:   95:    bool aruncaExceptie() {
+        -:   96:        std::random_device rd;
+        -:   97:        std::mt19937 gen(rd());
+        -:   98:        std::uniform_real_distribution<> dis(0.0, 1.0);
+        -:   99:        float val = dis(gen);
+        -:  100:        return val < probabilitate;
+        -:  101:    }
+        -:  102:
+        -:  103:public:
+        -:  104:
+        -:  105:	RepoNou() = default;
+        -:  106:    explicit RepoNou(float chance) : probabilitate(chance) {
+        -:  107:        if (probabilitate < 0.0 || probabilitate > 1.0) {
+        -:  108:            throw std::invalid_argument("Probabilitatea trebuie sa fie intre 0 si 1.");
+        -:  109:        }
+        -:  110:    }
+        -:  111:
+        -:  112:    void adauga(const Film& film) override {
+        -:  113:        if (aruncaExceptie()) {
+        -:  114:            throw RepositoryException("Eroare: A fost aruncată o excepție la adăugarea unui film.");
+        -:  115:        }
+        -:  116:        filme[film.getTitlu()] = film;
+        -:  117:    }
+        -:  118:
+        -:  119:	void sterge(const std::string& titlu, int an) override {
+        -:  120:        if (aruncaExceptie()) {
+        -:  121:            throw RepositoryException("Eroare: A fost aruncată o excepție la ștergerea unui film.");
+        -:  122:        }
+        -:  123:        auto it = filme.find(titlu);
+        -:  124:        if (it != filme.end()) {
+        -:  125:            filme.erase(it);
+        -:  126:        }
+        -:  127:	}
+        -:  128:
+        -:  129:	void modifica(const std::string& titlu, int an, const std::string& nouGen, int nouAn, const std::string& nouActor) override {
+        -:  130:        if (aruncaExceptie()) {
+        -:  131:            throw RepositoryException("Eroare: A fost aruncată o excepție la modificarea unui film.");
+        -:  132:        }
+        -:  133:        auto it = filme.find(titlu);
+        -:  134:        if (it != filme.end()) {
+        -:  135:            it->second.setGen(nouGen);
+        -:  136:            it->second.setAn(nouAn);
+        -:  137:            it->second.setActor(nouActor);
+        -:  138:        }
+        -:  139:	}
+        -:  140:
+        -:  141:    const Film& cauta(const std::string& titlu, int an) const override {
+        -:  142:        auto it = filme.find(titlu);
+        -:  143:        if (it != filme.end()) {
+        -:  144:            return it->second;}}
+        -:  145:
+        -:  146:    const std::vector<Film>& getAll() const noexcept override {
+        -:  147:        static std::vector<Film> listaFilme;
+        -:  148:        listaFilme.clear();
+        -:  149:        for (const auto& pair : filme) {
+        -:  150:            listaFilme.push_back(pair.second);
+        -:  151:        }
+        -:  152:        return listaFilme;
+        -:  153:    }
+        -:  154:
+        -:  155:
+        -:  156:    void setAll(const std::vector<Film>& filmeNoi) noexcept override {
+        -:  157:        filme.clear();
+        -:  158:        for (const auto& film : filmeNoi) {
+        -:  159:            filme[film.getTitlu()] = film;
+        -:  160:        }
+        -:  161:    }
+        -:  162:
+        -:  163:	~RepoNou() override {}
+        -:  164:};
+        -:  165:
+        -:  166:
+        -:  167:#endif //REPO_H

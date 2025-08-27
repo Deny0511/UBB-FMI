@@ -1,0 +1,482 @@
+        -:    0:Source:C:/Users/urdad/lab6_7/repo.cpp
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\repo.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\repo.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "repo.h"
+        -:    2:#include<fstream>
+        -:    3:#include<iostream>
+        -:    4:#include<sstream>
+        -:    5:
+function _ZN4Repo6adaugaERK4Film called 33 returned 97% blocks executed 68%
+       33:    6:void Repo::adauga(const Film& film) {
+       33:    7:    auto it = std::find(filme.begin(), filme.end(), film);
+       33:    7-block  0
+call    0 returned 33
+call    1 returned 33
+call    2 returned 33
+branch  3 taken 33 (fallthrough)
+branch  4 taken 0 (throw)
+        -:    8:
+       33:    9:    if (it != filme.end())
+       33:    9-block  0
+call    0 returned 33
+call    1 returned 33
+branch  2 taken 1 (fallthrough)
+branch  3 taken 32
+        3:   10:        throw RepositoryException("Filmul exista deja!");
+        1:   10-block  0
+call    0 returned 1
+        1:   10-block  1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   10-block  2
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   10-block  3
+call    7 returned 1
+        1:   10-block  4
+call    8 returned 1
+    $$$$$:   10-block  5
+call    9 never executed
+    $$$$$:   10-block  6
+    $$$$$:   10-block  7
+    $$$$$:   10-block  8
+call   10 never executed
+       32:   11:    filme.push_back(film);
+       32:   11-block  0
+call    0 returned 32
+branch  1 taken 32 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   12:
+       32:   13:}
+       32:   13-block  0
+        -:   14:
+        -:   15:
+function _ZN4Repo6stergeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi called 10 returned 90% blocks executed 67%
+       10:   16:void Repo::sterge(const std::string& titlu, int an) {
+function _ZZN4Repo6stergeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiENKUlRK4FilmE_clESA_ called 9 returned 100% blocks executed 89%
+       10:   17:    auto it = std::find_if(filme.begin(), filme.end(), [&titlu,an](const Film& f) {
+       10:   17-block  0
+call    0 returned 10
+call    1 returned 10
+call    2 returned 10
+branch  3 taken 10 (fallthrough)
+branch  4 taken 0 (throw)
+       9*:   18:        return f.getTitlu() == titlu && f.getAn() == an;
+        9:   18-block  0
+call    0 returned 9
+call    1 returned 9
+branch  2 taken 9 (fallthrough)
+branch  3 taken 0
+        9:   18-block  1
+call    4 returned 9
+branch  5 taken 9 (fallthrough)
+branch  6 taken 0
+        9:   18-block  2
+    %%%%%:   18-block  3
+        9:   18-block  4
+        -:   19:    });
+       10:   20:    if (it == filme.end()) {
+       10:   20-block  0
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 1 (fallthrough)
+branch  3 taken 9
+        3:   21:        throw RepositoryException("Filmul nu exista!");
+        1:   21-block  0
+call    0 returned 1
+        1:   21-block  1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   21-block  2
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   21-block  3
+call    7 returned 1
+        1:   21-block  4
+call    8 returned 1
+    $$$$$:   21-block  5
+call    9 never executed
+    $$$$$:   21-block  6
+    $$$$$:   21-block  7
+    $$$$$:   21-block  8
+call   10 never executed
+        -:   22:    }
+        9:   23:    filme.erase(it);
+        9:   23-block  0
+call    0 returned 9
+call    1 returned 9
+branch  2 taken 9 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   23-block  1
+        -:   24:
+        9:   25:}
+        9:   25-block  0
+        -:   26:
+function _ZN4Repo8modificaERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiS7_iS7_ called 6 returned 83% blocks executed 65%
+        6:   27:void Repo::modifica(const std::string& titlu, int an, const std::string& nouGen, int nouAn, const std::string& nouActor) {
+function _ZZN4Repo8modificaERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiS7_iS7_ENKUlRK4FilmE_clESA_ called 6 returned 100% blocks executed 100%
+        6:   28:    auto it = std::find_if(filme.begin(),filme.end(),[&titlu,an](const Film& f) {
+        6:   28-block  0
+call    0 returned 6
+call    1 returned 6
+call    2 returned 6
+branch  3 taken 6 (fallthrough)
+branch  4 taken 0 (throw)
+        6:   29:        return f.getTitlu() == titlu && f.getAn() == an;
+        6:   29-block  0
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 5 (fallthrough)
+branch  3 taken 1
+        5:   29-block  1
+call    4 returned 5
+branch  5 taken 5 (fallthrough)
+branch  6 taken 0
+        5:   29-block  2
+        1:   29-block  3
+        6:   29-block  4
+        -:   30:    });
+        6:   31:    if ( it == filme.end() ) {
+        6:   31-block  0
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 1 (fallthrough)
+branch  3 taken 5
+        3:   32:        throw RepositoryException("Filmul nu exista!");
+        1:   32-block  0
+call    0 returned 1
+        1:   32-block  1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   32-block  2
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   32-block  3
+call    7 returned 1
+        1:   32-block  4
+call    8 returned 1
+    $$$$$:   32-block  5
+call    9 never executed
+    $$$$$:   32-block  6
+    $$$$$:   32-block  7
+    $$$$$:   32-block  8
+call   10 never executed
+        -:   33:    }
+        5:   34:    *it = Film{titlu,nouGen,nouAn,nouActor};
+        5:   34-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   34-block  1
+call    3 returned 5
+call    4 returned 5
+branch  5 taken 5 (fallthrough)
+branch  6 taken 0 (throw)
+        5:   34-block  2
+call    7 returned 5
+    $$$$$:   34-block  3
+call    8 never executed
+    $$$$$:   34-block  4
+        -:   35:
+        -:   36:
+        5:   37:}
+        -:   38:
+        -:   39:
+      13*:   40:Repo::~Repo()
+        -:   41:{
+      13*:   42:}
+------------------
+_ZN4RepoD0Ev:
+function _ZN4RepoD0Ev called 0 returned 0% blocks executed 0%
+    #####:   40:Repo::~Repo()
+        -:   41:{
+    #####:   42:}
+    %%%%%:   42-block  0
+call    0 never executed
+call    1 never executed
+------------------
+_ZN4RepoD2Ev:
+function _ZN4RepoD2Ev called 13 returned 100% blocks executed 100%
+       13:   40:Repo::~Repo()
+        -:   41:{
+       13:   42:}
+       13:   42-block  0
+call    0 returned 13
+call    1 returned 13
+------------------
+        -:   43:
+        -:   44:
+        -:   45:
+        -:   46:
+function _ZN8RepoFile15readAllFromFileEv called 3 returned 100% blocks executed 65%
+        3:   47:void RepoFile::readAllFromFile() {
+        3:   48:    std::ifstream fin(numeFisier);
+        3:   48-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   49:
+        -:   50:
+        3:   51:    std::string linie;
+        3:   51-block  0
+call    0 returned 3
+       11:   52:    while (std::getline(fin, linie)) {
+       11:   52-block  0
+call    0 returned 11
+branch  1 taken 11 (fallthrough)
+branch  2 taken 0 (throw)
+       11:   52-block  1
+call    3 returned 11
+branch  4 taken 11 (fallthrough)
+branch  5 taken 0 (throw)
+       11:   52-block  2
+branch  6 taken 8
+branch  7 taken 3 (fallthrough)
+        8:   53:        std::stringstream ss(linie);
+        8:   53-block  0
+call    0 returned 8
+call    1 returned 8
+branch  2 taken 8 (fallthrough)
+branch  3 taken 0 (throw)
+        8:   54:        std::string titlu, gen, anStr, actor;
+        8:   54-block  0
+call    0 returned 8
+call    1 returned 8
+call    2 returned 8
+call    3 returned 8
+        -:   55:
+        8:   56:        std::getline(ss, titlu, ',');
+call    0 returned 8
+branch  1 taken 8 (fallthrough)
+branch  2 taken 0 (throw)
+        8:   57:        std::getline(ss, gen, ',');
+        8:   57-block  0
+call    0 returned 8
+branch  1 taken 8 (fallthrough)
+branch  2 taken 0 (throw)
+        8:   58:        std::getline(ss, anStr, ',');
+        8:   58-block  0
+call    0 returned 8
+branch  1 taken 8 (fallthrough)
+branch  2 taken 0 (throw)
+        8:   59:        std::getline(ss, actor);
+        8:   59-block  0
+call    0 returned 8
+branch  1 taken 8 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   60:
+        8:   61:        int an = std::stoi(anStr);
+        8:   61-block  0
+call    0 returned 8
+branch  1 taken 8 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   62:
+        8:   63:        Film film{titlu, gen, an, actor};
+        8:   63-block  0
+call    0 returned 8
+branch  1 taken 8 (fallthrough)
+branch  2 taken 0 (throw)
+        8:   64:        Repo::adauga(film);
+        8:   64-block  0
+call    0 returned 8
+branch  1 taken 8 (fallthrough)
+branch  2 taken 0 (throw)
+        8:   65:    }
+        8:   65-block  0
+call    0 returned 8
+call    1 returned 8
+call    2 returned 8
+call    3 returned 8
+call    4 returned 8
+call    5 returned 8
+    $$$$$:   65-block  1
+call    6 never executed
+    $$$$$:   65-block  2
+call    7 never executed
+    $$$$$:   65-block  3
+call    8 never executed
+    $$$$$:   65-block  4
+call    9 never executed
+    $$$$$:   65-block  5
+call   10 never executed
+    $$$$$:   65-block  6
+call   11 never executed
+        -:   66:
+        3:   67:    fin.close();
+        3:   67-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   68:
+        3:   69:}
+        3:   69-block  0
+call    0 returned 3
+call    1 returned 3
+    $$$$$:   69-block  1
+call    2 never executed
+    $$$$$:   69-block  2
+call    3 never executed
+        -:   70:
+        -:   71:
+function _ZN8RepoFile14writeAllToFileEv called 10 returned 100% blocks executed 89%
+       10:   72:void RepoFile::writeAllToFile() {
+       10:   73:    std::ofstream fout(numeFisier);
+       10:   73-block  0
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   74:
+       52:   75:    for (const auto& film : Repo::getAll()) {
+       10:   75-block  0
+call    0 returned 10
+call    1 returned 10
+call    2 returned 10
+       42:   75-block  1
+call    3 returned 42
+       42:   75-block  2
+call    4 returned 42
+       52:   75-block  3
+call    5 returned 52
+branch  6 taken 42
+branch  7 taken 10 (fallthrough)
+       42:   76:        fout << film.getTitlu() << ","
+call    0 returned 42
+branch  1 taken 42 (fallthrough)
+branch  2 taken 0 (throw)
+       42:   77:             << film.getGen() << ","
+       42:   77-block  0
+call    0 returned 42
+branch  1 taken 42 (fallthrough)
+branch  2 taken 0 (throw)
+       42:   77-block  1
+call    3 returned 42
+branch  4 taken 42 (fallthrough)
+branch  5 taken 0 (throw)
+       42:   77-block  2
+call    6 returned 42
+branch  7 taken 42 (fallthrough)
+branch  8 taken 0 (throw)
+       42:   77-block  3
+call    9 returned 42
+branch 10 taken 42 (fallthrough)
+branch 11 taken 0 (throw)
+       42:   77-block  4
+call   12 returned 42
+branch 13 taken 42 (fallthrough)
+branch 14 taken 0 (throw)
+        -:   78:             << film.getAn() << ","
+       42:   79:             << film.getActor() << "\n";
+       42:   79-block  0
+call    0 returned 42
+branch  1 taken 42 (fallthrough)
+branch  2 taken 0 (throw)
+       42:   79-block  1
+call    3 returned 42
+branch  4 taken 42 (fallthrough)
+branch  5 taken 0 (throw)
+       42:   79-block  2
+call    6 returned 42
+branch  7 taken 42 (fallthrough)
+branch  8 taken 0 (throw)
+       42:   79-block  3
+call    9 returned 42
+branch 10 taken 42 (fallthrough)
+branch 11 taken 0 (throw)
+       42:   79-block  4
+call   12 returned 42
+branch 13 taken 42 (fallthrough)
+branch 14 taken 0 (throw)
+       42:   79-block  5
+call   15 returned 42
+branch 16 taken 42 (fallthrough)
+branch 17 taken 0 (throw)
+        -:   80:    }
+       10:   81:    fout.close();
+       10:   81-block  0
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:   82:}
+       10:   82-block  0
+call    0 returned 10
+    $$$$$:   82-block  1
+call    1 never executed
+        -:   83:
+function _ZNK4Repo5cautaERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi called 11 returned 91% blocks executed 76%
+       11:   84:const Film& Repo::cauta(const std::string& titlu, int an) const {
+       12:   85:    for (const auto& film : this->filme) {
+       11:   85-block  0
+call    0 returned 11
+call    1 returned 11
+       11:   85-block  1
+call    2 returned 11
+        1:   85-block  2
+call    3 returned 1
+       12:   85-block  3
+call    4 returned 12
+branch  5 taken 11
+branch  6 taken 1 (fallthrough)
+       11:   86:        if (film.getTitlu() == titlu && film.getAn() == an) {
+call    0 returned 11
+branch  1 taken 11 (fallthrough)
+branch  2 taken 0 (throw)
+       11:   86-block  0
+call    3 returned 11
+branch  4 taken 10 (fallthrough)
+branch  5 taken 1
+       10:   86-block  1
+call    6 returned 10
+branch  7 taken 10 (fallthrough)
+branch  8 taken 0 (throw)
+       10:   86-block  2
+branch  9 taken 10 (fallthrough)
+branch 10 taken 0
+       10:   86-block  3
+        1:   86-block  4
+       11:   86-block  5
+branch 11 taken 10 (fallthrough)
+branch 12 taken 1
+       10:   87:            return film;
+       10:   87-block  0
+       10:   87-block  1
+        -:   88:        }
+        -:   89:    }
+        3:   90:    throw RepositoryException("Filmul nu exista!");
+        1:   90-block  0
+call    0 returned 1
+        1:   90-block  1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   90-block  2
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   90-block  3
+call    7 returned 1
+        1:   90-block  4
+call    8 returned 0
+    $$$$$:   90-block  5
+call    9 never executed
+    $$$$$:   90-block  6
+    $$$$$:   90-block  7
+    $$$$$:   90-block  8
+call   10 never executed
+        -:   91:}
+        -:   92:
+        -:   93:
+        -:   94:
+        -:   95:
+        -:   96:
+        -:   97:
+        -:   98:
+        -:   99:
+        -:  100:
+        -:  101:

@@ -1,0 +1,4 @@
+-DWIN32
+-o
+C:/Users/urdad/lab6_7/cmake-build-debug-coverage/moc_service.cpp
+C:/Users/urdad/lab6_7/service.h

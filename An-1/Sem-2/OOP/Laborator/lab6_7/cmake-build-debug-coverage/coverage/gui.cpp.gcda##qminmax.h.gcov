@@ -1,0 +1,85 @@
+        -:    0:Source:C:/Qt/6.9.0/mingw_64/include/QtCore/qminmax.h
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\gui.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\gui.cpp.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright (C) 2022 The Qt Company Ltd.
+        -:    2:// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+        -:    3:
+        -:    4:#ifndef QMINMAX_H
+        -:    5:#define QMINMAX_H
+        -:    6:
+        -:    7:#if 0
+        -:    8:#pragma qt_class(QtMinMax)
+        -:    9:#pragma qt_sync_stop_processing
+        -:   10:#endif
+        -:   11:
+        -:   12:#include <QtCore/qassert.h>
+        -:   13:#include <QtCore/qtconfigmacros.h>
+        -:   14:#include <QtCore/qttypetraits.h>
+        -:   15:
+        -:   16:QT_BEGIN_NAMESPACE
+        -:   17:
+        -:   18:template <typename T>
+        -:   19:constexpr inline const T &qMin(const T &a, const T &b) { return (a < b) ? a : b; }
+        -:   20:template <typename T>
+function _Z4qMaxIxERKT_S2_S2_ called 7 returned 100% blocks executed 80%
+       7*:   21:constexpr inline const T &qMax(const T &a, const T &b) { return (a < b) ? b : a; }
+        7:   21-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 7
+    %%%%%:   21-block  1
+        7:   21-block  2
+        7:   21-block  3
+        -:   22:template <typename T>
+        -:   23:constexpr inline const T &qBound(const T &min, const T &val, const T &max)
+        -:   24:{
+        -:   25:    Q_ASSERT(!(max < min));
+        -:   26:    return qMax(min, qMin(max, val));
+        -:   27:}
+        -:   28:template <typename T, typename U>
+        -:   29:constexpr inline QTypeTraits::Promoted<T, U> qMin(const T &a, const U &b)
+        -:   30:{
+        -:   31:    using P = QTypeTraits::Promoted<T, U>;
+        -:   32:    P _a = a;
+        -:   33:    P _b = b;
+        -:   34:    return (_a < _b) ? _a : _b;
+        -:   35:}
+        -:   36:template <typename T, typename U>
+function _Z4qMaxIixEN11QTypeTraits6detail8PromotedIT_T0_NSt9enable_ifIXaaaaaaaaaaaaaa15is_arithmetic_vIS3_E15is_arithmetic_vIS4_Eeq19is_floating_point_vIS3_E19is_floating_point_vIS4_Eeq11is_signed_vIS3_E11is_signed_vIS4_Ent9is_same_vIS3_bEnt9is_same_vIS4_bEnt9is_same_vIS3_cEnt9is_same_vIS4_cEEvE4typeEE4typeERKS3_RKS4_ called 0 returned 0% blocks executed 0%
+    #####:   37:constexpr inline QTypeTraits::Promoted<T, U> qMax(const T &a, const U &b)
+        -:   38:{
+        -:   39:    using P = QTypeTraits::Promoted<T, U>;
+    #####:   40:    P _a = a;
+    #####:   41:    P _b = b;
+    #####:   42:    return (_a < _b) ? _b : _a;
+    %%%%%:   42-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   42-block  1
+    %%%%%:   42-block  2
+    %%%%%:   42-block  3
+        -:   43:}
+        -:   44:template <typename T, typename U>
+        -:   45:constexpr inline QTypeTraits::Promoted<T, U> qBound(const T &min, const U &val, const T &max)
+        -:   46:{
+        -:   47:    Q_ASSERT(!(max < min));
+        -:   48:    return qMax(min, qMin(max, val));
+        -:   49:}
+        -:   50:template <typename T, typename U>
+        -:   51:constexpr inline QTypeTraits::Promoted<T, U> qBound(const T &min, const T &val, const U &max)
+        -:   52:{
+        -:   53:    using P = QTypeTraits::Promoted<T, U>;
+        -:   54:    Q_ASSERT(!(P(max) < P(min)));
+        -:   55:    return qMax(min, qMin(max, val));
+        -:   56:}
+        -:   57:template <typename T, typename U>
+        -:   58:constexpr inline QTypeTraits::Promoted<T, U> qBound(const U &min, const T &val, const T &max)
+        -:   59:{
+        -:   60:    using P = QTypeTraits::Promoted<T, U>;
+        -:   61:    Q_ASSERT(!(P(max) < P(min)));
+        -:   62:    return qMax(min, qMin(max, val));
+        -:   63:}
+        -:   64:
+        -:   65:QT_END_NAMESPACE
+        -:   66:
+        -:   67:#endif // QMINMAX_H

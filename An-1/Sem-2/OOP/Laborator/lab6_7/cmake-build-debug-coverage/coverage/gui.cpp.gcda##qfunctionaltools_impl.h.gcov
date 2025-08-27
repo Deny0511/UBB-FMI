@@ -1,0 +1,97 @@
+        -:    0:Source:C:/Qt/6.9.0/mingw_64/include/QtCore/qfunctionaltools_impl.h
+        -:    0:Graph:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\gui.cpp.gcno
+        -:    0:Data:C:\Users\urdad\lab6_7\cmake-build-debug-coverage\CMakeFiles\lab6_7.dir\gui.cpp.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright (C) 2023 The Qt Company Ltd.
+        -:    2:// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+        -:    3:
+        -:    4:#if 0
+        -:    5:#pragma qt_sync_skip_header_check
+        -:    6:#pragma qt_sync_stop_processing
+        -:    7:#endif
+        -:    8:
+        -:    9:#ifndef QFUNCTIONALTOOLS_IMPL_H
+        -:   10:#define QFUNCTIONALTOOLS_IMPL_H
+        -:   11:
+        -:   12:#include <QtCore/qtconfigmacros.h>
+        -:   13:
+        -:   14:#include <type_traits>
+        -:   15:#include <utility>
+        -:   16:
+        -:   17:QT_BEGIN_NAMESPACE
+        -:   18:
+        -:   19:namespace QtPrivate {
+        -:   20:
+        -:   21:namespace detail {
+        -:   22:
+        -:   23:#define FOR_EACH_CVREF(op) \
+        -:   24:    op(&) \
+        -:   25:    op(const &) \
+        -:   26:    op(&&) \
+        -:   27:    op(const &&) \
+        -:   28:    /* end */
+        -:   29:
+        -:   30:
+        -:   31:template <typename Object, typename = void>
+        -:   32:struct StorageByValue
+        -:   33:{
+        -:   34:    Object o;
+        -:   35:#define MAKE_GETTER(cvref) \
+        -:   36:    constexpr Object cvref object() cvref noexcept \
+        -:   37:    { return static_cast<Object cvref>(o); }
+        9:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN3GUI18regenereazaButoaneEvEUlvE_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN3GUI18regenereazaButoaneEvEUlvE_vE6objectEv called 1 returned 100% blocks executed 100%
+        1:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+        1:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN3GUI19genereazaButoaneGenEvEUlvE_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN3GUI19genereazaButoaneGenEvEUlvE_vE6objectEv called 2 returned 100% blocks executed 100%
+        2:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+        2:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIM3GUIFvvEvE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIM3GUIFvvEvE6objectEv called 6 returned 100% blocks executed 100%
+        6:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+        6:   38-block  0
+------------------
+        -:   39:#undef MAKE_GETTER
+        -:   40:};
+        -:   41:
+        -:   42:template <typename Object, typename Tag = void>
+        -:   43:struct StorageEmptyBaseClassOptimization : Object
+        -:   44:{
+        -:   45:    StorageEmptyBaseClassOptimization() = default;
+        -:   46:    StorageEmptyBaseClassOptimization(Object &&o)
+        -:   47:        : Object(std::move(o))
+        -:   48:    {}
+        -:   49:    StorageEmptyBaseClassOptimization(const Object &o)
+        -:   50:        : Object(o)
+        -:   51:    {}
+        -:   52:
+        -:   53:#define MAKE_GETTER(cvref) \
+        -:   54:    constexpr Object cvref object() cvref noexcept \
+        -:   55:    { return static_cast<Object cvref>(*this); }
+        -:   56:    FOR_EACH_CVREF(MAKE_GETTER)
+        -:   57:#undef MAKE_GETTER
+        -:   58:};
+        -:   59:} // namespace detail
+        -:   60:
+        -:   61:template <typename Object, typename Tag = void>
+        -:   62:using CompactStorage = typename std::conditional_t<
+        -:   63:        std::conjunction_v<
+        -:   64:            std::is_empty<Object>,
+        -:   65:            std::negation<std::is_final<Object>>
+        -:   66:        >,
+        -:   67:        detail::StorageEmptyBaseClassOptimization<Object, Tag>,
+        -:   68:        detail::StorageByValue<Object, Tag>
+        -:   69:    >;
+        -:   70:
+        -:   71:} // namespace QtPrivate
+        -:   72:
+        -:   73:#undef FOR_EACH_CVREF
+        -:   74:
+        -:   75:QT_END_NAMESPACE
+        -:   76:
+        -:   77:#endif // QFUNCTIONALTOOLS_IMPL_H
